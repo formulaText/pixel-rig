@@ -95,7 +95,8 @@ test('Gitに保存してarchiveした配信全体も両系統のID・全ファ�
   git('add', '.');
   git('-c', 'user.name=Test', '-c', 'user.email=test@example.invalid', 'commit', '-m', 'Test site');
   const archive = join(options.site, '..', 'site.tar');
-  writeFileSync(archive, git('archive', 'HEAD'));
+  // npmのThree.js本体を含むため、stdoutの既定1MiB制限に依存しない。
+  git('archive', '--output=' + archive, 'HEAD');
   const upload = join(options.site, '..', 'upload');
   mkdirSync(upload);
   execFileSync('tar', ['-xf', archive, '-C', upload]);
