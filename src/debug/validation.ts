@@ -13,6 +13,7 @@ import { ReplayClock, inputAt, parseInputs, presets } from './replay';
 import { PerformanceRun } from './metrics';
 import { comparePixels, differingPixels, type PixelFrame } from './pixels';
 import { type BufferView } from './buffers';
+import { characterStudy, type CharacterVariant } from './character-study';
 
 declare const __BUILD_INFO__: {buildId:string; commit:string; builtAt:string};
 const el = <T extends HTMLElement=HTMLElement>(id:string) => document.getElementById(id) as T;
@@ -24,6 +25,12 @@ let draw: (options?:CaptureOptions)=>void;
 let savedSettings: ReturnType<typeof settings> | null = null;
 let initial: ReturnType<typeof settings>;
 let preset = 'still', seed = 11, inputs = presets.still.inputs;
+export function studyPreset() { return active && !!presets[preset].study; }
+export function studyCamera() {
+  if (!studyPreset() || !characterStudy.fixedCamera) return null;
+  const [x,z]=presets[preset].start;
+  return { x:Math.round(x/texel()), y:-Math.round(z*SINP/texel())+Math.round(.9*COSP/texel()) };
+}
 let performanceRun: PerformanceRun | null = null;
 let performanceConditions: ReturnType<typeof conditions> | null = null;
 let lastPerformance: unknown = null;
@@ -50,17 +57,20 @@ function conditions() {
     replay:'入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る',
     stepSeconds:STEP, viewport:{width:innerWidth,height:innerHeight,dpr:devicePixelRatio,orientation:innerWidth>innerHeight?'横':'縦',bufferWidth:W,bufferHeight:H},
     browser:navigator.userAgent, characters:1, pointLights:state.tod==='day'?0:LAMPS.length, shadowLights:state.shadow?1:0,
-    qualityAdjustment:'なし', bufferView, recording:input('v-recording').checked?'録画中（申告）':'録画なし（申告・自動検出不可）', state:snapshot() };
+    qualityAdjustment:'なし', characterStudy:{...characterStudy,presetControlsActive:studyPreset()}, bufferView, recording:input('v-recording').checked?'録画中（申告）':'録画なし（申告・自動検出不可）', state:snapshot() };
 }
-function fingerprint() { return JSON.stringify({settings:settings(),seed,preset,inputs,W,H}); }
+function fingerprint() { return JSON.stringify({settings:settings(),seed,preset,inputs,W,H,characterStudy}); }
 function notice(text:string) { el('v-message').textContent=text; }
 function runTick(index:number) {
   const length=inputs.reduce((n,v)=>n+Math.round(v.seconds/STEP),0);
+  const {gx,gy}=player;
   setReplayInput(inputAt(inputs,index%Math.max(1,length),STEP)); tick(index*STEP*1000);
+  if (presets[preset].stationary) { player.gx=gx; player.gy=gy; }
 }
 function resetState() {
   clock.reset(); resetLogic(); resetInput(); seedRuntime(seed); resetWorld(seed);
   expr.seq=[]; expr.seqT=0; expr.emote=null; expr.blinkWait=2.5; expr.autoBlink=initial.autoBlink;
+  if (studyPreset() && characterStudy.freezePose) expr.autoBlink=false;
   setPlayerWorld(...presets[preset].start); shared.uTime.value=0; setReplayInput({x:0,y:0,len:0});
 }
 export function resetValidation() {
@@ -81,6 +91,8 @@ function lockControls() {
   el<HTMLSelectElement>('v-buffer').disabled=measuring;
 }
 export function leaveValidation() {
+  characterStudy.variant='baseline'; characterStudy.freezePose=false; characterStudy.fixedCamera=false;
+  el<HTMLSelectElement>('v-character-variant').value='baseline'; input('v-freeze-pose').checked=false; input('v-fixed-camera').checked=false;
   stopMeasurement('通常操作へ復帰'); active=false; clock.reset(); setReplayInput(null); seedRuntime(null); resetInput(); resetLogic(); resetWorld(11);
   bufferView='final'; el<HTMLSelectElement>('v-buffer').value='final';
   if(savedSettings) applySettings(savedSettings);
@@ -106,7 +118,8 @@ export function captureStatic() {
   };
   try {
     const full=read(true,true,time), noCharacter=read(false,true,time), animated=read(false,false,time), pixels=read(false,false,0);
-    const x=Math.round(player.gx), y=-Math.round(player.gy)+Math.round(.9*COSP/texel());
+    const fixed=studyCamera();
+    const x=fixed?.x??Math.round(player.gx), y=fixed?.y??(-Math.round(player.gy)+Math.round(.9*COSP/texel()));
     return { fullImage:full, image:{width:W,height:H,x,y,pixels}, conditions:conditions(), fingerprint:fingerprint(),
       separation:{characterPixels:differingPixels(full,noCharacter), movingFootShadowPixels:differingPixels(noCharacter,animated), intentionalAnimationPixels:differingPixels(animated,pixels),
         method:'同一カメラで4描画。全体→キャラ・顔・アイコンなし→足元影なし→既存シェーダー時刻0。静止比較は最終画像全域。建物・木の影と現在のuFootは保持し、差分を除外しない',
@@ -150,11 +163,24 @@ function refresh() {
   }
 }
 export function result() { return { schema:'pixel-rig-validation-1',conditions:conditions(),performance:lastPerformance ?? (performanceRun ? {conditions:performanceConditions,result:performanceRun.result(),endState:snapshot()} : null),pixelComparison:lastComparison,notices,
-  knownIssues:['PNG保存は保留','移動中の色のちらつき：原因未確定・未解決'],acceptance:'自動的な性能合格・実機確認・採用承認を意味しません' }; }
+  knownIssues:['PNG保存は保留','色ちらつき：輪郭深度の丸めに由来する成分を調査中。候補は部分改善・実機未確認・未採用'],acceptance:'自動的な性能合格・実機確認・採用承認を意味しません' }; }
 function showResult() { input('v-result').value=JSON.stringify(result(),null,2); }
 export function bindValidation(render:(options?:CaptureOptions)=>void) {
   draw=render;
   el('v-preset').innerHTML=Object.entries(presets).map(([key,p])=>`<option value="${key}">${p.label}</option>`).join('');
+  el<HTMLSelectElement>('v-preset').value='still';
+  el('v-character-variant').addEventListener('change',()=>{
+    stopMeasurement('比較方式の変更');
+    characterStudy.variant=el<HTMLSelectElement>('v-character-variant').value as CharacterVariant;
+    try { resetValidation(); notice('同じ経路の先頭へ戻りました。「再生」で変更前／候補を比較してください'); }
+    catch(e) { notice((e as Error).message); }
+  });
+  for (const [id,key] of [['v-freeze-pose','freezePose'],['v-fixed-camera','fixedCamera']] as const) {
+    input(id).addEventListener('change',()=>{
+      stopMeasurement('切分け条件の変更'); characterStudy[key]=input(id).checked;
+      try { resetValidation(); } catch(e) { notice((e as Error).message); }
+    });
+  }
   input('v-inputs').value=JSON.stringify(presets.still.inputs);
   el('v-preset').addEventListener('change',()=>{ input('v-inputs').value=JSON.stringify(presets[el<HTMLSelectElement>('v-preset').value].inputs); try { resetValidation(); } catch(e) { notice((e as Error).message); } });
   const actions:Record<string,()=>void>={
@@ -175,4 +201,9 @@ export function bindValidation(render:(options?:CaptureOptions)=>void) {
   document.addEventListener('visibilitychange',()=>{ if(document.hidden){clock.pause();resetInput();stopMeasurement('画面が非表示');} });
   addEventListener('blur',()=>{if(active){clock.pause();stopMeasurement('フォーカスが外れた');}});
   refresh();
+  if (new URLSearchParams(location.search).get('study')==='color') {
+    el<HTMLDetailsElement>('validation').open=true;
+    el<HTMLSelectElement>('v-preset').value='color-vertical';
+    el('v-preset').dispatchEvent(new Event('change'));
+  }
 }

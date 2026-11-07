@@ -12,6 +12,8 @@ import { decalScene } from '../world/decals';
 import { player, setPlayerWorld } from '../gameplay/player';
 import { makeGlyphTex } from '../character/face';
 import { stageCells, faceCells } from '../debug/strips';
+import { characterStudy } from '../debug/character-study';
+import { anchoredCharacterND } from './character-depth-experiment';
 let rtLo: THREE.WebGLRenderTarget, rtHi: THREE.WebGLRenderTarget, rtND: THREE.WebGLRenderTarget, cmpRT: THREE.WebGLRenderTarget, rtWLo: THREE.WebGLRenderTarget, rtWHi: THREE.WebGLRenderTarget, rtWND: THREE.WebGLRenderTarget;
 let prevTx = texel();
 /* ---- キャラ単体 ---- */
@@ -83,7 +85,7 @@ function renderWorld(o: RenderOptions, X: number, Z: number, camX: number, camYu
   if (capture.character !== false) pass(charScene, worldCam, colorRT, false);
   if (needND) {
     pass(worldScene, worldCam, rtWND, true, ndWorld);
-    if (capture.character !== false) pass(charScene, worldCam, rtWND, false, ndChar);
+    if (capture.character !== false) pass(charScene, worldCam, rtWND, false, characterStudy.variant === 'anchored' ? anchoredCharacterND : ndChar);
   }
   setPost(o, rtWLo, rtWHi, rtWND, W, H, WORLD_FAR - WORLD_NEAR, needND);
   computeStamps(worldCam, W, H, o.face);

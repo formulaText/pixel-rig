@@ -24,3 +24,8 @@ jobs:
         env:
           CHROMIUM_PATH: /usr/bin/google-chrome
           VALIDATION_CI: '1'
+      - name: キャラの位置補正比較・変更前の症状検出・候補の退行検査
+        run: npm run test:character
+        env:
+          CHROMIUM_PATH: /usr/bin/google-chrome
+          CHARACTER_CI: '1'

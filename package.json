@@ -16,7 +16,9 @@
     "verify:originals": "node scripts/verify-originals.mjs",
     "test": "node --test tests/*.test.mjs",
     "check": "npm run verify:originals && npm run typecheck && npm run build && npm test",
-    "test:browser": "node tests/browser/compare-v5.mjs && node tests/browser/site-smoke.mjs && node tests/browser/validation.mjs && node tests/browser/validation-built.mjs"
+    "test:browser": "node tests/browser/compare-v5.mjs && node tests/browser/site-smoke.mjs && node tests/browser/validation.mjs && node tests/browser/validation-built.mjs",
+    "test:character": "node tests/browser/character-stability.mjs",
+    "test:character-performance": "node tests/browser/character-performance.mjs"
   },
   "dependencies": {
     "three": "0.128.0"
