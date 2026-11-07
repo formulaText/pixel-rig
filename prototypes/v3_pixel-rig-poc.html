@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Pixel Rig PoC v3 — 3D→ドット絵リアルタイム変換</title>
+<style>
+:root{
+  --bg:#e9e7f1; --panel:#f7f6fb; --ink:#23213a; --sub:#6b6889; --line:#d3d0e2;
+  --accent:#5a4fcf; --accent-ink:#ffffff; --chip:#e3e0f0; --stage:#101a0d;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#15142a; --panel:#1d1c35; --ink:#e8e6f5; --sub:#9a97b8; --line:#34325a;
+    --accent:#8f86ff; --accent-ink:#15142a; --chip:#2a2848; --stage:#0a1108;
+    color-scheme: dark;
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP","Yu Gothic UI",sans-serif;font-size:14px;line-height:1.5;-webkit-tap-highlight-color:transparent}
+.app{display:grid;grid-template-rows:auto 1fr;height:100vh;height:100dvh}
+header{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 12px;padding:10px 16px;border-bottom:1px solid var(--line);background:var(--panel)}
+header h1{font-size:15px;font-weight:700}
+header p{font-size:12px;color:var(--sub)}
+.layout{display:grid;grid-template-rows:minmax(240px,52vh) 1fr;min-height:0}
+@media (min-width:900px){.layout{grid-template-columns:1fr 380px;grid-template-rows:1fr}}
+.stage{position:relative;background:var(--stage);overflow:hidden;touch-action:none;user-select:none;-webkit-user-select:none}
+#view{position:absolute;image-rendering:pixelated;image-rendering:crisp-edges;display:block}
+.hud{position:absolute;left:8px;top:8px;font:12px/1.4 ui-monospace,Menlo,Consolas,monospace;color:#f4f1e6;background:rgba(15,12,30,.6);padding:4px 8px;border-radius:6px;pointer-events:none;z-index:2}
+.hint{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);font-size:12px;color:#f4f1e6;background:rgba(15,12,30,.55);padding:4px 10px;border-radius:999px;pointer-events:none;white-space:nowrap;transition:opacity .4s;z-index:2}
+.joy{position:absolute;width:104px;height:104px;border-radius:50%;border:2px solid rgba(255,255,255,.45);background:rgba(255,255,255,.07);transform:translate(-50%,-50%);display:none;pointer-events:none;z-index:2}
+.joy i{position:absolute;left:50%;top:50%;width:42px;height:42px;margin:-21px 0 0 -21px;border-radius:50%;background:rgba(255,255,255,.55)}
+.panel{overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:20px;background:var(--panel);border-top:1px solid var(--line)}
+@media (min-width:900px){.panel{border-top:0;border-left:1px solid var(--line)}}
+.sec h2{font-size:13px;font-weight:700;margin-bottom:8px}
+.sec .note{font-size:12px;color:var(--sub);margin-top:6px}
+.step{display:grid;grid-template-columns:30px 1fr 40px;gap:10px;align-items:center;width:100%;text-align:left;padding:9px 10px;border:1px solid var(--line);border-radius:12px;margin-bottom:6px;cursor:pointer;background:transparent;color:inherit;font:inherit}
+.step:focus-visible,.seg button:focus-visible,.btn:focus-visible,.tg:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.step .no{font-weight:800;font-size:14px;width:30px;height:30px;border-radius:8px;display:grid;place-items:center;background:var(--chip);color:var(--sub)}
+.step.on .no{background:var(--accent);color:var(--accent-ink)}
+.step b{display:block;font-size:13.5px}
+.step small{display:block;color:var(--sub);font-size:11.5px;line-height:1.45}
+.sw{width:38px;height:22px;border-radius:11px;background:var(--chip);position:relative;border:1px solid var(--line);flex:none}
+.sw::after{content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:var(--sub);transition:left .15s}
+.on .sw{background:var(--accent);border-color:var(--accent)}
+.on .sw::after{left:18px;background:var(--accent-ink)}
+.strip{display:flex;gap:10px;overflow-x:auto;padding-bottom:4px}
+.cell{flex:none;text-align:center;font-size:11.5px;color:var(--sub)}
+.cell canvas{display:block;image-rendering:pixelated;image-rendering:crisp-edges;background:#5a9a49;border-radius:6px;margin-bottom:4px}
+.row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.row label{font-size:13px}
+.seg{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.seg.wrap{flex-wrap:wrap}
+.seg button{flex:1 0 auto;padding:6px 11px;border:0;background:transparent;color:var(--ink);font-weight:700;font-size:13px;cursor:pointer;white-space:nowrap}
+.seg button.on{background:var(--accent);color:var(--accent-ink)}
+input[type=range]{accent-color:var(--accent);width:140px}
+.tg{display:flex;align-items:center;gap:8px;background:transparent;border:0;color:inherit;font:inherit;cursor:pointer}
+.btn{display:block;width:100%;padding:12px;border-radius:10px;border:0;background:var(--accent);color:var(--accent-ink);font-weight:700;font-size:14px;cursor:pointer;text-align:center;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+dialog{margin:auto;border:1px solid var(--line);border-radius:14px;background:var(--panel);color:var(--ink);padding:16px;max-width:min(94vw,720px);max-height:92vh}
+dialog::backdrop{background:rgba(10,8,25,.6)}
+.dlg-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:10px}
+.dlg-head span{font-size:12px;color:var(--sub)}
+.sheet-wrap{overflow:auto;max-height:64vh;border-radius:8px;background-color:#cfcbe0;background-image:linear-gradient(45deg,#b9b4cf 25%,transparent 25%,transparent 75%,#b9b4cf 75%),linear-gradient(45deg,#b9b4cf 25%,transparent 25%,transparent 75%,#b9b4cf 75%);background-size:16px 16px;background-position:0 0,8px 8px}
+#sheet{display:block;image-rendering:pixelated;image-rendering:crisp-edges}
+.dlg-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <h1>Pixel Rig PoC v3</h1>
+    <p>カメラ方向投影のピクセル模様・2D式の前後関係・表情システムの検証</p>
+  </header>
+  <div class="layout">
+    <section class="stage" id="stage">
+      <div class="hud" id="hud"></div>
+      <div class="hint" id="hint">ドラッグ または WASD / 矢印キーで移動</div>
+      <div class="joy" id="joy"><i id="knob"></i></div>
+    </section>
+    <aside class="panel">
+      <div class="sec">
+        <h2>変換ステップ（メイン画面に適用）</h2>
+        <button class="step on" data-k="f1" role="switch" aria-checked="true">
+          <span class="no">1</span>
+          <span><b>トゥーン階調</b><small>光を段階で区切る（OFF時は滑らかな陰影）</small></span>
+          <span class="sw"></span>
+        </button>
+        <button class="step on" data-k="f2" role="switch" aria-checked="true">
+          <span class="no">2</span>
+          <span><b>半透明の排除</b><small>低解像度へ直接描画（OFFは高解像度からの単純縮小）</small></span>
+          <span class="sw"></span>
+        </button>
+        <button class="step on" data-k="f3" role="switch" aria-checked="true">
+          <span class="no">3</span>
+          <span><b>輪郭線</b><small>キャラは濃い外周線、背景は控えめな線＋法線エッジ</small></span>
+          <span class="sw"></span>
+        </button>
+        <button class="step on" data-k="f4" role="switch" aria-checked="true">
+          <span class="no">4</span>
+          <span><b>ちらつき対策</b><small>8方向のピクセル単位移動・歩行4コマ・向きスナップ</small></span>
+          <span class="sw"></span>
+        </button>
+      </div>
+
+      <div class="sec">
+        <h2>表情（ドット顔）</h2>
+        <div class="seg wrap" id="segExpr">
+          <button data-e="normal" class="on">通常</button><button data-e="joy">喜び</button><button data-e="surprise">驚き</button><button data-e="sleepy">眠い</button><button data-e="closed">目閉じ</button>
+        </div>
+        <div class="row" style="margin-top:12px">
+          <label>自動まばたき</label>
+          <button class="tg on" id="tgBlink" role="switch" aria-checked="true"><span class="sw"></span></button>
+        </div>
+        <div class="row">
+          <label>口パク</label>
+          <button class="tg" id="tgTalk" role="switch" aria-checked="false"><span class="sw"></span></button>
+        </div>
+        <p class="note">表情は基準の目と口のドットから自動生成しています。口は解像度32以上で表示されます。</p>
+      </div>
+
+      <div class="sec">
+        <h2>顔の表現の比較（ステップ1〜4すべて有効）</h2>
+        <div class="strip" id="faceStrip"></div>
+      </div>
+
+      <div class="sec">
+        <h2>段階比較（左から累積で有効化）</h2>
+        <div class="strip" id="stageStrip"></div>
+      </div>
+
+      <div class="sec">
+        <h2>設定</h2>
+        <div class="row">
+          <label>キャラの解像度</label>
+          <div class="seg" id="segS">
+            <button data-s="16">16</button><button data-s="24">24</button><button data-s="32" class="on">32</button><button data-s="48">48</button>
+          </div>
+        </div>
+        <div class="row">
+          <label>顔の表現</label>
+          <div class="seg" id="segFace">
+            <button data-f="3d">3D</button><button data-f="uv">デカール</button><button data-f="pixel" class="on">ドット顔</button>
+          </div>
+        </div>
+        <div class="row">
+          <label for="dot">ドットの大きさ <span id="dotVal">4</span></label>
+          <input type="range" id="dot" min="2" max="7" step="1" value="4">
+        </div>
+        <div class="row">
+          <label>自動歩行デモ</label>
+          <button class="tg on" id="tgAuto" role="switch" aria-checked="true"><span class="sw"></span></button>
+        </div>
+        <div class="row">
+          <label>比較表示を更新</label>
+          <button class="tg on" id="tgCmp" role="switch" aria-checked="true"><span class="sw"></span></button>
+        </div>
+      </div>
+
+      <div class="sec">
+        <button class="btn" id="bake">スプライトシートを焼き出す（8方向×4コマ）</button>
+        <p class="note">ステップ1〜3・顔の表現・表情の現在の設定で焼き出します。</p>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<dialog id="dlg">
+  <div class="dlg-head"><b>スプライトシート</b><span id="sheetInfo"></span></div>
+  <div class="sheet-wrap"><canvas id="sheet"></canvas></div>
+  <div class="dlg-actions">
+    <a class="btn" id="dl" download="sprite_sheet.png">PNGを保存</a>
+    <button class="btn ghost" id="closeDlg">閉じる</button>
+  </div>
+</dialog>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(() => {
+'use strict';
+
+/* ================= 定数 ================= */
+const TAU = Math.PI * 2;
+const FR = 1.25;                                     // キャラ単体カメラの半径
+const PITCH = 35 * Math.PI / 180;
+const SINP = Math.sin(PITCH), COSP = Math.cos(PITCH);
+const STEP = 1 / 60;                                 // ロジック更新は60Hz固定
+const CYCLE = 0.64, WALK_V = 2.8, LEG_LEN = 0.545, PLAYER_R = 0.28, CARD_K = 0.15;
+const SPRITE_NEAR = 3.4, SPRITE_FAR = 6.6, WORLD_DIST = 50, WORLD_NEAR = 20, WORLD_FAR = 80;
+const TW = 1.25;                                     // タイルの横幅（ワールド単位）＝画面上 S/2 px
+const TD = TW / SINP;                                // タイルの奥行き（画面上で同じpx数になる）
+const TH = TW / COSP;                                // 1タイル分の高さ（画面上で同じpx数になる）
+const MC = 40, MR = 24;                              // マップのタイル数
+const DIR_NAMES = ['下','右下','右','右上','上','左上','左','左下'];
+const DIR8 = [[0,1],[1,1],[1,0],[1,-1],[0,-1],[-1,-1],[-1,0],[-1,1]];
+const LIGHT_W = new THREE.Vector3(-0.55, 1.0, 0.7).normalize();
+const CAM_TARGET = new THREE.Vector3(0, 0.95, 0);
+const CAM_DIR = new THREE.Vector3(0, SINP, COSP);
+const STAGES = [
+  {label:'素の縮小', f:[0,0,0,0]},
+  {label:'＋1 階調', f:[1,0,0,0]},
+  {label:'＋2 α',   f:[1,1,0,0]},
+  {label:'＋3 輪郭', f:[1,1,1,0]},
+  {label:'＋4 対策', f:[1,1,1,1]},
+];
+const FACES = [ {k:'3d', label:'3D形状'}, {k:'uv', label:'UVデカール'}, {k:'pixel', label:'ドット顔'} ];
+const GLYPH_COLORS = { D:'#241a38', W:'#fffaf0', C:'#3f5aa6', M:'#b4604c', K:'#c98b6e', O:'#5a2430' };
+const GLYPHS = {
+  16:{ w:1, h:1, eye:['D'], narrow:['D'], mouth:null },
+  24:{ w:1, h:2, eye:['D','D'], narrow:['D','D'], mouth:null },
+  32:{ w:2, h:3, eye:['DW','DD','CC'], narrow:['D.','D.','C.'], mouth:['..','MM','..'] },
+  48:{ w:3, h:4, eye:['DDD','DCW','DCC','.DD'], narrow:['DD.','DC.','DC.','.D.'], mouth:['...','...','.MM','...'] },
+};
+const ATLAS_COLS = 12;                               // 目5状態×2（正面/細目）＋口2状態
+const PRESETS = {
+  normal:{ eye:0, mouth:0 }, joy:{ eye:3, mouth:1 }, surprise:{ eye:4, mouth:1 },
+  sleepy:{ eye:1, mouth:0 }, closed:{ eye:2, mouth:0 },
+};
+const P = { none:0, brick:1, plankH:2, plankV:3, shingle:4, stone:5 };
+const T = { grass:0, meadow:1, dirt:2, sand:3, cobble:4, water:5 };
+
+const state = { S:32, dot:4, face:'pixel', f1:true, f2:true, f3:true, f4:true, auto:true, compare:true };
+const texel = () => (2 * FR) / state.S;
+
+/* ================= シェーダー ================= */
+const CONSTS = `#define CP ${COSP.toFixed(6)}\n#define SP ${SINP.toFixed(6)}\n`;
+const HASH = `
+float hash(vec2 p){ vec3 p3 = fract(vec3(p.xyx) * 0.1031); p3 += dot(p3, p3.yzx + 33.33); return fract((p3.x + p3.y) * p3.z); }
+float vnoise(vec2 x){
+  vec2 i = floor(x), f = fract(x); vec2 u = f * f * (3.0 - 2.0 * f);
+  return mix(mix(hash(i), hash(i + vec2(1.0, 0.0)), u.x), mix(hash(i + vec2(0.0, 1.0)), hash(i + vec2(1.0, 1.0)), u.x), u.y);
+}
+float bandOf(float l){ return l > 0.8 ? 1.0 : (l > 0.5 ? 0.0 : (l > 0.3 ? -1.0 : -2.0)); }
+`;
+
+// 共通頂点シェーダー：カード（足元の垂直板）への深度の平坦化に対応
+const VS = CONSTS + `
+attribute vec3 aAnchor;
+uniform float uCardMode; uniform vec3 uAnchor; uniform float uCardK;
+varying vec3 vN; varying vec3 vWorld; varying vec2 vUv; varying float vDist;
+void main(){
+  vN = normalize(normalMatrix * normal);
+  vec4 wp = modelMatrix * vec4(position, 1.0);
+  vWorld = wp.xyz; vUv = uv;
+  vDist = -(viewMatrix * wp).z;
+  vec3 pos = wp.xyz;
+  if (uCardMode > 0.5) {
+    vec3 a = uCardMode > 1.5 ? aAnchor : uAnchor;
+    float u = wp.y * CP - wp.z * SP;
+    vec3 q = vec3(wp.x, (u + a.z * SP) / CP, a.z);
+    pos = mix(q, wp.xyz, uCardK);                  // 画面位置は変えず、深度だけ板に寄せる
+  }
+  gl_Position = projectionMatrix * viewMatrix * vec4(pos, 1.0);
+}`;
+
+const TOON_FS = `
+uniform vec3 uLightDir; uniform float uToon;
+uniform vec3 uDeep; uniform vec3 uShadow; uniform vec3 uBase; uniform vec3 uLight;
+uniform sampler2D uMap; uniform float uHasMap;
+varying vec3 vN; varying vec2 vUv;
+void main(){
+  vec4 tex = vec4(1.0);
+  if (uHasMap > 0.5) { tex = texture2D(uMap, vUv); if (tex.a < 0.5) discard; }
+  vec3 n = normalize(vN);
+  float l = dot(n, uLightDir) * 0.5 + 0.5;
+  vec3 c;
+  if (uToon > 0.5) c = l > 0.80 ? uLight : (l > 0.50 ? uBase : (l > 0.30 ? uShadow : uDeep));
+  else c = uBase * (0.42 + 0.78 * l);
+  if (uHasMap > 0.5) c = tex.rgb * (l > 0.30 ? 1.0 : 0.82);
+  gl_FragColor = vec4(c, 1.0);
+}`;
+
+// 建物・小物：カメラ方向投影のピクセル模様（整数ピクセル座標で計算）
+const WORLD_FS = HASH + `
+uniform vec3 uLightDir; uniform float uToon;
+uniform sampler2D tRamp; uniform float uRampRows; uniform float uRow; uniform float uPattern;
+uniform vec2 uPixOrigin; uniform float uPixScale;
+varying vec3 vN;
+float pat(vec2 q){
+  if (uPattern < 0.5) return 0.0;
+  if (uPattern < 1.5) {                              // レンガ 8×4
+    float row = floor(q.y / 4.0), ly = q.y - row * 4.0;
+    float sx = q.x + mod(row, 2.0) * 4.0; float col = floor(sx / 8.0), lx = sx - col * 8.0;
+    if (ly > 2.5 || lx > 6.5) return -1.0;
+    float o = hash(vec2(col, row)) < 0.25 ? -1.0 : 0.0;
+    if (ly < 0.5) o += 1.0;
+    return o;
+  }
+  if (uPattern < 2.5) {                              // 横板
+    float row = floor(q.y / 4.0), ly = q.y - row * 4.0;
+    if (ly > 2.5) return -1.0;
+    if (mod(q.x + floor(hash(vec2(row, 3.0)) * 24.0), 18.0) < 0.5) return -1.0;
+    if (hash(q) < 0.015) return -1.0;
+    return ly < 0.5 ? 1.0 : 0.0;
+  }
+  if (uPattern < 3.5) {                              // 縦板・樹皮
+    float col = floor(q.x / 3.0), lx = q.x - col * 3.0;
+    if (lx > 1.5 && hash(vec2(col, floor(q.y / 5.0))) < 0.7) return -1.0;
+    return lx < 0.5 ? 1.0 : 0.0;
+  }
+  if (uPattern < 4.5) {                              // 屋根瓦
+    float row = floor(q.y / 3.0), ly = q.y - row * 3.0;
+    float sx = q.x + mod(row, 2.0) * 3.0; float col = floor(sx / 6.0), lx = sx - col * 6.0;
+    if (ly > 1.5 || lx > 4.5) return -1.0;
+    return hash(vec2(col, row)) < 0.2 ? -1.0 : 0.0;
+  }
+  float row = floor(q.y / 5.0), ly = q.y - row * 5.0;  // 石積み（幅不揃い）
+  float w = 7.0 + floor(hash(vec2(row, 9.0)) * 5.0);
+  float sx = q.x + floor(hash(vec2(row, 2.0)) * 12.0); float col = floor(sx / w), lx = sx - col * w;
+  if (ly > 3.5 || lx > w - 1.5) return -2.0;
+  float o = hash(vec2(col, row)) < 0.3 ? -1.0 : 0.0;
+  if (ly < 0.5 || lx < 0.5) o += 1.0;
+  return o;
+}
+void main(){
+  vec2 p = uPixOrigin + floor(gl_FragCoord.xy / uPixScale);
+  vec2 q = vec2(p.x, -p.y - 1.0);
+  vec3 n = normalize(vN);
+  float l = dot(n, uLightDir) * 0.5 + 0.5;
+  float idx = clamp((uToon > 0.5 ? 2.0 + bandOf(l) : 2.0) + pat(q), 0.0, 4.0);
+  vec3 c = texture2D(tRamp, vec2((idx + 0.5) / 5.0, (uRow + 0.5) / uRampRows)).rgb;
+  if (uToon < 0.5) c *= 0.55 + 0.6 * l;
+  gl_FragColor = vec4(c, 1.0);
+}`;
+
+// 地面：タイルチップ＋境界のなじませ＋水アニメーション
+const GROUND_FS = HASH + `
+uniform vec3 uLightDir; uniform float uToon;
+uniform sampler2D tRamp; uniform float uRampRows;
+uniform sampler2D tMap; uniform vec2 uMapSize; uniform vec2 uMapOff; uniform float uT;
+uniform vec2 uPixOrigin; uniform float uPixScale; uniform float uHeightTiles; uniform float uTime;
+varying vec3 vN;
+float typeRaw(vec2 g){
+  vec2 t = floor((g + uMapOff) / uT);
+  if (t.x < 0.0 || t.y < 0.0 || t.x >= uMapSize.x || t.y >= uMapSize.y) return 0.0;
+  return floor(texture2D(tMap, (t + 0.5) / uMapSize).r * 255.0 + 0.5);
+}
+float typeAt(vec2 g){
+  vec2 n = vec2(vnoise(g / 5.0), vnoise(g / 5.0 + vec2(31.7, 11.3))) - 0.5;
+  return typeRaw(g + floor(n * uT * 0.5 + 0.5));
+}
+float grassP(vec2 g){
+  float o = 0.0;
+  float big = vnoise(g / vec2(18.0, 14.0));
+  if (big > 0.64 || (big > 0.58 && mod(g.x + g.y, 2.0) < 0.5)) o = -1.0;
+  vec2 cs = vec2(6.0, 5.0); vec2 cell = floor(g / cs);
+  float h = hash(cell);
+  vec2 org = cell * cs + floor(vec2(hash(cell + 3.1), hash(cell + 7.7)) * vec2(3.0, 2.0));
+  vec2 l = g - org;
+  if (h < 0.6) {
+    if (l == vec2(1.0, 0.0) || l == vec2(0.0, 1.0) || l == vec2(2.0, 1.0)) o = 1.0;
+    else if (l == vec2(1.0, 2.0)) o = -1.0;
+  } else if (h < 0.75 && l == vec2(0.0, 0.0)) o = -1.0;
+  return o;
+}
+vec4 flowerP(vec2 g){
+  vec2 cs = vec2(7.0, 6.0); vec2 cell = floor(g / cs);
+  float h = hash(cell + 11.0);
+  if (h > 0.5) return vec4(0.0);
+  vec2 org = cell * cs + floor(vec2(hash(cell + 2.3), hash(cell + 5.9)) * vec2(5.0, 4.0)) + 1.0;
+  vec2 l = g - org;
+  vec3 pc = h < 0.17 ? vec3(0.97, 0.95, 0.90) : (h < 0.34 ? vec3(0.98, 0.83, 0.30) : vec3(0.95, 0.55, 0.72));
+  if (l == vec2(0.0)) return uT >= 16.0 ? vec4(0.98, 0.85, 0.35, 1.0) : vec4(pc, 1.0);
+  if (uT >= 16.0 && (l == vec2(1.0, 0.0) || l == vec2(-1.0, 0.0) || l == vec2(0.0, 1.0) || l == vec2(0.0, -1.0))) return vec4(pc, 1.0);
+  return vec4(0.0);
+}
+float dirtP(vec2 g){
+  float o = 0.0;
+  if (vnoise(g / 16.0) > 0.66) o = -1.0;
+  float h = hash(g);
+  if (h < 0.05) o -= 1.0; else if (h < 0.08) o += 1.0;
+  vec2 cs = vec2(9.0, 7.0); vec2 cell = floor(g / cs);
+  if (hash(cell + 5.0) < 0.35) {
+    vec2 org = cell * cs + floor(vec2(hash(cell + 1.7), hash(cell + 9.3)) * vec2(6.0, 4.0));
+    vec2 l = g - org;
+    if (l.y == 0.0 && l.x >= 0.0 && l.x <= 1.0) o = 1.0;
+    else if (l.y == 1.0 && l.x >= 0.0 && l.x <= 1.0) o = -1.0;
+  }
+  return o;
+}
+float sandP(vec2 g){
+  float o = 0.0;
+  if (hash(g + 3.0) < 0.05) o = -1.0;
+  float w = g.y + floor(vnoise(vec2(g.x / 10.0, 3.7)) * 4.0);
+  if (mod(w, 7.0) < 0.5 && hash(vec2(floor(g.x / 4.0), floor(w / 7.0))) < 0.6) o = 1.0;
+  return o;
+}
+float cobbleP(vec2 g){
+  float row = floor(g.y / 6.0), ly = g.y - row * 6.0;
+  float sx = g.x + mod(row, 2.0) * 4.0; float col = floor(sx / 8.0), lx = sx - col * 8.0;
+  if (ly > 4.5 || lx > 6.5) return -2.0;
+  float o = hash(vec2(col, row)) < 0.3 ? -1.0 : 0.0;
+  if (ly < 0.5 || lx < 0.5) o += 1.0;
+  return o;
+}
+float waterP(vec2 g, float tq){
+  float o = 0.0;
+  if (vnoise(g / 14.0) > 0.6) o = -1.0;
+  float wy = floor(g.y / 4.0);
+  float sh = floor(tq * 0.5) + floor(hash(vec2(wy, 1.0)) * 30.0);
+  if (mod(g.y, 4.0) < 0.5 && mod(g.x + sh + wy * 7.0, 14.0) < 3.0) o = 1.0;
+  if (hash(g + vec2(tq * 13.0, tq * 7.0)) < 0.004) o = 2.0;
+  return o;
+}
+void main(){
+  vec2 p = uPixOrigin + floor(gl_FragCoord.xy / uPixScale);
+  vec2 g = vec2(p.x, -(p.y - uHeightTiles * uT) - 1.0);   // 地面上のピクセル座標（下向き正）
+  float ty = typeAt(g);
+  float up = typeAt(g + vec2(0.0, -1.0));
+  float dn = typeAt(g + vec2(0.0, 1.0));
+  float lf = typeAt(g + vec2(-1.0, 0.0));
+  float rt = typeAt(g + vec2(1.0, 0.0));
+  float tq = floor(uTime * 6.0);
+  float offs = 0.0; vec4 ov = vec4(0.0);
+  if (ty < 0.5) offs = grassP(g);
+  else if (ty < 1.5) { offs = grassP(g); ov = flowerP(g); }
+  else if (ty < 2.5) offs = dirtP(g);
+  else if (ty < 3.5) offs = sandP(g);
+  else if (ty < 4.5) offs = cobbleP(g);
+  else offs = waterP(g, tq);
+  bool grassy = ty < 1.5, upGrassy = up < 1.5;
+  if (!grassy && ty < 4.5 && upGrassy) offs -= 1.0;       // 草の縁の下にできる影
+  if (grassy && !upGrassy && up < 4.5) offs += 1.0;        // 草の上端の明るい縁
+  if (ty > 4.5) {
+    if (up < 4.5) offs -= 1.0;                             // 岸の影
+    bool shore = up < 4.5 || dn < 4.5 || lf < 4.5 || rt < 4.5;
+    if (shore && hash(g + vec2(tq * 7.0, tq * 3.0)) > 0.5) ov = vec4(0.85, 0.94, 1.0, 1.0);
+  }
+  vec3 n = normalize(vN);
+  float l = dot(n, uLightDir) * 0.5 + 0.5;
+  float idx = clamp((uToon > 0.5 ? 2.0 + bandOf(l) : 3.0) + offs, 0.0, 4.0);
+  vec3 c = texture2D(tRamp, vec2((idx + 0.5) / 5.0, (ty + 0.5) / uRampRows)).rgb;
+  if (uToon < 0.5) c *= 0.6 + 0.45 * l;
+  if (ov.a > 0.5) c = ov.rgb;
+  gl_FragColor = vec4(c, 1.0);
+}`;
+
+// 法線XY＋12bit深度（平坦化前の本来の深度）＋4bit ID
+const ND_FS = `
+uniform float uId; uniform float uNear; uniform float uFar;
+varying vec3 vN; varying float vDist;
+void main(){
+  float d = 1.0 - clamp((vDist - uNear) / (uFar - uNear), 0.0, 1.0);
+  float d12 = floor(d * 4095.0 + 0.5);
+  float hi = floor(d12 / 16.0);
+  float lo = d12 - hi * 16.0;
+  vec3 n = normalize(vN);
+  gl_FragColor = vec4(n.x * 0.5 + 0.5, n.y * 0.5 + 0.5, hi / 255.0, (lo * 16.0 + uId) / 255.0);
+}`;
+
+// 足元の影：ピクセル単位の楕円を乗算合成
+const SHADOW_FS = `
+uniform vec2 uPixOrigin; uniform float uPixScale; uniform vec2 uCenter; uniform vec2 uRad; uniform vec3 uCol;
+void main(){
+  vec2 p = uPixOrigin + floor(gl_FragCoord.xy / uPixScale) + 0.5;
+  vec2 d = (p - uCenter) / uRad;
+  if (dot(d, d) > 1.0) discard;
+  gl_FragColor = vec4(uCol, 1.0);
+}`;
+
+const POST_VS = `
+varying vec2 vUv;
+void main(){ vUv = uv; gl_Position = vec4(position.xy, 0.0, 1.0); }`;
+const POST_FS = `
+uniform sampler2D tColor; uniform sampler2D tHi; uniform sampler2D tND; uniform sampler2D tGlyph;
+uniform vec2 uRes; uniform float uF2; uniform float uF3; uniform float uNDOn;
+uniform vec3 uLightDir; uniform float uRange; uniform float uTexel;
+uniform float uStamp; uniform vec2 uGlyph; uniform float uAtlasCols; uniform vec3 uEye0; uniform vec3 uEye1; uniform vec3 uMouth;
+varying vec2 vUv;
+const vec3 INK = vec3(0.10, 0.06, 0.17);
+vec4 srcAt(vec2 uv){
+  if (uF2 > 0.5) { vec4 c = texture2D(tColor, uv); c.a = step(0.5, c.a); return c; }
+  vec2 hp = 1.0 / (uRes * 4.0);
+  vec3 rgb = vec3(0.0); float cov = 0.0;
+  for (int j = 0; j < 4; j++) {
+    for (int i = 0; i < 4; i++) {
+      vec4 s = texture2D(tHi, uv + (vec2(float(i), float(j)) - 1.5) * hp);
+      if (s.a > 0.5) { rgb += s.rgb; cov += 1.0; }
+    }
+  }
+  if (cov > 0.0) rgb /= cov;
+  return vec4(rgb, cov / 16.0);
+}
+vec4 decodeND(vec2 uv){
+  vec4 q = texture2D(tND, uv);
+  float A = floor(q.a * 255.0 + 0.5);
+  float id = mod(A, 16.0);
+  float lo = floor(A / 16.0);
+  float hi = floor(q.b * 255.0 + 0.5);
+  return vec4(q.r * 2.0 - 1.0, q.g * 2.0 - 1.0, (hi * 16.0 + lo) / 4095.0, id);
+}
+vec3 fullN(vec4 e){ return vec3(e.x, e.y, sqrt(max(0.0, 1.0 - e.x * e.x - e.y * e.y))); }
+void nb(vec2 uv, float g, vec4 me, inout float best, inout float bId, inout vec2 bUv, inout float ne){
+  vec4 q = decodeND(uv);
+  float diff = (q.z - me.z) * uRange;
+  if (q.w > 0.5 && diff > g && q.z > best) { best = q.z; bId = q.w; bUv = uv; }
+  if (me.w > 0.5 && q.w > 0.5 && abs(diff) <= g) {
+    vec3 n1 = fullN(me), n2 = fullN(q);
+    if (dot(n1, n2) < 0.6 && dot(n1, uLightDir) > dot(n2, uLightDir) + 0.15) ne = 1.0;
+  }
+}
+vec4 glyphAt(vec2 p, vec3 e){
+  if (e.z < -0.5) return vec4(0.0);
+  vec2 d = p - e.xy;
+  if (d.x < 0.0 || d.y < 0.0 || d.x >= uGlyph.x || d.y >= uGlyph.y) return vec4(0.0);
+  return texture2D(tGlyph, vec2((e.z * uGlyph.x + d.x + 0.5) / (uGlyph.x * uAtlasCols), (d.y + 0.5) / uGlyph.y));
+}
+void main(){
+  vec2 t = 1.0 / uRes;
+  vec4 c = srcAt(vUv);
+  bool cov = c.a > 0.5;
+  vec4 me = vec4(0.0);
+  if (uNDOn > 0.5) me = decodeND(vUv);
+  bool meChar = uNDOn > 0.5 ? (abs(me.w - 2.0) < 0.5) : cov;
+  if (uF3 > 0.5) {
+    vec3 mn = fullN(me);
+    float nz = max(mn.z, 0.25);
+    float gx = 0.06, gy = 0.06;
+    if (me.w > 0.5) { gx += uTexel * abs(mn.x) / nz * 1.15; gy += uTexel * abs(mn.y) / nz * 1.15; }
+    float best = -1.0, bId = 0.0, ne = 0.0; vec2 bUv = vUv;
+    nb(vUv + vec2(t.x, 0.0), gx, me, best, bId, bUv, ne);
+    nb(vUv - vec2(t.x, 0.0), gx, me, best, bId, bUv, ne);
+    nb(vUv + vec2(0.0, t.y), gy, me, best, bId, bUv, ne);
+    nb(vUv - vec2(0.0, t.y), gy, me, best, bId, bUv, ne);
+    if (best >= 0.0) {
+      if (abs(bId - 2.0) < 0.5 && !meChar) {
+        vec3 nc = srcAt(bUv).rgb;
+        c = vec4(mix(INK, nc * 0.3, 0.35), 1.0);
+      } else if (meChar) {
+        c.rgb = mix(c.rgb * 0.5, INK, 0.3);
+      } else if (me.w > 0.5) {
+        c.rgb = mix(c.rgb * 0.62, INK, 0.12);
+      }
+    } else if (ne > 0.5 && cov) {
+      c.rgb = min(c.rgb * 1.15 + 0.04, vec3(1.0));
+    }
+  }
+  if (uStamp > 0.5 && meChar) {
+    vec2 p = floor(vUv * uRes);
+    vec4 g = glyphAt(p, uEye0);
+    if (g.a < 0.5) g = glyphAt(p, uEye1);
+    if (g.a < 0.5) g = glyphAt(p, uMouth);
+    if (g.a > 0.5) c = vec4(g.rgb, 1.0);
+  }
+  gl_FragColor = c;
+}`;
+
+/* ================= レンダラー ================= */
+const stage = document.getElementById('stage');
+const renderer = new THREE.WebGLRenderer({ antialias:false, alpha:false, powerPreference:'high-performance' });
+renderer.setPixelRatio(1);
+renderer.autoClear = false;
+const canvas = renderer.domElement;
+canvas.id = 'view';
+stage.prepend(canvas);
+
+/* ================= 共有ユニフォーム ================= */
+const shared = {
+  uLightDir:{ value:new THREE.Vector3(0, 1, 0) },
+  uToon:{ value:1 },
+  uAnchor:{ value:new THREE.Vector3() },
+  uCardK:{ value:CARD_K },
+  uPixOrigin:{ value:new THREE.Vector2() },
+  uPixScale:{ value:1 },
+  uTime:{ value:0 },
+  tRamp:{ value:null }, uRampRows:{ value:1 },
+  tMap:{ value:null }, uMapSize:{ value:new THREE.Vector2(MC, MR) }, uMapOff:{ value:new THREE.Vector2() }, uT:{ value:16 },
+  uNear:{ value:1 }, uFar:{ value:2 },
+};
+
+/* ================= 色ランプ ================= */
+const clamp01 = v => Math.min(1, Math.max(0, v));
+function shiftHue(h, target, amt){
+  let d = target - h;
+  if (d > 0.5) d -= 1;
+  if (d < -0.5) d += 1;
+  return (h + d * amt + 1) % 1;
+}
+function rampColor(base, amt, ds, dl, target){
+  const hsl = {}; base.getHSL(hsl);
+  const c = new THREE.Color();
+  c.setHSL(shiftHue(hsl.h, target, amt), clamp01(hsl.s + ds), clamp01(hsl.l + dl));
+  return c;
+}
+function makeRamp4(hex){
+  const b = new THREE.Color(hex);
+  return [ rampColor(b, 0.22, 0.05, -0.30, 0.72), rampColor(b, 0.12, 0.03, -0.15, 0.72), b.clone(), rampColor(b, 0.10, -0.05, 0.12, 0.14) ];
+}
+function makeRamp5(hex){
+  const b = new THREE.Color(hex);
+  return [ rampColor(b, 0.22, 0.05, -0.30, 0.72), rampColor(b, 0.12, 0.03, -0.15, 0.72), b.clone(),
+           rampColor(b, 0.10, -0.05, 0.12, 0.14), rampColor(b, 0.16, -0.10, 0.24, 0.14) ];
+}
+const RAMP_HEX = [];
+const addRow = h => { RAMP_HEX.push(h); return RAMP_HEX.length - 1; };
+// 地面タイプは行番号＝タイプIDになるよう先頭に登録
+addRow(0x4a8a3c); addRow(0x4a8a3c); addRow(0x9c7646); addRow(0xc4ad78); addRow(0x8e897d); addRow(0x2f78b8);
+const R = {
+  brick:addRow(0xb06a52), plank:addRow(0xa57a50), stoneW:addRow(0xa29c8f),
+  roofR:addRow(0xb4463a), roofB:addRow(0x4366a6), roofG:addRow(0x4d7d48),
+  wood:addRow(0x7a5032), window:addRow(0xf0d07a), leaf:addRow(0x3c8243), bush:addRow(0x56974a),
+  rock:addRow(0x8c8c93), cliff:addRow(0x8a7864), trunk:addRow(0x6c482e), waterW:addRow(0x2f78b8),
+};
+function buildRampTex(){
+  const n = RAMP_HEX.length, data = new Uint8Array(5 * n * 4);
+  RAMP_HEX.forEach((h, row) => makeRamp5(h).forEach((c, i) => {
+    const k = (row * 5 + i) * 4;
+    data[k] = Math.round(c.r * 255); data[k + 1] = Math.round(c.g * 255); data[k + 2] = Math.round(c.b * 255); data[k + 3] = 255;
+  }));
+  const t = new THREE.DataTexture(data, 5, n, THREE.RGBAFormat);
+  t.minFilter = t.magFilter = THREE.NearestFilter; t.needsUpdate = true;
+  shared.tRamp.value = t; shared.uRampRows.value = n;
+}
+buildRampTex();
+
+/* ================= マテリアル ================= */
+function charMat(hex, o = {}){
+  const r = makeRamp4(hex);
+  return new THREE.ShaderMaterial({
+    uniforms:{
+      uLightDir:shared.uLightDir, uToon:shared.uToon,
+      uDeep:{value:r[0]}, uShadow:{value:r[1]}, uBase:{value:r[2]}, uLight:{value:r[3]},
+      uMap:{value:o.map || null}, uHasMap:{value:o.map ? 1 : 0},
+      uCardMode:{value:1}, uAnchor:shared.uAnchor, uCardK:shared.uCardK
+    },
+    vertexShader:VS, fragmentShader:TOON_FS, side:o.side || THREE.FrontSide
+  });
+}
+const matCache = new Map();
+function wmat(row, pattern = 0, card = false){
+  const key = row + '|' + pattern + '|' + card;
+  if (matCache.has(key)) return matCache.get(key);
+  const m = new THREE.ShaderMaterial({
+    uniforms:{
+      uLightDir:shared.uLightDir, uToon:shared.uToon, tRamp:shared.tRamp, uRampRows:shared.uRampRows,
+      uRow:{value:row}, uPattern:{value:pattern},
+      uPixOrigin:shared.uPixOrigin, uPixScale:shared.uPixScale,
+      uCardMode:{value:card ? 2 : 0}, uAnchor:shared.uAnchor, uCardK:shared.uCardK
+    },
+    vertexShader:VS, fragmentShader:WORLD_FS
+  });
+  matCache.set(key, m);
+  return m;
+}
+function groundMat(hTiles){
+  return new THREE.ShaderMaterial({
+    uniforms:{
+      uLightDir:shared.uLightDir, uToon:shared.uToon, tRamp:shared.tRamp, uRampRows:shared.uRampRows,
+      tMap:shared.tMap, uMapSize:shared.uMapSize, uMapOff:shared.uMapOff, uT:shared.uT,
+      uPixOrigin:shared.uPixOrigin, uPixScale:shared.uPixScale, uTime:shared.uTime,
+      uHeightTiles:{value:hTiles},
+      uCardMode:{value:0}, uAnchor:shared.uAnchor, uCardK:shared.uCardK
+    },
+    vertexShader:VS, fragmentShader:GROUND_FS
+  });
+}
+function ndMat(id, mode){
+  return new THREE.ShaderMaterial({
+    uniforms:{ uId:{value:id}, uNear:shared.uNear, uFar:shared.uFar,
+      uCardMode:{value:mode}, uAnchor:shared.uAnchor, uCardK:shared.uCardK },
+    vertexShader:VS, fragmentShader:ND_FS, side:THREE.DoubleSide
+  });
+}
+const ndWorld = ndMat(1, 0), ndProp = ndMat(1, 2), ndChar = ndMat(2, 1);
+
+/* ================= キャラクター ================= */
+const charScene = new THREE.Scene();
+function makeFaceDecal(){
+  const c = document.createElement('canvas'); c.width = 128; c.height = 64;
+  const g = c.getContext('2d');
+  for (const cx of [34.7, 93.3]) {
+    g.fillStyle = GLYPH_COLORS.D; g.beginPath(); g.ellipse(cx, 33, 7, 10.5, 0, 0, TAU); g.fill();
+    g.fillStyle = GLYPH_COLORS.C; g.beginPath(); g.ellipse(cx, 37, 5, 6, 0, 0, TAU); g.fill();
+    g.fillStyle = GLYPH_COLORS.W; g.beginPath(); g.arc(cx + 2.2, 28, 2.6, 0, TAU); g.fill();
+  }
+  g.strokeStyle = GLYPH_COLORS.M; g.lineWidth = 2.5;
+  g.beginPath(); g.moveTo(58, 53); g.quadraticCurveTo(64, 56, 70, 53); g.stroke();
+  const t = new THREE.CanvasTexture(c);
+  t.minFilter = t.magFilter = THREE.LinearFilter; t.generateMipmaps = false;
+  return t;
+}
+const CM = {
+  skin:charMat(0xf2c29b), hair:charMat(0xc4622d, {side:THREE.DoubleSide}), eye:charMat(0x2a1f3d),
+  tunic:charMat(0x2f8f8a), belt:charMat(0x6b4226), pants:charMat(0x3b3f6b),
+  boots:charMat(0x7a4a2b), scarf:charMat(0xd8433a), decal:charMat(0xffffff, {map:makeFaceDecal()})
+};
+function mesh(geo, m, x=0, y=0, z=0){ const o = new THREE.Mesh(geo, m); o.position.set(x, y, z); return o; }
+function grp(parent, x=0, y=0, z=0){ const g = new THREE.Group(); g.position.set(x, y, z); parent.add(g); return g; }
+
+const J = {};
+J.root = grp(charScene);
+J.hips = grp(J.root, 0, LEG_LEN, 0);
+J.torso = grp(J.hips);
+J.torso.add(mesh(new THREE.CylinderGeometry(0.22, 0.29, 0.52, 12), CM.tunic, 0, 0.24, 0));
+J.torso.add(mesh(new THREE.CylinderGeometry(0.295, 0.30, 0.08, 12), CM.belt, 0, 0.04, 0));
+J.torso.add(mesh(new THREE.CylinderGeometry(0.29, 0.34, 0.14, 12), CM.tunic, 0, -0.04, 0));
+const ring = mesh(new THREE.TorusGeometry(0.2, 0.075, 8, 16), CM.scarf, 0, 0.5, 0);
+ring.rotation.x = Math.PI / 2;
+J.torso.add(ring);
+J.tail = grp(J.torso, 0.1, 0.5, -0.18);
+J.tail.add(mesh(new THREE.BoxGeometry(0.13, 0.42, 0.05), CM.scarf, 0, -0.2, 0));
+J.head = grp(J.torso, 0, 0.56, 0);
+J.head.add(mesh(new THREE.SphereGeometry(0.44, 20, 14), CM.skin, 0, 0.36, 0));
+const cap = mesh(new THREE.SphereGeometry(0.475, 20, 10, 0, TAU, 0, Math.PI * 0.5), CM.hair, 0, 0.36, 0);
+cap.rotation.x = -0.3;
+J.head.add(cap);
+const backHair = mesh(new THREE.SphereGeometry(0.45, 16, 12), CM.hair, 0, 0.27, -0.1);
+backHair.scale.set(1.03, 0.95, 0.85);
+J.head.add(backHair);
+for (const bx of [-0.2, 0, 0.2]) {
+  const b = mesh(new THREE.ConeGeometry(0.1, 0.22, 4), CM.hair, bx, 0.46, 0.42);
+  b.rotation.set(Math.PI, 0, bx * 0.8);
+  J.head.add(b);
+}
+const ahoge = mesh(new THREE.ConeGeometry(0.06, 0.24, 5), CM.hair, 0.06, 0.88, 0.05);
+ahoge.rotation.z = -0.5;
+J.head.add(ahoge);
+J.eyes3d = grp(J.head);
+for (const sx of [-1, 1]) J.eyes3d.add(mesh(new THREE.BoxGeometry(0.075, 0.14, 0.05), CM.eye, sx * 0.15, 0.31, 0.405));
+J.decal = mesh(new THREE.SphereGeometry(0.447, 16, 10, Math.PI / 2 - 0.75, 1.5, Math.PI / 2 - 0.42, 0.95), CM.decal, 0, 0.36, 0);
+J.head.add(J.decal);
+J.headC = grp(J.head, 0, 0.36, 0);
+J.eyeA = [grp(J.head, 0.15, 0.33, 0.41), grp(J.head, -0.15, 0.33, 0.41)];
+J.mouthA = grp(J.head, 0, 0.2, 0.41);
+for (const sx of [-1, 1]) {
+  const a = grp(J.torso, sx * 0.31, 0.44, 0);
+  a.add(mesh(new THREE.CylinderGeometry(0.08, 0.07, 0.34, 8), CM.tunic, 0, -0.15, 0));
+  a.add(mesh(new THREE.SphereGeometry(0.09, 10, 8), CM.skin, 0, -0.36, 0));
+  if (sx > 0) J.armL = a; else J.armR = a;
+  const l = grp(J.hips, sx * 0.13, 0, 0);
+  l.add(mesh(new THREE.CylinderGeometry(0.095, 0.085, 0.4, 8), CM.pants, 0, -0.2, 0));
+  l.add(mesh(new THREE.BoxGeometry(0.18, 0.15, 0.27), CM.boots, 0, -0.47, 0.035));
+  if (sx > 0) J.legL = l; else J.legR = l;
+}
+function setFace(mode){ J.eyes3d.visible = mode === '3d'; J.decal.visible = mode === 'uv'; }
+function walkPose(ph){
+  const s = Math.sin(TAU * ph), a = Math.abs(s), swing = 0.6 * s;
+  J.legL.rotation.x = -swing; J.legR.rotation.x = swing;
+  J.armL.rotation.set(s * 0.75, 0, 0.1);
+  J.armR.rotation.set(-s * 0.75, 0, -0.1);
+  J.hips.position.y = LEG_LEN * Math.cos(swing) + 0.005;
+  J.hips.rotation.y = s * 0.1;
+  J.torso.position.y = 0;
+  J.torso.rotation.set(0.1, -s * 0.18, 0);
+  J.head.rotation.set(-0.06, s * 0.08, 0);
+  J.tail.rotation.set(0.75 + (1 - a) * 0.25, 0, s * 0.15);
+}
+function idlePose(b){
+  J.legL.rotation.x = 0; J.legR.rotation.x = 0;
+  J.armL.rotation.set(0, 0, 0.1 + b * 0.03);
+  J.armR.rotation.set(0, 0, -0.1 - b * 0.03);
+  J.hips.position.y = LEG_LEN; J.hips.rotation.y = 0;
+  J.torso.position.y = -(0.5 - 0.5 * b) * 0.05;
+  J.torso.rotation.set(0.02, 0, 0);
+  J.head.rotation.set(0.04 * b, 0, 0);
+  J.tail.rotation.set(0.18 + b * 0.05, 0, 0);
+}
+
+/* ================= マップ（タイルチップ） ================= */
+const mapData = new Uint8Array(MC * MR * 4);
+const mapGet = (c, r) => (c < 0 || r < 0 || c >= MC || r >= MR) ? T.grass : mapData[(r * MC + c) * 4];
+const mapSet = (c, r, t) => { if (c >= 0 && r >= 0 && c < MC && r < MR) mapData[(r * MC + c) * 4] = t; };
+const tileC = x => Math.floor(x / TW + 20.5);
+const tileR = z => Math.floor(z / TD + 12.5);
+function mulberry32(a){ return () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+const rnd = mulberry32(11);
+
+const HOUSES = [
+  { x:-7.5, z:-7, wall:R.brick, wp:P.brick, roof:R.roofR },
+  { x:7.5, z:-7, wall:R.plank, wp:P.plankH, roof:R.roofB },
+  { x:-8, z:7, wall:R.stoneW, wp:P.stone, roof:R.roofG },
+];
+function buildMap(){
+  for (let c = 0; c < MC; c++) mapSet(c, 12, T.dirt);
+  for (let r = 0; r < MR; r++) mapSet(20, r, T.dirt);
+  for (let c = 17; c <= 23; c++) for (let r = 11; r <= 13; r++) mapSet(c, r, T.cobble);
+  for (let c = 0; c < MC; c++) for (let r = 0; r < MR; r++) {
+    const e = ((c + 0.5 - 28.5) / 3.4) ** 2 + ((r + 0.5 - 17.5) / 2.3) ** 2;
+    if (e < 1) mapSet(c, r, T.water);
+    else if (e < 1.7 && mapGet(c, r) === T.grass) mapSet(c, r, T.sand);
+  }
+  for (let c = 0; c < MC; c++) for (let r = 0; r < MR; r++) if (mapGet(c, r) === T.grass && rnd() < 0.1) mapSet(c, r, T.meadow);
+  [[8,15],[9,15],[8,16],[31,7],[32,7],[31,8],[12,19],[13,19],[24,3],[25,3]].forEach(([c, r]) => { if (mapGet(c, r) === T.grass) mapSet(c, r, T.meadow); });
+  HOUSES.forEach(h => {
+    const c = tileC(h.x - 0.8), rf = tileR(h.z + 1.7);
+    if (h.z < 0) for (let r = rf; r <= 11; r++) mapSet(c, r, T.dirt);
+    else { mapSet(c, rf, T.dirt); mapSet(c, rf + 1, T.dirt); }
+  });
+  const tex = new THREE.DataTexture(mapData, MC, MR, THREE.RGBAFormat);
+  tex.minFilter = tex.magFilter = THREE.NearestFilter; tex.needsUpdate = true;
+  shared.tMap.value = tex;
+}
+buildMap();
+
+/* ================= フィールド（3D） ================= */
+const worldScene = new THREE.Scene();    // 建物・地形（本来の3D深度）
+const propScene = new THREE.Scene();     // 小物（足元の板で前後判定）
+const COL = { circles:[], rects:[] };
+const addRect = (x0, z0, x1, z1) => COL.rects.push({x0, z0, x1, z1});
+const addCirc = (x, z, r) => COL.circles.push({x, z, r});
+const G = {
+  box:new THREE.BoxGeometry(1, 1, 1),
+  cyl:new THREE.CylinderGeometry(1, 1, 1, 12),
+  cyl6:new THREE.CylinderGeometry(1, 1, 1, 6),
+  ico:new THREE.IcosahedronGeometry(1, 0),
+  ico1:new THREE.IcosahedronGeometry(1, 1),
+  dod:new THREE.DodecahedronGeometry(1, 0),
+  plane:new THREE.PlaneGeometry(1, 1).rotateX(-Math.PI / 2),
+  circle:new THREE.CircleGeometry(1, 24).rotateX(-Math.PI / 2),
+};
+function roofGeo(w, h, d){
+  const s = new THREE.Shape();
+  s.moveTo(-w / 2, 0); s.lineTo(w / 2, 0); s.lineTo(0, h); s.closePath();
+  const g = new THREE.ExtrudeGeometry(s, { depth:d, bevelEnabled:false });
+  g.translate(0, 0, -d / 2);
+  g.rotateY(Math.PI / 2);
+  return g;
+}
+const ROOF = roofGeo(3.9, 1.5, 4.4);
+const WELL_ROOF = roofGeo(1.5, 0.6, 1.7);
+const staticParts = new Map(), propParts = new Map();
+const _o = new THREE.Object3D();
+function put(geo, m, x, y, z, ry=0, sx=1, sy=1, sz=1, anchor=null){
+  _o.position.set(x, y, z); _o.rotation.set(0, ry, 0); _o.scale.set(sx, sy, sz); _o.updateMatrix();
+  let g = geo.clone().applyMatrix4(_o.matrix);
+  if (g.index) g = g.toNonIndexed();
+  if (anchor) {
+    const n = g.attributes.position.count, arr = new Float32Array(n * 3);
+    for (let i = 0; i < n; i++) { arr[i * 3] = anchor.x; arr[i * 3 + 1] = anchor.y; arr[i * 3 + 2] = anchor.z; }
+    g.setAttribute('aAnchor', new THREE.BufferAttribute(arr, 3));
+  }
+  const bucket = anchor ? propParts : staticParts;
+  if (!bucket.has(m)) bucket.set(m, []);
+  bucket.get(m).push(g);
+}
+function mergeGeos(list){
+  const hasA = !!list[0].attributes.aAnchor;
+  let total = 0;
+  list.forEach(g => total += g.attributes.position.count);
+  const pos = new Float32Array(total * 3), nor = new Float32Array(total * 3), anc = hasA ? new Float32Array(total * 3) : null;
+  let o = 0;
+  list.forEach(g => {
+    pos.set(g.attributes.position.array, o * 3);
+    nor.set(g.attributes.normal.array, o * 3);
+    if (hasA) anc.set(g.attributes.aAnchor.array, o * 3);
+    o += g.attributes.position.count;
+  });
+  const m = new THREE.BufferGeometry();
+  m.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  m.setAttribute('normal', new THREE.BufferAttribute(nor, 3));
+  if (hasA) m.setAttribute('aAnchor', new THREE.BufferAttribute(anc, 3));
+  return m;
+}
+const V = (x, y, z) => new THREE.Vector3(x, y, z);
+
+function house(h){
+  const { x, z } = h, WH = TH * 1.5;
+  put(G.box, wmat(h.wall, h.wp), x, WH / 2, z, 0, 3.75, WH, 3.2);
+  put(ROOF, wmat(h.roof, P.shingle), x, WH, z);
+  put(G.box, wmat(R.wood, P.plankV), x - 0.8, 0.8, z + 1.62, 0, 0.9, 1.6, 0.12);
+  put(G.box, wmat(R.window), x + 0.9, 1.35, z + 1.62, 0, 0.75, 0.6, 0.08);
+  put(G.box, wmat(R.wood), x + 0.9, 1.0, z + 1.66, 0, 0.9, 0.1, 0.14);
+  put(G.box, wmat(R.brick, P.brick), x + 1.1, WH + 0.9, z - 0.5, 0, 0.45, 1.1, 0.45);
+  addRect(x - 1.9, z - 1.62, x + 1.9, z + 1.62);
+}
+function tree(x, z, s=1, y0=0, col=true){
+  const A = V(x, y0, z + 0.2 * s);
+  put(G.cyl6, wmat(R.trunk, P.plankV, true), x, y0 + 0.6 * s, z, 0, 0.2 * s, 1.2 * s, 0.2 * s, A);
+  put(G.ico1, wmat(R.leaf, 0, true), x, y0 + 1.8 * s, z, rnd() * TAU, 1.0 * s, 0.9 * s, 1.0 * s, A);
+  put(G.ico, wmat(R.leaf, 0, true), x + 0.15 * s, y0 + 2.55 * s, z - 0.1 * s, rnd() * TAU, 0.68 * s, 0.62 * s, 0.68 * s, A);
+  if (col) addCirc(x, z, 0.45 * s);
+}
+function rock(x, z, r){ put(G.dod, wmat(R.rock, 0, true), x, r * 0.35, z, rnd() * TAU, r, r * 0.75, r, V(x, 0, z + r)); addCirc(x, z, r * 0.9); }
+function bush(x, z, s=1){ put(G.ico1, wmat(R.bush, 0, true), x, 0.35 * s, z, rnd() * TAU, 0.65 * s, 0.5 * s, 0.65 * s, V(x, 0, z + 0.65 * s)); addCirc(x, z, 0.55 * s); }
+function well(x, z){
+  const A = V(x, 0, z + 0.75);
+  put(G.cyl, wmat(R.stoneW, P.stone, true), x, 0.4, z, 0, 0.75, 0.8, 0.75, A);
+  put(G.circle, wmat(R.waterW, 0, true), x, 0.805, z, 0, 0.55, 1, 0.55, A);
+  put(G.box, wmat(R.wood, 0, true), x - 0.62, 1.3, z, 0, 0.12, 1.8, 0.12, A);
+  put(G.box, wmat(R.wood, 0, true), x + 0.62, 1.3, z, 0, 0.12, 1.8, 0.12, A);
+  put(WELL_ROOF, wmat(R.roofR, P.shingle, true), x, 2.15, z, 0, 1, 1, 1, A);
+  addCirc(x, z, 0.85);
+}
+function fence(x0, x1, z){
+  const A = V((x0 + x1) / 2, 0, z + 0.1);
+  for (let px = x0; px <= x1 + 0.01; px += 1) put(G.box, wmat(R.wood, 0, true), px, 0.35, z, 0, 0.12, 0.7, 0.12, A);
+  put(G.box, wmat(R.wood, 0, true), (x0 + x1) / 2, 0.5, z, 0, x1 - x0, 0.07, 0.06, A);
+  put(G.box, wmat(R.wood, 0, true), (x0 + x1) / 2, 0.25, z, 0, x1 - x0, 0.07, 0.06, A);
+  addRect(x0 - 0.1, z - 0.12, x1 + 0.1, z + 0.12);
+}
+function sign(x, z){
+  const A = V(x, 0, z + 0.1);
+  put(G.box, wmat(R.wood, 0, true), x, 0.5, z, 0, 0.1, 1, 0.1, A);
+  put(G.box, wmat(R.wood, P.plankH, true), x, 0.95, z + 0.02, 0, 0.8, 0.4, 0.08, A);
+  addCirc(x, z, 0.2);
+}
+function plateau(c0, r0, c1, r1){
+  const x0 = (c0 - 20.5) * TW, x1 = (c1 + 1 - 20.5) * TW, z0 = (r0 - 12.5) * TD, z1 = (r1 + 1 - 12.5) * TD;
+  const cx = (x0 + x1) / 2, cz = (z0 + z1) / 2, w = x1 - x0, d = z1 - z0;
+  put(G.box, wmat(R.cliff, P.stone), cx, TH / 2, cz, 0, w, TH, d);
+  put(G.plane, groundTop, cx, TH + 0.002, cz, 0, w, 1, d);
+  for (let x = x0 + 0.6; x < x1; x += 1.4 + rnd()) put(G.dod, wmat(R.cliff, 0, true), x, 0.3, z1 + 0.15, rnd() * TAU, 0.5, 0.45, 0.4, V(x, 0, z1 + 0.55));
+  addRect(x0, z0, x1, z1 + 0.4);
+  return { x0, x1, z0, z1 };
+}
+const groundBase = groundMat(0), groundTop = groundMat(1);
+
+function buildWorld(){
+  put(G.plane, groundBase, 0, 0, 0, 0, 140, 1, 140);
+  HOUSES.forEach(house);
+  well(3.1, -2.2);
+  sign(-1.9, 2.4);
+  fence(4.5, 14.5, 18.6);
+  const pl = plateau(4, 3, 11, 6);
+  tree(pl.x0 + 2.0, pl.z0 + 2.0, 1.0, TH, false);
+  tree(pl.x0 + 5.5, pl.z0 + 3.2, 0.9, TH, false);
+  tree(pl.x0 + 8.0, pl.z0 + 1.6, 0.8, TH, false);
+  [[-13,-10],[13,-11.5],[15,3.5],[-15,10.5],[-3.5,14],[3,16.5],[-16.5,-3.5],[17,-3.5],[-11,16.5],[17.5,13]]
+    .forEach(([x, z]) => tree(x, z, 0.9 + rnd() * 0.3));
+  for (let i = 0; i < 280; i++) {
+    const x = (rnd() - 0.5) * 70, z = (rnd() - 0.5) * 70;
+    if (Math.abs(x) > 22.5 || Math.abs(z) > 21.8) tree(x, z, 0.85 + rnd() * 0.35);
+  }
+  [[-4.8,-5.6],[9.9,-5.6],[-5.4,8.4],[-10.4,8.6]].forEach(([x, z]) => bush(x, z, 0.9 + rnd() * 0.2));
+  [[11,-11,0.6],[-11,12,0.5],[4.5,-12,0.55],[-3,-16,0.45],[17,8,0.6],[-17,4,0.5]].forEach(([x, z, r]) => rock(x, z, r));
+
+  staticParts.forEach((list, m) => { const me = new THREE.Mesh(mergeGeos(list), m); me.frustumCulled = false; worldScene.add(me); });
+  propParts.forEach((list, m) => { const me = new THREE.Mesh(mergeGeos(list), m); me.frustumCulled = false; propScene.add(me); });
+}
+buildWorld();
+
+function blocked(x, z){
+  if (Math.abs(x) > 21 || Math.abs(z) > 21) return true;
+  if (mapGet(tileC(x), tileR(z)) === T.water) return true;
+  for (const c of COL.circles) { const dx = x - c.x, dz = z - c.z, r = c.r + PLAYER_R; if (dx * dx + dz * dz < r * r) return true; }
+  for (const r of COL.rects) if (x > r.x0 - PLAYER_R && x < r.x1 + PLAYER_R && z > r.z0 - PLAYER_R && z < r.z1 + PLAYER_R) return true;
+  return false;
+}
+
+/* ---- 足元の影（乗算） ---- */
+const shadowScene = new THREE.Scene();
+const shadowMat = new THREE.ShaderMaterial({
+  uniforms:{ uPixOrigin:shared.uPixOrigin, uPixScale:shared.uPixScale,
+    uCenter:{value:new THREE.Vector2()}, uRad:{value:new THREE.Vector2(5, 2)}, uCol:{value:new THREE.Vector3(0.55, 0.58, 0.72)},
+    uCardMode:{value:0}, uAnchor:shared.uAnchor, uCardK:shared.uCardK },
+  vertexShader:VS, fragmentShader:SHADOW_FS,
+  transparent:true, depthWrite:false, depthTest:true,
+  blending:THREE.CustomBlending, blendEquation:THREE.AddEquation,
+  blendSrc:THREE.DstColorFactor, blendDst:THREE.ZeroFactor,
+  blendSrcAlpha:THREE.ZeroFactor, blendDstAlpha:THREE.OneFactor
+});
+const shadowMesh = new THREE.Mesh(new THREE.PlaneGeometry(2.4, 2.4).rotateX(-Math.PI / 2), shadowMat);
+shadowMesh.frustumCulled = false;
+shadowScene.add(shadowMesh);
+
+/* ================= 表情システム ================= */
+function eyeVariants(base){
+  const h = base.length, w = base[0].length;
+  const cols = []; for (let x = 0; x < w; x++) if (base.some(r => r[x] !== '.')) cols.push(x);
+  const blank = () => Array.from({length:h}, () => Array(w).fill('.'));
+  const out = a => a.map(r => r.join(''));
+  const closed = blank();
+  if (h === 1) cols.forEach(x => closed[0][x] = 'K');
+  else { const r = h >= 3 ? Math.floor(h * 0.6) : h - 1; cols.forEach(x => closed[r][x] = 'D'); }
+  let half;
+  if (h <= 2) half = closed.map(r => r.slice());
+  else {
+    half = base.map(r => [...r]);
+    const cut = Math.ceil(h / 2);
+    for (let y = 0; y < cut; y++) half[y] = Array(w).fill('.');
+    cols.forEach(x => half[cut - 1][x] = 'D');
+  }
+  const happy = blank();
+  if (w >= 3 && h >= 2) {
+    const r = Math.max(0, Math.floor(h * 0.35));
+    happy[r][cols[Math.floor(cols.length / 2)]] = 'D';
+    happy[r + 1][cols[0]] = 'D'; happy[r + 1][cols[cols.length - 1]] = 'D';
+  } else if (w === 2 && h >= 2) cols.forEach(x => happy[Math.floor(h * 0.3)][x] = 'D');
+  else happy[0][cols[0]] = h >= 2 ? 'D' : 'K';
+  const surprise = base.map(r => r.replace(/C/g, 'W'));
+  return [base, out(half), out(closed), out(happy), surprise];
+}
+function mouthVariants(base){
+  if (!base) return [null, null];
+  let ry = -1; base.forEach((r, y) => { if (r.includes('M')) ry = y; });
+  const cols = []; [...base[ry]].forEach((ch, x) => { if (ch === 'M') cols.push(x); });
+  const open = base.map(r => [...r]);
+  cols.forEach(x => { open[ry][x] = 'O'; if (ry + 1 < base.length) open[ry + 1][x] = 'O'; });
+  return [base, open.map(r => r.join(''))];
+}
+let glyph = GLYPHS[32], glyphTex = null;
+function makeGlyphTex(S){
+  glyph = GLYPHS[S];
+  const cells = [...eyeVariants(glyph.eye), ...eyeVariants(glyph.narrow), ...mouthVariants(glyph.mouth)];
+  const c = document.createElement('canvas');
+  c.width = glyph.w * ATLAS_COLS; c.height = glyph.h;
+  const g = c.getContext('2d');
+  cells.forEach((rows, cell) => {
+    if (!rows) return;
+    rows.forEach((row, y) => [...row].forEach((ch, x) => {
+      if (GLYPH_COLORS[ch]) { g.fillStyle = GLYPH_COLORS[ch]; g.fillRect(cell * glyph.w + x, y, 1, 1); }
+    }));
+  });
+  if (glyphTex) glyphTex.dispose();
+  glyphTex = new THREE.CanvasTexture(c);
+  glyphTex.minFilter = glyphTex.magFilter = THREE.NearestFilter;
+  glyphTex.generateMipmaps = false;
+  postMat.uniforms.tGlyph.value = glyphTex;
+  postMat.uniforms.uGlyph.value.set(glyph.w, glyph.h);
+}
+const expr = { preset:'normal', autoBlink:true, talk:false, blinkWait:2.5, seq:[], seqT:0, talkT:0, mouthOpen:false };
+function tickExpr(){
+  if (expr.seq.length) {
+    if (--expr.seqT <= 0) { expr.seq.shift(); if (expr.seq.length) expr.seqT = expr.seq[0][1]; }
+  } else if (expr.autoBlink) {
+    expr.blinkWait -= STEP;
+    if (expr.blinkWait <= 0) {
+      expr.seq = [[1,3],[2,4],[1,3]];
+      if (Math.random() < 0.15) expr.seq.push([0,5],[1,3],[2,4],[1,3]);
+      expr.seqT = expr.seq[0][1];
+      expr.blinkWait = 2 + Math.random() * 4;
+    }
+  }
+  if (expr.talk) {
+    if (--expr.talkT <= 0) { expr.mouthOpen = !expr.mouthOpen; expr.talkT = 5 + Math.floor(Math.random() * 6); }
+  } else expr.mouthOpen = false;
+}
+function curEye(){
+  const base = PRESETS[expr.preset].eye;
+  return (expr.seq.length && (base === 0 || base === 4)) ? expr.seq[0][0] : base;
+}
+function curMouth(){ return expr.talk ? (expr.mouthOpen ? 1 : 0) : PRESETS[expr.preset].mouth; }
+
+/* ================= ポストプロセス ================= */
+const postMat = new THREE.ShaderMaterial({
+  uniforms:{
+    tColor:{value:null}, tHi:{value:null}, tND:{value:null}, tGlyph:{value:null},
+    uRes:{value:new THREE.Vector2(1, 1)}, uF2:{value:1}, uF3:{value:1}, uNDOn:{value:1},
+    uLightDir:shared.uLightDir, uRange:{value:1}, uTexel:{value:0.1},
+    uStamp:{value:0}, uGlyph:{value:new THREE.Vector2(1, 1)}, uAtlasCols:{value:ATLAS_COLS},
+    uEye0:{value:new THREE.Vector3(0, 0, -1)}, uEye1:{value:new THREE.Vector3(0, 0, -1)}, uMouth:{value:new THREE.Vector3(0, 0, -1)}
+  },
+  vertexShader:POST_VS, fragmentShader:POST_FS, depthTest:false, depthWrite:false
+});
+const postScene = new THREE.Scene();
+const postQuad = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), postMat);
+postQuad.frustumCulled = false;
+postScene.add(postQuad);
+const postCam = new THREE.Camera();
+
+function mkRT(w, h){
+  return new THREE.WebGLRenderTarget(w, h, {
+    minFilter:THREE.NearestFilter, magFilter:THREE.NearestFilter,
+    format:THREE.RGBAFormat, depthBuffer:true, stencilBuffer:false, generateMipmaps:false
+  });
+}
+let rtLo, rtHi, rtND, cmpRT, rtWLo, rtWHi, rtWND;
+
+function pass(scene, cam, target, clear, override){
+  renderer.setRenderTarget(target);
+  if (clear) { renderer.setClearColor(0x000000, 0); renderer.clear(); }
+  scene.overrideMaterial = override || null;
+  renderer.render(scene, cam);
+  scene.overrideMaterial = null;
+}
+function setPost(o, lo, hi, nd, rx, ry, range, ndOn){
+  const u = postMat.uniforms;
+  u.tColor.value = lo.texture; u.tHi.value = hi.texture; u.tND.value = nd.texture;
+  u.uRes.value.set(rx, ry);
+  u.uF2.value = o.f2 ? 1 : 0; u.uF3.value = o.f3 ? 1 : 0;
+  u.uNDOn.value = ndOn ? 1 : 0;
+  u.uRange.value = range; u.uTexel.value = texel();
+}
+const _v = new THREE.Vector3(), _c = new THREE.Vector3(), _n = new THREE.Vector3();
+function computeStamps(cam, rx, ry, face){
+  const u = postMat.uniforms;
+  if (face !== 'pixel') { u.uStamp.value = 0; return; }
+  u.uStamp.value = 1;
+  J.root.updateMatrixWorld(true);
+  J.headC.getWorldPosition(_c);
+  const ei = curEye(), mi = curMouth();
+  const place = (anchor, target, pick) => {
+    anchor.getWorldPosition(_v);
+    const facing = _n.copy(_v).sub(_c).normalize().dot(CAM_DIR);
+    const col = pick(facing);
+    _v.project(cam);
+    const px = (_v.x * 0.5 + 0.5) * rx, py = (_v.y * 0.5 + 0.5) * ry;
+    target.set(Math.round(px - glyph.w / 2), Math.round(py - glyph.h / 2), col);
+  };
+  const eyePick = f => f > 0.5 ? ei : (f > 0.12 ? 5 + ei : -1);
+  place(J.eyeA[0], u.uEye0.value, eyePick);
+  place(J.eyeA[1], u.uEye1.value, eyePick);
+  place(J.mouthA, u.uMouth.value, f => (glyph.mouth && f > 0.55) ? 10 + mi : -1);
+}
+
+/* ---- キャラ単体（比較・焼き出し） ---- */
+const charCam = new THREE.OrthographicCamera(-FR, FR, FR, -FR, SPRITE_NEAR, SPRITE_FAR);
+function positionCharCam(subX, subY){
+  charCam.position.copy(CAM_TARGET).addScaledVector(CAM_DIR, 5);
+  charCam.lookAt(CAM_TARGET);
+  charCam.translateX(-subX * texel());
+  charCam.translateY(subY * texel());
+  charCam.updateMatrixWorld();
+}
+function renderSprite(o, target){
+  const S = state.S;
+  J.root.position.set(0, 0, 0);
+  J.root.rotation.y = o.angle;
+  setFace(o.face);
+  shared.uToon.value = o.f1 ? 1 : 0;
+  shared.uAnchor.value.set(0, 0, 0.2);
+  shared.uNear.value = SPRITE_NEAR; shared.uFar.value = SPRITE_FAR;
+  positionCharCam(o.subX, o.subY);
+  shared.uLightDir.value.copy(LIGHT_W).transformDirection(charCam.matrixWorldInverse);
+  const needND = o.f3 || o.face === 'pixel';
+  pass(charScene, charCam, o.f2 ? rtLo : rtHi, true);
+  if (needND) pass(charScene, charCam, rtND, true, ndChar);
+  setPost(o, rtLo, rtHi, rtND, S, S, SPRITE_FAR - SPRITE_NEAR, needND);
+  computeStamps(charCam, S, S, o.face);
+  renderer.setRenderTarget(target);
+  renderer.setClearColor(0x000000, 0); renderer.clear();
+  renderer.render(postScene, postCam);
+  renderer.setRenderTarget(null);
+}
+
+/* ---- フィールド＋キャラ（メイン画面） ---- */
+let W = 100, H = 100;
+const worldCam = new THREE.OrthographicCamera(-1, 1, 1, -1, WORLD_NEAR, WORLD_FAR);
+function updateWorldFrustum(){
+  // ピクセル境界が整数座標に来るよう、奇数サイズでも左右・上下を整数px単位で分ける
+  const tx = texel(), Wl = Math.floor(W / 2), Hl = Math.floor(H / 2);
+  worldCam.left = -Wl * tx; worldCam.right = (W - Wl) * tx;
+  worldCam.bottom = -Hl * tx; worldCam.top = (H - Hl) * tx;
+  worldCam.updateProjectionMatrix();
+}
+function renderWorld(o, X, Z, camX, camYup, cpx, cpy){
+  const tx = texel();
+  shared.uToon.value = o.f1 ? 1 : 0;
+  shared.uAnchor.value.set(X, 0, Z + 0.2);
+  shared.uPixScale.value = o.f2 ? 1 : 4;
+  shared.uPixOrigin.value.set(camX - Math.floor(W / 2), camYup - Math.floor(H / 2));
+  shared.uNear.value = WORLD_NEAR; shared.uFar.value = WORLD_FAR;
+  worldCam.position.copy(CAM_DIR).multiplyScalar(WORLD_DIST);
+  worldCam.lookAt(0, 0, 0);
+  worldCam.translateX(camX * tx);
+  worldCam.translateY(camYup * tx);
+  worldCam.updateMatrixWorld();
+  shared.uLightDir.value.copy(LIGHT_W).transformDirection(worldCam.matrixWorldInverse);
+  shadowMesh.position.set(X, 0.03, Z);
+  shadowMat.uniforms.uCenter.value.set(cpx, -cpy);
+  const rxp = Math.max(2, Math.round(0.4 / tx));
+  shadowMat.uniforms.uRad.value.set(rxp, Math.max(1, Math.round(rxp * 0.42)));
+  const needND = o.f3 || o.face === 'pixel';
+  const colorRT = o.f2 ? rtWLo : rtWHi;
+  pass(worldScene, worldCam, colorRT, true);
+  pass(propScene, worldCam, colorRT, false);
+  pass(shadowScene, worldCam, colorRT, false);
+  pass(charScene, worldCam, colorRT, false);
+  if (needND) {
+    pass(worldScene, worldCam, rtWND, true, ndWorld);
+    pass(propScene, worldCam, rtWND, false, ndProp);
+    pass(charScene, worldCam, rtWND, false, ndChar);
+  }
+  setPost(o, rtWLo, rtWHi, rtWND, W, H, WORLD_FAR - WORLD_NEAR, needND);
+  computeStamps(worldCam, W, H, o.face);
+  renderer.setRenderTarget(null);
+  renderer.setClearColor(0x000000, 1); renderer.clear();
+  renderer.render(postScene, postCam);
+}
+
+/* ================= 比較ストリップ ================= */
+function makeStrip(el, items){
+  return items.map(it => {
+    const cell = document.createElement('div'); cell.className = 'cell';
+    const cv = document.createElement('canvas');
+    cell.appendChild(cv);
+    const lb = document.createElement('div'); lb.textContent = it.label;
+    cell.appendChild(lb);
+    el.appendChild(cell);
+    return { cv, ctx:cv.getContext('2d') };
+  });
+}
+const stageCells = makeStrip(document.getElementById('stageStrip'), STAGES);
+const faceCells = makeStrip(document.getElementById('faceStrip'), FACES);
+let pixBuf = null;
+function blit(rt, ctx, S, dx, dy){
+  const n = S * S * 4;
+  if (!pixBuf || pixBuf.length !== n) pixBuf = new Uint8Array(n);
+  renderer.readRenderTargetPixels(rt, 0, 0, S, S, pixBuf);
+  const img = ctx.createImageData(S, S);
+  for (let y = 0; y < S; y++) {
+    const src = (S - 1 - y) * S * 4;
+    img.data.set(pixBuf.subarray(src, src + S * 4), y * S * 4);
+  }
+  ctx.putImageData(img, dx, dy);
+}
+
+/* ================= 状態 ================= */
+const player = { gx:0, gy:0 };          // 地面上のピクセル座標（下向き正）
+let prevTx = texel();
+function setPlayerWorld(x, z){ const tx = texel(); player.gx = Math.round(x / tx); player.gy = Math.round(z * SINP / tx); }
+setPlayerWorld(0, 2.5);
+
+/* ================= 再構築・リサイズ ================= */
+function rebuild(){
+  const S = state.S;
+  const wx = player.gx * prevTx, wz = player.gy * prevTx / SINP;
+  prevTx = texel();
+  setPlayerWorld(wx, wz);
+  [rtLo, rtHi, rtND, cmpRT].forEach(r => r && r.dispose());
+  rtLo = mkRT(S, S); rtHi = mkRT(S * 4, S * 4); rtND = mkRT(S, S); cmpRT = mkRT(S, S);
+  const Tpx = S / 2;
+  shared.uT.value = Tpx;
+  shared.uMapOff.value.set(20.5 * Tpx, 12.5 * Tpx);
+  makeGlyphTex(S);
+  updateWorldFrustum();
+  const dpr = window.devicePixelRatio || 1;
+  const dev = Math.max(1, Math.round(80 * dpr / S));
+  [...stageCells, ...faceCells].forEach(c => {
+    c.cv.width = S; c.cv.height = S;
+    c.cv.style.width = c.cv.style.height = (S * dev / dpr) + 'px';
+    c.ctx.clearRect(0, 0, S, S);
+  });
+}
+function resize(){
+  const r = stage.getBoundingClientRect();
+  const dpr = window.devicePixelRatio || 1;
+  const dev = Math.max(1, Math.round(state.dot * dpr));
+  const css = dev / dpr;
+  W = Math.max(16, Math.floor(r.width / css));
+  H = Math.max(16, Math.floor(r.height / css));
+  renderer.setSize(W, H, false);
+  const cw = W * css, ch = H * css;
+  const left = Math.round((r.left + (r.width - cw) / 2) * dpr) / dpr - r.left;
+  const top = Math.round((r.top + (r.height - ch) / 2) * dpr) / dpr - r.top;
+  canvas.style.width = cw + 'px'; canvas.style.height = ch + 'px';
+  canvas.style.left = left + 'px'; canvas.style.top = top + 'px';
+  [rtWLo, rtWHi, rtWND].forEach(t => t && t.dispose());
+  rtWLo = mkRT(W, H); rtWHi = mkRT(W * 4, H * 4); rtWND = mkRT(W, H);
+  updateWorldFrustum();
+}
+new ResizeObserver(resize).observe(stage);
+
+/* ================= 入力 ================= */
+const keys = new Set();
+const KEYMAP = { ArrowUp:'u', KeyW:'u', ArrowDown:'d', KeyS:'d', ArrowLeft:'l', KeyA:'l', ArrowRight:'r', KeyD:'r' };
+addEventListener('keydown', e => { if (KEYMAP[e.code]) { keys.add(KEYMAP[e.code]); e.preventDefault(); } });
+addEventListener('keyup', e => { if (KEYMAP[e.code]) keys.delete(KEYMAP[e.code]); });
+addEventListener('blur', () => keys.clear());
+const joyEl = document.getElementById('joy'), knob = document.getElementById('knob'), hint = document.getElementById('hint');
+let joy = null;
+stage.addEventListener('pointerdown', e => {
+  stage.setPointerCapture(e.pointerId);
+  const r = stage.getBoundingClientRect();
+  joy = { id:e.pointerId, ox:e.clientX, oy:e.clientY, x:0, y:0 };
+  joyEl.style.left = (e.clientX - r.left) + 'px';
+  joyEl.style.top = (e.clientY - r.top) + 'px';
+  joyEl.style.display = 'block';
+  knob.style.transform = '';
+  hint.style.opacity = 0;
+});
+stage.addEventListener('pointermove', e => {
+  if (!joy || e.pointerId !== joy.id) return;
+  let x = (e.clientX - joy.ox) / 40, y = (e.clientY - joy.oy) / 40;
+  const l = Math.hypot(x, y);
+  if (l > 1) { x /= l; y /= l; }
+  joy.x = x; joy.y = y;
+  knob.style.transform = `translate(${x * 30}px,${y * 30}px)`;
+});
+const endJoy = e => { if (joy && e.pointerId === joy.id) { joy = null; joyEl.style.display = 'none'; } };
+stage.addEventListener('pointerup', endJoy);
+stage.addEventListener('pointercancel', endJoy);
+let lastUser = -1e9;
+function inputVec(now){
+  let x = 0, y = 0;
+  if (keys.has('l')) x -= 1; if (keys.has('r')) x += 1;
+  if (keys.has('u')) y -= 1; if (keys.has('d')) y += 1;
+  if (joy) { x += joy.x; y += joy.y; }
+  let len = Math.hypot(x, y);
+  if (len > 1) { x /= len; y /= len; len = 1; }
+  if (len > 0.3) { lastUser = now; hint.style.opacity = 0; }
+  return { x, y, len };
+}
+const WP = [[0,2.5,0],[0,-12,0],[-4,-4,0],[-14,0,1],[14,0,0],[4,9,1],[0,0,0]];
+const auto = { i:1, wait:0, stuck:0 };
+function autoVec(){
+  if (auto.wait > 0) { auto.wait -= STEP; return { x:0, y:0, len:0 }; }
+  const tx = texel();
+  const px = player.gx * tx, pz = player.gy * tx / SINP;
+  const [wx, wz] = WP[auto.i];
+  const dx = wx - px, dz = wz - pz;
+  if (Math.hypot(dx, dz) < 0.3 || auto.stuck > 1.5) {
+    if (WP[auto.i][2]) auto.wait = 1.4;
+    auto.i = (auto.i + 1) % WP.length; auto.stuck = 0;
+    return { x:0, y:0, len:0 };
+  }
+  const sx = dx, sy = dz * SINP, l = Math.hypot(sx, sy);
+  return { x:sx / l, y:sy / l, len:1 };
+}
+
+/* ================= UI ================= */
+function setSwitch(el, on){ el.classList.toggle('on', on); el.setAttribute('aria-checked', on ? 'true' : 'false'); }
+document.querySelectorAll('.step').forEach(b => {
+  b.addEventListener('click', () => { const k = b.dataset.k; state[k] = !state[k]; setSwitch(b, state[k]); });
+});
+function segBind(sel, attr, fn){
+  document.querySelectorAll(sel + ' button').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll(sel + ' button').forEach(x => x.classList.toggle('on', x === b));
+    fn(b.dataset[attr]);
+  }));
+}
+segBind('#segS', 's', v => { state.S = +v; rebuild(); });
+segBind('#segFace', 'f', v => { state.face = v; });
+segBind('#segExpr', 'e', v => { expr.preset = v; expr.seq = []; });
+const dotIn = document.getElementById('dot'), dotVal = document.getElementById('dotVal');
+dotIn.addEventListener('input', () => { state.dot = +dotIn.value; dotVal.textContent = state.dot; resize(); });
+const toggles = [
+  ['tgAuto', () => state.auto = !state.auto],
+  ['tgCmp', () => state.compare = !state.compare],
+  ['tgBlink', () => { expr.autoBlink = !expr.autoBlink; expr.seq = []; return expr.autoBlink; }],
+  ['tgTalk', () => expr.talk = !expr.talk],
+];
+toggles.forEach(([id, fn]) => { const el = document.getElementById(id); el.addEventListener('click', () => setSwitch(el, fn())); });
+
+/* ================= 焼き出し ================= */
+const dlg = document.getElementById('dlg'), sheet = document.getElementById('sheet');
+const sheetCtx = sheet.getContext('2d');
+document.getElementById('closeDlg').addEventListener('click', () => dlg.close());
+document.getElementById('bake').addEventListener('click', () => {
+  const S = state.S;
+  sheet.width = S * 4; sheet.height = S * 8;
+  sheetCtx.clearRect(0, 0, sheet.width, sheet.height);
+  for (let d = 0; d < 8; d++) for (let k = 0; k < 4; k++) {
+    walkPose(k / 4);
+    renderSprite({ f1:state.f1, f2:state.f2, f3:state.f3, face:state.face, angle:d * TAU / 8, subX:0, subY:0 }, cmpRT);
+    blit(cmpRT, sheetCtx, S, k * S, d * S);
+  }
+  const dpr = window.devicePixelRatio || 1;
+  const maxCss = Math.min(innerWidth * 0.86, 640);
+  const dev = Math.max(1, Math.floor(Math.min(maxCss / (S * 4), (innerHeight * 0.6) / (S * 8)) * dpr));
+  sheet.style.width = (S * 4 * dev / dpr) + 'px';
+  sheet.style.height = (S * 8 * dev / dpr) + 'px';
+  document.getElementById('dl').href = sheet.toDataURL('image/png');
+  document.getElementById('sheetInfo').textContent = `${S * 4}×${S * 8}px／行：下・右下・右・右上・上・左上・左・左下`;
+  dlg.showModal();
+});
+
+/* ================= ロジック（60Hz固定） ================= */
+let phase = 0, idleT = 0, moving = false, smoothA = 0, snapA = 0, moveAcc = 0, simTime = 0;
+function lerpAngle(a, b, t){ const d = ((b - a + Math.PI) % TAU + TAU) % TAU - Math.PI; return a + d * t; }
+function canAt(gx, gy){ const tx = texel(); return !blocked(gx * tx, gy * tx / SINP); }
+function stepPixel(dx, dy){
+  if (canAt(player.gx + dx, player.gy + dy)) { player.gx += dx; player.gy += dy; return true; }
+  if (dx && dy) {
+    if (canAt(player.gx + dx, player.gy)) { player.gx += dx; return true; }
+    if (canAt(player.gx, player.gy + dy)) { player.gy += dy; return true; }
+  }
+  return false;
+}
+function moveFloat(dx, dy){
+  if (canAt(player.gx + dx, player.gy + dy)) { player.gx += dx; player.gy += dy; return true; }
+  if (canAt(player.gx + dx, player.gy)) { player.gx += dx; return true; }
+  if (canAt(player.gx, player.gy + dy)) { player.gy += dy; return true; }
+  return false;
+}
+function tick(now){
+  if (state.f4) { player.gx = Math.round(player.gx); player.gy = Math.round(player.gy); }
+  let v = inputVec(now);
+  const isAuto = v.len < 0.3 && state.auto && now - lastUser > 3000;
+  if (isAuto) v = autoVec();
+  moving = v.len > 0.3;
+  const spd = WALK_V / texel();                  // px/秒（縦横とも画面上で同じ速さ）
+  if (moving) {
+    const a = Math.atan2(v.x, v.y);
+    const k = ((Math.round(a / (TAU / 8)) % 8) + 8) % 8;
+    snapA = k * TAU / 8;
+    smoothA = lerpAngle(smoothA, a, 1 - Math.exp(-STEP * 12));
+    let ok = true;
+    if (state.f4) {
+      const d = DIR8[k], diag = d[0] && d[1];
+      moveAcc += spd * STEP * (diag ? Math.SQRT1_2 : 1);
+      while (moveAcc >= 1) { moveAcc -= 1; if (!stepPixel(d[0], d[1])) { ok = false; moveAcc = 0; break; } }
+    } else {
+      ok = moveFloat(v.x * spd * STEP, v.y * spd * STEP);
+    }
+    if (isAuto) auto.stuck = ok ? 0 : auto.stuck + STEP;
+    phase = (phase + STEP / CYCLE) % 1;
+    idleT = 0;
+  } else {
+    idleT += STEP; phase = 0; moveAcc = 0;
+  }
+  tickExpr();
+  simTime += STEP;
+}
+function applyPose(stepped){
+  if (moving) walkPose(stepped ? Math.floor(phase * 4) / 4 : phase);
+  else idlePose(stepped ? ((Math.floor(idleT / 0.6) % 2) ? 1 : -1) : Math.sin(idleT * TAU / 1.2));
+}
+
+/* ================= メインループ ================= */
+let frameN = 0, fps = 60, lastT = performance.now(), acc = 0;
+const hud = document.getElementById('hud');
+function frame(now){
+  requestAnimationFrame(frame);
+  const dt = Math.min(0.1, (now - lastT) / 1000);
+  lastT = now;
+  fps = fps * 0.93 + (1 / Math.max(dt, 1e-3)) * 0.07;
+  acc += dt;
+  let n = 0;
+  while (acc >= STEP && n < 6) { tick(now); acc -= STEP; n++; }
+  if (n === 6) acc = 0;
+  shared.uTime.value = simTime;
+
+  const S = state.S, st = state.f4, tx = texel();
+  const cx = Math.round(player.gx), cy = Math.round(player.gy);
+  const X = player.gx * tx, Z = player.gy * tx / SINP;
+  const upOff = Math.round(0.9 * COSP / tx);
+
+  setFace(state.face);
+  applyPose(st);
+  J.root.position.set(X, 0, Z);
+  J.root.rotation.y = st ? snapA : smoothA;
+  renderWorld({ f1:state.f1, f2:state.f2, f3:state.f3, face:state.face }, X, Z, cx, -cy + upOff, player.gx, player.gy);
+
+  if (state.compare) {
+    const subX = player.gx - Math.floor(player.gx), subY = player.gy - Math.floor(player.gy);
+    if (frameN % 2 === 0) {
+      STAGES.forEach((stg, i) => {
+        const f = stg.f;
+        applyPose(!!f[3]);
+        renderSprite({ f1:!!f[0], f2:!!f[1], f3:!!f[2], face:state.face, angle:f[3] ? snapA : smoothA,
+          subX:f[3] ? 0 : subX, subY:f[3] ? 0 : subY }, cmpRT);
+        blit(cmpRT, stageCells[i].ctx, S, 0, 0);
+      });
+    } else {
+      applyPose(true);
+      FACES.forEach((fc, i) => {
+        renderSprite({ f1:true, f2:true, f3:true, face:fc.k, angle:snapA, subX:0, subY:0 }, cmpRT);
+        blit(cmpRT, faceCells[i].ctx, S, 0, 0);
+      });
+    }
+  }
+  if (frameN % 10 === 0) {
+    const di = ((Math.round(snapA / (TAU / 8)) % 8) + 8) % 8;
+    hud.textContent = `${S}px／ドット×${state.dot}／${Math.round(fps)}fps／向き：${DIR_NAMES[di]}`;
+  }
+  frameN++;
+}
+
+rebuild();
+resize();
+requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
