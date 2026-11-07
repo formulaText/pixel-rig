@@ -11,7 +11,8 @@ mkdirSync(root,{recursive:true});
 const site = resolve(root,'pixel-rig');
 const state=updateSite({site,candidate:'dist',operation:'candidate'});
 // 一時サイトのみで昇格を模擬し、同一成果物のstableパスも起動する。
-updateSite({site,operation:'promote',approved:true,actor:'test',owner:'test',expectedBuildId:state.candidate.buildId});
+updateSite({site,operation:'promote',approved:true,actor:'test',owner:'test',expectedBuildId:state.candidate.buildId,
+  approval:{approver:'test',buildId:state.candidate.buildId,statement:`ビルド ${state.candidate.buildId} の昇格を承認（ローカル模擬）`,source:'ローカル一時サイトのテスト用承認'}});
 const mime={'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.txt':'text/plain'};
 const server=createServer((req,res)=>{
   let p=resolve(root,'.'+decodeURIComponent(new URL(req.url,'http://local').pathname));
