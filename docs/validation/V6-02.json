@@ -1,6 +1,6 @@
 {
   "date": "2026-11-07",
-  "issue": "V6-02 / M0 実機確認待ち",
+  "issue": "V6-02 / 原本相当の再現確認として区切る依頼者判断。PNG保存未達は保留、色のちらつき未解決、Issue #4はオープン維持。",
   "referenceSha256": "0f821957cc2f5b46edd31bb37382724cf3e33dbd6cc251036cefb0e9cb938d9c",
   "browser": "156.0.8078.79",
   "renderer": "Chromium / SwiftShader",
@@ -52,5 +52,32 @@
     "errors": []
   },
   "normalPerformance": "未測定。比較用readPixels・手動時計の値を通常fpsとして扱わない。",
-  "iphoneSafari": "未検証。依頼者のM0確認待ち。"
+  "iphoneSafari": "2026-11-07依頼者報告を受領。詳細はiphoneReportとdocs/14。全条件の無条件成功ではない。",
+  "cloudRecordScope": "既存の数値・PNG比較・builtSiteSmokeは実装時のChromium検査結果。iPhone Safariの保存成功を示さない。",
+  "iphoneReport": {
+    "source": "依頼者の実機報告",
+    "date": "2026-11-07",
+    "device": "iPhone 17 / Safari",
+    "buildId": "gh-42343155272-1-6b97c72eee25",
+    "commit": "6b97c72eee25d53b27788b33de9bf124e0d5fc20",
+    "startupManualMoveCommitMatch": "正常",
+    "visualMovementOrientationMagnificationAndAllSwitches": "原本との差なし",
+    "missingLines": "見られない",
+    "colorFlicker": "移動中に原本・候補共通。横以外で確認。横では目立たないが不発生と断定不可。マップ端で位置固定・歩行アニメーションのみでは見られない。原因未確定・未解決。",
+    "pngSave": "原本・候補とも失敗。OSダイアログの表示／ダウンロードで先へ進めず、保存画像比較は未確認。",
+    "moveAfterPngClose": "正常",
+    "fpsObservation": {
+      "displayRange": [
+        59,
+        61
+      ],
+      "orientation": "縦横ともおおむね60",
+      "conditions": "解像度32、倍率4、昼、影ON、比較更新OFF、PNG画面を閉じ、録画停止",
+      "duration": "数分間の継続動作で追加問題なし。厳密な秒数未報告。",
+      "limit": "既存の簡易表示による観察。厳密なフレーム時間測定・全条件の60fps保証ではない。"
+    },
+    "decision": "原本相当の再現として区切る。PNGは既存不具合として保留し後続研究の前提にしない。色のちらつきは最終許容仕様・解決済みとしない。視覚表現研究と必要な描画・検証基盤を優先。",
+    "issueState": "open",
+    "scope": "資料・Issue・PR更新のみ。実装・配信設定変更、後続Issue着手、マージ、再配信、昇格なし。"
+  }
 }
