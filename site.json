@@ -1,6 +1,16 @@
 {
   "schema": 1,
-  "stable": null,
+  "stable": {
+    "buildId": "gh-42339822673-1-f02a11ae6f2b",
+    "commit": "f02a11ae6f2bee438212207dd7d3cb5d7a8c3151",
+    "builtAt": "2026-11-07T04:45:44.932Z",
+    "files": {
+      "THIRD_PARTY_LICENSES.txt": "f2781316acfa25b7d520ea7edbc6056ca375999291ab54da4df293496a26362a",
+      "assets/index-BYWyTl4F.js": "561c7cc21c328272fafa78d9f832486887a30bdbab16b3b26d0549f6d22806cc",
+      "assets/index-DCd1FRiJ.css": "12e78b633197d02cde92e878662a1cf2dd23a423c0b2f8583bc276876d04009c",
+      "index.html": "69982883e5dc29deb5deb996eb2c51a8b60bb1fd6afb5fa94c8a157a0cc3b545"
+    }
+  },
   "candidate": {
     "buildId": "gh-42339822673-1-f02a11ae6f2b",
     "commit": "f02a11ae6f2bee438212207dd7d3cb5d7a8c3151",
@@ -16,5 +26,10 @@
     "path": "prototypes/v5_pixel-rig-poc.html",
     "sha256": "0f821957cc2f5b46edd31bb37382724cf3e33dbd6cc251036cefb0e9cb938d9c",
     "commit": "4c636354697c0eefea16ded9cb4b9a2d66bd5744"
+  },
+  "approval": {
+    "actor": "formulaText",
+    "buildId": "gh-42339822673-1-f02a11ae6f2b",
+    "at": "2026-11-07T04:53:49.132Z"
   }
 }
