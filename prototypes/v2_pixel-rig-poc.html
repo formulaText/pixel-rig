@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Pixel Rig PoC v2 — 3D→ドット絵リアルタイム変換</title>
+<style>
+:root{
+  --bg:#e9e7f1; --panel:#f7f6fb; --ink:#23213a; --sub:#6b6889; --line:#d3d0e2;
+  --accent:#5a4fcf; --accent-ink:#ffffff; --chip:#e3e0f0; --stage:#101a0d;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#15142a; --panel:#1d1c35; --ink:#e8e6f5; --sub:#9a97b8; --line:#34325a;
+    --accent:#8f86ff; --accent-ink:#15142a; --chip:#2a2848; --stage:#0a1108;
+    color-scheme: dark;
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP","Yu Gothic UI",sans-serif;font-size:14px;line-height:1.5;-webkit-tap-highlight-color:transparent}
+.app{display:grid;grid-template-rows:auto 1fr;height:100vh;height:100dvh}
+header{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 12px;padding:10px 16px;border-bottom:1px solid var(--line);background:var(--panel)}
+header h1{font-size:15px;font-weight:700}
+header p{font-size:12px;color:var(--sub)}
+.layout{display:grid;grid-template-rows:minmax(240px,52vh) 1fr;min-height:0}
+@media (min-width:900px){.layout{grid-template-columns:1fr 380px;grid-template-rows:1fr}}
+.stage{position:relative;background:var(--stage);overflow:hidden;touch-action:none;user-select:none;-webkit-user-select:none}
+#view{position:absolute;image-rendering:pixelated;image-rendering:crisp-edges;display:block}
+.hud{position:absolute;left:8px;top:8px;font:12px/1.4 ui-monospace,Menlo,Consolas,monospace;color:#f4f1e6;background:rgba(15,12,30,.6);padding:4px 8px;border-radius:6px;pointer-events:none;z-index:2}
+.hint{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);font-size:12px;color:#f4f1e6;background:rgba(15,12,30,.55);padding:4px 10px;border-radius:999px;pointer-events:none;white-space:nowrap;transition:opacity .4s;z-index:2}
+.joy{position:absolute;width:104px;height:104px;border-radius:50%;border:2px solid rgba(255,255,255,.45);background:rgba(255,255,255,.07);transform:translate(-50%,-50%);display:none;pointer-events:none;z-index:2}
+.joy i{position:absolute;left:50%;top:50%;width:42px;height:42px;margin:-21px 0 0 -21px;border-radius:50%;background:rgba(255,255,255,.55)}
+.panel{overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:20px;background:var(--panel);border-top:1px solid var(--line)}
+@media (min-width:900px){.panel{border-top:0;border-left:1px solid var(--line)}}
+.sec h2{font-size:13px;font-weight:700;margin-bottom:8px}
+.sec .note{font-size:12px;color:var(--sub);margin-top:6px}
+.step{display:grid;grid-template-columns:30px 1fr 40px;gap:10px;align-items:center;width:100%;text-align:left;padding:9px 10px;border:1px solid var(--line);border-radius:12px;margin-bottom:6px;cursor:pointer;background:transparent;color:inherit;font:inherit}
+.step:focus-visible,.seg button:focus-visible,.btn:focus-visible,.tg:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.step .no{font-weight:800;font-size:14px;width:30px;height:30px;border-radius:8px;display:grid;place-items:center;background:var(--chip);color:var(--sub)}
+.step.on .no{background:var(--accent);color:var(--accent-ink)}
+.step b{display:block;font-size:13.5px}
+.step small{display:block;color:var(--sub);font-size:11.5px;line-height:1.45}
+.sw{width:38px;height:22px;border-radius:11px;background:var(--chip);position:relative;border:1px solid var(--line);flex:none}
+.sw::after{content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:var(--sub);transition:left .15s}
+.on .sw{background:var(--accent);border-color:var(--accent)}
+.on .sw::after{left:18px;background:var(--accent-ink)}
+.strip{display:flex;gap:10px;overflow-x:auto;padding-bottom:4px}
+.cell{flex:none;text-align:center;font-size:11.5px;color:var(--sub)}
+.cell canvas{display:block;image-rendering:pixelated;image-rendering:crisp-edges;background:#6aa84f;border-radius:6px;margin-bottom:4px}
+.row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.row label{font-size:13px}
+.seg{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.seg button{padding:6px 11px;border:0;background:transparent;color:var(--ink);font-weight:700;font-size:13px;cursor:pointer;white-space:nowrap}
+.seg button.on{background:var(--accent);color:var(--accent-ink)}
+input[type=range]{accent-color:var(--accent);width:140px}
+.tg{display:flex;align-items:center;gap:8px;background:transparent;border:0;color:inherit;font:inherit;cursor:pointer}
+.btn{display:block;width:100%;padding:12px;border-radius:10px;border:0;background:var(--accent);color:var(--accent-ink);font-weight:700;font-size:14px;cursor:pointer;text-align:center;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+dialog{margin:auto;border:1px solid var(--line);border-radius:14px;background:var(--panel);color:var(--ink);padding:16px;max-width:min(94vw,720px);max-height:92vh}
+dialog::backdrop{background:rgba(10,8,25,.6)}
+.dlg-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:10px}
+.dlg-head span{font-size:12px;color:var(--sub)}
+.sheet-wrap{overflow:auto;max-height:64vh;border-radius:8px;background-color:#cfcbe0;background-image:linear-gradient(45deg,#b9b4cf 25%,transparent 25%,transparent 75%,#b9b4cf 75%),linear-gradient(45deg,#b9b4cf 25%,transparent 25%,transparent 75%,#b9b4cf 75%);background-size:16px 16px;background-position:0 0,8px 8px}
+#sheet{display:block;image-rendering:pixelated;image-rendering:crisp-edges}
+.dlg-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <h1>Pixel Rig PoC v2</h1>
+    <p>3Dのキャラとフィールドを、同じピクセルグリッドでリアルタイムにドット絵化する検証</p>
+  </header>
+  <div class="layout">
+    <section class="stage" id="stage">
+      <div class="hud" id="hud"></div>
+      <div class="hint" id="hint">ドラッグ または WASD / 矢印キーで移動</div>
+      <div class="joy" id="joy"><i id="knob"></i></div>
+    </section>
+    <aside class="panel">
+      <div class="sec">
+        <h2>変換ステップ（メイン画面に適用）</h2>
+        <button class="step on" data-k="f1" role="switch" aria-checked="true">
+          <span class="no">1</span>
+          <span><b>色数制限</b><small>トゥーン階調（色相シフト付き）。OFF時は滑らかな陰影</small></span>
+          <span class="sw"></span>
+        </button>
+        <button class="step on" data-k="f2" role="switch" aria-checked="true">
+          <span class="no">2</span>
+          <span><b>半透明の排除</b><small>低解像度へ直接描画（OFFは高解像度からの単純縮小）</small></span>
+          <span class="sw"></span>
+        </button>
+        <button class="step on" data-k="f3" role="switch" aria-checked="true">
+          <span class="no">3</span>
+          <span><b>輪郭線</b><small>キャラは濃い外周線、背景は控えめな線＋法線エッジ</small></span>
+          <span class="sw"></span>
+        </button>
+        <button class="step on" data-k="f4" role="switch" aria-checked="true">
+          <span class="no">4</span>
+          <span><b>ちらつき対策</b><small>歩行4コマ・ピクセルスナップ・8方向スナップ</small></span>
+          <span class="sw"></span>
+        </button>
+      </div>
+
+      <div class="sec">
+        <h2>顔の表現の比較（ステップ1〜4すべて有効）</h2>
+        <div class="strip" id="faceStrip"></div>
+        <p class="note">ドット顔は、目と口の位置だけを3Dから求め、ドット絵の目を直接描き込む方式です。</p>
+      </div>
+
+      <div class="sec">
+        <h2>段階比較（左から累積で有効化）</h2>
+        <div class="strip" id="stageStrip"></div>
+        <p class="note">旋回中や移動中に見比べると、輪郭のちらつきや向きの切り替わり方の違いが分かります。</p>
+      </div>
+
+      <div class="sec">
+        <h2>設定</h2>
+        <div class="row">
+          <label>キャラの解像度</label>
+          <div class="seg" id="segS">
+            <button data-s="16">16</button><button data-s="24">24</button><button data-s="32" class="on">32</button><button data-s="48">48</button>
+          </div>
+        </div>
+        <div class="row">
+          <label>顔の表現</label>
+          <div class="seg" id="segFace">
+            <button data-f="3d">3D</button><button data-f="uv">デカール</button><button data-f="pixel" class="on">ドット顔</button>
+          </div>
+        </div>
+        <div class="row">
+          <label for="dot">ドットの大きさ <span id="dotVal">4</span></label>
+          <input type="range" id="dot" min="2" max="7" step="1" value="4">
+        </div>
+        <div class="row">
+          <label>自動歩行デモ</label>
+          <button class="tg on" id="tgAuto" role="switch" aria-checked="true"><span class="sw"></span></button>
+        </div>
+        <div class="row">
+          <label>比較表示を更新</label>
+          <button class="tg on" id="tgCmp" role="switch" aria-checked="true"><span class="sw"></span></button>
+        </div>
+      </div>
+
+      <div class="sec">
+        <button class="btn" id="bake">スプライトシートを焼き出す（8方向×4コマ）</button>
+        <p class="note">ステップ1〜3と顔の表現の現在の設定で焼き出します。</p>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<dialog id="dlg">
+  <div class="dlg-head"><b>スプライトシート</b><span id="sheetInfo"></span></div>
+  <div class="sheet-wrap"><canvas id="sheet"></canvas></div>
+  <div class="dlg-actions">
+    <a class="btn" id="dl" download="sprite_sheet.png">PNGを保存</a>
+    <button class="btn ghost" id="closeDlg">閉じる</button>
+  </div>
+</dialog>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(() => {
+'use strict';
+
+/* ================= 定数 ================= */
+const TAU = Math.PI * 2;
+const FR = 1.25;                                   // キャラ単体カメラの半径（ワールド単位）
+const PITCH = 35 * Math.PI / 180;
+const SINP = Math.sin(PITCH), COSP = Math.cos(PITCH);
+const CYCLE = 0.64;
+const WALK_V = 2.8;                                // 横方向の移動速度（ワールド単位/秒）
+const LEG_LEN = 0.545;
+const PLAYER_R = 0.28;
+const SPRITE_NEAR = 3.4, SPRITE_FAR = 6.6;
+const WORLD_DIST = 50, WORLD_NEAR = 20, WORLD_FAR = 80;
+const DIR_NAMES = ['下','右下','右','右上','上','左上','左','左下'];
+const LIGHT_W = new THREE.Vector3(-0.55, 1.0, 0.7).normalize();
+const CAM_TARGET = new THREE.Vector3(0, 0.95, 0);
+const CAM_DIR = new THREE.Vector3(0, SINP, COSP);
+const STAGES = [
+  {label:'素の縮小', f:[0,0,0,0]},
+  {label:'＋1 色数', f:[1,0,0,0]},
+  {label:'＋2 α',   f:[1,1,0,0]},
+  {label:'＋3 輪郭', f:[1,1,1,0]},
+  {label:'＋4 対策', f:[1,1,1,1]},
+];
+const FACES = [
+  {k:'3d', label:'3D形状'},
+  {k:'uv', label:'UVデカール'},
+  {k:'pixel', label:'ドット顔'},
+];
+const GLYPH_COLORS = { D:'#241a38', W:'#fffaf0', C:'#3f5aa6', M:'#b4604c' };
+const GLYPHS = {
+  16:{ w:1, h:1, full:['D'], narrow:['D'], mouth:null },
+  24:{ w:1, h:2, full:['D','D'], narrow:['D','D'], mouth:null },
+  32:{ w:2, h:3, full:['DW','DD','CC'], narrow:['D.','D.','C.'], mouth:['..','MM','..'] },
+  48:{ w:3, h:4, full:['DDD','DCW','DCC','.DD'], narrow:['DD.','DC.','DC.','.D.'], mouth:['...','...','.MM','...'] },
+};
+
+const state = { S:32, dot:4, face:'pixel', f1:true, f2:true, f3:true, f4:true, auto:true, compare:true };
+const texel = () => (2 * FR) / state.S;
+
+/* ================= シェーダー ================= */
+const TOON_VS = `
+varying vec3 vN; varying vec3 vWorld; varying vec2 vUv;
+void main(){
+  vN = normalize(normalMatrix * normal);
+  vec4 wp = modelMatrix * vec4(position, 1.0);
+  vWorld = wp.xyz; vUv = uv;
+  gl_Position = projectionMatrix * viewMatrix * wp;
+}`;
+const TOON_FS = `
+#define CP ${COSP.toFixed(6)}
+#define SP ${SINP.toFixed(6)}
+uniform vec3 uLightDir; uniform float uToon;
+uniform vec3 uDeep; uniform vec3 uShadow; uniform vec3 uBase; uniform vec3 uLight;
+uniform float uNoise; uniform float uNoiseScale; uniform float uRecv; uniform vec3 uBlob;
+uniform sampler2D uMap; uniform float uHasMap;
+varying vec3 vN; varying vec3 vWorld; varying vec2 vUv;
+float hash(vec2 p){ return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453); }
+void main(){
+  vec4 tex = vec4(1.0);
+  if (uHasMap > 0.5) { tex = texture2D(uMap, vUv); if (tex.a < 0.5) discard; }
+  vec3 n = normalize(vN);
+  float l = dot(n, uLightDir) * 0.5 + 0.5;
+  if (uNoise > 0.0) {
+    vec2 q = floor(vec2(vWorld.x, vWorld.y * CP - vWorld.z * SP) * uNoiseScale);
+    l += (hash(q) - 0.5) * uNoise + (hash(floor(q / 3.0) + 17.0) - 0.5) * uNoise * 0.9;
+  }
+  if (uRecv > 0.5 && uBlob.z > 0.0) {
+    vec2 d = (vWorld.xz - uBlob.xy) / vec2(uBlob.z, uBlob.z * 0.8);
+    if (dot(d, d) < 1.0) l -= 0.45;
+  }
+  vec3 c;
+  if (uToon > 0.5) c = l > 0.80 ? uLight : (l > 0.50 ? uBase : (l > 0.30 ? uShadow : uDeep));
+  else c = uBase * (0.42 + 0.78 * clamp(l, 0.0, 1.0));
+  if (uHasMap > 0.5) c = tex.rgb * (l > 0.30 ? 1.0 : 0.82);
+  gl_FragColor = vec4(c, 1.0);
+}`;
+// 法線XY＋12bit深度＋4bit ID を RGBA8 に詰める
+const ND_FS = `
+uniform float uId;
+varying vec3 vN;
+void main(){
+  float d = clamp(1.0 - gl_FragCoord.z, 0.0, 1.0);
+  float d12 = floor(d * 4095.0 + 0.5);
+  float hi = floor(d12 / 16.0);
+  float lo = d12 - hi * 16.0;
+  vec3 n = normalize(vN);
+  gl_FragColor = vec4(n.x * 0.5 + 0.5, n.y * 0.5 + 0.5, hi / 255.0, (lo * 16.0 + uId) / 255.0);
+}`;
+const POST_VS = `
+varying vec2 vUv;
+void main(){ vUv = uv; gl_Position = vec4(position.xy, 0.0, 1.0); }`;
+const POST_FS = `
+uniform sampler2D tColor; uniform sampler2D tHi; uniform sampler2D tND; uniform sampler2D tPal; uniform sampler2D tGlyph;
+uniform vec2 uRes; uniform float uF1; uniform float uF2; uniform float uF3; uniform float uNDOn;
+uniform float uPalN; uniform vec3 uLightDir; uniform float uRange; uniform float uTexel;
+uniform float uStamp; uniform vec2 uGlyph; uniform vec3 uEye0; uniform vec3 uEye1; uniform vec3 uMouth;
+varying vec2 vUv;
+const vec3 INK = vec3(0.10, 0.06, 0.17);
+
+vec4 srcAt(vec2 uv){
+  if (uF2 > 0.5) { vec4 c = texture2D(tColor, uv); c.a = step(0.5, c.a); return c; }
+  vec2 hp = 1.0 / (uRes * 4.0);
+  vec3 rgb = vec3(0.0); float cov = 0.0;
+  for (int j = 0; j < 4; j++) {
+    for (int i = 0; i < 4; i++) {
+      vec4 s = texture2D(tHi, uv + (vec2(float(i), float(j)) - 1.5) * hp);
+      if (s.a > 0.5) { rgb += s.rgb; cov += 1.0; }
+    }
+  }
+  if (cov > 0.0) rgb /= cov;
+  return vec4(rgb, cov / 16.0);
+}
+vec3 quant(vec3 c){
+  float best = 1e9; vec3 r = c;
+  for (int i = 0; i < 128; i++) {
+    if (float(i) >= uPalN) break;
+    vec3 p = texture2D(tPal, vec2((float(i) + 0.5) / uPalN, 0.5)).rgb;
+    vec3 d = c - p;
+    float e = dot(d * d, vec3(0.30, 0.59, 0.11));
+    if (e < best) { best = e; r = p; }
+  }
+  return r;
+}
+vec4 decodeND(vec2 uv){
+  vec4 q = texture2D(tND, uv);
+  float A = floor(q.a * 255.0 + 0.5);
+  float id = mod(A, 16.0);
+  float lo = floor(A / 16.0);
+  float hi = floor(q.b * 255.0 + 0.5);
+  return vec4(q.r * 2.0 - 1.0, q.g * 2.0 - 1.0, (hi * 16.0 + lo) / 4095.0, id);
+}
+vec3 fullN(vec4 e){ return vec3(e.x, e.y, sqrt(max(0.0, 1.0 - e.x * e.x - e.y * e.y))); }
+void nb(vec2 uv, float g, vec4 me, inout float best, inout float bId, inout vec2 bUv, inout float ne){
+  vec4 q = decodeND(uv);
+  float diff = (q.z - me.z) * uRange;
+  if (q.w > 0.5 && diff > g && q.z > best) { best = q.z; bId = q.w; bUv = uv; }
+  if (me.w > 0.5 && q.w > 0.5 && abs(diff) <= g) {
+    vec3 n1 = fullN(me), n2 = fullN(q);
+    if (dot(n1, n2) < 0.6 && dot(n1, uLightDir) > dot(n2, uLightDir) + 0.15) ne = 1.0;
+  }
+}
+vec4 glyphAt(vec2 p, vec3 e){
+  if (e.z < -0.5) return vec4(0.0);
+  vec2 d = p - e.xy;
+  if (d.x < 0.0 || d.y < 0.0 || d.x >= uGlyph.x || d.y >= uGlyph.y) return vec4(0.0);
+  return texture2D(tGlyph, vec2((e.z * uGlyph.x + d.x + 0.5) / (uGlyph.x * 3.0), (d.y + 0.5) / uGlyph.y));
+}
+void main(){
+  vec2 t = 1.0 / uRes;
+  vec4 c = srcAt(vUv);
+  bool cov = c.a > 0.5;
+  if (cov && uF1 > 0.5 && uF2 < 0.5) c.rgb = quant(c.rgb);
+  vec4 me = vec4(0.0);
+  if (uNDOn > 0.5) me = decodeND(vUv);
+  bool meChar = uNDOn > 0.5 ? (abs(me.w - 2.0) < 0.5) : cov;
+
+  if (uF3 > 0.5) {
+    vec3 mn = fullN(me);
+    float nz = max(mn.z, 0.25);
+    float gx = 0.06, gy = 0.06;
+    if (me.w > 0.5) { gx += uTexel * abs(mn.x) / nz * 1.15; gy += uTexel * abs(mn.y) / nz * 1.15; }
+    float best = -1.0, bId = 0.0, ne = 0.0; vec2 bUv = vUv;
+    nb(vUv + vec2(t.x, 0.0), gx, me, best, bId, bUv, ne);
+    nb(vUv - vec2(t.x, 0.0), gx, me, best, bId, bUv, ne);
+    nb(vUv + vec2(0.0, t.y), gy, me, best, bId, bUv, ne);
+    nb(vUv - vec2(0.0, t.y), gy, me, best, bId, bUv, ne);
+    if (best >= 0.0) {
+      if (abs(bId - 2.0) < 0.5 && !meChar) {
+        vec3 nc = srcAt(bUv).rgb;
+        c = vec4(mix(INK, nc * 0.3, 0.35), 1.0);
+      } else if (meChar) {
+        c.rgb = mix(c.rgb * 0.5, INK, 0.3);
+      } else if (me.w > 0.5) {
+        c.rgb = mix(c.rgb * 0.62, INK, 0.12);
+      }
+    } else if (ne > 0.5 && cov) {
+      c.rgb = min(c.rgb * 1.15 + 0.04, vec3(1.0));
+    }
+  }
+
+  if (uStamp > 0.5 && meChar) {
+    vec2 p = floor(vUv * uRes);
+    vec4 g = glyphAt(p, uEye0);
+    if (g.a < 0.5) g = glyphAt(p, uEye1);
+    if (g.a < 0.5) g = glyphAt(p, uMouth);
+    if (g.a > 0.5) c = vec4(g.rgb, 1.0);
+  }
+  gl_FragColor = c;
+}`;
+
+/* ================= レンダラー ================= */
+const stage = document.getElementById('stage');
+const renderer = new THREE.WebGLRenderer({ antialias:false, alpha:false, powerPreference:'high-performance' });
+renderer.setPixelRatio(1);
+renderer.autoClear = false;
+const canvas = renderer.domElement;
+canvas.id = 'view';
+stage.prepend(canvas);
+
+/* ================= 色ランプ・マテリアル ================= */
+const clamp01 = v => Math.min(1, Math.max(0, v));
+function shiftHue(h, target, amt){
+  let d = target - h;
+  if (d > 0.5) d -= 1;
+  if (d < -0.5) d += 1;
+  return (h + d * amt + 1) % 1;
+}
+function makeRamp(hex){
+  const base = new THREE.Color(hex);
+  const hsl = {}; base.getHSL(hsl);
+  const mk = (amt, ds, dl, target) => {
+    const c = new THREE.Color();
+    c.setHSL(shiftHue(hsl.h, target, amt), clamp01(hsl.s + ds), clamp01(hsl.l + dl));
+    return c;
+  };
+  return [ mk(0.22, 0.05, -0.30, 0.72), mk(0.12, 0.03, -0.15, 0.72), base.clone(), mk(0.10, -0.05, 0.12, 0.14) ];
+}
+const shared = {
+  uLightDir:{ value:new THREE.Vector3(0, 1, 0) },
+  uToon:{ value:1 },
+  uNoiseScale:{ value:1 },
+  uBlob:{ value:new THREE.Vector3(0, 0, 0) },
+};
+const palette = [];
+function toonMat(hex, o = {}){
+  const r = makeRamp(hex);
+  if (!o.nopal) palette.push(...r);
+  return new THREE.ShaderMaterial({
+    uniforms:{
+      uLightDir:shared.uLightDir, uToon:shared.uToon, uNoiseScale:shared.uNoiseScale, uBlob:shared.uBlob,
+      uDeep:{value:r[0]}, uShadow:{value:r[1]}, uBase:{value:r[2]}, uLight:{value:r[3]},
+      uNoise:{value:o.noise || 0}, uRecv:{value:o.recv ? 1 : 0},
+      uMap:{value:o.map || null}, uHasMap:{value:o.map ? 1 : 0}
+    },
+    vertexShader:TOON_VS, fragmentShader:TOON_FS,
+    side:o.side || THREE.FrontSide
+  });
+}
+
+/* ================= キャラクター ================= */
+const charScene = new THREE.Scene();
+const CM = {
+  skin:toonMat(0xf2c29b), hair:toonMat(0xc4622d, {side:THREE.DoubleSide}), eye:toonMat(0x2a1f3d),
+  tunic:toonMat(0x2f8f8a), belt:toonMat(0x6b4226), pants:toonMat(0x3b3f6b),
+  boots:toonMat(0x7a4a2b), scarf:toonMat(0xd8433a)
+};
+function makeFaceDecal(){
+  const c = document.createElement('canvas'); c.width = 128; c.height = 64;
+  const g = c.getContext('2d');
+  for (const cx of [34.7, 93.3]) {
+    g.fillStyle = GLYPH_COLORS.D; g.beginPath(); g.ellipse(cx, 33, 7, 10.5, 0, 0, TAU); g.fill();
+    g.fillStyle = GLYPH_COLORS.C; g.beginPath(); g.ellipse(cx, 37, 5, 6, 0, 0, TAU); g.fill();
+    g.fillStyle = GLYPH_COLORS.W; g.beginPath(); g.arc(cx + 2.2, 28, 2.6, 0, TAU); g.fill();
+  }
+  g.strokeStyle = GLYPH_COLORS.M; g.lineWidth = 2.5;
+  g.beginPath(); g.moveTo(58, 53); g.quadraticCurveTo(64, 56, 70, 53); g.stroke();
+  const t = new THREE.CanvasTexture(c);
+  t.minFilter = t.magFilter = THREE.LinearFilter; t.generateMipmaps = false;
+  return t;
+}
+CM.decal = toonMat(0xffffff, { map:makeFaceDecal(), nopal:true });
+Object.values(GLYPH_COLORS).forEach(h => palette.push(new THREE.Color(h)));
+
+function mesh(geo, m, x=0, y=0, z=0){ const o = new THREE.Mesh(geo, m); o.position.set(x, y, z); return o; }
+function grp(parent, x=0, y=0, z=0){ const g = new THREE.Group(); g.position.set(x, y, z); parent.add(g); return g; }
+
+const J = {};
+J.root = grp(charScene);
+J.hips = grp(J.root, 0, LEG_LEN, 0);
+J.torso = grp(J.hips);
+J.torso.add(mesh(new THREE.CylinderGeometry(0.22, 0.29, 0.52, 12), CM.tunic, 0, 0.24, 0));
+J.torso.add(mesh(new THREE.CylinderGeometry(0.295, 0.30, 0.08, 12), CM.belt, 0, 0.04, 0));
+J.torso.add(mesh(new THREE.CylinderGeometry(0.29, 0.34, 0.14, 12), CM.tunic, 0, -0.04, 0));
+const ring = mesh(new THREE.TorusGeometry(0.2, 0.075, 8, 16), CM.scarf, 0, 0.5, 0);
+ring.rotation.x = Math.PI / 2;
+J.torso.add(ring);
+J.tail = grp(J.torso, 0.1, 0.5, -0.18);
+J.tail.add(mesh(new THREE.BoxGeometry(0.13, 0.42, 0.05), CM.scarf, 0, -0.2, 0));
+
+J.head = grp(J.torso, 0, 0.56, 0);
+J.head.add(mesh(new THREE.SphereGeometry(0.44, 20, 14), CM.skin, 0, 0.36, 0));
+const cap = mesh(new THREE.SphereGeometry(0.475, 20, 10, 0, TAU, 0, Math.PI * 0.5), CM.hair, 0, 0.36, 0);
+cap.rotation.x = -0.3;                               // 生え際を上げて顔の面積を確保
+J.head.add(cap);
+const backHair = mesh(new THREE.SphereGeometry(0.45, 16, 12), CM.hair, 0, 0.27, -0.1);
+backHair.scale.set(1.03, 0.95, 0.85);
+J.head.add(backHair);
+for (const bx of [-0.2, 0, 0.2]) {                   // 前髪
+  const b = mesh(new THREE.ConeGeometry(0.1, 0.22, 4), CM.hair, bx, 0.46, 0.42);
+  b.rotation.set(Math.PI, 0, bx * 0.8);
+  J.head.add(b);
+}
+const ahoge = mesh(new THREE.ConeGeometry(0.06, 0.24, 5), CM.hair, 0.06, 0.88, 0.05);
+ahoge.rotation.z = -0.5;
+J.head.add(ahoge);
+
+J.eyes3d = grp(J.head);
+for (const sx of [-1, 1]) J.eyes3d.add(mesh(new THREE.BoxGeometry(0.075, 0.14, 0.05), CM.eye, sx * 0.15, 0.31, 0.405));
+J.decal = mesh(new THREE.SphereGeometry(0.447, 16, 10, Math.PI / 2 - 0.75, 1.5, Math.PI / 2 - 0.42, 0.95), CM.decal, 0, 0.36, 0);
+J.head.add(J.decal);
+J.headC = grp(J.head, 0, 0.36, 0);
+J.eyeA = [grp(J.head, 0.15, 0.33, 0.41), grp(J.head, -0.15, 0.33, 0.41)];
+J.mouthA = grp(J.head, 0, 0.2, 0.41);
+
+for (const sx of [-1, 1]) {
+  const a = grp(J.torso, sx * 0.31, 0.44, 0);
+  a.add(mesh(new THREE.CylinderGeometry(0.08, 0.07, 0.34, 8), CM.tunic, 0, -0.15, 0));
+  a.add(mesh(new THREE.SphereGeometry(0.09, 10, 8), CM.skin, 0, -0.36, 0));
+  if (sx > 0) J.armL = a; else J.armR = a;
+  const l = grp(J.hips, sx * 0.13, 0, 0);
+  l.add(mesh(new THREE.CylinderGeometry(0.095, 0.085, 0.4, 8), CM.pants, 0, -0.2, 0));
+  l.add(mesh(new THREE.BoxGeometry(0.18, 0.15, 0.27), CM.boots, 0, -0.47, 0.035));
+  if (sx > 0) J.legL = l; else J.legR = l;
+}
+
+function setFace(mode){
+  J.eyes3d.visible = mode === '3d';
+  J.decal.visible = mode === 'uv';
+}
+
+function walkPose(ph){
+  const s = Math.sin(TAU * ph), a = Math.abs(s);
+  const swing = 0.6 * s;
+  J.legL.rotation.x = -swing; J.legR.rotation.x = swing;
+  J.armL.rotation.set(s * 0.75, 0, 0.1);
+  J.armR.rotation.set(-s * 0.75, 0, -0.1);
+  J.hips.position.y = LEG_LEN * Math.cos(swing) + 0.005;
+  J.hips.rotation.y = s * 0.1;
+  J.torso.position.y = 0;
+  J.torso.rotation.set(0.1, -s * 0.18, 0);
+  J.head.rotation.set(-0.06, s * 0.08, 0);
+  J.tail.rotation.set(0.75 + (1 - a) * 0.25, 0, s * 0.15);
+}
+function idlePose(b){
+  J.legL.rotation.x = 0; J.legR.rotation.x = 0;
+  J.armL.rotation.set(0, 0, 0.1 + b * 0.03);
+  J.armR.rotation.set(0, 0, -0.1 - b * 0.03);
+  J.hips.position.y = LEG_LEN; J.hips.rotation.y = 0;
+  J.torso.position.y = -(0.5 - 0.5 * b) * 0.05;
+  J.torso.rotation.set(0.02, 0, 0);
+  J.head.rotation.set(0.04 * b, 0, 0);
+  J.tail.rotation.set(0.18 + b * 0.05, 0, 0);
+}
+
+/* ================= フィールド（3D） ================= */
+const worldScene = new THREE.Scene();
+const WM = {
+  grass:toonMat(0x6aa84f, {noise:0.16, recv:1}),
+  dirt:toonMat(0xc9a36b, {noise:0.14, recv:1}),
+  cobble:toonMat(0xb9b2a3, {noise:0.22, recv:1}),
+  wall:toonMat(0xeadcc0, {noise:0.05}),
+  roofR:toonMat(0xc2493b, {noise:0.08}),
+  roofB:toonMat(0x4a6fb3, {noise:0.08}),
+  wood:toonMat(0x8a5a36, {noise:0.05}),
+  window:toonMat(0xf3d77a),
+  brick:toonMat(0xa8574a, {noise:0.1}),
+  leaf:toonMat(0x3f8a45, {noise:0.12}),
+  bush:toonMat(0x5fa24a, {noise:0.12}),
+  stone:toonMat(0x9a9a9f, {noise:0.1}),
+  water:toonMat(0x4aa3d8, {noise:0.12}),
+  cliff:toonMat(0x8c7a68, {noise:0.14}),
+  fPink:toonMat(0xf28bb5), fYel:toonMat(0xf5d04a), fWht:toonMat(0xf4f1ea),
+};
+const COL = { circles:[], rects:[] };
+const addRect = (x0, z0, x1, z1) => COL.rects.push({x0, z0, x1, z1});
+const addCirc = (x, z, r) => COL.circles.push({x, z, r});
+
+function mulberry32(a){ return () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+const rnd = mulberry32(11);
+
+const G = {
+  box:new THREE.BoxGeometry(1, 1, 1),
+  cyl:new THREE.CylinderGeometry(1, 1, 1, 12),
+  cyl6:new THREE.CylinderGeometry(1, 1, 1, 6),
+  sph:new THREE.SphereGeometry(1, 8, 6),
+  ico:new THREE.IcosahedronGeometry(1, 0),
+  ico1:new THREE.IcosahedronGeometry(1, 1),
+  dod:new THREE.DodecahedronGeometry(1, 0),
+  plane:new THREE.PlaneGeometry(1, 1).rotateX(-Math.PI / 2),
+  circle:new THREE.CircleGeometry(1, 28).rotateX(-Math.PI / 2),
+};
+function roofGeo(w, h, d){
+  const s = new THREE.Shape();
+  s.moveTo(-w / 2, 0); s.lineTo(w / 2, 0); s.lineTo(0, h); s.closePath();
+  const g = new THREE.ExtrudeGeometry(s, { depth:d, bevelEnabled:false });
+  g.translate(0, 0, -d / 2);
+  g.rotateY(Math.PI / 2);
+  return g;
+}
+const ROOF = roofGeo(3.9, 1.5, 4.6);
+const WELL_ROOF = roofGeo(1.5, 0.6, 1.7);
+
+const staticParts = new Map();
+const _o = new THREE.Object3D();
+function put(geo, m, x, y, z, ry=0, sx=1, sy=1, sz=1){
+  _o.position.set(x, y, z); _o.rotation.set(0, ry, 0); _o.scale.set(sx, sy, sz); _o.updateMatrix();
+  let g = geo.clone().applyMatrix4(_o.matrix);
+  if (g.index) g = g.toNonIndexed();
+  if (!staticParts.has(m)) staticParts.set(m, []);
+  staticParts.get(m).push(g);
+}
+function mergeGeos(list){
+  let total = 0;
+  list.forEach(g => total += g.attributes.position.count);
+  const pos = new Float32Array(total * 3), nor = new Float32Array(total * 3);
+  let o = 0;
+  list.forEach(g => {
+    pos.set(g.attributes.position.array, o * 3);
+    nor.set(g.attributes.normal.array, o * 3);
+    o += g.attributes.position.count;
+  });
+  const m = new THREE.BufferGeometry();
+  m.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  m.setAttribute('normal', new THREE.BufferAttribute(nor, 3));
+  return m;
+}
+
+function house(x, z, roof){
+  put(G.box, WM.wall, x, 1.1, z, 0, 4, 2.2, 3.2);
+  put(ROOF, roof, x, 2.2, z);
+  put(G.box, WM.wood, x - 0.7, 0.8, z + 1.62, 0, 0.9, 1.6, 0.12);
+  put(G.box, WM.window, x + 0.95, 1.35, z + 1.62, 0, 0.75, 0.6, 0.08);
+  put(G.box, WM.wood, x + 0.95, 1.0, z + 1.66, 0, 0.9, 0.1, 0.14);
+  put(G.box, WM.brick, x + 1.2, 3.1, z - 0.5, 0, 0.45, 1.1, 0.45);
+  put(G.plane, WM.dirt, x - 0.7, 0.015, z + 2.6, 0, 1.2, 1, 2.0);
+  addRect(x - 2.05, z - 1.65, x + 2.05, z + 1.65);
+}
+function tree(x, z, s=1, y0=0, col=true){
+  put(G.cyl6, WM.wood, x, y0 + 0.6 * s, z, 0, 0.2 * s, 1.2 * s, 0.2 * s);
+  put(G.ico1, WM.leaf, x, y0 + 1.8 * s, z, rnd() * TAU, 1.0 * s, 0.9 * s, 1.0 * s);
+  put(G.ico, WM.leaf, x + 0.15 * s, y0 + 2.55 * s, z - 0.1 * s, rnd() * TAU, 0.68 * s, 0.62 * s, 0.68 * s);
+  if (col) addCirc(x, z, 0.45 * s);
+}
+function rock(x, z, r){ put(G.dod, WM.stone, x, r * 0.35, z, rnd() * TAU, r, r * 0.75, r); addCirc(x, z, r * 0.9); }
+function bush(x, z, s=1){ put(G.ico1, WM.bush, x, 0.35 * s, z, rnd() * TAU, 0.65 * s, 0.5 * s, 0.65 * s); addCirc(x, z, 0.55 * s); }
+function flowers(x, z, m, n=7){ for (let i = 0; i < n; i++) put(G.sph, m, x + (rnd() - 0.5) * 1.3, 0.07, z + (rnd() - 0.5) * 1.0, 0, 0.08, 0.08, 0.08); }
+function pond(x, z, r){
+  put(G.circle, WM.water, x, 0.025, z, 0, r, 1, r);
+  put(new THREE.TorusGeometry(r, 0.22, 6, 28).rotateX(Math.PI / 2), WM.stone, x, 0.08, z);
+  put(G.circle, WM.bush, x - r * 0.35, 0.035, z + r * 0.2, 0, 0.35, 1, 0.35);
+  put(G.circle, WM.bush, x + r * 0.3, 0.035, z - r * 0.3, 0, 0.28, 1, 0.28);
+  addCirc(x, z, r + 0.15);
+}
+function well(x, z){
+  put(G.cyl, WM.stone, x, 0.4, z, 0, 0.75, 0.8, 0.75);
+  put(G.circle, WM.water, x, 0.805, z, 0, 0.55, 1, 0.55);
+  put(G.box, WM.wood, x - 0.62, 1.3, z, 0, 0.12, 1.8, 0.12);
+  put(G.box, WM.wood, x + 0.62, 1.3, z, 0, 0.12, 1.8, 0.12);
+  put(WELL_ROOF, WM.roofR, x, 2.15, z);
+  addCirc(x, z, 0.85);
+}
+function fence(x0, x1, z){
+  for (let px = x0; px <= x1 + 0.01; px += 1) put(G.box, WM.wood, px, 0.35, z, 0, 0.12, 0.7, 0.12);
+  put(G.box, WM.wood, (x0 + x1) / 2, 0.5, z, 0, x1 - x0, 0.07, 0.06);
+  put(G.box, WM.wood, (x0 + x1) / 2, 0.25, z, 0, x1 - x0, 0.07, 0.06);
+  addRect(x0 - 0.1, z - 0.12, x1 + 0.1, z + 0.12);
+}
+function plateau(x0, z0, x1, z1, h){
+  const cx = (x0 + x1) / 2, cz = (z0 + z1) / 2, w = x1 - x0, d = z1 - z0;
+  put(G.box, WM.cliff, cx, h / 2, cz, 0, w, h, d);
+  put(G.plane, WM.grass, cx, h + 0.002, cz, 0, w, 1, d);
+  for (let x = x0 + 0.6; x < x1; x += 1.4 + rnd()) put(G.dod, WM.cliff, x, 0.3, z1 + 0.15, rnd() * TAU, 0.5, 0.45, 0.4);
+  addRect(x0, z0, x1, z1 + 0.4);
+}
+function sign(x, z){
+  put(G.box, WM.wood, x, 0.5, z, 0, 0.1, 1, 0.1);
+  put(G.box, WM.wood, x, 0.95, z + 0.02, 0, 0.8, 0.4, 0.08);
+  addCirc(x, z, 0.2);
+}
+
+function buildWorld(){
+  put(G.plane, WM.grass, 0, 0, 0, 0, 140, 1, 140);
+  put(G.plane, WM.dirt, 0, 0.01, 0, 0, 48, 1, 2.4);
+  put(G.plane, WM.dirt, 0, 0.011, 0, 0, 2.4, 1, 48);
+  put(G.circle, WM.cobble, 0, 0.02, 0, 0, 3.4, 1, 3.4);
+  well(2.2, -2.2);
+  sign(-1.9, 1.9);
+  house(-6.5, -6.5, WM.roofR);
+  house(6.5, -6.5, WM.roofB);
+  house(-7, 6.5, WM.roofB);
+  pond(9, 9, 2.6);
+  fence(4.5, 13.5, 13.2);
+  plateau(-18, -22, -8, -14, 1.8);
+  tree(-15.5, -19.5, 1.0, 1.8, false); tree(-11, -18, 0.9, 1.8, false); tree(-13.5, -16, 0.8, 1.8, false);
+  [[-12,-9],[12,-10.5],[14,4],[-14,9.5],[-3.5,13],[3,15.5],[-15.5,-3.5],[16.5,-3.5],[-10,15],[17,12]]
+    .forEach(([x, z]) => tree(x, z, 0.9 + rnd() * 0.3));
+  for (let i = 0; i < 260; i++) {
+    const x = (rnd() - 0.5) * 68, z = (rnd() - 0.5) * 68;
+    if (Math.max(Math.abs(x), Math.abs(z)) > 22.5) tree(x, z, 0.85 + rnd() * 0.35);
+  }
+  [[-4.0,-4.4],[9.1,-4.5],[-4.4,8.7],[-9.3,8.6]].forEach(([x, z]) => bush(x, z, 0.9 + rnd() * 0.2));
+  [[11,-11,0.6],[-11,12,0.5],[4.5,-12,0.55],[-2.5,-16,0.45],[17,8,0.6],[-17,4,0.5]].forEach(([x, z, r]) => rock(x, z, r));
+  flowers(-2.8, 4.5, WM.fPink); flowers(3.2, 4.0, WM.fYel); flowers(-10, 2.6, WM.fWht);
+  flowers(10, -2.6, WM.fPink); flowers(6, 10.8, WM.fYel); flowers(-5, -10.5, WM.fWht);
+  flowers(13, 6.5, WM.fWht); flowers(-13, -6, WM.fYel);
+
+  staticParts.forEach((list, m) => {
+    const me = new THREE.Mesh(mergeGeos(list), m);
+    me.frustumCulled = false;
+    worldScene.add(me);
+  });
+}
+buildWorld();
+
+function blocked(x, z){
+  if (Math.abs(x) > 21 || Math.abs(z) > 21) return true;
+  for (const c of COL.circles) { const dx = x - c.x, dz = z - c.z, r = c.r + PLAYER_R; if (dx * dx + dz * dz < r * r) return true; }
+  for (const r of COL.rects) if (x > r.x0 - PLAYER_R && x < r.x1 + PLAYER_R && z > r.z0 - PLAYER_R && z < r.z1 + PLAYER_R) return true;
+  return false;
+}
+
+/* ================= パレット・グリフ ================= */
+const PAL_N = Math.min(128, palette.length);
+const palData = new Uint8Array(PAL_N * 4);
+for (let i = 0; i < PAL_N; i++) {
+  palData[i * 4] = Math.round(palette[i].r * 255);
+  palData[i * 4 + 1] = Math.round(palette[i].g * 255);
+  palData[i * 4 + 2] = Math.round(palette[i].b * 255);
+  palData[i * 4 + 3] = 255;
+}
+const palTex = new THREE.DataTexture(palData, PAL_N, 1, THREE.RGBAFormat);
+palTex.minFilter = palTex.magFilter = THREE.NearestFilter;
+palTex.needsUpdate = true;
+
+let glyph = GLYPHS[32], glyphTex = null;
+function makeGlyphTex(S){
+  glyph = GLYPHS[S];
+  const c = document.createElement('canvas');
+  c.width = glyph.w * 3; c.height = glyph.h;
+  const g = c.getContext('2d');
+  [glyph.full, glyph.narrow, glyph.mouth].forEach((rows, cell) => {
+    if (!rows) return;
+    rows.forEach((row, y) => [...row].forEach((ch, x) => {
+      if (GLYPH_COLORS[ch]) { g.fillStyle = GLYPH_COLORS[ch]; g.fillRect(cell * glyph.w + x, y, 1, 1); }
+    }));
+  });
+  if (glyphTex) glyphTex.dispose();
+  glyphTex = new THREE.CanvasTexture(c);
+  glyphTex.minFilter = glyphTex.magFilter = THREE.NearestFilter;
+  glyphTex.generateMipmaps = false;
+  postMat.uniforms.tGlyph.value = glyphTex;
+  postMat.uniforms.uGlyph.value.set(glyph.w, glyph.h);
+}
+
+/* ================= ポストプロセス ================= */
+const ndWorld = new THREE.ShaderMaterial({ uniforms:{ uId:{value:1} }, vertexShader:TOON_VS, fragmentShader:ND_FS, side:THREE.DoubleSide });
+const ndChar = new THREE.ShaderMaterial({ uniforms:{ uId:{value:2} }, vertexShader:TOON_VS, fragmentShader:ND_FS, side:THREE.DoubleSide });
+const postMat = new THREE.ShaderMaterial({
+  uniforms:{
+    tColor:{value:null}, tHi:{value:null}, tND:{value:null}, tPal:{value:palTex}, tGlyph:{value:null},
+    uRes:{value:new THREE.Vector2(1, 1)}, uF1:{value:1}, uF2:{value:1}, uF3:{value:1}, uNDOn:{value:1},
+    uPalN:{value:PAL_N}, uLightDir:shared.uLightDir, uRange:{value:1}, uTexel:{value:0.1},
+    uStamp:{value:0}, uGlyph:{value:new THREE.Vector2(1, 1)},
+    uEye0:{value:new THREE.Vector3(0, 0, -1)}, uEye1:{value:new THREE.Vector3(0, 0, -1)}, uMouth:{value:new THREE.Vector3(0, 0, -1)}
+  },
+  vertexShader:POST_VS, fragmentShader:POST_FS, depthTest:false, depthWrite:false
+});
+const postScene = new THREE.Scene();
+const postQuad = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), postMat);
+postQuad.frustumCulled = false;
+postScene.add(postQuad);
+const postCam = new THREE.Camera();
+
+function mkRT(w, h){
+  return new THREE.WebGLRenderTarget(w, h, {
+    minFilter:THREE.NearestFilter, magFilter:THREE.NearestFilter,
+    format:THREE.RGBAFormat, depthBuffer:true, stencilBuffer:false, generateMipmaps:false
+  });
+}
+let rtLo, rtHi, rtND, cmpRT;          // キャラ単体用（S×S）
+let rtWLo, rtWHi, rtWND;              // フィールド用（W×H）
+
+function pass(scene, cam, target, clear, override){
+  renderer.setRenderTarget(target);
+  if (clear) { renderer.setClearColor(0x000000, 0); renderer.clear(); }
+  scene.overrideMaterial = override || null;
+  renderer.render(scene, cam);
+  scene.overrideMaterial = null;
+}
+function setPost(o, lo, hi, nd, rx, ry, range, ndOn){
+  const u = postMat.uniforms;
+  u.tColor.value = lo.texture; u.tHi.value = hi.texture; u.tND.value = nd.texture;
+  u.uRes.value.set(rx, ry);
+  u.uF1.value = o.f1 ? 1 : 0; u.uF2.value = o.f2 ? 1 : 0; u.uF3.value = o.f3 ? 1 : 0;
+  u.uNDOn.value = ndOn ? 1 : 0;
+  u.uRange.value = range; u.uTexel.value = texel();
+}
+
+/* ---- ドット顔：目と口の位置を3Dから求める ---- */
+const _v = new THREE.Vector3(), _c = new THREE.Vector3();
+function computeStamps(cam, rx, ry, face){
+  const u = postMat.uniforms;
+  if (face !== 'pixel') { u.uStamp.value = 0; return; }
+  u.uStamp.value = 1;
+  J.root.updateMatrixWorld(true);
+  J.headC.getWorldPosition(_c);
+  const place = (anchor, target, pick) => {
+    anchor.getWorldPosition(_v);
+    const facing = _v.clone().sub(_c).normalize().dot(CAM_DIR);
+    const g = pick(facing);
+    _v.project(cam);
+    const px = (_v.x * 0.5 + 0.5) * rx, py = (_v.y * 0.5 + 0.5) * ry;
+    target.set(Math.round(px - glyph.w / 2), Math.round(py - glyph.h / 2), g);
+  };
+  const eyePick = f => f > 0.5 ? 0 : (f > 0.12 ? 1 : -1);
+  place(J.eyeA[0], u.uEye0.value, eyePick);
+  place(J.eyeA[1], u.uEye1.value, eyePick);
+  place(J.mouthA, u.uMouth.value, f => (glyph.mouth && f > 0.55) ? 2 : -1);
+}
+
+/* ---- キャラ単体（比較・焼き出し用） ---- */
+const charCam = new THREE.OrthographicCamera(-FR, FR, FR, -FR, SPRITE_NEAR, SPRITE_FAR);
+function positionCharCam(subX, subY){
+  charCam.position.copy(CAM_TARGET).addScaledVector(CAM_DIR, 5);
+  charCam.lookAt(CAM_TARGET);
+  charCam.translateX(-subX * texel());
+  charCam.translateY(subY * texel());
+  charCam.updateMatrixWorld();
+}
+function renderSprite(o, target){
+  const S = state.S;
+  J.root.position.set(0, 0, 0);
+  J.root.rotation.y = o.angle;
+  setFace(o.face);
+  shared.uToon.value = o.f1 ? 1 : 0;
+  shared.uBlob.value.set(0, 0, 0);
+  positionCharCam(o.subX, o.subY);
+  shared.uLightDir.value.copy(LIGHT_W).transformDirection(charCam.matrixWorldInverse);
+  const needND = o.f3 || o.face === 'pixel';
+  pass(charScene, charCam, o.f2 ? rtLo : rtHi, true);
+  if (needND) pass(charScene, charCam, rtND, true, ndChar);
+  setPost(o, rtLo, rtHi, rtND, S, S, SPRITE_FAR - SPRITE_NEAR, needND);
+  computeStamps(charCam, S, S, o.face);
+  renderer.setRenderTarget(target);
+  renderer.setClearColor(0x000000, 0); renderer.clear();
+  renderer.render(postScene, postCam);
+  renderer.setRenderTarget(null);
+}
+
+/* ---- フィールド＋キャラ（メイン画面） ---- */
+let W = 100, H = 100;
+const worldCam = new THREE.OrthographicCamera(-1, 1, 1, -1, WORLD_NEAR, WORLD_FAR);
+function updateWorldFrustum(){
+  const tx = texel();
+  worldCam.left = -W * tx / 2; worldCam.right = W * tx / 2;
+  worldCam.top = H * tx / 2; worldCam.bottom = -H * tx / 2;
+  worldCam.updateProjectionMatrix();
+}
+function renderWorld(o, X, Z, camX, camYup){
+  const tx = texel();
+  shared.uToon.value = o.f1 ? 1 : 0;
+  shared.uBlob.value.set(X, Z, 0.42);
+  worldCam.position.copy(CAM_DIR).multiplyScalar(WORLD_DIST);
+  worldCam.lookAt(0, 0, 0);
+  worldCam.translateX(camX * tx);
+  worldCam.translateY(camYup * tx);
+  worldCam.updateMatrixWorld();
+  shared.uLightDir.value.copy(LIGHT_W).transformDirection(worldCam.matrixWorldInverse);
+  const needND = o.f3 || o.face === 'pixel';
+  const colorRT = o.f2 ? rtWLo : rtWHi;
+  pass(worldScene, worldCam, colorRT, true);
+  pass(charScene, worldCam, colorRT, false);
+  if (needND) {
+    pass(worldScene, worldCam, rtWND, true, ndWorld);
+    pass(charScene, worldCam, rtWND, false, ndChar);
+  }
+  setPost(o, rtWLo, rtWHi, rtWND, W, H, WORLD_FAR - WORLD_NEAR, needND);
+  computeStamps(worldCam, W, H, o.face);
+  renderer.setRenderTarget(null);
+  renderer.setClearColor(0x000000, 1); renderer.clear();
+  renderer.render(postScene, postCam);
+}
+
+/* ================= 比較ストリップ ================= */
+function makeStrip(el, items){
+  return items.map(it => {
+    const cell = document.createElement('div'); cell.className = 'cell';
+    const cv = document.createElement('canvas');
+    cell.appendChild(cv);
+    const lb = document.createElement('div'); lb.textContent = it.label;
+    cell.appendChild(lb);
+    el.appendChild(cell);
+    return { cv, ctx:cv.getContext('2d') };
+  });
+}
+const stageCells = makeStrip(document.getElementById('stageStrip'), STAGES);
+const faceCells = makeStrip(document.getElementById('faceStrip'), FACES);
+let pixBuf = null;
+function blit(rt, ctx, S, dx, dy){
+  const n = S * S * 4;
+  if (!pixBuf || pixBuf.length !== n) pixBuf = new Uint8Array(n);
+  renderer.readRenderTargetPixels(rt, 0, 0, S, S, pixBuf);
+  const img = ctx.createImageData(S, S);
+  for (let y = 0; y < S; y++) {
+    const src = (S - 1 - y) * S * 4;
+    img.data.set(pixBuf.subarray(src, src + S * 4), y * S * 4);
+  }
+  ctx.putImageData(img, dx, dy);
+}
+
+/* ================= 再構築・リサイズ ================= */
+function rebuild(){
+  const S = state.S;
+  [rtLo, rtHi, rtND, cmpRT].forEach(r => r && r.dispose());
+  rtLo = mkRT(S, S); rtHi = mkRT(S * 4, S * 4); rtND = mkRT(S, S); cmpRT = mkRT(S, S);
+  shared.uNoiseScale.value = 1 / (2 * texel());
+  makeGlyphTex(S);
+  updateWorldFrustum();
+  const dpr = window.devicePixelRatio || 1;
+  const dev = Math.max(1, Math.round(80 * dpr / S));
+  [...stageCells, ...faceCells].forEach(c => {
+    c.cv.width = S; c.cv.height = S;
+    c.cv.style.width = c.cv.style.height = (S * dev / dpr) + 'px';
+    c.ctx.clearRect(0, 0, S, S);
+  });
+}
+function resize(){
+  const r = stage.getBoundingClientRect();
+  const dpr = window.devicePixelRatio || 1;
+  const dev = Math.max(1, Math.round(state.dot * dpr));   // 1ドット＝整数デバイスピクセル
+  const css = dev / dpr;
+  W = Math.max(16, Math.floor(r.width / css));
+  H = Math.max(16, Math.floor(r.height / css));
+  renderer.setSize(W, H, false);
+  const cw = W * css, ch = H * css;
+  // キャンバスの左上をデバイスピクセル境界に揃える
+  const left = Math.round((r.left + (r.width - cw) / 2) * dpr) / dpr - r.left;
+  const top = Math.round((r.top + (r.height - ch) / 2) * dpr) / dpr - r.top;
+  canvas.style.width = cw + 'px'; canvas.style.height = ch + 'px';
+  canvas.style.left = left + 'px'; canvas.style.top = top + 'px';
+  [rtWLo, rtWHi, rtWND].forEach(t => t && t.dispose());
+  rtWLo = mkRT(W, H); rtWHi = mkRT(W * 4, H * 4); rtWND = mkRT(W, H);
+  updateWorldFrustum();
+}
+new ResizeObserver(resize).observe(stage);
+
+/* ================= 入力 ================= */
+const keys = new Set();
+const KEYMAP = { ArrowUp:'u', KeyW:'u', ArrowDown:'d', KeyS:'d', ArrowLeft:'l', KeyA:'l', ArrowRight:'r', KeyD:'r' };
+addEventListener('keydown', e => { if (KEYMAP[e.code]) { keys.add(KEYMAP[e.code]); e.preventDefault(); } });
+addEventListener('keyup', e => { if (KEYMAP[e.code]) keys.delete(KEYMAP[e.code]); });
+addEventListener('blur', () => keys.clear());
+
+const joyEl = document.getElementById('joy'), knob = document.getElementById('knob'), hint = document.getElementById('hint');
+let joy = null;
+stage.addEventListener('pointerdown', e => {
+  stage.setPointerCapture(e.pointerId);
+  const r = stage.getBoundingClientRect();
+  joy = { id:e.pointerId, ox:e.clientX, oy:e.clientY, x:0, y:0 };
+  joyEl.style.left = (e.clientX - r.left) + 'px';
+  joyEl.style.top = (e.clientY - r.top) + 'px';
+  joyEl.style.display = 'block';
+  knob.style.transform = '';
+  hint.style.opacity = 0;
+});
+stage.addEventListener('pointermove', e => {
+  if (!joy || e.pointerId !== joy.id) return;
+  let x = (e.clientX - joy.ox) / 40, y = (e.clientY - joy.oy) / 40;
+  const l = Math.hypot(x, y);
+  if (l > 1) { x /= l; y /= l; }
+  joy.x = x; joy.y = y;
+  knob.style.transform = `translate(${x * 30}px,${y * 30}px)`;
+});
+const endJoy = e => { if (joy && e.pointerId === joy.id) { joy = null; joyEl.style.display = 'none'; } };
+stage.addEventListener('pointerup', endJoy);
+stage.addEventListener('pointercancel', endJoy);
+
+let lastUser = -1e9;
+function inputVec(now){
+  let x = 0, y = 0;
+  if (keys.has('l')) x -= 1; if (keys.has('r')) x += 1;
+  if (keys.has('u')) y -= 1; if (keys.has('d')) y += 1;
+  if (joy) { x += joy.x; y += joy.y; }
+  let len = Math.hypot(x, y);
+  if (len > 1) { x /= len; y /= len; len = 1; }
+  if (len > 0.15) { lastUser = now; hint.style.opacity = 0; }
+  return { x, y, len };
+}
+
+/* ---- 自動歩行（道に沿った巡回） ---- */
+const WP = [[0,2,0],[0,-10,0],[-3.5,-3.5,0],[-12,0,1],[12,0,0],[4,8,1],[0,0,0]];
+const auto = { i:1, wait:0, stuck:0 };
+function autoVec(dt){
+  if (auto.wait > 0) { auto.wait -= dt; return { x:0, y:0, len:0 }; }
+  const [tx, tz] = WP[auto.i];
+  const dx = tx - player.x, dz = tz - player.z;
+  if (Math.hypot(dx, dz) < 0.3 || auto.stuck > 1.5) {
+    if (WP[auto.i][2]) auto.wait = 1.4;
+    auto.i = (auto.i + 1) % WP.length;
+    auto.stuck = 0;
+    return { x:0, y:0, len:0 };
+  }
+  const sx = dx, sy = dz * SINP, l = Math.hypot(sx, sy);
+  return { x:sx / l, y:sy / l, len:1 };
+}
+
+/* ================= UI ================= */
+function setSwitch(el, on){ el.classList.toggle('on', on); el.setAttribute('aria-checked', on ? 'true' : 'false'); }
+document.querySelectorAll('.step').forEach(b => {
+  b.addEventListener('click', () => { const k = b.dataset.k; state[k] = !state[k]; setSwitch(b, state[k]); });
+});
+document.querySelectorAll('#segS button').forEach(b => {
+  b.addEventListener('click', () => {
+    state.S = +b.dataset.s;
+    document.querySelectorAll('#segS button').forEach(x => x.classList.toggle('on', x === b));
+    rebuild();
+  });
+});
+document.querySelectorAll('#segFace button').forEach(b => {
+  b.addEventListener('click', () => {
+    state.face = b.dataset.f;
+    document.querySelectorAll('#segFace button').forEach(x => x.classList.toggle('on', x === b));
+  });
+});
+const dotIn = document.getElementById('dot'), dotVal = document.getElementById('dotVal');
+dotIn.addEventListener('input', () => { state.dot = +dotIn.value; dotVal.textContent = state.dot; resize(); });
+const tgAuto = document.getElementById('tgAuto'), tgCmp = document.getElementById('tgCmp');
+tgAuto.addEventListener('click', () => { state.auto = !state.auto; setSwitch(tgAuto, state.auto); });
+tgCmp.addEventListener('click', () => { state.compare = !state.compare; setSwitch(tgCmp, state.compare); });
+
+/* ================= 焼き出し ================= */
+const dlg = document.getElementById('dlg'), sheet = document.getElementById('sheet');
+const sheetCtx = sheet.getContext('2d');
+document.getElementById('closeDlg').addEventListener('click', () => dlg.close());
+document.getElementById('bake').addEventListener('click', () => {
+  const S = state.S;
+  sheet.width = S * 4; sheet.height = S * 8;
+  sheetCtx.clearRect(0, 0, sheet.width, sheet.height);
+  for (let d = 0; d < 8; d++) {
+    for (let k = 0; k < 4; k++) {
+      walkPose(k / 4);
+      renderSprite({ f1:state.f1, f2:state.f2, f3:state.f3, face:state.face, angle:d * TAU / 8, subX:0, subY:0 }, cmpRT);
+      blit(cmpRT, sheetCtx, S, k * S, d * S);
+    }
+  }
+  const dpr = window.devicePixelRatio || 1;
+  const maxCss = Math.min(innerWidth * 0.86, 640);
+  const dev = Math.max(1, Math.floor(Math.min(maxCss / (S * 4), (innerHeight * 0.6) / (S * 8)) * dpr));
+  sheet.style.width = (S * 4 * dev / dpr) + 'px';
+  sheet.style.height = (S * 8 * dev / dpr) + 'px';
+  document.getElementById('dl').href = sheet.toDataURL('image/png');
+  document.getElementById('sheetInfo').textContent = `${S * 4}×${S * 8}px／行：下・右下・右・右上・上・左上・左・左下`;
+  dlg.showModal();
+});
+
+/* ================= メインループ ================= */
+const player = { x:0, z:2 };
+let phase = 0, idleT = 0, moving = false, smoothA = 0, snapA = 0;
+let frameN = 0, fps = 60, lastT = performance.now();
+const hud = document.getElementById('hud');
+
+function lerpAngle(a, b, t){
+  const d = ((b - a + Math.PI) % TAU + TAU) % TAU - Math.PI;
+  return a + d * t;
+}
+function applyPose(stepped){
+  if (moving) walkPose(stepped ? Math.floor(phase * 4) / 4 : phase);
+  else idlePose(stepped ? ((Math.floor(idleT / 0.6) % 2) ? 1 : -1) : Math.sin(idleT * TAU / 1.2));
+}
+function tryMove(dx, dz){
+  const nx = player.x + dx, nz = player.z + dz;
+  if (!blocked(nx, nz)) { player.x = nx; player.z = nz; return true; }
+  if (dx && !blocked(nx, player.z)) { player.x = nx; return true; }
+  if (dz && !blocked(player.x, nz)) { player.z = nz; return true; }
+  return false;
+}
+
+function frame(now){
+  requestAnimationFrame(frame);
+  const dt = Math.min(0.05, (now - lastT) / 1000);
+  lastT = now;
+  fps = fps * 0.93 + (1 / Math.max(dt, 1e-3)) * 0.07;
+
+  let v = inputVec(now);
+  const isAuto = v.len < 0.15 && state.auto && now - lastUser > 3000;
+  if (isAuto) v = autoVec(dt);
+  moving = v.len > 0.15;
+  if (moving) {
+    // 画面上の速度が縦横で揃うよう、奥行き方向はsin(見下ろし角)で割る
+    const ok = tryMove(v.x * WALK_V * dt, v.y * WALK_V / SINP * dt);
+    if (isAuto) auto.stuck = ok ? 0 : auto.stuck + dt;
+    const target = Math.atan2(v.x, v.y);
+    snapA = Math.round(target / (TAU / 8)) * (TAU / 8);
+    smoothA = lerpAngle(smoothA, target, 1 - Math.exp(-dt * 12));
+    phase = (phase + dt / CYCLE) % 1;
+    idleT = 0;
+  } else {
+    idleT += dt; phase = 0;
+  }
+
+  const S = state.S, st = state.f4, tx = texel();
+  const px = player.x / tx, py = player.z * SINP / tx;   // 画面ピクセル座標（下向き正）
+  const cx = Math.round(px), cy = Math.round(py);
+  let X, Z;
+  if (st) { X = cx * tx; Z = cy * tx / SINP; }           // キャラ位置もピクセル格子へ
+  else { X = player.x; Z = player.z; }
+
+  // メイン：フィールド＋キャラ
+  setFace(state.face);
+  applyPose(st);
+  J.root.position.set(X, 0, Z);
+  J.root.rotation.y = st ? snapA : smoothA;
+  const upOff = Math.round(0.9 * COSP / tx);
+  renderWorld({ f1:state.f1, f2:state.f2, f3:state.f3, face:state.face }, X, Z, cx, -cy + upOff);
+
+  // 比較（偶数フレーム：段階、奇数フレーム：顔）
+  if (state.compare) {
+    const subX = px - Math.floor(px), subY = py - Math.floor(py);
+    if (frameN % 2 === 0) {
+      STAGES.forEach((stg, i) => {
+        const f = stg.f;
+        applyPose(!!f[3]);
+        renderSprite({
+          f1:!!f[0], f2:!!f[1], f3:!!f[2], face:state.face, angle:f[3] ? snapA : smoothA,
+          subX:f[3] ? 0 : subX, subY:f[3] ? 0 : subY
+        }, cmpRT);
+        blit(cmpRT, stageCells[i].ctx, S, 0, 0);
+      });
+    } else {
+      applyPose(true);
+      FACES.forEach((fc, i) => {
+        renderSprite({ f1:true, f2:true, f3:true, face:fc.k, angle:snapA, subX:0, subY:0 }, cmpRT);
+        blit(cmpRT, faceCells[i].ctx, S, 0, 0);
+      });
+    }
+  }
+
+  if (frameN % 10 === 0) {
+    const di = ((Math.round(snapA / (TAU / 8)) % 8) + 8) % 8;
+    hud.textContent = `${S}px／ドット×${state.dot}／${Math.round(fps)}fps／向き：${DIR_NAMES[di]}`;
+  }
+  frameN++;
+}
+
+rebuild();
+resize();
+requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
