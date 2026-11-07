@@ -1,5 +1,7 @@
 name: Pages - candidate or promote
 on:
+  issue_comment:
+    types: [created]
   workflow_dispatch:
     inputs:
       operation:
@@ -15,23 +17,57 @@ on:
         description: '昇格する候補のビルドID（入口からコピー）'
         type: string
       iphone_approved:
-        description: '依頼者本人がiPhone実機で確認し、このビルドの昇格を明示承認する'
+        description: '対象ビルドのiPhone実機確認・昇格承認を依頼者から受領済み'
         type: boolean
         default: false
+      approval_by:
+        description: '承認者のGitHub名（現在はformulaText）'
+        type: string
+      approval_text:
+        description: '対象ビルドIDを含む受領した承認原文'
+        type: string
+      approval_source:
+        description: '承認元URL、またはCodexへの依頼日時・文脈（秘密情報を含めない）'
+        type: string
+      executor_label:
+        description: '実行経路'
+        type: choice
+        options: [GitHub, Codex]
+        default: GitHub
 permissions:
   contents: read
-# 候補のビルドから状態保存・Pages配信までを直列化する。
-concurrency:
-  group: pixel-rig-pages
-  cancel-in-progress: false
 jobs:
+  request:
+    if: >-
+      github.ref == 'refs/heads/main' &&
+      (github.event_name == 'workflow_dispatch' ||
+       (github.event.issue.pull_request && startsWith(github.event.comment.body, '/pixel-rig-pages ')))
+    runs-on: ubuntu-24.04
+    outputs:
+      request: ${{ steps.request.outputs.request }}
+      operation: ${{ steps.request.outputs.operation }}
+      source_ref: ${{ steps.request.outputs.source_ref }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version-file: .nvmrc
+      - name: Validate executor and approval receipt
+        id: request
+        env:
+          PAGES_EXECUTORS: ${{ vars.PAGES_EXECUTORS }}
+        run: node scripts/pages-request.mjs
   build:
-    if: github.ref == 'refs/heads/main' && inputs.operation == 'candidate'
+    needs: request
+    if: needs.request.outputs.operation == 'candidate'
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
-          ref: ${{ inputs.source_ref }}
+          ref: ${{ needs.request.outputs.source_ref }}
           persist-credentials: false
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
@@ -47,11 +83,15 @@ jobs:
           retention-days: 1
           if-no-files-found: error
   publish:
-    needs: build
+    # 認可済み要求だけを直列化し、通常のPRコメントが待機中の配信を置換しない。
+    concurrency:
+      group: pixel-rig-pages
+      cancel-in-progress: false
+    needs: [request, build]
     if: >-
-      always() && !cancelled() && github.ref == 'refs/heads/main' &&
-      ((inputs.operation == 'candidate' && needs.build.result == 'success') ||
-       (inputs.operation == 'promote' && inputs.iphone_approved && github.actor == github.repository_owner && github.triggering_actor == github.repository_owner))
+      always() && !cancelled() && needs.request.result == 'success' &&
+      ((needs.request.outputs.operation == 'candidate' && needs.build.result == 'success') ||
+       needs.request.outputs.operation == 'promote')
     runs-on: ubuntu-24.04
     permissions:
       contents: write
@@ -71,6 +111,7 @@ jobs:
         with:
           node-version-file: .nvmrc
       - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
+        id: pages
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           ref: ${{ github.sha }}
@@ -88,8 +129,17 @@ jobs:
             git checkout --orphan pages-state
             git rm -rf .
           fi
+      - name: Verify current public site before mutation
+        if: github.run_attempt == 1
+        env:
+          SITE_DIR: work/state
+          PUBLIC_URL: ${{ steps.pages.outputs.base_url }}/
+        run: |
+          if [ -f work/state/site.json ]; then
+            node scripts/verify-public-site.mjs
+          fi
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
-        if: inputs.operation == 'candidate'
+        if: needs.request.outputs.operation == 'candidate'
         with:
           name: candidate
           path: work/candidate
@@ -97,11 +147,9 @@ jobs:
         env:
           SITE_DIR: work/state
           CANDIDATE_DIR: work/candidate
-          OPERATION: ${{ inputs.operation }}
-          EXPECTED_BUILD_ID: ${{ inputs.expected_build_id }}
-          APPROVED: ${{ inputs.iphone_approved }}
-          ACTOR: ${{ github.actor }}
-          OWNER: ${{ github.repository_owner }}
+          PAGES_REQUEST: ${{ needs.request.outputs.request }}
+          CURRENT_TRIGGERING_ACTOR: ${{ github.triggering_actor }}
+          PAGES_EXECUTORS: ${{ vars.PAGES_EXECUTORS }}
         run: node scripts/site.mjs
       - name: Save durable state before deployment
         working-directory: work/state
@@ -122,3 +170,8 @@ jobs:
       - name: Deploy entire site
         id: deployment
         uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
+      - name: Verify deployed build IDs and every published byte
+        env:
+          SITE_DIR: work/upload
+          PUBLIC_URL: ${{ steps.deployment.outputs.page_url }}
+        run: node scripts/verify-public-site.mjs

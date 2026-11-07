@@ -15,7 +15,9 @@ function setup(t) {
   cpSync('dist', candidate, { recursive: true });
   return { site, candidate, operation: 'candidate' };
 }
-const approve = state => ({ operation: 'promote', approved: true, actor: 'owner', owner: 'owner', expectedBuildId: state.candidate.buildId });
+const approve = state => ({ operation: 'promote', approved: true, actor: 'owner', owner: 'owner', expectedBuildId: state.candidate.buildId,
+  approval: { approver: 'owner', buildId: state.candidate.buildId,
+    statement: `ビルド ${state.candidate.buildId} をiPhoneで確認済み。昇格を承認します。`, source: 'Codex依頼 2026-11-07 / テスト用承認' } });
 
 test('初回未確定→明示昇格→候補更新でも確認済み成果物を全バイト保持', t => {
   const options = setup(t);
@@ -51,7 +53,7 @@ test('未承認・他者・候補なし・成果物改変を拒否', t => {
   assert.throws(() => updateSite({ ...options, ...approve({ candidate: { buildId: 'none' } }) }), /ビルドID/);
   const state = updateSite(options);
   assert.throws(() => updateSite({ ...options, ...approve(state), approved: false }), /明示承認/);
-  assert.throws(() => updateSite({ ...options, ...approve(state), actor: 'other' }), /明示承認/);
+  assert.throws(() => updateSite({ ...options, ...approve(state), actor: 'other' }), /実行者/);
   writeFileSync(join(options.candidate, 'index.html'), 'broken');
   assert.throws(() => updateSite(options), /不一致/);
   assert.deepEqual(verifyArtifact(join(options.site, 'candidate')), state.candidate);
@@ -113,4 +115,36 @@ test('ファイルハッシュが正しくても表示と異なるビルドID・
   assert.throws(() => updateSite(options), /識別情報/);
   writeFileSync(join(options.candidate, 'build.json'), JSON.stringify({ ...info, commit: 'a'.repeat(40) }));
   assert.throws(() => updateSite(options), /識別情報/);
+});
+
+test('委任実行の承認者・実行者・原文・受領元を記録し候補の全バイトを昇格', t => {
+  const options = setup(t);
+  const initial = updateSite(options);
+  const delegated = { ...options, ...approve(initial), actor: 'delegate', triggeringActor: 'delegate',
+    delegates: 'delegate', executorLabel: 'Codex', requestUrl: 'https://github.com/o/r/pull/1#issuecomment-2',
+    runUrl: 'https://github.com/o/r/actions/runs/3' };
+  const before = hashes(options.site);
+  for (const invalid of [
+    { approved: false }, { approval: undefined },
+    { approval: { ...delegated.approval, approver: 'delegate' } },
+    { approval: { ...delegated.approval, buildId: 'other' } },
+    { approval: { ...delegated.approval, statement: '' } },
+    { approval: { ...delegated.approval, source: '' } },
+    { delegates: '' }, { triggeringActor: 'stranger' },
+  ]) {
+    assert.throws(() => updateSite({ ...delegated, ...invalid }));
+    assert.deepEqual(hashes(options.site), before);
+  }
+  const promoted = updateSite(delegated);
+  assert.deepEqual(hashes(join(options.site, 'stable')), hashes(join(options.site, 'candidate')));
+  assert.deepEqual(readFileSync(join(options.site, 'stable/build.json')), readFileSync(join(options.site, 'candidate/build.json')));
+  assert.equal(promoted.approval.approver, 'owner');
+  assert.equal(promoted.approval.actor, 'delegate');
+  assert.equal(promoted.approval.triggeringActor, 'delegate');
+  assert.equal(promoted.approval.executorLabel, 'Codex');
+  assert.equal(promoted.approval.statement, delegated.approval.statement);
+  assert.equal(promoted.approval.source, delegated.approval.source);
+  assert.equal(promoted.approval.requestUrl, delegated.requestUrl);
+  assert.equal(promoted.approval.runUrl, delegated.runUrl);
+  assert.deepEqual(updateSite(options).approval, promoted.approval);
 });
