@@ -1,27 +1,142 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="data:," />
-    <title>Pixel Rig — 研究アプリ</title>
-    <script type="module" crossorigin src="./assets/index-BYWyTl4F.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-DCd1FRiJ.css">
-  </head>
-  <body>
-    <main>
-      <a href="../">入口へ戻る</a>
-      <h1>Pixel Rig</h1>
-      <p>研究アプリ · V6-01</p>
-      <p id="status" role="status">起動中…</p>
-      <p>v5の移植はV6-02で行います。このページでは描画・移動・fps測定はまだ行いません。</p>
-      <dl>
-        <dt>ビルドID</dt><dd id="build-id"></dd>
-        <dt>元のコミット</dt><dd id="commit"></dd>
-        <dt>ビルド日時（UTC）</dt><dd id="built-at"></dd>
-      </dl>
-      <p><a href="../original/v5.html">原本v5（比較用）を開く</a></p>
-      <p><a href="./THIRD_PARTY_LICENSES.txt">依存ライブラリのライセンス</a></p>
-    </main>
-  </body>
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="data:,">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Pixel Rig — v5再現（r128）</title>
+
+  <script type="module" crossorigin src="./assets/index-oCIxwAhN.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CKisffVF.css">
+</head>
+<body>
+<div class="app">
+  <header>
+    <h1>Pixel Rig PoC v5</h1>
+    <p>深度ルール・プロシージャル樹木・描き込み層・照明の検証</p>
+  </header>
+  <div class="layout">
+    <section class="stage" id="stage">
+      <div class="hud" id="hud"></div>
+      <div class="hint" id="hint">ドラッグ または WASD / 矢印キーで移動</div>
+      <div class="joy" id="joy"><i id="knob"></i></div>
+    </section>
+    <aside class="panel">
+      <div class="sec">
+        <h2>照明</h2>
+        <div class="row">
+          <label>時間帯</label>
+          <div class="seg" id="segTod">
+            <button data-t="day" class="on">昼</button><button data-t="evening">夕方</button><button data-t="night">夜</button>
+          </div>
+        </div>
+        <div class="row">
+          <label>建物や木の影</label>
+          <button class="tg on" id="tgShadow" role="switch" aria-checked="true"><span class="sw"></span></button>
+        </div>
+        <p class="note">夕方と夜は街灯が点灯します。光の届く範囲は、ディザで区切った段階的な明るさになります。</p>
+      </div>
+
+      <div class="sec">
+        <h2>感情表現</h2>
+        <div class="emo" id="emo">
+          <button data-k="joy">喜び</button><button data-k="surprise">驚き</button><button data-k="question">疑問</button>
+          <button data-k="sad">落ち込み</button><button data-k="angry">怒り</button><button data-k="sweat">焦り</button>
+        </div>
+        <div class="row">
+          <label>自動まばたき</label>
+          <button class="tg on" id="tgBlink" role="switch" aria-checked="true"><span class="sw"></span></button>
+        </div>
+      </div>
+
+      <div class="sec">
+        <h2>曲面の模様</h2>
+        <div class="row">
+          <label for="unwrap">展開の強さ（既定値） <span id="unwrapVal">100</span>%</label>
+          <input type="range" id="unwrap" min="0" max="100" step="10" value="100">
+        </div>
+        <p class="note">物体ごとの上書き設定がない円柱に適用されます。</p>
+      </div>
+
+      <div class="sec">
+        <h2>変換ステップ（メイン画面に適用）</h2>
+        <button class="step on" data-k="f1" role="switch" aria-checked="true">
+          <span class="no">1</span>
+          <span><b>トゥーン階調</b><small>光を段階で区切る（OFF時は滑らかな陰影）</small></span>
+          <span class="sw"></span>
+        </button>
+        <button class="step on" data-k="f2" role="switch" aria-checked="true">
+          <span class="no">2</span>
+          <span><b>半透明の排除</b><small>低解像度へ直接描画（OFFは高解像度からの単純縮小）</small></span>
+          <span class="sw"></span>
+        </button>
+        <button class="step on" data-k="f3" role="switch" aria-checked="true">
+          <span class="no">3</span>
+          <span><b>輪郭線</b><small>キャラは濃い外周線、背景は控えめな線＋法線エッジ</small></span>
+          <span class="sw"></span>
+        </button>
+        <button class="step on" data-k="f4" role="switch" aria-checked="true">
+          <span class="no">4</span>
+          <span><b>ちらつき対策</b><small>8方向のピクセル単位移動・歩行4コマ・向きスナップ</small></span>
+          <span class="sw"></span>
+        </button>
+      </div>
+
+      <div class="sec">
+        <h2>顔の表現の比較（ステップ1〜4すべて有効）</h2>
+        <div class="strip" id="faceStrip"></div>
+      </div>
+
+      <div class="sec">
+        <h2>段階比較（左から累積で有効化）</h2>
+        <div class="strip" id="stageStrip"></div>
+      </div>
+
+      <div class="sec">
+        <h2>設定</h2>
+        <div class="row">
+          <label>キャラの解像度</label>
+          <div class="seg" id="segS">
+            <button data-s="16">16</button><button data-s="24">24</button><button data-s="32" class="on">32</button><button data-s="48">48</button>
+          </div>
+        </div>
+        <div class="row">
+          <label>顔の表現</label>
+          <div class="seg" id="segFace">
+            <button data-f="3d">3D</button><button data-f="uv">デカール</button><button data-f="pixel" class="on">ドット顔</button>
+          </div>
+        </div>
+        <div class="row">
+          <label for="dot">ドットの大きさ <span id="dotVal">4</span></label>
+          <input type="range" id="dot" min="2" max="7" step="1" value="4">
+        </div>
+        <div class="row">
+          <label>自動歩行デモ</label>
+          <button class="tg on" id="tgAuto" role="switch" aria-checked="true"><span class="sw"></span></button>
+        </div>
+        <div class="row">
+          <label>比較表示を更新</label>
+          <button class="tg on" id="tgCmp" role="switch" aria-checked="true"><span class="sw"></span></button>
+        </div>
+      </div>
+
+      <div class="sec">
+        <button class="btn" id="bake">スプライトシートを焼き出す（8方向×4コマ）</button>
+        <p class="note">ステップ1〜3・顔の表現の現在の設定で、昼の光の条件で焼き出します。</p>
+      </div>
+<div class="sec build-info"><h2>研究アプリ · v5再現（r128）</h2><p id="status"></p><p>ビルドID：<code id="build-id"></code></p><p>元コミット：<code id="commit"></code></p><p>ビルド日時：<span id="built-at"></span></p><a href="../">入口へ戻る</a></div>
+    </aside>
+  </div>
+</div>
+
+<dialog id="dlg">
+  <div class="dlg-head"><b>スプライトシート</b><span id="sheetInfo"></span></div>
+  <div class="sheet-wrap"><canvas id="sheet"></canvas></div>
+  <div class="dlg-actions">
+    <a class="btn" id="dl" download="sprite_sheet.png">PNGを保存</a>
+    <button class="btn ghost" id="closeDlg">閉じる</button>
+  </div>
+</dialog>
+
+</body>
 </html>
