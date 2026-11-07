@@ -1,0 +1,6 @@
+:root { color-scheme: dark; font-family: system-ui, sans-serif; background: #141b25; color: #edf3fa; }
+body { margin: 0; padding: max(24px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left)); }
+main { max-width: 760px; margin: auto; line-height: 1.8; }
+a { color: #9cd8ff; display: inline-block; padding: 8px 0; }
+dt { color: #b6c9dd; margin-top: 16px; }
+dd { margin: 0; overflow-wrap: anywhere; font-family: monospace; }
