@@ -76,4 +76,4 @@ function setCamBasis(cam: THREE.Camera){
 }
 
 
-export { blobScene, blobMat, blobMesh, updateShadowMap, applyLight, setCamBasis };
+export { shadowRT, blobScene, blobMat, blobMesh, updateShadowMap, applyLight, setCamBasis };

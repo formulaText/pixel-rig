@@ -1,3 +1,4 @@
+import { random } from '../core/random';
 import type { EmoteKey } from '../core/types';
 import { stage } from '../render/renderer';
 import { EMOTES, STEP, texel, SINP } from '../core/constants';
@@ -6,7 +7,7 @@ import { triggerEmote } from '../character/expression';
 /* ================= 入力 ================= */
 const keys = new Set<string>();
 const KEYMAP: Record<string, string> = { ArrowUp:'u', KeyW:'u', ArrowDown:'d', KeyS:'d', ArrowLeft:'l', KeyA:'l', ArrowRight:'r', KeyD:'r' };
-addEventListener('keydown', e => { if (KEYMAP[e.code]) { keys.add(KEYMAP[e.code]); e.preventDefault(); } });
+addEventListener('keydown', e => { if ((e.target as HTMLElement)?.closest('input, textarea, select')) return; if (KEYMAP[e.code]) { keys.add(KEYMAP[e.code]); e.preventDefault(); } });
 addEventListener('keyup', e => { if (KEYMAP[e.code]) keys.delete(KEYMAP[e.code]); });
 addEventListener('blur', () => keys.clear());
 const joyEl = (document.getElementById('joy') as HTMLElement), knob = (document.getElementById('knob') as HTMLElement), hint = (document.getElementById('hint') as HTMLElement);
@@ -33,7 +34,11 @@ const endJoy = (e: PointerEvent) => { if (joy && e.pointerId === joy.id) { joy =
 stage.addEventListener('pointerup', endJoy);
 stage.addEventListener('pointercancel', endJoy);
 let lastUser = -1e9;
+export let replayInput: { x: number; y: number; len: number } | null = null;
+export function setReplayInput(v: typeof replayInput) { replayInput = v; }
+export function resetInput() { keys.clear(); joy = null; joyEl.style.display = 'none'; lastUser = -1e9; Object.assign(auto, { i:1, wait:0, stuck:0 }); }
 function inputVec(now: number){
+  if (replayInput) return replayInput;
   let x = 0, y = 0;
   if (keys.has('l')) x -= 1; if (keys.has('r')) x += 1;
   if (keys.has('u')) y -= 1; if (keys.has('d')) y += 1;
@@ -53,7 +58,7 @@ function autoVec(){
   const [wx, wz] = WP[auto.i];
   const dx = wx - px, dz = wz - pz;
   if (Math.hypot(dx, dz) < 0.3 || auto.stuck > 1.5) {
-    if (WP[auto.i][2]) { auto.wait = 2.2; triggerEmote(EMOTE_KEYS[Math.floor(Math.random() * EMOTE_KEYS.length)]); }
+    if (WP[auto.i][2]) { auto.wait = 2.2; triggerEmote(EMOTE_KEYS[Math.floor(random() * EMOTE_KEYS.length)]); }
     auto.i = (auto.i + 1) % WP.length; auto.stuck = 0;
     return { x:0, y:0, len:0 };
   }

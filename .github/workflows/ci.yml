@@ -19,3 +19,8 @@ jobs:
       - run: npm install --global npm@11.9.0
       - run: npm ci
       - run: npm run check
+      - name: 再生・画素比較・コピー復帰のブラウザ検査
+        run: node tests/browser/validation.mjs
+        env:
+          CHROMIUM_PATH: /usr/bin/google-chrome
+          VALIDATION_CI: '1'

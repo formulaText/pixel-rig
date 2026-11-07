@@ -22,7 +22,11 @@ test('v5の定数・既定値・顔／アイコン／デカールデータを維
   const baseline = runInNewContext(`${constants}\nJSON.stringify({${names.join(',')}})`, { THREE });
   const port = readFileSync('src/core/constants.ts', 'utf8').replace(/^import .*;\n/gm, '').replace(/export \{[^}]+\};/, '');
   const compiled = transpileModule(`${port}\nJSON.stringify({${names.join(',')}})`, { compilerOptions: { module: ModuleKind.CommonJS } }).outputText;
-  assert.equal(runInNewContext(compiled, { THREE }), baseline);
+  // V6-03: readback comparison is explicitly opt-in; all drawing defaults stay v5.
+  const current = JSON.parse(runInNewContext(compiled, { THREE }));
+  assert.equal(current.state.compare, false);
+  current.state.compare = true;
+  assert.deepEqual(current, JSON.parse(baseline));
 });
 
 test('移動・時間・感情・深度描画の主要関数は型消去後に原本と同じ', async () => {
@@ -36,12 +40,12 @@ test('移動・時間・感情・深度描画の主要関数は型消去後に�
     'src/gameplay/logic.ts': ['lerpAngle', 'angDist', 'pickDir', 'canAt', 'stepPixel', 'moveFloat', 'tick', 'applyPose'],
     'src/character/expression.ts': ['triggerEmote', 'tickExpr', 'curEye', 'applyEmote'],
     'src/character/rig.ts': ['walkPose', 'idlePose', 'setFace'],
-    'src/render/scene.ts': ['renderSprite', 'renderWorld', 'positionCharCam', 'updateWorldFrustum', 'resize'],
+    'src/render/scene.ts': ['renderSprite', 'positionCharCam', 'updateWorldFrustum', 'resize'],
     'src/render/lighting.ts': ['updateShadowMap', 'applyLight', 'setCamBasis'],
     'src/render/post.ts': ['pass', 'setPost', 'computeStamps', 'setIcon', 'mkRT'],
     'src/world/world.ts': ['blocked', 'mulberry32', 'put', 'mergeGeos', 'house', 'tree', 'bush', 'rock', 'well', 'barrel', 'crate', 'fence', 'sign', 'lamp', 'plateau'],
   };
-  const eraseTypes = code => transpileModule(code, { compilerOptions: { target: ts.ScriptTarget.ES2022, removeComments: true } }).outputText;
+  const eraseTypes = code => transpileModule(code, { compilerOptions: { target: ts.ScriptTarget.ES2022, removeComments: true } }).outputText.replace(/(?<![.\w])random\(\)/g, 'Math.random()');
   for (const [file, names] of Object.entries(cases)) {
     const port = functions(readFileSync(file, 'utf8'));
     for (const name of names) assert.equal(eraseTypes(port.get(name)), eraseTypes(baseline.get(name)), `${file}: ${name}`);

@@ -11,13 +11,14 @@ const mapSet = (c: number, r: number, t: number) => { if (c >= 0 && r >= 0 && c 
 const tileC = (x: number) => Math.floor(x / TW + MC / 2 + 0.5);
 const tileR = (z: number) => Math.floor(z / TD + MR / 2 + 0.5);
 function mulberry32(a: number){ return () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
-const rnd = mulberry32(11);
+let rnd = mulberry32(11);
 const HOUSES = [
   { x:-7.5, z:-7, wall:R.brick, wp:P.brick, roof:R.roofR },
   { x:7.5, z:-7, wall:R.plank, wp:P.plankH, roof:R.roofB },
   { x:-8, z:7, wall:R.stoneW, wp:P.stone, roof:R.roofG },
 ];
-(function buildMap(){
+function buildMap(){
+  mapData.fill(0);
   for (let c = 0; c < MC; c++) mapSet(c, 12, T.dirt);
   for (let r = 0; r < MR; r++) mapSet(20, r, T.dirt);
   for (let c = 17; c <= 23; c++) for (let r = 11; r <= 13; r++) mapSet(c, r, T.cobble);
@@ -35,8 +36,10 @@ const HOUSES = [
   });
   const tex = new THREE.DataTexture(mapData, MC, MR, THREE.RGBAFormat);
   tex.minFilter = tex.magFilter = THREE.NearestFilter; tex.needsUpdate = true;
+  shared.tMap.value?.dispose();
   shared.tMap.value = tex;
-})();
+}
+buildMap();
 
 /* ================= フィールド ================= */
 const worldScene = new THREE.Scene();
@@ -184,7 +187,7 @@ function plateau(c0: number, r0: number, c1: number, r1: number){
   addRect(x0, z0, x1, z1 + 0.4);
   return { x0, x1, z0, z1 };
 }
-(function buildWorld(){
+function buildWorld(){
   put(G.plane, groundBase, 0, 0, 0, { card:CARD.GROUND, s:[140, 1, 140] });
   HOUSES.forEach(house);
   well(3.1, -2.2);
@@ -205,8 +208,18 @@ function plateau(c0: number, r0: number, c1: number, r1: number){
   }
   [[-4.4,-6.2],[10.2,-8.6],[-5.0,9.6],[-10.6,8.6]].forEach(([x, z]) => bush(x, z, 0.9 + rnd() * 0.3));
   [[11,-11,0.6],[-11,12,0.5],[4.5,-12,0.55],[-3,-16,0.45],[17,8,0.6],[-17,4,0.5]].forEach(([x, z, r]) => rock(x, z, r));
-  staticParts.forEach((list, m) => { const me = new THREE.Mesh(mergeGeos(list), m); me.frustumCulled = false; worldScene.add(me); });
-})();
+  staticParts.forEach((list, m) => { const me = new THREE.Mesh(mergeGeos(list), m); me.frustumCulled = false; worldScene.add(me); list.forEach(g => g.dispose()); });
+  staticParts.clear();
+}
+buildWorld();
+let worldSeed = 11;
+function resetWorld(seed: number){
+  if (worldSeed === seed) return;
+  worldSeed = seed; rnd = mulberry32(seed);
+  for (const child of [...worldScene.children]) { (child as THREE.Mesh).geometry.dispose(); worldScene.remove(child); }
+  COL.circles.length = 0; COL.rects.length = 0; LAMPS.length = 0;
+  buildMap(); buildWorld();
+}
 
 const WATER_PTS = [[0,0],[0.8,0],[-0.8,0],[0,0.8],[0,-0.8]];
 function blocked(x: number, z: number){
@@ -218,4 +231,4 @@ function blocked(x: number, z: number){
 }
 
 
-export { worldScene, LAMPS, blocked };
+export { worldScene, LAMPS, blocked, resetWorld, worldSeed };

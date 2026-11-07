@@ -1,0 +1,5205 @@
+{
+  "date": "2026-11-07",
+  "environment": "Node 24.22.1 / npm 11.9.0 / Chromium 156.0.8078.79 / SwiftShader",
+  "scope": "開発環境での検査。iPhone実機確認・60fps達成・採用承認ではない",
+  "sourceBase": "90b0594a06b37fdf46ee21b8b570fc74c3ca96a5",
+  "sourceFiles": {
+    "src/character/expression.ts": "c26edc1d4ecde49a275c7e61ede81df4d68184cc20e5c24b92b104af920f7c97",
+    "src/character/face.ts": "12372260f0e19b47aae8dcb3da9cc197175f1a482a74fe3d80987810f2bdb6b1",
+    "src/character/rig.ts": "d3f9ff65c1f2c375f524c098fe53d8917b4d705a596d66161bb8eac5d27942ed",
+    "src/core/constants.ts": "9439ed481f9e5b5a1c42b6c395052a587ee0415508451ada8b3f44df8bff65c0",
+    "src/core/random.ts": "d310137758751a27c7c203d1b9586c26d4377703eecf346d092713d925522c09",
+    "src/core/types.ts": "616bef7e762f37f8571e596065584e3119f8fe1faaa84382411be0a2f9659378",
+    "src/debug/buffers.ts": "b80d3ee60ac59e6b9a8b44ed9b48c0607b7ae6fbf91c8ac9f22aaf849cd04454",
+    "src/debug/comparison.ts": "99e7e8f0927406ace2e41c4759a4cfb8c3a574bdb08daf8a2066c02f4aefd465",
+    "src/debug/export.ts": "17e3dc1c8edc1fb0745c8388843ce4fe8aaeec6899a7b9621f1208ddfec0d49c",
+    "src/debug/metrics.ts": "7658a0650b4422f75d95ea581d7452f46452363f2e02475e40e222d13ec0834b",
+    "src/debug/pixels.ts": "2b8157f68efb5a02d2ad0115b86b5f183b46e107a0d32dfc5c9fab2d17627351",
+    "src/debug/replay.ts": "6efca48bb9b123f83fe326216926882aa5d9b0c0471b327e8941adf9168b32b2",
+    "src/debug/strips.ts": "5c72b0cc1b5678f1567f8f5744d4caf17c3af838498d2cf749399be8e2536a3d",
+    "src/debug/validation.ts": "1823ba166359e361f873cf7d6f655d08512368a906aea89d56f332201fab2737",
+    "src/gameplay/logic.ts": "ae9427412ff16b9047fe9b8442a39bd4d1d7267a7bb619b4aadda23ddbdda325",
+    "src/gameplay/player.ts": "ea1c1ba7e391fb5139b598a8b6b064857e8a419c48e07812cf4dd7de6b405dd6",
+    "src/input/input.ts": "572b6faf60bf29e42bea643227397c06b3b8aebd37ba4567a539c1eefd77e006",
+    "src/main.ts": "6e5a1379b9c35ffa997a57deefe5595fffad5adf7a1695bf0435f303ade7e737",
+    "src/materials/materials.ts": "c0b6b637b16e8f5f14ba39e0ac6ae7fad5b7c76060e4f33d90e551203b104bcc",
+    "src/materials/palette.ts": "dc46a0d8fd75d3b7557d9c6fe5f965c0467c5e6ad7270a7a03458a3642915297",
+    "src/materials/shared.ts": "4ea9a07e143a7ac30f956fc9296d437d06c3543a29a1337334ac8bba3d899005",
+    "src/render/lighting.ts": "4a5b0ba49771e7c6e221b2a36c49871a80c5760a16a61348de6a88636207f9f8",
+    "src/render/post.ts": "953d595e3c3e10c9d4e372cf0d885883c21dc0b6dfd0b3b1043a83d0c4c7cb6b",
+    "src/render/renderer.ts": "249a677010ca74744af1020a58e93f21cada476f68d5093bd41dcd01b950c5eb",
+    "src/render/scene.ts": "dafb730e28577014cbadf178d5b3b7b7adcfb57b620a679e7cf8f1c104483d59",
+    "src/render/shaders.ts": "0023a8c84804ae76d117c2f9a4845c2c2408e3be546f582265e38cc6beac49e0",
+    "src/style.css": "52675b942292d9da80877f7ff34372beaa0151684a7c36534cc6bbe4188818cf",
+    "src/ui/controls.ts": "cc5b1a718c1b3e4870c73447b566d99b4713c9a621ad3dc60218da3eba9c6e50",
+    "src/world/decals.ts": "d7d00c713640a9a81213f552e0131289b8829988b7bb034013c734287ac44978",
+    "src/world/world.ts": "df76f13a09913fa07c7274c5fb53a20b45e2cb50825119372a5c23b2fc5c1d7a"
+  },
+  "unitTests": 20,
+  "originalFilesVerified": 18,
+  "v5Comparison": {
+    "cases": 357,
+    "errors": [],
+    "differingBytes": 0,
+    "note": "比較読出しを明示ONにして条件を揃えた。336描画・状態条件と21PNG。実機のPNG保存保留は解除しない"
+  },
+  "replayAndPixels": {
+    "browser": "156.0.8078.79",
+    "renderer": "SwiftShader",
+    "measurement": "手動RAF・readPixelsを用いた再現検査。実性能値ではない",
+    "cases": [
+      {
+        "orientation": "portrait",
+        "preset": "still",
+        "repeatedTicks": 180,
+        "repeatedPixelBytes": 43120,
+        "repeatedFullPixelBytes": 43120,
+        "exactRepeat": true,
+        "staticChanged": 0
+      },
+      {
+        "orientation": "portrait",
+        "preset": "horizontal",
+        "repeatedTicks": 180,
+        "repeatedPixelBytes": 43120,
+        "repeatedFullPixelBytes": 43120,
+        "exactRepeat": true,
+        "staticChanged": 0
+      },
+      {
+        "orientation": "portrait",
+        "preset": "vertical",
+        "repeatedTicks": 180,
+        "repeatedPixelBytes": 43120,
+        "repeatedFullPixelBytes": 43120,
+        "exactRepeat": true,
+        "staticChanged": 0
+      },
+      {
+        "orientation": "portrait",
+        "preset": "diagonal",
+        "repeatedTicks": 180,
+        "repeatedPixelBytes": 43120,
+        "repeatedFullPixelBytes": 43120,
+        "exactRepeat": true,
+        "staticChanged": 0
+      },
+      {
+        "orientation": "portrait",
+        "preset": "wall",
+        "repeatedTicks": 180,
+        "repeatedPixelBytes": 43120,
+        "repeatedFullPixelBytes": 43120,
+        "exactRepeat": true,
+        "staticChanged": 0
+      },
+      {
+        "orientation": "portrait",
+        "preset": "trees",
+        "repeatedTicks": 180,
+        "repeatedPixelBytes": 43120,
+        "repeatedFullPixelBytes": 43120,
+        "exactRepeat": true,
+        "staticChanged": 0
+      },
+      {
+        "orientation": "landscape",
+        "preset": "still",
+        "repeatedTicks": 180,
+        "repeatedPixelBytes": 42804,
+        "repeatedFullPixelBytes": 42804,
+        "exactRepeat": true,
+        "staticChanged": 0
+      },
+      {
+        "orientation": "landscape",
+        "preset": "horizontal",
+        "repeatedTicks": 180,
+        "repeatedPixelBytes": 42804,
+        "repeatedFullPixelBytes": 42804,
+        "exactRepeat": true,
+        "staticChanged": 0
+      },
+      {
+        "orientation": "landscape",
+        "preset": "vertical",
+        "repeatedTicks": 180,
+        "repeatedPixelBytes": 42804,
+        "repeatedFullPixelBytes": 42804,
+        "exactRepeat": true,
+        "staticChanged": 0
+      },
+      {
+        "orientation": "landscape",
+        "preset": "diagonal",
+        "repeatedTicks": 180,
+        "repeatedPixelBytes": 42804,
+        "repeatedFullPixelBytes": 42804,
+        "exactRepeat": true,
+        "staticChanged": 0
+      },
+      {
+        "orientation": "landscape",
+        "preset": "wall",
+        "repeatedTicks": 180,
+        "repeatedPixelBytes": 42804,
+        "repeatedFullPixelBytes": 42804,
+        "exactRepeat": true,
+        "staticChanged": 0
+      },
+      {
+        "orientation": "landscape",
+        "preset": "trees",
+        "repeatedTicks": 180,
+        "repeatedPixelBytes": 42804,
+        "repeatedFullPixelBytes": 42804,
+        "exactRepeat": true,
+        "staticChanged": 0
+      },
+      {
+        "orientation": "odd",
+        "preset": "still",
+        "repeatedTicks": 180,
+        "repeatedPixelBytes": 170100,
+        "repeatedFullPixelBytes": 170100,
+        "exactRepeat": true,
+        "staticChanged": 0
+      },
+      {
+        "orientation": "odd",
+        "preset": "horizontal",
+        "repeatedTicks": 180,
+        "repeatedPixelBytes": 170100,
+        "repeatedFullPixelBytes": 170100,
+        "exactRepeat": true,
+        "staticChanged": 0
+      },
+      {
+        "orientation": "odd",
+        "preset": "vertical",
+        "repeatedTicks": 180,
+        "repeatedPixelBytes": 170100,
+        "repeatedFullPixelBytes": 170100,
+        "exactRepeat": true,
+        "staticChanged": 0
+      },
+      {
+        "orientation": "odd",
+        "preset": "diagonal",
+        "repeatedTicks": 180,
+        "repeatedPixelBytes": 170100,
+        "repeatedFullPixelBytes": 170100,
+        "exactRepeat": true,
+        "staticChanged": 0
+      },
+      {
+        "orientation": "odd",
+        "preset": "wall",
+        "repeatedTicks": 180,
+        "repeatedPixelBytes": 170100,
+        "repeatedFullPixelBytes": 170100,
+        "exactRepeat": true,
+        "staticChanged": 0
+      },
+      {
+        "orientation": "odd",
+        "preset": "trees",
+        "repeatedTicks": 180,
+        "repeatedPixelBytes": 170100,
+        "repeatedFullPixelBytes": 170100,
+        "exactRepeat": true,
+        "staticChanged": 0
+      }
+    ],
+    "pixels": [
+      {
+        "orientation": "portrait",
+        "preset": "still",
+        "reference": {
+          "build": {
+            "buildId": "local-dev",
+            "commit": "未コミットの開発画面",
+            "builtAt": ""
+          },
+          "settings": {
+            "S": 32,
+            "dot": 4,
+            "face": "pixel",
+            "f1": true,
+            "f2": true,
+            "f3": true,
+            "f4": true,
+            "auto": false,
+            "compare": false,
+            "tod": "day",
+            "shadow": true,
+            "unwrap": 1,
+            "autoBlink": true
+          },
+          "seed": 11,
+          "worldSeed": 11,
+          "preset": "still",
+          "presetLabel": "静止",
+          "inputs": [
+            {
+              "seconds": 6,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+          "stepSeconds": 0.016666666666666666,
+          "viewport": {
+            "width": 393,
+            "height": 852,
+            "dpr": 3,
+            "orientation": "縦",
+            "bufferWidth": 98,
+            "bufferHeight": 110
+          },
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "characters": 1,
+          "pointLights": 0,
+          "shadowLights": 1,
+          "qualityAdjustment": "なし",
+          "bufferView": "final",
+          "recording": "録画なし（申告・自動検出不可）",
+          "state": {
+            "ticks": 0,
+            "time": 0,
+            "shaderTime": 0,
+            "player": {
+              "gx": 0,
+              "gy": 18
+            },
+            "phase": 0,
+            "idleT": 0,
+            "moving": false,
+            "snapA": 0,
+            "smoothA": 0,
+            "curDir": 0,
+            "dirHold": 0,
+            "moveAcc": 0,
+            "expression": {
+              "autoBlink": true,
+              "blinkWait": 2.5,
+              "seq": [],
+              "seqT": 0,
+              "emote": null
+            },
+            "auto": {
+              "i": 1,
+              "wait": 0,
+              "stuck": 0
+            },
+            "camera": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0.8191520442889918,
+              -0.573576436351046,
+              0,
+              0,
+              0.573576436351046,
+              0.8191520442889918,
+              0,
+              0,
+              28.102855536411607,
+              41.36089814625892,
+              1
+            ],
+            "worldSeed": 11
+          }
+        },
+        "current": {
+          "build": {
+            "buildId": "local-dev",
+            "commit": "未コミットの開発画面",
+            "builtAt": ""
+          },
+          "settings": {
+            "S": 32,
+            "dot": 4,
+            "face": "pixel",
+            "f1": true,
+            "f2": true,
+            "f3": true,
+            "f4": true,
+            "auto": false,
+            "compare": false,
+            "tod": "day",
+            "shadow": true,
+            "unwrap": 1,
+            "autoBlink": true
+          },
+          "seed": 11,
+          "worldSeed": 11,
+          "preset": "still",
+          "presetLabel": "静止",
+          "inputs": [
+            {
+              "seconds": 6,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+          "stepSeconds": 0.016666666666666666,
+          "viewport": {
+            "width": 393,
+            "height": 852,
+            "dpr": 3,
+            "orientation": "縦",
+            "bufferWidth": 98,
+            "bufferHeight": 110
+          },
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "characters": 1,
+          "pointLights": 0,
+          "shadowLights": 1,
+          "qualityAdjustment": "なし",
+          "bufferView": "final",
+          "recording": "録画なし（申告・自動検出不可）",
+          "state": {
+            "ticks": 30,
+            "time": 0.49999999999999994,
+            "shaderTime": 0,
+            "player": {
+              "gx": 0,
+              "gy": 18
+            },
+            "phase": 0,
+            "idleT": 0.49999999999999994,
+            "moving": false,
+            "snapA": 0,
+            "smoothA": 0,
+            "curDir": 0,
+            "dirHold": 0,
+            "moveAcc": 0,
+            "expression": {
+              "autoBlink": true,
+              "blinkWait": 2.0000000000000018,
+              "seq": [],
+              "seqT": 0,
+              "emote": null
+            },
+            "auto": {
+              "i": 1,
+              "wait": 0,
+              "stuck": 0
+            },
+            "camera": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0.8191520442889918,
+              -0.573576436351046,
+              0,
+              0,
+              0.573576436351046,
+              0.8191520442889918,
+              0,
+              0,
+              28.102855536411607,
+              41.36089814625892,
+              1
+            ],
+            "worldSeed": 11
+          }
+        },
+        "referenceSeparation": {
+          "characterPixels": 253,
+          "movingFootShadowPixels": 32,
+          "intentionalAnimationPixels": 0,
+          "method": "同一カメラで4描画。全体→キャラ・顔・アイコンなし→足元影なし→既存シェーダー時刻0。静止比較は最終画像全域。建物・木の影と現在のuFootは保持し、差分を除外しない",
+          "frozenShaderSeconds": 0,
+          "readPixels": true,
+          "normalPerformance": false
+        },
+        "currentSeparation": {
+          "characterPixels": 253,
+          "movingFootShadowPixels": 32,
+          "intentionalAnimationPixels": 0,
+          "method": "同一カメラで4描画。全体→キャラ・顔・アイコンなし→足元影なし→既存シェーダー時刻0。静止比較は最終画像全域。建物・木の影と現在のuFootは保持し、差分を除外しない",
+          "frozenShaderSeconds": 0,
+          "readPixels": true,
+          "normalPerformance": false
+        },
+        "result": {
+          "scroll": {
+            "dx": 0,
+            "dy": 0
+          },
+          "compared": 10368,
+          "changed": 0,
+          "maxChannelDelta": 0,
+          "examples": [],
+          "excluded": 412,
+          "exclusion": "視野の非共通部分と両画像の1px外周（輪郭の隣接参照）。物体や差分値による除外なし",
+          "status": "比較範囲で差分なし"
+        }
+      },
+      {
+        "orientation": "portrait",
+        "preset": "horizontal",
+        "reference": {
+          "build": {
+            "buildId": "local-dev",
+            "commit": "未コミットの開発画面",
+            "builtAt": ""
+          },
+          "settings": {
+            "S": 32,
+            "dot": 4,
+            "face": "pixel",
+            "f1": true,
+            "f2": true,
+            "f3": true,
+            "f4": true,
+            "auto": false,
+            "compare": false,
+            "tod": "day",
+            "shadow": true,
+            "unwrap": 1,
+            "autoBlink": true
+          },
+          "seed": 11,
+          "worldSeed": 11,
+          "preset": "horizontal",
+          "presetLabel": "横移動",
+          "inputs": [
+            {
+              "seconds": 2,
+              "x": 1,
+              "y": 0
+            },
+            {
+              "seconds": 2,
+              "x": -1,
+              "y": 0
+            },
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+          "stepSeconds": 0.016666666666666666,
+          "viewport": {
+            "width": 393,
+            "height": 852,
+            "dpr": 3,
+            "orientation": "縦",
+            "bufferWidth": 98,
+            "bufferHeight": 110
+          },
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "characters": 1,
+          "pointLights": 0,
+          "shadowLights": 1,
+          "qualityAdjustment": "なし",
+          "bufferView": "final",
+          "recording": "録画なし（申告・自動検出不可）",
+          "state": {
+            "ticks": 0,
+            "time": 0,
+            "shaderTime": 0,
+            "player": {
+              "gx": 0,
+              "gy": 18
+            },
+            "phase": 0,
+            "idleT": 0,
+            "moving": false,
+            "snapA": 0,
+            "smoothA": 0,
+            "curDir": 0,
+            "dirHold": 0,
+            "moveAcc": 0,
+            "expression": {
+              "autoBlink": true,
+              "blinkWait": 2.5,
+              "seq": [],
+              "seqT": 0,
+              "emote": null
+            },
+            "auto": {
+              "i": 1,
+              "wait": 0,
+              "stuck": 0
+            },
+            "camera": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0.8191520442889918,
+              -0.573576436351046,
+              0,
+              0,
+              0.573576436351046,
+              0.8191520442889918,
+              0,
+              0,
+              28.102855536411607,
+              41.36089814625892,
+              1
+            ],
+            "worldSeed": 11
+          }
+        },
+        "current": {
+          "build": {
+            "buildId": "local-dev",
+            "commit": "未コミットの開発画面",
+            "builtAt": ""
+          },
+          "settings": {
+            "S": 32,
+            "dot": 4,
+            "face": "pixel",
+            "f1": true,
+            "f2": true,
+            "f3": true,
+            "f4": true,
+            "auto": false,
+            "compare": false,
+            "tod": "day",
+            "shadow": true,
+            "unwrap": 1,
+            "autoBlink": true
+          },
+          "seed": 11,
+          "worldSeed": 11,
+          "preset": "horizontal",
+          "presetLabel": "横移動",
+          "inputs": [
+            {
+              "seconds": 2,
+              "x": 1,
+              "y": 0
+            },
+            {
+              "seconds": 2,
+              "x": -1,
+              "y": 0
+            },
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+          "stepSeconds": 0.016666666666666666,
+          "viewport": {
+            "width": 393,
+            "height": 852,
+            "dpr": 3,
+            "orientation": "縦",
+            "bufferWidth": 98,
+            "bufferHeight": 110
+          },
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "characters": 1,
+          "pointLights": 0,
+          "shadowLights": 1,
+          "qualityAdjustment": "なし",
+          "bufferView": "final",
+          "recording": "録画なし（申告・自動検出不可）",
+          "state": {
+            "ticks": 30,
+            "time": 0.49999999999999994,
+            "shaderTime": 0,
+            "player": {
+              "gx": 17,
+              "gy": 18
+            },
+            "phase": 0.7812499999999998,
+            "idleT": 0,
+            "moving": true,
+            "snapA": 1.5707963267948966,
+            "smoothA": 1.5669027119807537,
+            "curDir": 2,
+            "dirHold": 29,
+            "moveAcc": 0.9199999999999982,
+            "expression": {
+              "autoBlink": true,
+              "blinkWait": 2.0000000000000018,
+              "seq": [],
+              "seqT": 0,
+              "emote": null
+            },
+            "auto": {
+              "i": 1,
+              "wait": 0,
+              "stuck": 0
+            },
+            "camera": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0.8191520442889918,
+              -0.573576436351046,
+              0,
+              0,
+              0.573576436351046,
+              0.8191520442889918,
+              0,
+              1.328125,
+              28.102855536411607,
+              41.36089814625892,
+              1
+            ],
+            "worldSeed": 11
+          }
+        },
+        "referenceSeparation": {
+          "characterPixels": 253,
+          "movingFootShadowPixels": 32,
+          "intentionalAnimationPixels": 0,
+          "method": "同一カメラで4描画。全体→キャラ・顔・アイコンなし→足元影なし→既存シェーダー時刻0。静止比較は最終画像全域。建物・木の影と現在のuFootは保持し、差分を除外しない",
+          "frozenShaderSeconds": 0,
+          "readPixels": true,
+          "normalPerformance": false
+        },
+        "currentSeparation": {
+          "characterPixels": 258,
+          "movingFootShadowPixels": 32,
+          "intentionalAnimationPixels": 0,
+          "method": "同一カメラで4描画。全体→キャラ・顔・アイコンなし→足元影なし→既存シェーダー時刻0。静止比較は最終画像全域。建物・木の影と現在のuFootは保持し、差分を除外しない",
+          "frozenShaderSeconds": 0,
+          "readPixels": true,
+          "normalPerformance": false
+        },
+        "result": {
+          "scroll": {
+            "dx": 17,
+            "dy": 0
+          },
+          "compared": 8532,
+          "changed": 0,
+          "maxChannelDelta": 0,
+          "examples": [],
+          "excluded": 2248,
+          "exclusion": "視野の非共通部分と両画像の1px外周（輪郭の隣接参照）。物体や差分値による除外なし",
+          "status": "比較範囲で差分なし"
+        }
+      },
+      {
+        "orientation": "portrait",
+        "preset": "vertical",
+        "reference": {
+          "build": {
+            "buildId": "local-dev",
+            "commit": "未コミットの開発画面",
+            "builtAt": ""
+          },
+          "settings": {
+            "S": 32,
+            "dot": 4,
+            "face": "pixel",
+            "f1": true,
+            "f2": true,
+            "f3": true,
+            "f4": true,
+            "auto": false,
+            "compare": false,
+            "tod": "day",
+            "shadow": true,
+            "unwrap": 1,
+            "autoBlink": true
+          },
+          "seed": 11,
+          "worldSeed": 11,
+          "preset": "vertical",
+          "presetLabel": "縦移動",
+          "inputs": [
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": -1
+            },
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": 1
+            },
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+          "stepSeconds": 0.016666666666666666,
+          "viewport": {
+            "width": 393,
+            "height": 852,
+            "dpr": 3,
+            "orientation": "縦",
+            "bufferWidth": 98,
+            "bufferHeight": 110
+          },
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "characters": 1,
+          "pointLights": 0,
+          "shadowLights": 1,
+          "qualityAdjustment": "なし",
+          "bufferView": "final",
+          "recording": "録画なし（申告・自動検出不可）",
+          "state": {
+            "ticks": 0,
+            "time": 0,
+            "shaderTime": 0,
+            "player": {
+              "gx": 0,
+              "gy": 18
+            },
+            "phase": 0,
+            "idleT": 0,
+            "moving": false,
+            "snapA": 0,
+            "smoothA": 0,
+            "curDir": 0,
+            "dirHold": 0,
+            "moveAcc": 0,
+            "expression": {
+              "autoBlink": true,
+              "blinkWait": 2.5,
+              "seq": [],
+              "seqT": 0,
+              "emote": null
+            },
+            "auto": {
+              "i": 1,
+              "wait": 0,
+              "stuck": 0
+            },
+            "camera": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0.8191520442889918,
+              -0.573576436351046,
+              0,
+              0,
+              0.573576436351046,
+              0.8191520442889918,
+              0,
+              0,
+              28.102855536411607,
+              41.36089814625892,
+              1
+            ],
+            "worldSeed": 11
+          }
+        },
+        "current": {
+          "build": {
+            "buildId": "local-dev",
+            "commit": "未コミットの開発画面",
+            "builtAt": ""
+          },
+          "settings": {
+            "S": 32,
+            "dot": 4,
+            "face": "pixel",
+            "f1": true,
+            "f2": true,
+            "f3": true,
+            "f4": true,
+            "auto": false,
+            "compare": false,
+            "tod": "day",
+            "shadow": true,
+            "unwrap": 1,
+            "autoBlink": true
+          },
+          "seed": 11,
+          "worldSeed": 11,
+          "preset": "vertical",
+          "presetLabel": "縦移動",
+          "inputs": [
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": -1
+            },
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": 1
+            },
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+          "stepSeconds": 0.016666666666666666,
+          "viewport": {
+            "width": 393,
+            "height": 852,
+            "dpr": 3,
+            "orientation": "縦",
+            "bufferWidth": 98,
+            "bufferHeight": 110
+          },
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "characters": 1,
+          "pointLights": 0,
+          "shadowLights": 1,
+          "qualityAdjustment": "なし",
+          "bufferView": "final",
+          "recording": "録画なし（申告・自動検出不可）",
+          "state": {
+            "ticks": 30,
+            "time": 0.49999999999999994,
+            "shaderTime": 0,
+            "player": {
+              "gx": 0,
+              "gy": 1
+            },
+            "phase": 0.7812499999999998,
+            "idleT": 0,
+            "moving": true,
+            "snapA": 3.141592653589793,
+            "smoothA": -3.1338054239615083,
+            "curDir": 4,
+            "dirHold": 29,
+            "moveAcc": 0.9199999999999982,
+            "expression": {
+              "autoBlink": true,
+              "blinkWait": 2.0000000000000018,
+              "seq": [],
+              "seqT": 0,
+              "emote": null
+            },
+            "auto": {
+              "i": 1,
+              "wait": 0,
+              "stuck": 0
+            },
+            "camera": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0.8191520442889918,
+              -0.573576436351046,
+              0,
+              0,
+              0.573576436351046,
+              0.8191520442889918,
+              0,
+              0,
+              29.190791845232923,
+              40.59911694173018,
+              1
+            ],
+            "worldSeed": 11
+          }
+        },
+        "referenceSeparation": {
+          "characterPixels": 253,
+          "movingFootShadowPixels": 32,
+          "intentionalAnimationPixels": 0,
+          "method": "同一カメラで4描画。全体→キャラ・顔・アイコンなし→足元影なし→既存シェーダー時刻0。静止比較は最終画像全域。建物・木の影と現在のuFootは保持し、差分を除外しない",
+          "frozenShaderSeconds": 0,
+          "readPixels": true,
+          "normalPerformance": false
+        },
+        "currentSeparation": {
+          "characterPixels": 262,
+          "movingFootShadowPixels": 32,
+          "intentionalAnimationPixels": 0,
+          "method": "同一カメラで4描画。全体→キャラ・顔・アイコンなし→足元影なし→既存シェーダー時刻0。静止比較は最終画像全域。建物・木の影と現在のuFootは保持し、差分を除外しない",
+          "frozenShaderSeconds": 0,
+          "readPixels": true,
+          "normalPerformance": false
+        },
+        "result": {
+          "scroll": {
+            "dx": 0,
+            "dy": 17
+          },
+          "compared": 8736,
+          "changed": 0,
+          "maxChannelDelta": 0,
+          "examples": [],
+          "excluded": 2044,
+          "exclusion": "視野の非共通部分と両画像の1px外周（輪郭の隣接参照）。物体や差分値による除外なし",
+          "status": "比較範囲で差分なし"
+        }
+      },
+      {
+        "orientation": "portrait",
+        "preset": "diagonal",
+        "reference": {
+          "build": {
+            "buildId": "local-dev",
+            "commit": "未コミットの開発画面",
+            "builtAt": ""
+          },
+          "settings": {
+            "S": 32,
+            "dot": 4,
+            "face": "pixel",
+            "f1": true,
+            "f2": true,
+            "f3": true,
+            "f4": true,
+            "auto": false,
+            "compare": false,
+            "tod": "day",
+            "shadow": true,
+            "unwrap": 1,
+            "autoBlink": true
+          },
+          "seed": 11,
+          "worldSeed": 11,
+          "preset": "diagonal",
+          "presetLabel": "斜め移動",
+          "inputs": [
+            {
+              "seconds": 2,
+              "x": 1,
+              "y": 1
+            },
+            {
+              "seconds": 2,
+              "x": -1,
+              "y": -1
+            },
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+          "stepSeconds": 0.016666666666666666,
+          "viewport": {
+            "width": 393,
+            "height": 852,
+            "dpr": 3,
+            "orientation": "縦",
+            "bufferWidth": 98,
+            "bufferHeight": 110
+          },
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "characters": 1,
+          "pointLights": 0,
+          "shadowLights": 1,
+          "qualityAdjustment": "なし",
+          "bufferView": "final",
+          "recording": "録画なし（申告・自動検出不可）",
+          "state": {
+            "ticks": 0,
+            "time": 0,
+            "shaderTime": 0,
+            "player": {
+              "gx": 0,
+              "gy": 18
+            },
+            "phase": 0,
+            "idleT": 0,
+            "moving": false,
+            "snapA": 0,
+            "smoothA": 0,
+            "curDir": 0,
+            "dirHold": 0,
+            "moveAcc": 0,
+            "expression": {
+              "autoBlink": true,
+              "blinkWait": 2.5,
+              "seq": [],
+              "seqT": 0,
+              "emote": null
+            },
+            "auto": {
+              "i": 1,
+              "wait": 0,
+              "stuck": 0
+            },
+            "camera": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0.8191520442889918,
+              -0.573576436351046,
+              0,
+              0,
+              0.573576436351046,
+              0.8191520442889918,
+              0,
+              0,
+              28.102855536411607,
+              41.36089814625892,
+              1
+            ],
+            "worldSeed": 11
+          }
+        },
+        "current": {
+          "build": {
+            "buildId": "local-dev",
+            "commit": "未コミットの開発画面",
+            "builtAt": ""
+          },
+          "settings": {
+            "S": 32,
+            "dot": 4,
+            "face": "pixel",
+            "f1": true,
+            "f2": true,
+            "f3": true,
+            "f4": true,
+            "auto": false,
+            "compare": false,
+            "tod": "day",
+            "shadow": true,
+            "unwrap": 1,
+            "autoBlink": true
+          },
+          "seed": 11,
+          "worldSeed": 11,
+          "preset": "diagonal",
+          "presetLabel": "斜め移動",
+          "inputs": [
+            {
+              "seconds": 2,
+              "x": 1,
+              "y": 1
+            },
+            {
+              "seconds": 2,
+              "x": -1,
+              "y": -1
+            },
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+          "stepSeconds": 0.016666666666666666,
+          "viewport": {
+            "width": 393,
+            "height": 852,
+            "dpr": 3,
+            "orientation": "縦",
+            "bufferWidth": 98,
+            "bufferHeight": 110
+          },
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "characters": 1,
+          "pointLights": 0,
+          "shadowLights": 1,
+          "qualityAdjustment": "なし",
+          "bufferView": "final",
+          "recording": "録画なし（申告・自動検出不可）",
+          "state": {
+            "ticks": 30,
+            "time": 0.49999999999999994,
+            "shaderTime": 0,
+            "player": {
+              "gx": 12,
+              "gy": 30
+            },
+            "phase": 0.7812499999999998,
+            "idleT": 0,
+            "moving": true,
+            "snapA": 0.7853981633974483,
+            "smoothA": 0.7834513559903765,
+            "curDir": 1,
+            "dirHold": 29,
+            "moveAcc": 0.6713535188629327,
+            "expression": {
+              "autoBlink": true,
+              "blinkWait": 2.0000000000000018,
+              "seq": [],
+              "seqT": 0,
+              "emote": null
+            },
+            "auto": {
+              "i": 1,
+              "wait": 0,
+              "stuck": 0
+            },
+            "camera": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0.8191520442889918,
+              -0.573576436351046,
+              0,
+              0,
+              0.573576436351046,
+              0.8191520442889918,
+              0,
+              0.9375,
+              27.334900494890675,
+              41.89862605533802,
+              1
+            ],
+            "worldSeed": 11
+          }
+        },
+        "referenceSeparation": {
+          "characterPixels": 253,
+          "movingFootShadowPixels": 32,
+          "intentionalAnimationPixels": 0,
+          "method": "同一カメラで4描画。全体→キャラ・顔・アイコンなし→足元影なし→既存シェーダー時刻0。静止比較は最終画像全域。建物・木の影と現在のuFootは保持し、差分を除外しない",
+          "frozenShaderSeconds": 0,
+          "readPixels": true,
+          "normalPerformance": false
+        },
+        "currentSeparation": {
+          "characterPixels": 257,
+          "movingFootShadowPixels": 32,
+          "intentionalAnimationPixels": 0,
+          "method": "同一カメラで4描画。全体→キャラ・顔・アイコンなし→足元影なし→既存シェーダー時刻0。静止比較は最終画像全域。建物・木の影と現在のuFootは保持し、差分を除外しない",
+          "frozenShaderSeconds": 0,
+          "readPixels": true,
+          "normalPerformance": false
+        },
+        "result": {
+          "scroll": {
+            "dx": 12,
+            "dy": -12
+          },
+          "compared": 8064,
+          "changed": 0,
+          "maxChannelDelta": 0,
+          "examples": [],
+          "excluded": 2716,
+          "exclusion": "視野の非共通部分と両画像の1px外周（輪郭の隣接参照）。物体や差分値による除外なし",
+          "status": "比較範囲で差分なし"
+        }
+      },
+      {
+        "orientation": "portrait",
+        "preset": "wall",
+        "reference": {
+          "build": {
+            "buildId": "local-dev",
+            "commit": "未コミットの開発画面",
+            "builtAt": ""
+          },
+          "settings": {
+            "S": 32,
+            "dot": 4,
+            "face": "pixel",
+            "f1": true,
+            "f2": true,
+            "f3": true,
+            "f4": true,
+            "auto": false,
+            "compare": false,
+            "tod": "day",
+            "shadow": true,
+            "unwrap": 1,
+            "autoBlink": true
+          },
+          "seed": 11,
+          "worldSeed": 11,
+          "preset": "wall",
+          "presetLabel": "壁際",
+          "inputs": [
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": -1
+            },
+            {
+              "seconds": 2,
+              "x": 1,
+              "y": -1
+            },
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+          "stepSeconds": 0.016666666666666666,
+          "viewport": {
+            "width": 393,
+            "height": 852,
+            "dpr": 3,
+            "orientation": "縦",
+            "bufferWidth": 98,
+            "bufferHeight": 110
+          },
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "characters": 1,
+          "pointLights": 0,
+          "shadowLights": 1,
+          "qualityAdjustment": "なし",
+          "bufferView": "final",
+          "recording": "録画なし（申告・自動検出不可）",
+          "state": {
+            "ticks": 0,
+            "time": 0,
+            "shaderTime": 0,
+            "player": {
+              "gx": -96,
+              "gy": -36
+            },
+            "phase": 0,
+            "idleT": 0,
+            "moving": false,
+            "snapA": 0,
+            "smoothA": 0,
+            "curDir": 0,
+            "dirHold": 0,
+            "moveAcc": 0,
+            "expression": {
+              "autoBlink": true,
+              "blinkWait": 2.5,
+              "seq": [],
+              "seqT": 0,
+              "emote": null
+            },
+            "auto": {
+              "i": 1,
+              "wait": 0,
+              "stuck": 0
+            },
+            "camera": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0.8191520442889918,
+              -0.573576436351046,
+              0,
+              0,
+              0.573576436351046,
+              0.8191520442889918,
+              0,
+              -7.5,
+              31.558653223255792,
+              38.94112255540294,
+              1
+            ],
+            "worldSeed": 11
+          }
+        },
+        "current": {
+          "build": {
+            "buildId": "local-dev",
+            "commit": "未コミットの開発画面",
+            "builtAt": ""
+          },
+          "settings": {
+            "S": 32,
+            "dot": 4,
+            "face": "pixel",
+            "f1": true,
+            "f2": true,
+            "f3": true,
+            "f4": true,
+            "auto": false,
+            "compare": false,
+            "tod": "day",
+            "shadow": true,
+            "unwrap": 1,
+            "autoBlink": true
+          },
+          "seed": 11,
+          "worldSeed": 11,
+          "preset": "wall",
+          "presetLabel": "壁際",
+          "inputs": [
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": -1
+            },
+            {
+              "seconds": 2,
+              "x": 1,
+              "y": -1
+            },
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+          "stepSeconds": 0.016666666666666666,
+          "viewport": {
+            "width": 393,
+            "height": 852,
+            "dpr": 3,
+            "orientation": "縦",
+            "bufferWidth": 98,
+            "bufferHeight": 110
+          },
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "characters": 1,
+          "pointLights": 0,
+          "shadowLights": 1,
+          "qualityAdjustment": "なし",
+          "bufferView": "final",
+          "recording": "録画なし（申告・自動検出不可）",
+          "state": {
+            "ticks": 30,
+            "time": 0.49999999999999994,
+            "shaderTime": 0,
+            "player": {
+              "gx": -96,
+              "gy": -37
+            },
+            "phase": 0.7812499999999998,
+            "idleT": 0,
+            "moving": true,
+            "snapA": 3.141592653589793,
+            "smoothA": -3.1338054239615083,
+            "curDir": 4,
+            "dirHold": 29,
+            "moveAcc": 0,
+            "expression": {
+              "autoBlink": true,
+              "blinkWait": 2.0000000000000018,
+              "seq": [],
+              "seqT": 0,
+              "emote": null
+            },
+            "auto": {
+              "i": 1,
+              "wait": 0,
+              "stuck": 0
+            },
+            "camera": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0.8191520442889918,
+              -0.573576436351046,
+              0,
+              0,
+              0.573576436351046,
+              0.8191520442889918,
+              0,
+              -7.5,
+              31.622649476715868,
+              38.896311896313016,
+              1
+            ],
+            "worldSeed": 11
+          }
+        },
+        "referenceSeparation": {
+          "characterPixels": 253,
+          "movingFootShadowPixels": 32,
+          "intentionalAnimationPixels": 0,
+          "method": "同一カメラで4描画。全体→キャラ・顔・アイコンなし→足元影なし→既存シェーダー時刻0。静止比較は最終画像全域。建物・木の影と現在のuFootは保持し、差分を除外しない",
+          "frozenShaderSeconds": 0,
+          "readPixels": true,
+          "normalPerformance": false
+        },
+        "currentSeparation": {
+          "characterPixels": 262,
+          "movingFootShadowPixels": 32,
+          "intentionalAnimationPixels": 51,
+          "method": "同一カメラで4描画。全体→キャラ・顔・アイコンなし→足元影なし→既存シェーダー時刻0。静止比較は最終画像全域。建物・木の影と現在のuFootは保持し、差分を除外しない",
+          "frozenShaderSeconds": 0,
+          "readPixels": true,
+          "normalPerformance": false
+        },
+        "result": {
+          "scroll": {
+            "dx": 0,
+            "dy": 1
+          },
+          "compared": 10272,
+          "changed": 0,
+          "maxChannelDelta": 0,
+          "examples": [],
+          "excluded": 508,
+          "exclusion": "視野の非共通部分と両画像の1px外周（輪郭の隣接参照）。物体や差分値による除外なし",
+          "status": "比較範囲で差分なし"
+        }
+      },
+      {
+        "orientation": "portrait",
+        "preset": "trees",
+        "reference": {
+          "build": {
+            "buildId": "local-dev",
+            "commit": "未コミットの開発画面",
+            "builtAt": ""
+          },
+          "settings": {
+            "S": 32,
+            "dot": 4,
+            "face": "pixel",
+            "f1": true,
+            "f2": true,
+            "f3": true,
+            "f4": true,
+            "auto": false,
+            "compare": false,
+            "tod": "day",
+            "shadow": true,
+            "unwrap": 1,
+            "autoBlink": true
+          },
+          "seed": 11,
+          "worldSeed": 11,
+          "preset": "trees",
+          "presetLabel": "木の重なり",
+          "inputs": [
+            {
+              "seconds": 2,
+              "x": 1,
+              "y": 0
+            },
+            {
+              "seconds": 2,
+              "x": -1,
+              "y": -1
+            },
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+          "stepSeconds": 0.016666666666666666,
+          "viewport": {
+            "width": 393,
+            "height": 852,
+            "dpr": 3,
+            "orientation": "縦",
+            "bufferWidth": 98,
+            "bufferHeight": 110
+          },
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "characters": 1,
+          "pointLights": 0,
+          "shadowLights": 1,
+          "qualityAdjustment": "なし",
+          "bufferView": "final",
+          "recording": "録画なし（申告・自動検出不可）",
+          "state": {
+            "ticks": 0,
+            "time": 0,
+            "shaderTime": 0,
+            "player": {
+              "gx": 166,
+              "gy": -73
+            },
+            "phase": 0,
+            "idleT": 0,
+            "moving": false,
+            "snapA": 0,
+            "smoothA": 0,
+            "curDir": 0,
+            "dirHold": 0,
+            "moveAcc": 0,
+            "expression": {
+              "autoBlink": true,
+              "blinkWait": 2.5,
+              "seq": [],
+              "seqT": 0,
+              "emote": null
+            },
+            "auto": {
+              "i": 1,
+              "wait": 0,
+              "stuck": 0
+            },
+            "camera": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0.8191520442889918,
+              -0.573576436351046,
+              0,
+              0,
+              0.573576436351046,
+              0.8191520442889918,
+              0,
+              12.96875,
+              33.92651460127866,
+              37.283128169075695,
+              1
+            ],
+            "worldSeed": 11
+          }
+        },
+        "current": {
+          "build": {
+            "buildId": "local-dev",
+            "commit": "未コミットの開発画面",
+            "builtAt": ""
+          },
+          "settings": {
+            "S": 32,
+            "dot": 4,
+            "face": "pixel",
+            "f1": true,
+            "f2": true,
+            "f3": true,
+            "f4": true,
+            "auto": false,
+            "compare": false,
+            "tod": "day",
+            "shadow": true,
+            "unwrap": 1,
+            "autoBlink": true
+          },
+          "seed": 11,
+          "worldSeed": 11,
+          "preset": "trees",
+          "presetLabel": "木の重なり",
+          "inputs": [
+            {
+              "seconds": 2,
+              "x": 1,
+              "y": 0
+            },
+            {
+              "seconds": 2,
+              "x": -1,
+              "y": -1
+            },
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+          "stepSeconds": 0.016666666666666666,
+          "viewport": {
+            "width": 393,
+            "height": 852,
+            "dpr": 3,
+            "orientation": "縦",
+            "bufferWidth": 98,
+            "bufferHeight": 110
+          },
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "characters": 1,
+          "pointLights": 0,
+          "shadowLights": 1,
+          "qualityAdjustment": "なし",
+          "bufferView": "final",
+          "recording": "録画なし（申告・自動検出不可）",
+          "state": {
+            "ticks": 30,
+            "time": 0.49999999999999994,
+            "shaderTime": 0,
+            "player": {
+              "gx": 183,
+              "gy": -73
+            },
+            "phase": 0.7812499999999998,
+            "idleT": 0,
+            "moving": true,
+            "snapA": 1.5707963267948966,
+            "smoothA": 1.5669027119807537,
+            "curDir": 2,
+            "dirHold": 29,
+            "moveAcc": 0.9199999999999982,
+            "expression": {
+              "autoBlink": true,
+              "blinkWait": 2.0000000000000018,
+              "seq": [],
+              "seqT": 0,
+              "emote": null
+            },
+            "auto": {
+              "i": 1,
+              "wait": 0,
+              "stuck": 0
+            },
+            "camera": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0.8191520442889918,
+              -0.573576436351046,
+              0,
+              0,
+              0.573576436351046,
+              0.8191520442889918,
+              0,
+              14.296875,
+              33.92651460127866,
+              37.283128169075695,
+              1
+            ],
+            "worldSeed": 11
+          }
+        },
+        "referenceSeparation": {
+          "characterPixels": 253,
+          "movingFootShadowPixels": 32,
+          "intentionalAnimationPixels": 0,
+          "method": "同一カメラで4描画。全体→キャラ・顔・アイコンなし→足元影なし→既存シェーダー時刻0。静止比較は最終画像全域。建物・木の影と現在のuFootは保持し、差分を除外しない",
+          "frozenShaderSeconds": 0,
+          "readPixels": true,
+          "normalPerformance": false
+        },
+        "currentSeparation": {
+          "characterPixels": 258,
+          "movingFootShadowPixels": 32,
+          "intentionalAnimationPixels": 257,
+          "method": "同一カメラで4描画。全体→キャラ・顔・アイコンなし→足元影なし→既存シェーダー時刻0。静止比較は最終画像全域。建物・木の影と現在のuFootは保持し、差分を除外しない",
+          "frozenShaderSeconds": 0,
+          "readPixels": true,
+          "normalPerformance": false
+        },
+        "result": {
+          "scroll": {
+            "dx": 17,
+            "dy": 0
+          },
+          "compared": 8532,
+          "changed": 0,
+          "maxChannelDelta": 0,
+          "examples": [],
+          "excluded": 2248,
+          "exclusion": "視野の非共通部分と両画像の1px外周（輪郭の隣接参照）。物体や差分値による除外なし",
+          "status": "比較範囲で差分なし"
+        }
+      },
+      {
+        "orientation": "landscape",
+        "preset": "still",
+        "reference": {
+          "build": {
+            "buildId": "local-dev",
+            "commit": "未コミットの開発画面",
+            "builtAt": ""
+          },
+          "settings": {
+            "S": 32,
+            "dot": 4,
+            "face": "pixel",
+            "f1": true,
+            "f2": true,
+            "f3": true,
+            "f4": true,
+            "auto": false,
+            "compare": false,
+            "tod": "day",
+            "shadow": true,
+            "unwrap": 1,
+            "autoBlink": true
+          },
+          "seed": 11,
+          "worldSeed": 11,
+          "preset": "still",
+          "presetLabel": "静止",
+          "inputs": [
+            {
+              "seconds": 6,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+          "stepSeconds": 0.016666666666666666,
+          "viewport": {
+            "width": 852,
+            "height": 393,
+            "dpr": 3,
+            "orientation": "横",
+            "bufferWidth": 123,
+            "bufferHeight": 87
+          },
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "characters": 1,
+          "pointLights": 0,
+          "shadowLights": 1,
+          "qualityAdjustment": "なし",
+          "bufferView": "final",
+          "recording": "録画なし（申告・自動検出不可）",
+          "state": {
+            "ticks": 0,
+            "time": 0,
+            "shaderTime": 0,
+            "player": {
+              "gx": 0,
+              "gy": 18
+            },
+            "phase": 0,
+            "idleT": 0,
+            "moving": false,
+            "snapA": 0,
+            "smoothA": 0,
+            "curDir": 0,
+            "dirHold": 0,
+            "moveAcc": 0,
+            "expression": {
+              "autoBlink": true,
+              "blinkWait": 2.5,
+              "seq": [],
+              "seqT": 0,
+              "emote": null
+            },
+            "auto": {
+              "i": 1,
+              "wait": 0,
+              "stuck": 0
+            },
+            "camera": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0.8191520442889918,
+              -0.573576436351046,
+              0,
+              0,
+              0.573576436351046,
+              0.8191520442889918,
+              0,
+              0,
+              28.102855536411607,
+              41.36089814625892,
+              1
+            ],
+            "worldSeed": 11
+          }
+        },
+        "current": {
+          "build": {
+            "buildId": "local-dev",
+            "commit": "未コミットの開発画面",
+            "builtAt": ""
+          },
+          "settings": {
+            "S": 32,
+            "dot": 4,
+            "face": "pixel",
+            "f1": true,
+            "f2": true,
+            "f3": true,
+            "f4": true,
+            "auto": false,
+            "compare": false,
+            "tod": "day",
+            "shadow": true,
+            "unwrap": 1,
+            "autoBlink": true
+          },
+          "seed": 11,
+          "worldSeed": 11,
+          "preset": "still",
+          "presetLabel": "静止",
+          "inputs": [
+            {
+              "seconds": 6,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+          "stepSeconds": 0.016666666666666666,
+          "viewport": {
+            "width": 852,
+            "height": 393,
+            "dpr": 3,
+            "orientation": "横",
+            "bufferWidth": 123,
+            "bufferHeight": 87
+          },
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "characters": 1,
+          "pointLights": 0,
+          "shadowLights": 1,
+          "qualityAdjustment": "なし",
+          "bufferView": "final",
+          "recording": "録画なし（申告・自動検出不可）",
+          "state": {
+            "ticks": 30,
+            "time": 0.49999999999999994,
+            "shaderTime": 0,
+            "player": {
+              "gx": 0,
+              "gy": 18
+            },
+            "phase": 0,
+            "idleT": 0.49999999999999994,
+            "moving": false,
+            "snapA": 0,
+            "smoothA": 0,
+            "curDir": 0,
+            "dirHold": 0,
+            "moveAcc": 0,
+            "expression": {
+              "autoBlink": true,
+              "blinkWait": 2.0000000000000018,
+              "seq": [],
+              "seqT": 0,
+              "emote": null
+            },
+            "auto": {
+              "i": 1,
+              "wait": 0,
+              "stuck": 0
+            },
+            "camera": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0.8191520442889918,
+              -0.573576436351046,
+              0,
+              0,
+              0.573576436351046,
+              0.8191520442889918,
+              0,
+              0,
+              28.102855536411607,
+              41.36089814625892,
+              1
+            ],
+            "worldSeed": 11
+          }
+        },
+        "referenceSeparation": {
+          "characterPixels": 253,
+          "movingFootShadowPixels": 32,
+          "intentionalAnimationPixels": 0,
+          "method": "同一カメラで4描画。全体→キャラ・顔・アイコンなし→足元影なし→既存シェーダー時刻0。静止比較は最終画像全域。建物・木の影と現在のuFootは保持し、差分を除外しない",
+          "frozenShaderSeconds": 0,
+          "readPixels": true,
+          "normalPerformance": false
+        },
+        "currentSeparation": {
+          "characterPixels": 253,
+          "movingFootShadowPixels": 32,
+          "intentionalAnimationPixels": 0,
+          "method": "同一カメラで4描画。全体→キャラ・顔・アイコンなし→足元影なし→既存シェーダー時刻0。静止比較は最終画像全域。建物・木の影と現在のuFootは保持し、差分を除外しない",
+          "frozenShaderSeconds": 0,
+          "readPixels": true,
+          "normalPerformance": false
+        },
+        "result": {
+          "scroll": {
+            "dx": 0,
+            "dy": 0
+          },
+          "compared": 10285,
+          "changed": 0,
+          "maxChannelDelta": 0,
+          "examples": [],
+          "excluded": 416,
+          "exclusion": "視野の非共通部分と両画像の1px外周（輪郭の隣接参照）。物体や差分値による除外なし",
+          "status": "比較範囲で差分なし"
+        }
+      },
+      {
+        "orientation": "landscape",
+        "preset": "horizontal",
+        "reference": {
+          "build": {
+            "buildId": "local-dev",
+            "commit": "未コミットの開発画面",
+            "builtAt": ""
+          },
+          "settings": {
+            "S": 32,
+            "dot": 4,
+            "face": "pixel",
+            "f1": true,
+            "f2": true,
+            "f3": true,
+            "f4": true,
+            "auto": false,
+            "compare": false,
+            "tod": "day",
+            "shadow": true,
+            "unwrap": 1,
+            "autoBlink": true
+          },
+          "seed": 11,
+          "worldSeed": 11,
+          "preset": "horizontal",
+          "presetLabel": "横移動",
+          "inputs": [
+            {
+              "seconds": 2,
+              "x": 1,
+              "y": 0
+            },
+            {
+              "seconds": 2,
+              "x": -1,
+              "y": 0
+            },
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+          "stepSeconds": 0.016666666666666666,
+          "viewport": {
+            "width": 852,
+            "height": 393,
+            "dpr": 3,
+            "orientation": "横",
+            "bufferWidth": 123,
+            "bufferHeight": 87
+          },
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "characters": 1,
+          "pointLights": 0,
+          "shadowLights": 1,
+          "qualityAdjustment": "なし",
+          "bufferView": "final",
+          "recording": "録画なし（申告・自動検出不可）",
+          "state": {
+            "ticks": 0,
+            "time": 0,
+            "shaderTime": 0,
+            "player": {
+              "gx": 0,
+              "gy": 18
+            },
+            "phase": 0,
+            "idleT": 0,
+            "moving": false,
+            "snapA": 0,
+            "smoothA": 0,
+            "curDir": 0,
+            "dirHold": 0,
+            "moveAcc": 0,
+            "expression": {
+              "autoBlink": true,
+              "blinkWait": 2.5,
+              "seq": [],
+              "seqT": 0,
+              "emote": null
+            },
+            "auto": {
+              "i": 1,
+              "wait": 0,
+              "stuck": 0
+            },
+            "camera": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0.8191520442889918,
+              -0.573576436351046,
+              0,
+              0,
+              0.573576436351046,
+              0.8191520442889918,
+              0,
+              0,
+              28.102855536411607,
+              41.36089814625892,
+              1
+            ],
+            "worldSeed": 11
+          }
+        },
+        "current": {
+          "build": {
+            "buildId": "local-dev",
+            "commit": "未コミットの開発画面",
+            "builtAt": ""
+          },
+          "settings": {
+            "S": 32,
+            "dot": 4,
+            "face": "pixel",
+            "f1": true,
+            "f2": true,
+            "f3": true,
+            "f4": true,
+            "auto": false,
+            "compare": false,
+            "tod": "day",
+            "shadow": true,
+            "unwrap": 1,
+            "autoBlink": true
+          },
+          "seed": 11,
+          "worldSeed": 11,
+          "preset": "horizontal",
+          "presetLabel": "横移動",
+          "inputs": [
+            {
+              "seconds": 2,
+              "x": 1,
+              "y": 0
+            },
+            {
+              "seconds": 2,
+              "x": -1,
+              "y": 0
+            },
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+          "stepSeconds": 0.016666666666666666,
+          "viewport": {
+            "width": 852,
+            "height": 393,
+            "dpr": 3,
+            "orientation": "横",
+            "bufferWidth": 123,
+            "bufferHeight": 87
+          },
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "characters": 1,
+          "pointLights": 0,
+          "shadowLights": 1,
+          "qualityAdjustment": "なし",
+          "bufferView": "final",
+          "recording": "録画なし（申告・自動検出不可）",
+          "state": {
+            "ticks": 30,
+            "time": 0.49999999999999994,
+            "shaderTime": 0,
+            "player": {
+              "gx": 17,
+              "gy": 18
+            },
+            "phase": 0.7812499999999998,
+            "idleT": 0,
+            "moving": true,
+            "snapA": 1.5707963267948966,
+            "smoothA": 1.5669027119807537,
+            "curDir": 2,
+            "dirHold": 29,
+            "moveAcc": 0.9199999999999982,
+            "expression": {
+              "autoBlink": true,
+              "blinkWait": 2.0000000000000018,
+              "seq": [],
+              "seqT": 0,
+              "emote": null
+            },
+            "auto": {
+              "i": 1,
+              "wait": 0,
+              "stuck": 0
+            },
+            "camera": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0.8191520442889918,
+              -0.573576436351046,
+              0,
+              0,
+              0.573576436351046,
+              0.8191520442889918,
+              0,
+              1.328125,
+              28.102855536411607,
+              41.36089814625892,
+              1
+            ],
+            "worldSeed": 11
+          }
+        },
+        "referenceSeparation": {
+          "characterPixels": 253,
+          "movingFootShadowPixels": 32,
+          "intentionalAnimationPixels": 0,
+          "method": "同一カメラで4描画。全体→キャラ・顔・アイコンなし→足元影なし→既存シェーダー時刻0。静止比較は最終画像全域。建物・木の影と現在のuFootは保持し、差分を除外しない",
+          "frozenShaderSeconds": 0,
+          "readPixels": true,
+          "normalPerformance": false
+        },
+        "currentSeparation": {
+          "characterPixels": 258,
+          "movingFootShadowPixels": 32,
+          "intentionalAnimationPixels": 0,
+          "method": "同一カメラで4描画。全体→キャラ・顔・アイコンなし→足元影なし→既存シェーダー時刻0。静止比較は最終画像全域。建物・木の影と現在のuFootは保持し、差分を除外しない",
+          "frozenShaderSeconds": 0,
+          "readPixels": true,
+          "normalPerformance": false
+        },
+        "result": {
+          "scroll": {
+            "dx": 17,
+            "dy": 0
+          },
+          "compared": 8840,
+          "changed": 0,
+          "maxChannelDelta": 0,
+          "examples": [],
+          "excluded": 1861,
+          "exclusion": "視野の非共通部分と両画像の1px外周（輪郭の隣接参照）。物体や差分値による除外なし",
+          "status": "比較範囲で差分なし"
+        }
+      },
+      {
+        "orientation": "landscape",
+        "preset": "vertical",
+        "reference": {
+          "build": {
+            "buildId": "local-dev",
+            "commit": "未コミットの開発画面",
+            "builtAt": ""
+          },
+          "settings": {
+            "S": 32,
+            "dot": 4,
+            "face": "pixel",
+            "f1": true,
+            "f2": true,
+            "f3": true,
+            "f4": true,
+            "auto": false,
+            "compare": false,
+            "tod": "day",
+            "shadow": true,
+            "unwrap": 1,
+            "autoBlink": true
+          },
+          "seed": 11,
+          "worldSeed": 11,
+          "preset": "vertical",
+          "presetLabel": "縦移動",
+          "inputs": [
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": -1
+            },
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": 1
+            },
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+          "stepSeconds": 0.016666666666666666,
+          "viewport": {
+            "width": 852,
+            "height": 393,
+            "dpr": 3,
+            "orientation": "横",
+            "bufferWidth": 123,
+            "bufferHeight": 87
+          },
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "characters": 1,
+          "pointLights": 0,
+          "shadowLights": 1,
+          "qualityAdjustment": "なし",
+          "bufferView": "final",
+          "recording": "録画なし（申告・自動検出不可）",
+          "state": {
+            "ticks": 0,
+            "time": 0,
+            "shaderTime": 0,
+            "player": {
+              "gx": 0,
+              "gy": 18
+            },
+            "phase": 0,
+            "idleT": 0,
+            "moving": false,
+            "snapA": 0,
+            "smoothA": 0,
+            "curDir": 0,
+            "dirHold": 0,
+            "moveAcc": 0,
+            "expression": {
+              "autoBlink": true,
+              "blinkWait": 2.5,
+              "seq": [],
+              "seqT": 0,
+              "emote": null
+            },
+            "auto": {
+              "i": 1,
+              "wait": 0,
+              "stuck": 0
+            },
+            "camera": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0.8191520442889918,
+              -0.573576436351046,
+              0,
+              0,
+              0.573576436351046,
+              0.8191520442889918,
+              0,
+              0,
+              28.102855536411607,
+              41.36089814625892,
+              1
+            ],
+            "worldSeed": 11
+          }
+        },
+        "current": {
+          "build": {
+            "buildId": "local-dev",
+            "commit": "未コミットの開発画面",
+            "builtAt": ""
+          },
+          "settings": {
+            "S": 32,
+            "dot": 4,
+            "face": "pixel",
+            "f1": true,
+            "f2": true,
+            "f3": true,
+            "f4": true,
+            "auto": false,
+            "compare": false,
+            "tod": "day",
+            "shadow": true,
+            "unwrap": 1,
+            "autoBlink": true
+          },
+          "seed": 11,
+          "worldSeed": 11,
+          "preset": "vertical",
+          "presetLabel": "縦移動",
+          "inputs": [
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": -1
+            },
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": 1
+            },
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+          "stepSeconds": 0.016666666666666666,
+          "viewport": {
+            "width": 852,
+            "height": 393,
+            "dpr": 3,
+            "orientation": "横",
+            "bufferWidth": 123,
+            "bufferHeight": 87
+          },
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "characters": 1,
+          "pointLights": 0,
+          "shadowLights": 1,
+          "qualityAdjustment": "なし",
+          "bufferView": "final",
+          "recording": "録画なし（申告・自動検出不可）",
+          "state": {
+            "ticks": 30,
+            "time": 0.49999999999999994,
+            "shaderTime": 0,
+            "player": {
+              "gx": 0,
+              "gy": 1
+            },
+            "phase": 0.7812499999999998,
+            "idleT": 0,
+            "moving": true,
+            "snapA": 3.141592653589793,
+            "smoothA": -3.1338054239615083,
+            "curDir": 4,
+            "dirHold": 29,
+            "moveAcc": 0.9199999999999982,
+            "expression": {
+              "autoBlink": true,
+              "blinkWait": 2.0000000000000018,
+              "seq": [],
+              "seqT": 0,
+              "emote": null
+            },
+            "auto": {
+              "i": 1,
+              "wait": 0,
+              "stuck": 0
+            },
+            "camera": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0.8191520442889918,
+              -0.573576436351046,
+              0,
+              0,
+              0.573576436351046,
+              0.8191520442889918,
+              0,
+              0,
+              29.190791845232923,
+              40.59911694173018,
+              1
+            ],
+            "worldSeed": 11
+          }
+        },
+        "referenceSeparation": {
+          "characterPixels": 253,
+          "movingFootShadowPixels": 32,
+          "intentionalAnimationPixels": 0,
+          "method": "同一カメラで4描画。全体→キャラ・顔・アイコンなし→足元影なし→既存シェーダー時刻0。静止比較は最終画像全域。建物・木の影と現在のuFootは保持し、差分を除外しない",
+          "frozenShaderSeconds": 0,
+          "readPixels": true,
+          "normalPerformance": false
+        },
+        "currentSeparation": {
+          "characterPixels": 262,
+          "movingFootShadowPixels": 32,
+          "intentionalAnimationPixels": 4,
+          "method": "同一カメラで4描画。全体→キャラ・顔・アイコンなし→足元影なし→既存シェーダー時刻0。静止比較は最終画像全域。建物・木の影と現在のuFootは保持し、差分を除外しない",
+          "frozenShaderSeconds": 0,
+          "readPixels": true,
+          "normalPerformance": false
+        },
+        "result": {
+          "scroll": {
+            "dx": 0,
+            "dy": 17
+          },
+          "compared": 8228,
+          "changed": 0,
+          "maxChannelDelta": 0,
+          "examples": [],
+          "excluded": 2473,
+          "exclusion": "視野の非共通部分と両画像の1px外周（輪郭の隣接参照）。物体や差分値による除外なし",
+          "status": "比較範囲で差分なし"
+        }
+      },
+      {
+        "orientation": "landscape",
+        "preset": "diagonal",
+        "reference": {
+          "build": {
+            "buildId": "local-dev",
+            "commit": "未コミットの開発画面",
+            "builtAt": ""
+          },
+          "settings": {
+            "S": 32,
+            "dot": 4,
+            "face": "pixel",
+            "f1": true,
+            "f2": true,
+            "f3": true,
+            "f4": true,
+            "auto": false,
+            "compare": false,
+            "tod": "day",
+            "shadow": true,
+            "unwrap": 1,
+            "autoBlink": true
+          },
+          "seed": 11,
+          "worldSeed": 11,
+          "preset": "diagonal",
+          "presetLabel": "斜め移動",
+          "inputs": [
+            {
+              "seconds": 2,
+              "x": 1,
+              "y": 1
+            },
+            {
+              "seconds": 2,
+              "x": -1,
+              "y": -1
+            },
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+          "stepSeconds": 0.016666666666666666,
+          "viewport": {
+            "width": 852,
+            "height": 393,
+            "dpr": 3,
+            "orientation": "横",
+            "bufferWidth": 123,
+            "bufferHeight": 87
+          },
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "characters": 1,
+          "pointLights": 0,
+          "shadowLights": 1,
+          "qualityAdjustment": "なし",
+          "bufferView": "final",
+          "recording": "録画なし（申告・自動検出不可）",
+          "state": {
+            "ticks": 0,
+            "time": 0,
+            "shaderTime": 0,
+            "player": {
+              "gx": 0,
+              "gy": 18
+            },
+            "phase": 0,
+            "idleT": 0,
+            "moving": false,
+            "snapA": 0,
+            "smoothA": 0,
+            "curDir": 0,
+            "dirHold": 0,
+            "moveAcc": 0,
+            "expression": {
+              "autoBlink": true,
+              "blinkWait": 2.5,
+              "seq": [],
+              "seqT": 0,
+              "emote": null
+            },
+            "auto": {
+              "i": 1,
+              "wait": 0,
+              "stuck": 0
+            },
+            "camera": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0.8191520442889918,
+              -0.573576436351046,
+              0,
+              0,
+              0.573576436351046,
+              0.8191520442889918,
+              0,
+              0,
+              28.102855536411607,
+              41.36089814625892,
+              1
+            ],
+            "worldSeed": 11
+          }
+        },
+        "current": {
+          "build": {
+            "buildId": "local-dev",
+            "commit": "未コミットの開発画面",
+            "builtAt": ""
+          },
+          "settings": {
+            "S": 32,
+            "dot": 4,
+            "face": "pixel",
+            "f1": true,
+            "f2": true,
+            "f3": true,
+            "f4": true,
+            "auto": false,
+            "compare": false,
+            "tod": "day",
+            "shadow": true,
+            "unwrap": 1,
+            "autoBlink": true
+          },
+          "seed": 11,
+          "worldSeed": 11,
+          "preset": "diagonal",
+          "presetLabel": "斜め移動",
+          "inputs": [
+            {
+              "seconds": 2,
+              "x": 1,
+              "y": 1
+            },
+            {
+              "seconds": 2,
+              "x": -1,
+              "y": -1
+            },
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+          "stepSeconds": 0.016666666666666666,
+          "viewport": {
+            "width": 852,
+            "height": 393,
+            "dpr": 3,
+            "orientation": "横",
+            "bufferWidth": 123,
+            "bufferHeight": 87
+          },
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "characters": 1,
+          "pointLights": 0,
+          "shadowLights": 1,
+          "qualityAdjustment": "なし",
+          "bufferView": "final",
+          "recording": "録画なし（申告・自動検出不可）",
+          "state": {
+            "ticks": 30,
+            "time": 0.49999999999999994,
+            "shaderTime": 0,
+            "player": {
+              "gx": 12,
+              "gy": 30
+            },
+            "phase": 0.7812499999999998,
+            "idleT": 0,
+            "moving": true,
+            "snapA": 0.7853981633974483,
+            "smoothA": 0.7834513559903765,
+            "curDir": 1,
+            "dirHold": 29,
+            "moveAcc": 0.6713535188629327,
+            "expression": {
+              "autoBlink": true,
+              "blinkWait": 2.0000000000000018,
+              "seq": [],
+              "seqT": 0,
+              "emote": null
+            },
+            "auto": {
+              "i": 1,
+              "wait": 0,
+              "stuck": 0
+            },
+            "camera": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0.8191520442889918,
+              -0.573576436351046,
+              0,
+              0,
+              0.573576436351046,
+              0.8191520442889918,
+              0,
+              0.9375,
+              27.334900494890675,
+              41.89862605533802,
+              1
+            ],
+            "worldSeed": 11
+          }
+        },
+        "referenceSeparation": {
+          "characterPixels": 253,
+          "movingFootShadowPixels": 32,
+          "intentionalAnimationPixels": 0,
+          "method": "同一カメラで4描画。全体→キャラ・顔・アイコンなし→足元影なし→既存シェーダー時刻0。静止比較は最終画像全域。建物・木の影と現在のuFootは保持し、差分を除外しない",
+          "frozenShaderSeconds": 0,
+          "readPixels": true,
+          "normalPerformance": false
+        },
+        "currentSeparation": {
+          "characterPixels": 257,
+          "movingFootShadowPixels": 32,
+          "intentionalAnimationPixels": 3,
+          "method": "同一カメラで4描画。全体→キャラ・顔・アイコンなし→足元影なし→既存シェーダー時刻0。静止比較は最終画像全域。建物・木の影と現在のuFootは保持し、差分を除外しない",
+          "frozenShaderSeconds": 0,
+          "readPixels": true,
+          "normalPerformance": false
+        },
+        "result": {
+          "scroll": {
+            "dx": 12,
+            "dy": -12
+          },
+          "compared": 7957,
+          "changed": 0,
+          "maxChannelDelta": 0,
+          "examples": [],
+          "excluded": 2744,
+          "exclusion": "視野の非共通部分と両画像の1px外周（輪郭の隣接参照）。物体や差分値による除外なし",
+          "status": "比較範囲で差分なし"
+        }
+      },
+      {
+        "orientation": "landscape",
+        "preset": "wall",
+        "reference": {
+          "build": {
+            "buildId": "local-dev",
+            "commit": "未コミットの開発画面",
+            "builtAt": ""
+          },
+          "settings": {
+            "S": 32,
+            "dot": 4,
+            "face": "pixel",
+            "f1": true,
+            "f2": true,
+            "f3": true,
+            "f4": true,
+            "auto": false,
+            "compare": false,
+            "tod": "day",
+            "shadow": true,
+            "unwrap": 1,
+            "autoBlink": true
+          },
+          "seed": 11,
+          "worldSeed": 11,
+          "preset": "wall",
+          "presetLabel": "壁際",
+          "inputs": [
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": -1
+            },
+            {
+              "seconds": 2,
+              "x": 1,
+              "y": -1
+            },
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+          "stepSeconds": 0.016666666666666666,
+          "viewport": {
+            "width": 852,
+            "height": 393,
+            "dpr": 3,
+            "orientation": "横",
+            "bufferWidth": 123,
+            "bufferHeight": 87
+          },
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "characters": 1,
+          "pointLights": 0,
+          "shadowLights": 1,
+          "qualityAdjustment": "なし",
+          "bufferView": "final",
+          "recording": "録画なし（申告・自動検出不可）",
+          "state": {
+            "ticks": 0,
+            "time": 0,
+            "shaderTime": 0,
+            "player": {
+              "gx": -96,
+              "gy": -36
+            },
+            "phase": 0,
+            "idleT": 0,
+            "moving": false,
+            "snapA": 0,
+            "smoothA": 0,
+            "curDir": 0,
+            "dirHold": 0,
+            "moveAcc": 0,
+            "expression": {
+              "autoBlink": true,
+              "blinkWait": 2.5,
+              "seq": [],
+              "seqT": 0,
+              "emote": null
+            },
+            "auto": {
+              "i": 1,
+              "wait": 0,
+              "stuck": 0
+            },
+            "camera": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0.8191520442889918,
+              -0.573576436351046,
+              0,
+              0,
+              0.573576436351046,
+              0.8191520442889918,
+              0,
+              -7.5,
+              31.558653223255792,
+              38.94112255540294,
+              1
+            ],
+            "worldSeed": 11
+          }
+        },
+        "current": {
+          "build": {
+            "buildId": "local-dev",
+            "commit": "未コミットの開発画面",
+            "builtAt": ""
+          },
+          "settings": {
+            "S": 32,
+            "dot": 4,
+            "face": "pixel",
+            "f1": true,
+            "f2": true,
+            "f3": true,
+            "f4": true,
+            "auto": false,
+            "compare": false,
+            "tod": "day",
+            "shadow": true,
+            "unwrap": 1,
+            "autoBlink": true
+          },
+          "seed": 11,
+          "worldSeed": 11,
+          "preset": "wall",
+          "presetLabel": "壁際",
+          "inputs": [
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": -1
+            },
+            {
+              "seconds": 2,
+              "x": 1,
+              "y": -1
+            },
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+          "stepSeconds": 0.016666666666666666,
+          "viewport": {
+            "width": 852,
+            "height": 393,
+            "dpr": 3,
+            "orientation": "横",
+            "bufferWidth": 123,
+            "bufferHeight": 87
+          },
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "characters": 1,
+          "pointLights": 0,
+          "shadowLights": 1,
+          "qualityAdjustment": "なし",
+          "bufferView": "final",
+          "recording": "録画なし（申告・自動検出不可）",
+          "state": {
+            "ticks": 30,
+            "time": 0.49999999999999994,
+            "shaderTime": 0,
+            "player": {
+              "gx": -96,
+              "gy": -37
+            },
+            "phase": 0.7812499999999998,
+            "idleT": 0,
+            "moving": true,
+            "snapA": 3.141592653589793,
+            "smoothA": -3.1338054239615083,
+            "curDir": 4,
+            "dirHold": 29,
+            "moveAcc": 0,
+            "expression": {
+              "autoBlink": true,
+              "blinkWait": 2.0000000000000018,
+              "seq": [],
+              "seqT": 0,
+              "emote": null
+            },
+            "auto": {
+              "i": 1,
+              "wait": 0,
+              "stuck": 0
+            },
+            "camera": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0.8191520442889918,
+              -0.573576436351046,
+              0,
+              0,
+              0.573576436351046,
+              0.8191520442889918,
+              0,
+              -7.5,
+              31.622649476715868,
+              38.896311896313016,
+              1
+            ],
+            "worldSeed": 11
+          }
+        },
+        "referenceSeparation": {
+          "characterPixels": 253,
+          "movingFootShadowPixels": 32,
+          "intentionalAnimationPixels": 0,
+          "method": "同一カメラで4描画。全体→キャラ・顔・アイコンなし→足元影なし→既存シェーダー時刻0。静止比較は最終画像全域。建物・木の影と現在のuFootは保持し、差分を除外しない",
+          "frozenShaderSeconds": 0,
+          "readPixels": true,
+          "normalPerformance": false
+        },
+        "currentSeparation": {
+          "characterPixels": 262,
+          "movingFootShadowPixels": 32,
+          "intentionalAnimationPixels": 51,
+          "method": "同一カメラで4描画。全体→キャラ・顔・アイコンなし→足元影なし→既存シェーダー時刻0。静止比較は最終画像全域。建物・木の影と現在のuFootは保持し、差分を除外しない",
+          "frozenShaderSeconds": 0,
+          "readPixels": true,
+          "normalPerformance": false
+        },
+        "result": {
+          "scroll": {
+            "dx": 0,
+            "dy": 1
+          },
+          "compared": 10164,
+          "changed": 0,
+          "maxChannelDelta": 0,
+          "examples": [],
+          "excluded": 537,
+          "exclusion": "視野の非共通部分と両画像の1px外周（輪郭の隣接参照）。物体や差分値による除外なし",
+          "status": "比較範囲で差分なし"
+        }
+      },
+      {
+        "orientation": "landscape",
+        "preset": "trees",
+        "reference": {
+          "build": {
+            "buildId": "local-dev",
+            "commit": "未コミットの開発画面",
+            "builtAt": ""
+          },
+          "settings": {
+            "S": 32,
+            "dot": 4,
+            "face": "pixel",
+            "f1": true,
+            "f2": true,
+            "f3": true,
+            "f4": true,
+            "auto": false,
+            "compare": false,
+            "tod": "day",
+            "shadow": true,
+            "unwrap": 1,
+            "autoBlink": true
+          },
+          "seed": 11,
+          "worldSeed": 11,
+          "preset": "trees",
+          "presetLabel": "木の重なり",
+          "inputs": [
+            {
+              "seconds": 2,
+              "x": 1,
+              "y": 0
+            },
+            {
+              "seconds": 2,
+              "x": -1,
+              "y": -1
+            },
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+          "stepSeconds": 0.016666666666666666,
+          "viewport": {
+            "width": 852,
+            "height": 393,
+            "dpr": 3,
+            "orientation": "横",
+            "bufferWidth": 123,
+            "bufferHeight": 87
+          },
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "characters": 1,
+          "pointLights": 0,
+          "shadowLights": 1,
+          "qualityAdjustment": "なし",
+          "bufferView": "final",
+          "recording": "録画なし（申告・自動検出不可）",
+          "state": {
+            "ticks": 0,
+            "time": 0,
+            "shaderTime": 0,
+            "player": {
+              "gx": 166,
+              "gy": -73
+            },
+            "phase": 0,
+            "idleT": 0,
+            "moving": false,
+            "snapA": 0,
+            "smoothA": 0,
+            "curDir": 0,
+            "dirHold": 0,
+            "moveAcc": 0,
+            "expression": {
+              "autoBlink": true,
+              "blinkWait": 2.5,
+              "seq": [],
+              "seqT": 0,
+              "emote": null
+            },
+            "auto": {
+              "i": 1,
+              "wait": 0,
+              "stuck": 0
+            },
+            "camera": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0.8191520442889918,
+              -0.573576436351046,
+              0,
+              0,
+              0.573576436351046,
+              0.8191520442889918,
+              0,
+              12.96875,
+              33.92651460127866,
+              37.283128169075695,
+              1
+            ],
+            "worldSeed": 11
+          }
+        },
+        "current": {
+          "build": {
+            "buildId": "local-dev",
+            "commit": "未コミットの開発画面",
+            "builtAt": ""
+          },
+          "settings": {
+            "S": 32,
+            "dot": 4,
+            "face": "pixel",
+            "f1": true,
+            "f2": true,
+            "f3": true,
+            "f4": true,
+            "auto": false,
+            "compare": false,
+            "tod": "day",
+            "shadow": true,
+            "unwrap": 1,
+            "autoBlink": true
+          },
+          "seed": 11,
+          "worldSeed": 11,
+          "preset": "trees",
+          "presetLabel": "木の重なり",
+          "inputs": [
+            {
+              "seconds": 2,
+              "x": 1,
+              "y": 0
+            },
+            {
+              "seconds": 2,
+              "x": -1,
+              "y": -1
+            },
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+          "stepSeconds": 0.016666666666666666,
+          "viewport": {
+            "width": 852,
+            "height": 393,
+            "dpr": 3,
+            "orientation": "横",
+            "bufferWidth": 123,
+            "bufferHeight": 87
+          },
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "characters": 1,
+          "pointLights": 0,
+          "shadowLights": 1,
+          "qualityAdjustment": "なし",
+          "bufferView": "final",
+          "recording": "録画なし（申告・自動検出不可）",
+          "state": {
+            "ticks": 30,
+            "time": 0.49999999999999994,
+            "shaderTime": 0,
+            "player": {
+              "gx": 183,
+              "gy": -73
+            },
+            "phase": 0.7812499999999998,
+            "idleT": 0,
+            "moving": true,
+            "snapA": 1.5707963267948966,
+            "smoothA": 1.5669027119807537,
+            "curDir": 2,
+            "dirHold": 29,
+            "moveAcc": 0.9199999999999982,
+            "expression": {
+              "autoBlink": true,
+              "blinkWait": 2.0000000000000018,
+              "seq": [],
+              "seqT": 0,
+              "emote": null
+            },
+            "auto": {
+              "i": 1,
+              "wait": 0,
+              "stuck": 0
+            },
+            "camera": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0.8191520442889918,
+              -0.573576436351046,
+              0,
+              0,
+              0.573576436351046,
+              0.8191520442889918,
+              0,
+              14.296875,
+              33.92651460127866,
+              37.283128169075695,
+              1
+            ],
+            "worldSeed": 11
+          }
+        },
+        "referenceSeparation": {
+          "characterPixels": 253,
+          "movingFootShadowPixels": 32,
+          "intentionalAnimationPixels": 0,
+          "method": "同一カメラで4描画。全体→キャラ・顔・アイコンなし→足元影なし→既存シェーダー時刻0。静止比較は最終画像全域。建物・木の影と現在のuFootは保持し、差分を除外しない",
+          "frozenShaderSeconds": 0,
+          "readPixels": true,
+          "normalPerformance": false
+        },
+        "currentSeparation": {
+          "characterPixels": 258,
+          "movingFootShadowPixels": 32,
+          "intentionalAnimationPixels": 187,
+          "method": "同一カメラで4描画。全体→キャラ・顔・アイコンなし→足元影なし→既存シェーダー時刻0。静止比較は最終画像全域。建物・木の影と現在のuFootは保持し、差分を除外しない",
+          "frozenShaderSeconds": 0,
+          "readPixels": true,
+          "normalPerformance": false
+        },
+        "result": {
+          "scroll": {
+            "dx": 17,
+            "dy": 0
+          },
+          "compared": 8840,
+          "changed": 0,
+          "maxChannelDelta": 0,
+          "examples": [],
+          "excluded": 1861,
+          "exclusion": "視野の非共通部分と両画像の1px外周（輪郭の隣接参照）。物体や差分値による除外なし",
+          "status": "比較範囲で差分なし"
+        }
+      },
+      {
+        "orientation": "odd",
+        "preset": "still",
+        "reference": {
+          "build": {
+            "buildId": "local-dev",
+            "commit": "未コミットの開発画面",
+            "builtAt": ""
+          },
+          "settings": {
+            "S": 32,
+            "dot": 4,
+            "face": "pixel",
+            "f1": true,
+            "f2": true,
+            "f3": true,
+            "f4": true,
+            "auto": false,
+            "compare": false,
+            "tod": "day",
+            "shadow": true,
+            "unwrap": 1,
+            "autoBlink": true
+          },
+          "seed": 11,
+          "worldSeed": 11,
+          "preset": "still",
+          "presetLabel": "静止",
+          "inputs": [
+            {
+              "seconds": 6,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+          "stepSeconds": 0.016666666666666666,
+          "viewport": {
+            "width": 1281,
+            "height": 801,
+            "dpr": 1.25,
+            "orientation": "横",
+            "bufferWidth": 225,
+            "bufferHeight": 189
+          },
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "characters": 1,
+          "pointLights": 0,
+          "shadowLights": 1,
+          "qualityAdjustment": "なし",
+          "bufferView": "final",
+          "recording": "録画なし（申告・自動検出不可）",
+          "state": {
+            "ticks": 0,
+            "time": 0,
+            "shaderTime": 0,
+            "player": {
+              "gx": 0,
+              "gy": 18
+            },
+            "phase": 0,
+            "idleT": 0,
+            "moving": false,
+            "snapA": 0,
+            "smoothA": 0,
+            "curDir": 0,
+            "dirHold": 0,
+            "moveAcc": 0,
+            "expression": {
+              "autoBlink": true,
+              "blinkWait": 2.5,
+              "seq": [],
+              "seqT": 0,
+              "emote": null
+            },
+            "auto": {
+              "i": 1,
+              "wait": 0,
+              "stuck": 0
+            },
+            "camera": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0.8191520442889918,
+              -0.573576436351046,
+              0,
+              0,
+              0.573576436351046,
+              0.8191520442889918,
+              0,
+              0,
+              28.102855536411607,
+              41.36089814625892,
+              1
+            ],
+            "worldSeed": 11
+          }
+        },
+        "current": {
+          "build": {
+            "buildId": "local-dev",
+            "commit": "未コミットの開発画面",
+            "builtAt": ""
+          },
+          "settings": {
+            "S": 32,
+            "dot": 4,
+            "face": "pixel",
+            "f1": true,
+            "f2": true,
+            "f3": true,
+            "f4": true,
+            "auto": false,
+            "compare": false,
+            "tod": "day",
+            "shadow": true,
+            "unwrap": 1,
+            "autoBlink": true
+          },
+          "seed": 11,
+          "worldSeed": 11,
+          "preset": "still",
+          "presetLabel": "静止",
+          "inputs": [
+            {
+              "seconds": 6,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+          "stepSeconds": 0.016666666666666666,
+          "viewport": {
+            "width": 1281,
+            "height": 801,
+            "dpr": 1.25,
+            "orientation": "横",
+            "bufferWidth": 225,
+            "bufferHeight": 189
+          },
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "characters": 1,
+          "pointLights": 0,
+          "shadowLights": 1,
+          "qualityAdjustment": "なし",
+          "bufferView": "final",
+          "recording": "録画なし（申告・自動検出不可）",
+          "state": {
+            "ticks": 30,
+            "time": 0.49999999999999994,
+            "shaderTime": 0,
+            "player": {
+              "gx": 0,
+              "gy": 18
+            },
+            "phase": 0,
+            "idleT": 0.49999999999999994,
+            "moving": false,
+            "snapA": 0,
+            "smoothA": 0,
+            "curDir": 0,
+            "dirHold": 0,
+            "moveAcc": 0,
+            "expression": {
+              "autoBlink": true,
+              "blinkWait": 2.0000000000000018,
+              "seq": [],
+              "seqT": 0,
+              "emote": null
+            },
+            "auto": {
+              "i": 1,
+              "wait": 0,
+              "stuck": 0
+            },
+            "camera": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0.8191520442889918,
+              -0.573576436351046,
+              0,
+              0,
+              0.573576436351046,
+              0.8191520442889918,
+              0,
+              0,
+              28.102855536411607,
+              41.36089814625892,
+              1
+            ],
+            "worldSeed": 11
+          }
+        },
+        "referenceSeparation": {
+          "characterPixels": 253,
+          "movingFootShadowPixels": 32,
+          "intentionalAnimationPixels": 0,
+          "method": "同一カメラで4描画。全体→キャラ・顔・アイコンなし→足元影なし→既存シェーダー時刻0。静止比較は最終画像全域。建物・木の影と現在のuFootは保持し、差分を除外しない",
+          "frozenShaderSeconds": 0,
+          "readPixels": true,
+          "normalPerformance": false
+        },
+        "currentSeparation": {
+          "characterPixels": 253,
+          "movingFootShadowPixels": 32,
+          "intentionalAnimationPixels": 365,
+          "method": "同一カメラで4描画。全体→キャラ・顔・アイコンなし→足元影なし→既存シェーダー時刻0。静止比較は最終画像全域。建物・木の影と現在のuFootは保持し、差分を除外しない",
+          "frozenShaderSeconds": 0,
+          "readPixels": true,
+          "normalPerformance": false
+        },
+        "result": {
+          "scroll": {
+            "dx": 0,
+            "dy": 0
+          },
+          "compared": 41701,
+          "changed": 0,
+          "maxChannelDelta": 0,
+          "examples": [],
+          "excluded": 824,
+          "exclusion": "視野の非共通部分と両画像の1px外周（輪郭の隣接参照）。物体や差分値による除外なし",
+          "status": "比較範囲で差分なし"
+        }
+      },
+      {
+        "orientation": "odd",
+        "preset": "horizontal",
+        "reference": {
+          "build": {
+            "buildId": "local-dev",
+            "commit": "未コミットの開発画面",
+            "builtAt": ""
+          },
+          "settings": {
+            "S": 32,
+            "dot": 4,
+            "face": "pixel",
+            "f1": true,
+            "f2": true,
+            "f3": true,
+            "f4": true,
+            "auto": false,
+            "compare": false,
+            "tod": "day",
+            "shadow": true,
+            "unwrap": 1,
+            "autoBlink": true
+          },
+          "seed": 11,
+          "worldSeed": 11,
+          "preset": "horizontal",
+          "presetLabel": "横移動",
+          "inputs": [
+            {
+              "seconds": 2,
+              "x": 1,
+              "y": 0
+            },
+            {
+              "seconds": 2,
+              "x": -1,
+              "y": 0
+            },
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+          "stepSeconds": 0.016666666666666666,
+          "viewport": {
+            "width": 1281,
+            "height": 801,
+            "dpr": 1.25,
+            "orientation": "横",
+            "bufferWidth": 225,
+            "bufferHeight": 189
+          },
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "characters": 1,
+          "pointLights": 0,
+          "shadowLights": 1,
+          "qualityAdjustment": "なし",
+          "bufferView": "final",
+          "recording": "録画なし（申告・自動検出不可）",
+          "state": {
+            "ticks": 0,
+            "time": 0,
+            "shaderTime": 0,
+            "player": {
+              "gx": 0,
+              "gy": 18
+            },
+            "phase": 0,
+            "idleT": 0,
+            "moving": false,
+            "snapA": 0,
+            "smoothA": 0,
+            "curDir": 0,
+            "dirHold": 0,
+            "moveAcc": 0,
+            "expression": {
+              "autoBlink": true,
+              "blinkWait": 2.5,
+              "seq": [],
+              "seqT": 0,
+              "emote": null
+            },
+            "auto": {
+              "i": 1,
+              "wait": 0,
+              "stuck": 0
+            },
+            "camera": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0.8191520442889918,
+              -0.573576436351046,
+              0,
+              0,
+              0.573576436351046,
+              0.8191520442889918,
+              0,
+              0,
+              28.102855536411607,
+              41.36089814625892,
+              1
+            ],
+            "worldSeed": 11
+          }
+        },
+        "current": {
+          "build": {
+            "buildId": "local-dev",
+            "commit": "未コミットの開発画面",
+            "builtAt": ""
+          },
+          "settings": {
+            "S": 32,
+            "dot": 4,
+            "face": "pixel",
+            "f1": true,
+            "f2": true,
+            "f3": true,
+            "f4": true,
+            "auto": false,
+            "compare": false,
+            "tod": "day",
+            "shadow": true,
+            "unwrap": 1,
+            "autoBlink": true
+          },
+          "seed": 11,
+          "worldSeed": 11,
+          "preset": "horizontal",
+          "presetLabel": "横移動",
+          "inputs": [
+            {
+              "seconds": 2,
+              "x": 1,
+              "y": 0
+            },
+            {
+              "seconds": 2,
+              "x": -1,
+              "y": 0
+            },
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+          "stepSeconds": 0.016666666666666666,
+          "viewport": {
+            "width": 1281,
+            "height": 801,
+            "dpr": 1.25,
+            "orientation": "横",
+            "bufferWidth": 225,
+            "bufferHeight": 189
+          },
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "characters": 1,
+          "pointLights": 0,
+          "shadowLights": 1,
+          "qualityAdjustment": "なし",
+          "bufferView": "final",
+          "recording": "録画なし（申告・自動検出不可）",
+          "state": {
+            "ticks": 30,
+            "time": 0.49999999999999994,
+            "shaderTime": 0,
+            "player": {
+              "gx": 17,
+              "gy": 18
+            },
+            "phase": 0.7812499999999998,
+            "idleT": 0,
+            "moving": true,
+            "snapA": 1.5707963267948966,
+            "smoothA": 1.5669027119807537,
+            "curDir": 2,
+            "dirHold": 29,
+            "moveAcc": 0.9199999999999982,
+            "expression": {
+              "autoBlink": true,
+              "blinkWait": 2.0000000000000018,
+              "seq": [],
+              "seqT": 0,
+              "emote": null
+            },
+            "auto": {
+              "i": 1,
+              "wait": 0,
+              "stuck": 0
+            },
+            "camera": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0.8191520442889918,
+              -0.573576436351046,
+              0,
+              0,
+              0.573576436351046,
+              0.8191520442889918,
+              0,
+              1.328125,
+              28.102855536411607,
+              41.36089814625892,
+              1
+            ],
+            "worldSeed": 11
+          }
+        },
+        "referenceSeparation": {
+          "characterPixels": 253,
+          "movingFootShadowPixels": 32,
+          "intentionalAnimationPixels": 0,
+          "method": "同一カメラで4描画。全体→キャラ・顔・アイコンなし→足元影なし→既存シェーダー時刻0。静止比較は最終画像全域。建物・木の影と現在のuFootは保持し、差分を除外しない",
+          "frozenShaderSeconds": 0,
+          "readPixels": true,
+          "normalPerformance": false
+        },
+        "currentSeparation": {
+          "characterPixels": 258,
+          "movingFootShadowPixels": 32,
+          "intentionalAnimationPixels": 420,
+          "method": "同一カメラで4描画。全体→キャラ・顔・アイコンなし→足元影なし→既存シェーダー時刻0。静止比較は最終画像全域。建物・木の影と現在のuFootは保持し、差分を除外しない",
+          "frozenShaderSeconds": 0,
+          "readPixels": true,
+          "normalPerformance": false
+        },
+        "result": {
+          "scroll": {
+            "dx": 17,
+            "dy": 0
+          },
+          "compared": 38522,
+          "changed": 0,
+          "maxChannelDelta": 0,
+          "examples": [],
+          "excluded": 4003,
+          "exclusion": "視野の非共通部分と両画像の1px外周（輪郭の隣接参照）。物体や差分値による除外なし",
+          "status": "比較範囲で差分なし"
+        }
+      },
+      {
+        "orientation": "odd",
+        "preset": "vertical",
+        "reference": {
+          "build": {
+            "buildId": "local-dev",
+            "commit": "未コミットの開発画面",
+            "builtAt": ""
+          },
+          "settings": {
+            "S": 32,
+            "dot": 4,
+            "face": "pixel",
+            "f1": true,
+            "f2": true,
+            "f3": true,
+            "f4": true,
+            "auto": false,
+            "compare": false,
+            "tod": "day",
+            "shadow": true,
+            "unwrap": 1,
+            "autoBlink": true
+          },
+          "seed": 11,
+          "worldSeed": 11,
+          "preset": "vertical",
+          "presetLabel": "縦移動",
+          "inputs": [
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": -1
+            },
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": 1
+            },
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+          "stepSeconds": 0.016666666666666666,
+          "viewport": {
+            "width": 1281,
+            "height": 801,
+            "dpr": 1.25,
+            "orientation": "横",
+            "bufferWidth": 225,
+            "bufferHeight": 189
+          },
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "characters": 1,
+          "pointLights": 0,
+          "shadowLights": 1,
+          "qualityAdjustment": "なし",
+          "bufferView": "final",
+          "recording": "録画なし（申告・自動検出不可）",
+          "state": {
+            "ticks": 0,
+            "time": 0,
+            "shaderTime": 0,
+            "player": {
+              "gx": 0,
+              "gy": 18
+            },
+            "phase": 0,
+            "idleT": 0,
+            "moving": false,
+            "snapA": 0,
+            "smoothA": 0,
+            "curDir": 0,
+            "dirHold": 0,
+            "moveAcc": 0,
+            "expression": {
+              "autoBlink": true,
+              "blinkWait": 2.5,
+              "seq": [],
+              "seqT": 0,
+              "emote": null
+            },
+            "auto": {
+              "i": 1,
+              "wait": 0,
+              "stuck": 0
+            },
+            "camera": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0.8191520442889918,
+              -0.573576436351046,
+              0,
+              0,
+              0.573576436351046,
+              0.8191520442889918,
+              0,
+              0,
+              28.102855536411607,
+              41.36089814625892,
+              1
+            ],
+            "worldSeed": 11
+          }
+        },
+        "current": {
+          "build": {
+            "buildId": "local-dev",
+            "commit": "未コミットの開発画面",
+            "builtAt": ""
+          },
+          "settings": {
+            "S": 32,
+            "dot": 4,
+            "face": "pixel",
+            "f1": true,
+            "f2": true,
+            "f3": true,
+            "f4": true,
+            "auto": false,
+            "compare": false,
+            "tod": "day",
+            "shadow": true,
+            "unwrap": 1,
+            "autoBlink": true
+          },
+          "seed": 11,
+          "worldSeed": 11,
+          "preset": "vertical",
+          "presetLabel": "縦移動",
+          "inputs": [
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": -1
+            },
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": 1
+            },
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+          "stepSeconds": 0.016666666666666666,
+          "viewport": {
+            "width": 1281,
+            "height": 801,
+            "dpr": 1.25,
+            "orientation": "横",
+            "bufferWidth": 225,
+            "bufferHeight": 189
+          },
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "characters": 1,
+          "pointLights": 0,
+          "shadowLights": 1,
+          "qualityAdjustment": "なし",
+          "bufferView": "final",
+          "recording": "録画なし（申告・自動検出不可）",
+          "state": {
+            "ticks": 30,
+            "time": 0.49999999999999994,
+            "shaderTime": 0,
+            "player": {
+              "gx": 0,
+              "gy": 1
+            },
+            "phase": 0.7812499999999998,
+            "idleT": 0,
+            "moving": true,
+            "snapA": 3.141592653589793,
+            "smoothA": -3.1338054239615083,
+            "curDir": 4,
+            "dirHold": 29,
+            "moveAcc": 0.9199999999999982,
+            "expression": {
+              "autoBlink": true,
+              "blinkWait": 2.0000000000000018,
+              "seq": [],
+              "seqT": 0,
+              "emote": null
+            },
+            "auto": {
+              "i": 1,
+              "wait": 0,
+              "stuck": 0
+            },
+            "camera": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0.8191520442889918,
+              -0.573576436351046,
+              0,
+              0,
+              0.573576436351046,
+              0.8191520442889918,
+              0,
+              0,
+              29.190791845232923,
+              40.59911694173018,
+              1
+            ],
+            "worldSeed": 11
+          }
+        },
+        "referenceSeparation": {
+          "characterPixels": 253,
+          "movingFootShadowPixels": 32,
+          "intentionalAnimationPixels": 0,
+          "method": "同一カメラで4描画。全体→キャラ・顔・アイコンなし→足元影なし→既存シェーダー時刻0。静止比較は最終画像全域。建物・木の影と現在のuFootは保持し、差分を除外しない",
+          "frozenShaderSeconds": 0,
+          "readPixels": true,
+          "normalPerformance": false
+        },
+        "currentSeparation": {
+          "characterPixels": 262,
+          "movingFootShadowPixels": 32,
+          "intentionalAnimationPixels": 247,
+          "method": "同一カメラで4描画。全体→キャラ・顔・アイコンなし→足元影なし→既存シェーダー時刻0。静止比較は最終画像全域。建物・木の影と現在のuFootは保持し、差分を除外しない",
+          "frozenShaderSeconds": 0,
+          "readPixels": true,
+          "normalPerformance": false
+        },
+        "result": {
+          "scroll": {
+            "dx": 0,
+            "dy": 17
+          },
+          "compared": 37910,
+          "changed": 0,
+          "maxChannelDelta": 0,
+          "examples": [],
+          "excluded": 4615,
+          "exclusion": "視野の非共通部分と両画像の1px外周（輪郭の隣接参照）。物体や差分値による除外なし",
+          "status": "比較範囲で差分なし"
+        }
+      },
+      {
+        "orientation": "odd",
+        "preset": "diagonal",
+        "reference": {
+          "build": {
+            "buildId": "local-dev",
+            "commit": "未コミットの開発画面",
+            "builtAt": ""
+          },
+          "settings": {
+            "S": 32,
+            "dot": 4,
+            "face": "pixel",
+            "f1": true,
+            "f2": true,
+            "f3": true,
+            "f4": true,
+            "auto": false,
+            "compare": false,
+            "tod": "day",
+            "shadow": true,
+            "unwrap": 1,
+            "autoBlink": true
+          },
+          "seed": 11,
+          "worldSeed": 11,
+          "preset": "diagonal",
+          "presetLabel": "斜め移動",
+          "inputs": [
+            {
+              "seconds": 2,
+              "x": 1,
+              "y": 1
+            },
+            {
+              "seconds": 2,
+              "x": -1,
+              "y": -1
+            },
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+          "stepSeconds": 0.016666666666666666,
+          "viewport": {
+            "width": 1281,
+            "height": 801,
+            "dpr": 1.25,
+            "orientation": "横",
+            "bufferWidth": 225,
+            "bufferHeight": 189
+          },
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "characters": 1,
+          "pointLights": 0,
+          "shadowLights": 1,
+          "qualityAdjustment": "なし",
+          "bufferView": "final",
+          "recording": "録画なし（申告・自動検出不可）",
+          "state": {
+            "ticks": 0,
+            "time": 0,
+            "shaderTime": 0,
+            "player": {
+              "gx": 0,
+              "gy": 18
+            },
+            "phase": 0,
+            "idleT": 0,
+            "moving": false,
+            "snapA": 0,
+            "smoothA": 0,
+            "curDir": 0,
+            "dirHold": 0,
+            "moveAcc": 0,
+            "expression": {
+              "autoBlink": true,
+              "blinkWait": 2.5,
+              "seq": [],
+              "seqT": 0,
+              "emote": null
+            },
+            "auto": {
+              "i": 1,
+              "wait": 0,
+              "stuck": 0
+            },
+            "camera": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0.8191520442889918,
+              -0.573576436351046,
+              0,
+              0,
+              0.573576436351046,
+              0.8191520442889918,
+              0,
+              0,
+              28.102855536411607,
+              41.36089814625892,
+              1
+            ],
+            "worldSeed": 11
+          }
+        },
+        "current": {
+          "build": {
+            "buildId": "local-dev",
+            "commit": "未コミットの開発画面",
+            "builtAt": ""
+          },
+          "settings": {
+            "S": 32,
+            "dot": 4,
+            "face": "pixel",
+            "f1": true,
+            "f2": true,
+            "f3": true,
+            "f4": true,
+            "auto": false,
+            "compare": false,
+            "tod": "day",
+            "shadow": true,
+            "unwrap": 1,
+            "autoBlink": true
+          },
+          "seed": 11,
+          "worldSeed": 11,
+          "preset": "diagonal",
+          "presetLabel": "斜め移動",
+          "inputs": [
+            {
+              "seconds": 2,
+              "x": 1,
+              "y": 1
+            },
+            {
+              "seconds": 2,
+              "x": -1,
+              "y": -1
+            },
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+          "stepSeconds": 0.016666666666666666,
+          "viewport": {
+            "width": 1281,
+            "height": 801,
+            "dpr": 1.25,
+            "orientation": "横",
+            "bufferWidth": 225,
+            "bufferHeight": 189
+          },
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "characters": 1,
+          "pointLights": 0,
+          "shadowLights": 1,
+          "qualityAdjustment": "なし",
+          "bufferView": "final",
+          "recording": "録画なし（申告・自動検出不可）",
+          "state": {
+            "ticks": 30,
+            "time": 0.49999999999999994,
+            "shaderTime": 0,
+            "player": {
+              "gx": 12,
+              "gy": 30
+            },
+            "phase": 0.7812499999999998,
+            "idleT": 0,
+            "moving": true,
+            "snapA": 0.7853981633974483,
+            "smoothA": 0.7834513559903765,
+            "curDir": 1,
+            "dirHold": 29,
+            "moveAcc": 0.6713535188629327,
+            "expression": {
+              "autoBlink": true,
+              "blinkWait": 2.0000000000000018,
+              "seq": [],
+              "seqT": 0,
+              "emote": null
+            },
+            "auto": {
+              "i": 1,
+              "wait": 0,
+              "stuck": 0
+            },
+            "camera": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0.8191520442889918,
+              -0.573576436351046,
+              0,
+              0,
+              0.573576436351046,
+              0.8191520442889918,
+              0,
+              0.9375,
+              27.334900494890675,
+              41.89862605533802,
+              1
+            ],
+            "worldSeed": 11
+          }
+        },
+        "referenceSeparation": {
+          "characterPixels": 253,
+          "movingFootShadowPixels": 32,
+          "intentionalAnimationPixels": 0,
+          "method": "同一カメラで4描画。全体→キャラ・顔・アイコンなし→足元影なし→既存シェーダー時刻0。静止比較は最終画像全域。建物・木の影と現在のuFootは保持し、差分を除外しない",
+          "frozenShaderSeconds": 0,
+          "readPixels": true,
+          "normalPerformance": false
+        },
+        "currentSeparation": {
+          "characterPixels": 257,
+          "movingFootShadowPixels": 32,
+          "intentionalAnimationPixels": 429,
+          "method": "同一カメラで4描画。全体→キャラ・顔・アイコンなし→足元影なし→既存シェーダー時刻0。静止比較は最終画像全域。建物・木の影と現在のuFootは保持し、差分を除外しない",
+          "frozenShaderSeconds": 0,
+          "readPixels": true,
+          "normalPerformance": false
+        },
+        "result": {
+          "scroll": {
+            "dx": 12,
+            "dy": -12
+          },
+          "compared": 36925,
+          "changed": 0,
+          "maxChannelDelta": 0,
+          "examples": [],
+          "excluded": 5600,
+          "exclusion": "視野の非共通部分と両画像の1px外周（輪郭の隣接参照）。物体や差分値による除外なし",
+          "status": "比較範囲で差分なし"
+        }
+      },
+      {
+        "orientation": "odd",
+        "preset": "wall",
+        "reference": {
+          "build": {
+            "buildId": "local-dev",
+            "commit": "未コミットの開発画面",
+            "builtAt": ""
+          },
+          "settings": {
+            "S": 32,
+            "dot": 4,
+            "face": "pixel",
+            "f1": true,
+            "f2": true,
+            "f3": true,
+            "f4": true,
+            "auto": false,
+            "compare": false,
+            "tod": "day",
+            "shadow": true,
+            "unwrap": 1,
+            "autoBlink": true
+          },
+          "seed": 11,
+          "worldSeed": 11,
+          "preset": "wall",
+          "presetLabel": "壁際",
+          "inputs": [
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": -1
+            },
+            {
+              "seconds": 2,
+              "x": 1,
+              "y": -1
+            },
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+          "stepSeconds": 0.016666666666666666,
+          "viewport": {
+            "width": 1281,
+            "height": 801,
+            "dpr": 1.25,
+            "orientation": "横",
+            "bufferWidth": 225,
+            "bufferHeight": 189
+          },
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "characters": 1,
+          "pointLights": 0,
+          "shadowLights": 1,
+          "qualityAdjustment": "なし",
+          "bufferView": "final",
+          "recording": "録画なし（申告・自動検出不可）",
+          "state": {
+            "ticks": 0,
+            "time": 0,
+            "shaderTime": 0,
+            "player": {
+              "gx": -96,
+              "gy": -36
+            },
+            "phase": 0,
+            "idleT": 0,
+            "moving": false,
+            "snapA": 0,
+            "smoothA": 0,
+            "curDir": 0,
+            "dirHold": 0,
+            "moveAcc": 0,
+            "expression": {
+              "autoBlink": true,
+              "blinkWait": 2.5,
+              "seq": [],
+              "seqT": 0,
+              "emote": null
+            },
+            "auto": {
+              "i": 1,
+              "wait": 0,
+              "stuck": 0
+            },
+            "camera": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0.8191520442889918,
+              -0.573576436351046,
+              0,
+              0,
+              0.573576436351046,
+              0.8191520442889918,
+              0,
+              -7.5,
+              31.558653223255792,
+              38.94112255540294,
+              1
+            ],
+            "worldSeed": 11
+          }
+        },
+        "current": {
+          "build": {
+            "buildId": "local-dev",
+            "commit": "未コミットの開発画面",
+            "builtAt": ""
+          },
+          "settings": {
+            "S": 32,
+            "dot": 4,
+            "face": "pixel",
+            "f1": true,
+            "f2": true,
+            "f3": true,
+            "f4": true,
+            "auto": false,
+            "compare": false,
+            "tod": "day",
+            "shadow": true,
+            "unwrap": 1,
+            "autoBlink": true
+          },
+          "seed": 11,
+          "worldSeed": 11,
+          "preset": "wall",
+          "presetLabel": "壁際",
+          "inputs": [
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": -1
+            },
+            {
+              "seconds": 2,
+              "x": 1,
+              "y": -1
+            },
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+          "stepSeconds": 0.016666666666666666,
+          "viewport": {
+            "width": 1281,
+            "height": 801,
+            "dpr": 1.25,
+            "orientation": "横",
+            "bufferWidth": 225,
+            "bufferHeight": 189
+          },
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "characters": 1,
+          "pointLights": 0,
+          "shadowLights": 1,
+          "qualityAdjustment": "なし",
+          "bufferView": "final",
+          "recording": "録画なし（申告・自動検出不可）",
+          "state": {
+            "ticks": 30,
+            "time": 0.49999999999999994,
+            "shaderTime": 0,
+            "player": {
+              "gx": -96,
+              "gy": -37
+            },
+            "phase": 0.7812499999999998,
+            "idleT": 0,
+            "moving": true,
+            "snapA": 3.141592653589793,
+            "smoothA": -3.1338054239615083,
+            "curDir": 4,
+            "dirHold": 29,
+            "moveAcc": 0,
+            "expression": {
+              "autoBlink": true,
+              "blinkWait": 2.0000000000000018,
+              "seq": [],
+              "seqT": 0,
+              "emote": null
+            },
+            "auto": {
+              "i": 1,
+              "wait": 0,
+              "stuck": 0
+            },
+            "camera": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0.8191520442889918,
+              -0.573576436351046,
+              0,
+              0,
+              0.573576436351046,
+              0.8191520442889918,
+              0,
+              -7.5,
+              31.622649476715868,
+              38.896311896313016,
+              1
+            ],
+            "worldSeed": 11
+          }
+        },
+        "referenceSeparation": {
+          "characterPixels": 253,
+          "movingFootShadowPixels": 32,
+          "intentionalAnimationPixels": 0,
+          "method": "同一カメラで4描画。全体→キャラ・顔・アイコンなし→足元影なし→既存シェーダー時刻0。静止比較は最終画像全域。建物・木の影と現在のuFootは保持し、差分を除外しない",
+          "frozenShaderSeconds": 0,
+          "readPixels": true,
+          "normalPerformance": false
+        },
+        "currentSeparation": {
+          "characterPixels": 262,
+          "movingFootShadowPixels": 32,
+          "intentionalAnimationPixels": 255,
+          "method": "同一カメラで4描画。全体→キャラ・顔・アイコンなし→足元影なし→既存シェーダー時刻0。静止比較は最終画像全域。建物・木の影と現在のuFootは保持し、差分を除外しない",
+          "frozenShaderSeconds": 0,
+          "readPixels": true,
+          "normalPerformance": false
+        },
+        "result": {
+          "scroll": {
+            "dx": 0,
+            "dy": 1
+          },
+          "compared": 41478,
+          "changed": 0,
+          "maxChannelDelta": 0,
+          "examples": [],
+          "excluded": 1047,
+          "exclusion": "視野の非共通部分と両画像の1px外周（輪郭の隣接参照）。物体や差分値による除外なし",
+          "status": "比較範囲で差分なし"
+        }
+      },
+      {
+        "orientation": "odd",
+        "preset": "trees",
+        "reference": {
+          "build": {
+            "buildId": "local-dev",
+            "commit": "未コミットの開発画面",
+            "builtAt": ""
+          },
+          "settings": {
+            "S": 32,
+            "dot": 4,
+            "face": "pixel",
+            "f1": true,
+            "f2": true,
+            "f3": true,
+            "f4": true,
+            "auto": false,
+            "compare": false,
+            "tod": "day",
+            "shadow": true,
+            "unwrap": 1,
+            "autoBlink": true
+          },
+          "seed": 11,
+          "worldSeed": 11,
+          "preset": "trees",
+          "presetLabel": "木の重なり",
+          "inputs": [
+            {
+              "seconds": 2,
+              "x": 1,
+              "y": 0
+            },
+            {
+              "seconds": 2,
+              "x": -1,
+              "y": -1
+            },
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+          "stepSeconds": 0.016666666666666666,
+          "viewport": {
+            "width": 1281,
+            "height": 801,
+            "dpr": 1.25,
+            "orientation": "横",
+            "bufferWidth": 225,
+            "bufferHeight": 189
+          },
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "characters": 1,
+          "pointLights": 0,
+          "shadowLights": 1,
+          "qualityAdjustment": "なし",
+          "bufferView": "final",
+          "recording": "録画なし（申告・自動検出不可）",
+          "state": {
+            "ticks": 0,
+            "time": 0,
+            "shaderTime": 0,
+            "player": {
+              "gx": 166,
+              "gy": -73
+            },
+            "phase": 0,
+            "idleT": 0,
+            "moving": false,
+            "snapA": 0,
+            "smoothA": 0,
+            "curDir": 0,
+            "dirHold": 0,
+            "moveAcc": 0,
+            "expression": {
+              "autoBlink": true,
+              "blinkWait": 2.5,
+              "seq": [],
+              "seqT": 0,
+              "emote": null
+            },
+            "auto": {
+              "i": 1,
+              "wait": 0,
+              "stuck": 0
+            },
+            "camera": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0.8191520442889918,
+              -0.573576436351046,
+              0,
+              0,
+              0.573576436351046,
+              0.8191520442889918,
+              0,
+              12.96875,
+              33.92651460127866,
+              37.283128169075695,
+              1
+            ],
+            "worldSeed": 11
+          }
+        },
+        "current": {
+          "build": {
+            "buildId": "local-dev",
+            "commit": "未コミットの開発画面",
+            "builtAt": ""
+          },
+          "settings": {
+            "S": 32,
+            "dot": 4,
+            "face": "pixel",
+            "f1": true,
+            "f2": true,
+            "f3": true,
+            "f4": true,
+            "auto": false,
+            "compare": false,
+            "tod": "day",
+            "shadow": true,
+            "unwrap": 1,
+            "autoBlink": true
+          },
+          "seed": 11,
+          "worldSeed": 11,
+          "preset": "trees",
+          "presetLabel": "木の重なり",
+          "inputs": [
+            {
+              "seconds": 2,
+              "x": 1,
+              "y": 0
+            },
+            {
+              "seconds": 2,
+              "x": -1,
+              "y": -1
+            },
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+          "stepSeconds": 0.016666666666666666,
+          "viewport": {
+            "width": 1281,
+            "height": 801,
+            "dpr": 1.25,
+            "orientation": "横",
+            "bufferWidth": 225,
+            "bufferHeight": 189
+          },
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "characters": 1,
+          "pointLights": 0,
+          "shadowLights": 1,
+          "qualityAdjustment": "なし",
+          "bufferView": "final",
+          "recording": "録画なし（申告・自動検出不可）",
+          "state": {
+            "ticks": 30,
+            "time": 0.49999999999999994,
+            "shaderTime": 0,
+            "player": {
+              "gx": 183,
+              "gy": -73
+            },
+            "phase": 0.7812499999999998,
+            "idleT": 0,
+            "moving": true,
+            "snapA": 1.5707963267948966,
+            "smoothA": 1.5669027119807537,
+            "curDir": 2,
+            "dirHold": 29,
+            "moveAcc": 0.9199999999999982,
+            "expression": {
+              "autoBlink": true,
+              "blinkWait": 2.0000000000000018,
+              "seq": [],
+              "seqT": 0,
+              "emote": null
+            },
+            "auto": {
+              "i": 1,
+              "wait": 0,
+              "stuck": 0
+            },
+            "camera": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0.8191520442889918,
+              -0.573576436351046,
+              0,
+              0,
+              0.573576436351046,
+              0.8191520442889918,
+              0,
+              14.296875,
+              33.92651460127866,
+              37.283128169075695,
+              1
+            ],
+            "worldSeed": 11
+          }
+        },
+        "referenceSeparation": {
+          "characterPixels": 253,
+          "movingFootShadowPixels": 32,
+          "intentionalAnimationPixels": 0,
+          "method": "同一カメラで4描画。全体→キャラ・顔・アイコンなし→足元影なし→既存シェーダー時刻0。静止比較は最終画像全域。建物・木の影と現在のuFootは保持し、差分を除外しない",
+          "frozenShaderSeconds": 0,
+          "readPixels": true,
+          "normalPerformance": false
+        },
+        "currentSeparation": {
+          "characterPixels": 258,
+          "movingFootShadowPixels": 32,
+          "intentionalAnimationPixels": 412,
+          "method": "同一カメラで4描画。全体→キャラ・顔・アイコンなし→足元影なし→既存シェーダー時刻0。静止比較は最終画像全域。建物・木の影と現在のuFootは保持し、差分を除外しない",
+          "frozenShaderSeconds": 0,
+          "readPixels": true,
+          "normalPerformance": false
+        },
+        "result": {
+          "scroll": {
+            "dx": 17,
+            "dy": 0
+          },
+          "compared": 38522,
+          "changed": 0,
+          "maxChannelDelta": 0,
+          "examples": [],
+          "excluded": 4003,
+          "exclusion": "視野の非共通部分と両画像の1px外周（輪郭の隣接参照）。物体や差分値による除外なし",
+          "status": "比較範囲で差分なし"
+        }
+      }
+    ],
+    "errors": []
+  },
+  "realRafPerformance": {
+    "browser": "156.0.8078.79",
+    "renderer": "Chromium / SwiftShader（ソフトウェアGPU）。iPhone性能ではない。録画・画素読出しなし",
+    "results": [
+      {
+        "name": "portrait",
+        "conditions": {
+          "mode": "検証",
+          "replayPaused": false,
+          "build": {
+            "buildId": "local-90b0594a06b3-1794037110978",
+            "commit": "90b0594a06b37fdf46ee21b8b570fc74c3ca96a5",
+            "builtAt": "2026-11-07T07:38:30.978Z"
+          },
+          "settings": {
+            "S": 32,
+            "dot": 4,
+            "face": "pixel",
+            "f1": true,
+            "f2": true,
+            "f3": true,
+            "f4": true,
+            "auto": false,
+            "compare": false,
+            "tod": "day",
+            "shadow": true,
+            "unwrap": 1,
+            "autoBlink": true
+          },
+          "seed": 11,
+          "worldSeed": 11,
+          "preset": "horizontal",
+          "presetLabel": "横移動",
+          "inputs": [
+            {
+              "seconds": 2,
+              "x": 1,
+              "y": 0
+            },
+            {
+              "seconds": 2,
+              "x": -1,
+              "y": 0
+            },
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+          "stepSeconds": 0.016666666666666666,
+          "viewport": {
+            "width": 393,
+            "height": 852,
+            "dpr": 3,
+            "orientation": "縦",
+            "bufferWidth": 98,
+            "bufferHeight": 110
+          },
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "characters": 1,
+          "pointLights": 0,
+          "shadowLights": 1,
+          "qualityAdjustment": "なし",
+          "bufferView": "final",
+          "recording": "録画なし（申告・自動検出不可）",
+          "state": {
+            "ticks": 0,
+            "time": 0,
+            "shaderTime": 0,
+            "player": {
+              "gx": 0,
+              "gy": 18
+            },
+            "phase": 0,
+            "idleT": 0,
+            "moving": false,
+            "snapA": 0,
+            "smoothA": 0,
+            "curDir": 0,
+            "dirHold": 0,
+            "moveAcc": 0,
+            "expression": {
+              "autoBlink": true,
+              "blinkWait": 2.5,
+              "seq": [],
+              "seqT": 0,
+              "emote": null
+            },
+            "auto": {
+              "i": 1,
+              "wait": 0,
+              "stuck": 0
+            },
+            "camera": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0.8191520442889918,
+              -0.573576436351046,
+              0,
+              0,
+              0.573576436351046,
+              0.8191520442889918,
+              0,
+              1.25,
+              28.102855536411607,
+              41.36089814625892,
+              1
+            ],
+            "worldSeed": 11
+          }
+        },
+        "result": {
+          "status": "complete",
+          "reason": null,
+          "warmupSeconds": 5,
+          "requestedSeconds": 10,
+          "measuredSeconds": 10.033,
+          "renderedFrames": 89,
+          "logicUpdates": 509,
+          "renderedFps": 8.870726602212699,
+          "logicHz": 50.732582477823186,
+          "frameIntervals": {
+            "count": 89,
+            "meanMs": 112.73033707865169,
+            "medianMs": 100,
+            "p95Ms": 200,
+            "maxMs": 300,
+            "over50ms": 86
+          },
+          "cpuSubmission": {
+            "count": 89,
+            "meanMs": 1.165168539343632,
+            "medianMs": 1,
+            "p95Ms": 1.8000000000465661,
+            "maxMs": 5,
+            "over50ms": 0
+          },
+          "gpuMs": null,
+          "gpuNote": "未取得。RAF間隔・CPU描画命令発行時間はGPU時間ではありません",
+          "readPixels": false,
+          "video": "外部録画は自動検出できません。結果の申告欄を参照",
+          "pacing": "通常RAF描画、既存STEPロジック。描画60fpsへ制限していない",
+          "passJudgment": null
+        },
+        "endState": {
+          "ticks": 788,
+          "time": 13.133333333333566,
+          "shaderTime": 13.133333333333566,
+          "player": {
+            "gx": 23,
+            "gy": 18
+          },
+          "phase": 0.7708333333333326,
+          "idleT": 0,
+          "moving": true,
+          "snapA": 1.5707963267948966,
+          "smoothA": 1.5707924296646667,
+          "curDir": 2,
+          "dirHold": 67,
+          "moveAcc": 0.6186666666666625,
+          "expression": {
+            "autoBlink": true,
+            "blinkWait": 2.5354225230713743,
+            "seq": [],
+            "seqT": 0,
+            "emote": null
+          },
+          "auto": {
+            "i": 1,
+            "wait": 0,
+            "stuck": 0
+          },
+          "camera": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0.8191520442889918,
+            -0.573576436351046,
+            0,
+            0,
+            0.573576436351046,
+            0.8191520442889918,
+            0,
+            1.796875,
+            28.102855536411607,
+            41.36089814625892,
+            1
+          ],
+          "worldSeed": 11
+        }
+      },
+      {
+        "name": "landscape",
+        "conditions": {
+          "mode": "検証",
+          "replayPaused": false,
+          "build": {
+            "buildId": "local-90b0594a06b3-1794037110978",
+            "commit": "90b0594a06b37fdf46ee21b8b570fc74c3ca96a5",
+            "builtAt": "2026-11-07T07:38:30.978Z"
+          },
+          "settings": {
+            "S": 32,
+            "dot": 4,
+            "face": "pixel",
+            "f1": true,
+            "f2": true,
+            "f3": true,
+            "f4": true,
+            "auto": false,
+            "compare": false,
+            "tod": "day",
+            "shadow": true,
+            "unwrap": 1,
+            "autoBlink": true
+          },
+          "seed": 11,
+          "worldSeed": 11,
+          "preset": "horizontal",
+          "presetLabel": "横移動",
+          "inputs": [
+            {
+              "seconds": 2,
+              "x": 1,
+              "y": 0
+            },
+            {
+              "seconds": 2,
+              "x": -1,
+              "y": 0
+            },
+            {
+              "seconds": 2,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+          "stepSeconds": 0.016666666666666666,
+          "viewport": {
+            "width": 852,
+            "height": 393,
+            "dpr": 3,
+            "orientation": "横",
+            "bufferWidth": 123,
+            "bufferHeight": 87
+          },
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "characters": 1,
+          "pointLights": 0,
+          "shadowLights": 1,
+          "qualityAdjustment": "なし",
+          "bufferView": "final",
+          "recording": "録画なし（申告・自動検出不可）",
+          "state": {
+            "ticks": 0,
+            "time": 0,
+            "shaderTime": 0,
+            "player": {
+              "gx": 0,
+              "gy": 18
+            },
+            "phase": 0,
+            "idleT": 0,
+            "moving": false,
+            "snapA": 0,
+            "smoothA": 0,
+            "curDir": 0,
+            "dirHold": 0,
+            "moveAcc": 0,
+            "expression": {
+              "autoBlink": true,
+              "blinkWait": 2.5,
+              "seq": [],
+              "seqT": 0,
+              "emote": null
+            },
+            "auto": {
+              "i": 1,
+              "wait": 0,
+              "stuck": 0
+            },
+            "camera": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0.8191520442889918,
+              -0.573576436351046,
+              0,
+              0,
+              0.573576436351046,
+              0.8191520442889918,
+              0,
+              1.796875,
+              28.102855536411607,
+              41.36089814625892,
+              1
+            ],
+            "worldSeed": 11
+          }
+        },
+        "result": {
+          "status": "complete",
+          "reason": null,
+          "warmupSeconds": 5,
+          "requestedSeconds": 10,
+          "measuredSeconds": 10.133,
+          "renderedFrames": 52,
+          "logicUpdates": 305,
+          "renderedFps": 5.131747754860357,
+          "logicHz": 30.09967433139248,
+          "frameIntervals": {
+            "count": 52,
+            "meanMs": 194.8653846153846,
+            "medianMs": 116.70000000000073,
+            "p95Ms": 750,
+            "maxMs": 1416.5999999999985,
+            "over50ms": 51
+          },
+          "cpuSubmission": {
+            "count": 52,
+            "meanMs": 3.661538461514283,
+            "medianMs": 1.6000000000931323,
+            "p95Ms": 18.0999999998603,
+            "maxMs": 32.9000000001397,
+            "over50ms": 0
+          },
+          "gpuMs": null,
+          "gpuNote": "未取得。RAF間隔・CPU描画命令発行時間はGPU時間ではありません",
+          "readPixels": false,
+          "video": "外部録画は自動検出できません。結果の申告欄を参照",
+          "pacing": "通常RAF描画、既存STEPロジック。描画60fpsへ制限していない",
+          "passJudgment": null
+        },
+        "endState": {
+          "ticks": 395,
+          "time": 6.583333333333315,
+          "shaderTime": 6.583333333333315,
+          "player": {
+            "gx": 3,
+            "gy": 18
+          },
+          "phase": 0.9114583333333329,
+          "idleT": 0,
+          "moving": true,
+          "snapA": 1.5707963267948966,
+          "smoothA": 1.5679315651110772,
+          "curDir": 2,
+          "dirHold": 34,
+          "moveAcc": 0.9066666666666645,
+          "expression": {
+            "autoBlink": true,
+            "blinkWait": 0.21978563293815617,
+            "seq": [],
+            "seqT": 0,
+            "emote": null
+          },
+          "auto": {
+            "i": 1,
+            "wait": 0,
+            "stuck": 0
+          },
+          "camera": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0.8191520442889918,
+            -0.573576436351046,
+            0,
+            0,
+            0.573576436351046,
+            0.8191520442889918,
+            0,
+            0.234375,
+            28.102855536411607,
+            41.36089814625892,
+            1
+          ],
+          "worldSeed": 11
+        }
+      }
+    ],
+    "errors": []
+  },
+  "builtSite": {
+    "browser": "156.0.8078.79",
+    "errors": [],
+    "requests": [
+      "http://127.0.0.1:5176/pixel-rig/",
+      "http://127.0.0.1:5176/pixel-rig/candidate/",
+      "http://127.0.0.1:5176/pixel-rig/candidate/assets/index-Cy0vK645.css",
+      "http://127.0.0.1:5176/pixel-rig/candidate/assets/index-6NktV1dE.js",
+      "http://127.0.0.1:5176/pixel-rig/stable/",
+      "http://127.0.0.1:5176/pixel-rig/stable/assets/index-Cy0vK645.css",
+      "http://127.0.0.1:5176/pixel-rig/stable/assets/index-6NktV1dE.js"
+    ],
+    "results": [
+      {
+        "name": "portrait",
+        "viewport": {
+          "width": 393,
+          "height": 852
+        },
+        "dpr": 3,
+        "buildId": "local-90b0594a06b3-1794036769733",
+        "commit": "90b0594a06b37fdf46ee21b8b570fc74c3ca96a5",
+        "png": [
+          192,
+          384
+        ],
+        "overflow": false,
+        "stage": {
+          "x": 0,
+          "y": 65.5,
+          "width": 393,
+          "height": 443.03125
+        },
+        "panel": {
+          "x": 0,
+          "y": 508.53125,
+          "width": 393,
+          "height": 343.46875
+        }
+      },
+      {
+        "name": "landscape",
+        "viewport": {
+          "width": 852,
+          "height": 393
+        },
+        "dpr": 3,
+        "buildId": "local-90b0594a06b3-1794036769733",
+        "commit": "90b0594a06b37fdf46ee21b8b570fc74c3ca96a5",
+        "png": [
+          192,
+          384
+        ],
+        "overflow": false,
+        "stage": {
+          "x": 0,
+          "y": 43.5,
+          "width": 852,
+          "height": 240
+        },
+        "panel": {
+          "x": 0,
+          "y": 283.5,
+          "width": 852,
+          "height": 109.5
+        }
+      }
+    ]
+  },
+  "unresolved": [
+    "PNG保存のiPhone不具合は保留",
+    "移動中のキャラの色のちらつきは原因未確定・未解決"
+  ],
+  "approval": "2026-11-07：依頼者が対象ビルドのiPhone実機確認、V6-03採用、PR #9マージと同一成果物の昇格を承認。実行結果はIssue #8／PR #9。",
+  "iphoneVerification": {
+    "source": "依頼者によるCodex本スレッドへの2026-11-07実機報告。Codexの再測定ではない",
+    "receiptUrl": "https://github.com/formulaText/pixel-rig/pull/9#issuecomment-6704646627",
+    "buildId": "gh-42352378419-1-ea1f0d032288",
+    "commit": "ea1f0d032288a464312696bed74d5b981b5fd15a",
+    "device": "iPhone 17",
+    "browser": "Safari",
+    "operations": {
+      "resetAndPlay": "正常",
+      "pauseAndSingleStep": "正常",
+      "returnToNormal": "正常",
+      "copyPortrait": "成功",
+      "copyLandscape": "成功"
+    },
+    "conditions": {
+      "resolution": 32,
+      "dotScale": 4,
+      "timeOfDay": "day",
+      "shadows": true,
+      "characters": 1,
+      "seed": 11,
+      "preset": "horizontal",
+      "warmupSeconds": 5,
+      "requestedMeasureSeconds": 10
+    },
+    "results": [
+      {
+        "orientation": "portrait",
+        "measuredSeconds": 10.001,
+        "frames": 600,
+        "fps": 59.994,
+        "frameIntervalP95Ms": 17,
+        "frameIntervalMaxMs": 23,
+        "over50ms": 0,
+        "gpuMs": null
+      },
+      {
+        "orientation": "landscape",
+        "measuredSeconds": 10.002,
+        "frames": 600,
+        "fps": 59.988,
+        "frameIntervalP95Ms": 17,
+        "frameIntervalMaxMs": 21,
+        "over50ms": 0,
+        "gpuMs": null
+      }
+    ],
+    "limits": "GPU時間は未取得。指定条件での短時間測定。全条件60fps保証ではない。PNG保存保留・色のちらつき未解決を継続。",
+    "approval": {
+      "approver": "formulaText",
+      "executor": "Codex",
+      "statement": "ビルド gh-42352378419-1-ea1f0d032288 をiPhone 17 Safariで確認しました。V6-03を採用し、PR #9のマージと、この確認済み成果物の確認済み版への昇格を承認します。Codexで実行してください。",
+      "source": "https://github.com/formulaText/pixel-rig/pull/9#issuecomment-6704646627",
+      "scope": [
+        "V6-03採用",
+        "PR #9マージ",
+        "確認した同一成果物の昇格（再ビルドなし）"
+      ]
+    }
+  }
+}

@@ -51,6 +51,8 @@ async function open(path, viewport, dpr) {
   // Let ResizeObserver finish before stepping; it must not clear the captured framebuffer.
   await p.waitForTimeout(50);
   await p.evaluate(()=>window.__resetRandom());
+  // V6-03 makes readback opt-in. Enable the old comparison explicitly for equivalence.
+  if(path==='') await p.locator('#tgCmp').evaluate(e=>e.click());
   return p;
 }
 async function capture(p, count, imageName) {
