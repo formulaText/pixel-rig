@@ -1,0 +1,807 @@
+{
+  "browser": "156.0.8078.79",
+  "renderer": "Chromium / SwiftShader（ソフトウェアGPU）。iPhone性能ではない。録画・画素読出しなし",
+  "results": [
+    {
+      "name": "portrait",
+      "variant": "baseline",
+      "normalReadbacks": 0,
+      "diagnosticReads": 8,
+      "diagnosticReadMs": 962,
+      "comparisonWallMs": 2263.0699539999987,
+      "conditions": {
+        "mode": "検証",
+        "replayPaused": false,
+        "build": {
+          "buildId": "local-ce9b4bc0da4e-1794044843860",
+          "commit": "ce9b4bc0da4ec006010c5d23bcff67a4f8c36fb6",
+          "builtAt": "2026-11-07T09:47:23.859Z"
+        },
+        "settings": {
+          "S": 32,
+          "dot": 4,
+          "face": "pixel",
+          "f1": true,
+          "f2": true,
+          "f3": true,
+          "f4": true,
+          "auto": false,
+          "compare": false,
+          "tod": "day",
+          "shadow": true,
+          "unwrap": 1,
+          "autoBlink": true
+        },
+        "seed": 11,
+        "worldSeed": 11,
+        "preset": "color-vertical",
+        "presetLabel": "色比較：縦移動",
+        "inputs": [
+          {
+            "seconds": 2,
+            "x": 0,
+            "y": -1
+          },
+          {
+            "seconds": 2,
+            "x": 0,
+            "y": 1
+          }
+        ],
+        "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+        "stepSeconds": 0.016666666666666666,
+        "viewport": {
+          "width": 393,
+          "height": 852,
+          "dpr": 3,
+          "orientation": "縦",
+          "bufferWidth": 98,
+          "bufferHeight": 110
+        },
+        "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+        "characters": 1,
+        "pointLights": 0,
+        "shadowLights": 1,
+        "qualityAdjustment": "なし",
+        "characterStudy": {
+          "variant": "baseline",
+          "freezePose": false,
+          "fixedCamera": false,
+          "presetControlsActive": true
+        },
+        "bufferView": "final",
+        "recording": "録画なし（申告・自動検出不可）",
+        "state": {
+          "ticks": 0,
+          "time": 0,
+          "shaderTime": 0,
+          "player": {
+            "gx": 0,
+            "gy": 18
+          },
+          "phase": 0,
+          "idleT": 0,
+          "moving": false,
+          "snapA": 0,
+          "smoothA": 0,
+          "curDir": 0,
+          "dirHold": 0,
+          "moveAcc": 0,
+          "expression": {
+            "autoBlink": true,
+            "blinkWait": 2.5,
+            "seq": [],
+            "seqT": 0,
+            "emote": null
+          },
+          "auto": {
+            "i": 1,
+            "wait": 0,
+            "stuck": 0
+          },
+          "camera": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0.8191520442889918,
+            -0.573576436351046,
+            0,
+            0,
+            0.573576436351046,
+            0.8191520442889918,
+            0,
+            0,
+            29.57476936599339,
+            40.33025298719063,
+            1
+          ],
+          "worldSeed": 11
+        }
+      },
+      "result": {
+        "status": "complete",
+        "reason": null,
+        "warmupSeconds": 5,
+        "requestedSeconds": 10,
+        "measuredSeconds": 10.049599999999998,
+        "renderedFrames": 111,
+        "logicUpdates": 534,
+        "renderedFps": 11.045215729979304,
+        "logicHz": 53.13644324152206,
+        "frameIntervals": {
+          "count": 111,
+          "meanMs": 90.53693693693693,
+          "medianMs": 83.39999999999964,
+          "p95Ms": 166.59999999999854,
+          "maxMs": 250.00000000000182,
+          "over50ms": 100
+        },
+        "cpuSubmission": {
+          "count": 111,
+          "meanMs": 0.8513513513492538,
+          "medianMs": 0.8000000000465661,
+          "p95Ms": 1.3999999999068677,
+          "maxMs": 3.699999999953434,
+          "over50ms": 0
+        },
+        "gpuMs": null,
+        "gpuNote": "未取得。RAF間隔・CPU描画命令発行時間はGPU時間ではありません",
+        "readPixels": false,
+        "video": "外部録画は自動検出できません。結果の申告欄を参照",
+        "pacing": "通常RAF描画、既存STEPロジック。描画60fpsへ制限していない",
+        "passJudgment": null
+      },
+      "endState": {
+        "ticks": 772,
+        "time": 12.866666666666886,
+        "shaderTime": 12.866666666666886,
+        "player": {
+          "gx": 0,
+          "gy": -13
+        },
+        "phase": 0.10416666666665608,
+        "idleT": 0,
+        "moving": true,
+        "snapA": 3.141592653589793,
+        "smoothA": -3.141497047124747,
+        "curDir": 4,
+        "dirHold": 51,
+        "moveAcc": 0.1413333333332858,
+        "expression": {
+          "autoBlink": true,
+          "blinkWait": 2.80208918973804,
+          "seq": [],
+          "seqT": 0,
+          "emote": null
+        },
+        "auto": {
+          "i": 1,
+          "wait": 0,
+          "stuck": 0
+        },
+        "camera": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0.8191520442889918,
+          -0.573576436351046,
+          0,
+          0,
+          0.573576436351046,
+          0.8191520442889918,
+          0,
+          0,
+          30.08673939367401,
+          39.97176771447123,
+          1
+        ],
+        "worldSeed": 11
+      }
+    },
+    {
+      "name": "portrait",
+      "variant": "anchored",
+      "normalReadbacks": 0,
+      "diagnosticReads": 8,
+      "diagnosticReadMs": 1070.200000000419,
+      "comparisonWallMs": 2511.2039559999976,
+      "conditions": {
+        "mode": "検証",
+        "replayPaused": false,
+        "build": {
+          "buildId": "local-ce9b4bc0da4e-1794044843860",
+          "commit": "ce9b4bc0da4ec006010c5d23bcff67a4f8c36fb6",
+          "builtAt": "2026-11-07T09:47:23.859Z"
+        },
+        "settings": {
+          "S": 32,
+          "dot": 4,
+          "face": "pixel",
+          "f1": true,
+          "f2": true,
+          "f3": true,
+          "f4": true,
+          "auto": false,
+          "compare": false,
+          "tod": "day",
+          "shadow": true,
+          "unwrap": 1,
+          "autoBlink": true
+        },
+        "seed": 11,
+        "worldSeed": 11,
+        "preset": "color-vertical",
+        "presetLabel": "色比較：縦移動",
+        "inputs": [
+          {
+            "seconds": 2,
+            "x": 0,
+            "y": -1
+          },
+          {
+            "seconds": 2,
+            "x": 0,
+            "y": 1
+          }
+        ],
+        "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+        "stepSeconds": 0.016666666666666666,
+        "viewport": {
+          "width": 393,
+          "height": 852,
+          "dpr": 3,
+          "orientation": "縦",
+          "bufferWidth": 98,
+          "bufferHeight": 110
+        },
+        "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+        "characters": 1,
+        "pointLights": 0,
+        "shadowLights": 1,
+        "qualityAdjustment": "なし",
+        "characterStudy": {
+          "variant": "anchored",
+          "freezePose": false,
+          "fixedCamera": false,
+          "presetControlsActive": true
+        },
+        "bufferView": "final",
+        "recording": "録画なし（申告・自動検出不可）",
+        "state": {
+          "ticks": 0,
+          "time": 0,
+          "shaderTime": 0,
+          "player": {
+            "gx": 0,
+            "gy": 18
+          },
+          "phase": 0,
+          "idleT": 0,
+          "moving": false,
+          "snapA": 0,
+          "smoothA": 0,
+          "curDir": 0,
+          "dirHold": 0,
+          "moveAcc": 0,
+          "expression": {
+            "autoBlink": true,
+            "blinkWait": 2.5,
+            "seq": [],
+            "seqT": 0,
+            "emote": null
+          },
+          "auto": {
+            "i": 1,
+            "wait": 0,
+            "stuck": 0
+          },
+          "camera": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0.8191520442889918,
+            -0.573576436351046,
+            0,
+            0,
+            0.573576436351046,
+            0.8191520442889918,
+            0,
+            0,
+            29.51077311253331,
+            40.37506364628056,
+            1
+          ],
+          "worldSeed": 11
+        }
+      },
+      "result": {
+        "status": "complete",
+        "reason": null,
+        "warmupSeconds": 5,
+        "requestedSeconds": 10,
+        "measuredSeconds": 10.0663,
+        "renderedFrames": 113,
+        "logicUpdates": 541,
+        "renderedFps": 11.225574441453166,
+        "logicHz": 53.743679405541265,
+        "frameIntervals": {
+          "count": 113,
+          "meanMs": 89.08230088495574,
+          "medianMs": 83.39999999999782,
+          "p95Ms": 150,
+          "maxMs": 216.70000000000073,
+          "over50ms": 104
+        },
+        "cpuSubmission": {
+          "count": 113,
+          "meanMs": 0.756637168156016,
+          "medianMs": 0.6000000000931323,
+          "p95Ms": 1.6000000000931323,
+          "maxMs": 3.800000000046566,
+          "over50ms": 0
+        },
+        "gpuMs": null,
+        "gpuNote": "未取得。RAF間隔・CPU描画命令発行時間はGPU時間ではありません",
+        "readPixels": false,
+        "video": "外部録画は自動検出できません。結果の申告欄を参照",
+        "pacing": "通常RAF描画、既存STEPロジック。描画60fpsへ制限していない",
+        "passJudgment": null
+      },
+      "endState": {
+        "ticks": 810,
+        "time": 13.50000000000025,
+        "shaderTime": 13.50000000000025,
+        "player": {
+          "gx": 0,
+          "gy": -35
+        },
+        "phase": 0.0937499999999889,
+        "idleT": 0,
+        "moving": true,
+        "snapA": 3.141592653589793,
+        "smoothA": -3.1415926057434005,
+        "curDir": 4,
+        "dirHold": 89,
+        "moveAcc": 0.8399999999999501,
+        "expression": {
+          "autoBlink": true,
+          "blinkWait": 2.168755856404709,
+          "seq": [],
+          "seqT": 0,
+          "emote": null
+        },
+        "auto": {
+          "i": 1,
+          "wait": 0,
+          "stuck": 0
+        },
+        "camera": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0.8191520442889918,
+          -0.573576436351046,
+          0,
+          0,
+          0.573576436351046,
+          0.8191520442889918,
+          0,
+          0,
+          31.494656969795713,
+          38.98593321449287,
+          1
+        ],
+        "worldSeed": 11
+      }
+    },
+    {
+      "name": "landscape",
+      "variant": "baseline",
+      "normalReadbacks": 0,
+      "diagnosticReads": 8,
+      "diagnosticReadMs": 1017.9000000001397,
+      "comparisonWallMs": 2162.489061,
+      "conditions": {
+        "mode": "検証",
+        "replayPaused": false,
+        "build": {
+          "buildId": "local-ce9b4bc0da4e-1794044843860",
+          "commit": "ce9b4bc0da4ec006010c5d23bcff67a4f8c36fb6",
+          "builtAt": "2026-11-07T09:47:23.859Z"
+        },
+        "settings": {
+          "S": 32,
+          "dot": 4,
+          "face": "pixel",
+          "f1": true,
+          "f2": true,
+          "f3": true,
+          "f4": true,
+          "auto": false,
+          "compare": false,
+          "tod": "day",
+          "shadow": true,
+          "unwrap": 1,
+          "autoBlink": true
+        },
+        "seed": 11,
+        "worldSeed": 11,
+        "preset": "color-vertical",
+        "presetLabel": "色比較：縦移動",
+        "inputs": [
+          {
+            "seconds": 2,
+            "x": 0,
+            "y": -1
+          },
+          {
+            "seconds": 2,
+            "x": 0,
+            "y": 1
+          }
+        ],
+        "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+        "stepSeconds": 0.016666666666666666,
+        "viewport": {
+          "width": 852,
+          "height": 393,
+          "dpr": 3,
+          "orientation": "横",
+          "bufferWidth": 123,
+          "bufferHeight": 87
+        },
+        "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+        "characters": 1,
+        "pointLights": 0,
+        "shadowLights": 1,
+        "qualityAdjustment": "なし",
+        "characterStudy": {
+          "variant": "baseline",
+          "freezePose": false,
+          "fixedCamera": false,
+          "presetControlsActive": true
+        },
+        "bufferView": "final",
+        "recording": "録画なし（申告・自動検出不可）",
+        "state": {
+          "ticks": 0,
+          "time": 0,
+          "shaderTime": 0,
+          "player": {
+            "gx": 0,
+            "gy": 18
+          },
+          "phase": 0,
+          "idleT": 0,
+          "moving": false,
+          "snapA": 0,
+          "smoothA": 0,
+          "curDir": 0,
+          "dirHold": 0,
+          "moveAcc": 0,
+          "expression": {
+            "autoBlink": true,
+            "blinkWait": 2.5,
+            "seq": [],
+            "seqT": 0,
+            "emote": null
+          },
+          "auto": {
+            "i": 1,
+            "wait": 0,
+            "stuck": 0
+          },
+          "camera": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0.8191520442889918,
+            -0.573576436351046,
+            0,
+            0,
+            0.573576436351046,
+            0.8191520442889918,
+            0,
+            0,
+            29.57476936599339,
+            40.33025298719063,
+            1
+          ],
+          "worldSeed": 11
+        }
+      },
+      "result": {
+        "status": "complete",
+        "reason": null,
+        "warmupSeconds": 5,
+        "requestedSeconds": 10,
+        "measuredSeconds": 10.099499999999999,
+        "renderedFrames": 112,
+        "logicUpdates": 522,
+        "renderedFps": 11.08965790385663,
+        "logicHz": 51.68572701618893,
+        "frameIntervals": {
+          "count": 112,
+          "meanMs": 90.17410714285712,
+          "medianMs": 83.39999999999964,
+          "p95Ms": 183.29999999999927,
+          "maxMs": 266.7000000000007,
+          "over50ms": 95
+        },
+        "cpuSubmission": {
+          "count": 112,
+          "meanMs": 0.7562499999912689,
+          "medianMs": 0.5999999998603016,
+          "p95Ms": 1,
+          "maxMs": 18.199999999953434,
+          "over50ms": 0
+        },
+        "gpuMs": null,
+        "gpuNote": "未取得。RAF間隔・CPU描画命令発行時間はGPU時間ではありません",
+        "readPixels": false,
+        "video": "外部録画は自動検出できません。結果の申告欄を参照",
+        "pacing": "通常RAF描画、既存STEPロジック。描画60fpsへ制限していない",
+        "passJudgment": null
+      },
+      "endState": {
+        "ticks": 794,
+        "time": 13.23333333333357,
+        "shaderTime": 13.23333333333357,
+        "player": {
+          "gx": 0,
+          "gy": -26
+        },
+        "phase": 0.6770833333333226,
+        "idleT": 0,
+        "moving": true,
+        "snapA": 3.141592653589793,
+        "smoothA": -3.141591479796725,
+        "curDir": 4,
+        "dirHold": 73,
+        "moveAcc": 0.28266666666661777,
+        "expression": {
+          "autoBlink": true,
+          "blinkWait": 2.4354225230713746,
+          "seq": [],
+          "seqT": 0,
+          "emote": null
+        },
+        "auto": {
+          "i": 1,
+          "wait": 0,
+          "stuck": 0
+        },
+        "camera": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0.8191520442889918,
+          -0.573576436351046,
+          0,
+          0,
+          0.573576436351046,
+          0.8191520442889918,
+          0,
+          0,
+          30.918690688655015,
+          39.38922914630219,
+          1
+        ],
+        "worldSeed": 11
+      }
+    },
+    {
+      "name": "landscape",
+      "variant": "anchored",
+      "normalReadbacks": 0,
+      "diagnosticReads": 8,
+      "diagnosticReadMs": 991.4999999995343,
+      "comparisonWallMs": 2168.4361310000095,
+      "conditions": {
+        "mode": "検証",
+        "replayPaused": false,
+        "build": {
+          "buildId": "local-ce9b4bc0da4e-1794044843860",
+          "commit": "ce9b4bc0da4ec006010c5d23bcff67a4f8c36fb6",
+          "builtAt": "2026-11-07T09:47:23.859Z"
+        },
+        "settings": {
+          "S": 32,
+          "dot": 4,
+          "face": "pixel",
+          "f1": true,
+          "f2": true,
+          "f3": true,
+          "f4": true,
+          "auto": false,
+          "compare": false,
+          "tod": "day",
+          "shadow": true,
+          "unwrap": 1,
+          "autoBlink": true
+        },
+        "seed": 11,
+        "worldSeed": 11,
+        "preset": "color-vertical",
+        "presetLabel": "色比較：縦移動",
+        "inputs": [
+          {
+            "seconds": 2,
+            "x": 0,
+            "y": -1
+          },
+          {
+            "seconds": 2,
+            "x": 0,
+            "y": 1
+          }
+        ],
+        "replay": "入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る",
+        "stepSeconds": 0.016666666666666666,
+        "viewport": {
+          "width": 852,
+          "height": 393,
+          "dpr": 3,
+          "orientation": "横",
+          "bufferWidth": 123,
+          "bufferHeight": 87
+        },
+        "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+        "characters": 1,
+        "pointLights": 0,
+        "shadowLights": 1,
+        "qualityAdjustment": "なし",
+        "characterStudy": {
+          "variant": "anchored",
+          "freezePose": false,
+          "fixedCamera": false,
+          "presetControlsActive": true
+        },
+        "bufferView": "final",
+        "recording": "録画なし（申告・自動検出不可）",
+        "state": {
+          "ticks": 0,
+          "time": 0,
+          "shaderTime": 0,
+          "player": {
+            "gx": 0,
+            "gy": 18
+          },
+          "phase": 0,
+          "idleT": 0,
+          "moving": false,
+          "snapA": 0,
+          "smoothA": 0,
+          "curDir": 0,
+          "dirHold": 0,
+          "moveAcc": 0,
+          "expression": {
+            "autoBlink": true,
+            "blinkWait": 2.5,
+            "seq": [],
+            "seqT": 0,
+            "emote": null
+          },
+          "auto": {
+            "i": 1,
+            "wait": 0,
+            "stuck": 0
+          },
+          "camera": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0.8191520442889918,
+            -0.573576436351046,
+            0,
+            0,
+            0.573576436351046,
+            0.8191520442889918,
+            0,
+            0,
+            29.31878435215308,
+            40.50949562355033,
+            1
+          ],
+          "worldSeed": 11
+        }
+      },
+      "result": {
+        "status": "complete",
+        "reason": null,
+        "warmupSeconds": 5,
+        "requestedSeconds": 10,
+        "measuredSeconds": 10.083,
+        "renderedFrames": 112,
+        "logicUpdates": 530,
+        "renderedFps": 11.10780521670138,
+        "logicHz": 52.563721114747594,
+        "frameIntervals": {
+          "count": 112,
+          "meanMs": 90.02678571428571,
+          "medianMs": 83.39999999999964,
+          "p95Ms": 166.70000000000073,
+          "maxMs": 266.6999999999989,
+          "over50ms": 97
+        },
+        "cpuSubmission": {
+          "count": 112,
+          "meanMs": 1.080357142855064,
+          "medianMs": 0.8999999999068677,
+          "p95Ms": 2.4000000001396984,
+          "maxMs": 5.100000000093132,
+          "over50ms": 0
+        },
+        "gpuMs": null,
+        "gpuNote": "未取得。RAF間隔・CPU描画命令発行時間はGPU時間ではありません",
+        "readPixels": false,
+        "video": "外部録画は自動検出できません。結果の申告欄を参照",
+        "pacing": "通常RAF描画、既存STEPロジック。描画60fpsへ制限していない",
+        "passJudgment": null
+      },
+      "endState": {
+        "ticks": 814,
+        "time": 13.56666666666692,
+        "shaderTime": 13.56666666666692,
+        "player": {
+          "gx": 0,
+          "gy": -38
+        },
+        "phase": 0.19791666666665553,
+        "idleT": 0,
+        "moving": true,
+        "snapA": 3.141592653589793,
+        "smoothA": -3.1415926320910237,
+        "curDir": 4,
+        "dirHold": 93,
+        "moveAcc": 0.2293333333332832,
+        "expression": {
+          "autoBlink": true,
+          "blinkWait": 2.1020891897380425,
+          "seq": [],
+          "seqT": 0,
+          "emote": null
+        },
+        "auto": {
+          "i": 1,
+          "wait": 0,
+          "stuck": 0
+        },
+        "camera": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0.8191520442889918,
+          -0.573576436351046,
+          0,
+          0,
+          0.573576436351046,
+          0.8191520442889918,
+          0,
+          0,
+          31.686645730175947,
+          38.85150123722309,
+          1
+        ],
+        "worldSeed": 11
+      }
+    }
+  ],
+  "errors": []
+}

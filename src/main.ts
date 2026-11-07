@@ -3,13 +3,14 @@ import { STEP, state, texel, SINP, COSP, DIR_NAMES } from './core/constants';
 import { tick, simTime, applyPose, snapA, smoothA, curDir } from './gameplay/logic';
 import { shared } from './materials/shared';
 import { player } from './gameplay/player';
-import { setFace, J } from './character/rig';
+import { setFace, J, walkPose } from './character/rig';
 import { renderWorld, resize, rebuild, type CaptureOptions } from './render/scene';
 import { updateComparison } from './debug/comparison';
 import { stage } from './render/renderer';
 import { bindControls } from './ui/controls';
 import { bindExport } from './debug/export';
-import { bindValidation, active, advanceValidation, observeFrame, bufferView } from './debug/validation';
+import { bindValidation, active, advanceValidation, observeFrame, bufferView, studyPreset, studyCamera } from './debug/validation';
+import { characterStudy } from './debug/character-study';
 import { showBuffer } from './debug/buffers';
 /* ================= メインループ ================= */
 let frameN = 0, fps = 60, lastT = performance.now(), acc = 0;
@@ -49,9 +50,14 @@ function drawWorld(options?: CaptureOptions){
 
   setFace(state.face);
   applyPose(st);
+  if (studyPreset() && characterStudy.freezePose) {
+    walkPose(.25);
+    J.motion.position.set(0, 0, 0); J.motion.rotation.set(0, 0, 0);
+  }
   J.root.position.set(X, 0, Z);
-  J.root.rotation.y = st ? snapA : smoothA;
-  renderWorld({ f1:state.f1, f2:state.f2, f3:state.f3, face:state.face }, X, Z, cx, -cy + upOff, player.gx, player.gy, options);
+  J.root.rotation.y = studyPreset() && characterStudy.freezePose ? 0 : (st ? snapA : smoothA);
+  const fixed = studyCamera();
+  renderWorld({ f1:state.f1, f2:state.f2, f3:state.f3, face:state.face }, X, Z, fixed?.x ?? cx, fixed?.y ?? (-cy + upOff), player.gx, player.gy, options);
 
 }
 

@@ -1,0 +1,7944 @@
+{
+  "browser": "156.0.8078.79",
+  "renderer": "SwiftShader",
+  "method": "24 integer positions, fixed walk pose 0.25 unless specified; same facing/light; aligned foot ROI S+4 including all character and 1px outline, raw render-target RGBA; no difference-dependent exclusion. Each variant compared between consecutive positions. GPU readback is diagnostic only.",
+  "viewport": {
+    "width": 1101,
+    "height": 901,
+    "dpr": 1.25
+  },
+  "aggregate": {
+    "baseline": {
+      "color": 520,
+      "final": 1788,
+      "normal": 0,
+      "coverage": 76
+    },
+    "anchored": {
+      "color": 520,
+      "final": 572,
+      "normal": 0,
+      "coverage": 76
+    }
+  },
+  "matrix": [
+    {
+      "S": 16,
+      "dot": 4,
+      "angle": 0,
+      "path": [
+        1,
+        0
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 400,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 16,
+      "dot": 4,
+      "angle": 0,
+      "path": [
+        1,
+        0
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 400,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 16,
+      "dot": 4,
+      "angle": 0,
+      "path": [
+        0,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 400,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 12,
+            "max": 1,
+            "changedTransitions": 12
+          },
+          "final": {
+            "total": 12,
+            "max": 1,
+            "changedTransitions": 12
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 12,
+            "max": 1,
+            "changedTransitions": 12
+          },
+          "final": {
+            "total": 12,
+            "max": 1,
+            "changedTransitions": 12
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 16,
+      "dot": 4,
+      "angle": 0,
+      "path": [
+        0,
+        1
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 400,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 12,
+            "max": 1,
+            "changedTransitions": 12
+          },
+          "final": {
+            "total": 12,
+            "max": 1,
+            "changedTransitions": 12
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 12,
+            "max": 1,
+            "changedTransitions": 12
+          },
+          "final": {
+            "total": 12,
+            "max": 1,
+            "changedTransitions": 12
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 16,
+      "dot": 4,
+      "angle": 0,
+      "path": [
+        1,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 400,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 12,
+            "max": 1,
+            "changedTransitions": 12
+          },
+          "final": {
+            "total": 12,
+            "max": 1,
+            "changedTransitions": 12
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 12,
+            "max": 1,
+            "changedTransitions": 12
+          },
+          "final": {
+            "total": 12,
+            "max": 1,
+            "changedTransitions": 12
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 16,
+      "dot": 4,
+      "angle": 0,
+      "path": [
+        1,
+        1
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 400,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 12,
+            "max": 1,
+            "changedTransitions": 12
+          },
+          "final": {
+            "total": 12,
+            "max": 1,
+            "changedTransitions": 12
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 12,
+            "max": 1,
+            "changedTransitions": 12
+          },
+          "final": {
+            "total": 12,
+            "max": 1,
+            "changedTransitions": 12
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 16,
+      "dot": 4,
+      "angle": 1.5707963267948966,
+      "path": [
+        1,
+        0
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 400,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 16,
+      "dot": 4,
+      "angle": 1.5707963267948966,
+      "path": [
+        1,
+        0
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 400,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 16,
+      "dot": 4,
+      "angle": 1.5707963267948966,
+      "path": [
+        0,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 400,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 11,
+            "max": 1,
+            "changedTransitions": 11
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 16,
+      "dot": 4,
+      "angle": 1.5707963267948966,
+      "path": [
+        0,
+        1
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 400,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 11,
+            "max": 1,
+            "changedTransitions": 11
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 16,
+      "dot": 4,
+      "angle": 1.5707963267948966,
+      "path": [
+        1,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 400,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 11,
+            "max": 1,
+            "changedTransitions": 11
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 16,
+      "dot": 4,
+      "angle": 1.5707963267948966,
+      "path": [
+        1,
+        1
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 400,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 11,
+            "max": 1,
+            "changedTransitions": 11
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 16,
+      "dot": 4,
+      "angle": 3.141592653589793,
+      "path": [
+        1,
+        0
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 400,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 16,
+      "dot": 4,
+      "angle": 3.141592653589793,
+      "path": [
+        1,
+        0
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 400,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 16,
+      "dot": 4,
+      "angle": 3.141592653589793,
+      "path": [
+        0,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 400,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 13,
+            "max": 1,
+            "changedTransitions": 13
+          },
+          "final": {
+            "total": 26,
+            "max": 2,
+            "changedTransitions": 13
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 13,
+            "max": 1,
+            "changedTransitions": 13
+          },
+          "final": {
+            "total": 26,
+            "max": 2,
+            "changedTransitions": 13
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 16,
+      "dot": 4,
+      "angle": 3.141592653589793,
+      "path": [
+        0,
+        1
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 400,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 13,
+            "max": 1,
+            "changedTransitions": 13
+          },
+          "final": {
+            "total": 26,
+            "max": 2,
+            "changedTransitions": 13
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 13,
+            "max": 1,
+            "changedTransitions": 13
+          },
+          "final": {
+            "total": 26,
+            "max": 2,
+            "changedTransitions": 13
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 16,
+      "dot": 4,
+      "angle": 3.141592653589793,
+      "path": [
+        1,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 400,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 13,
+            "max": 1,
+            "changedTransitions": 13
+          },
+          "final": {
+            "total": 26,
+            "max": 2,
+            "changedTransitions": 13
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 13,
+            "max": 1,
+            "changedTransitions": 13
+          },
+          "final": {
+            "total": 26,
+            "max": 2,
+            "changedTransitions": 13
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 16,
+      "dot": 4,
+      "angle": 3.141592653589793,
+      "path": [
+        1,
+        1
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 400,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 13,
+            "max": 1,
+            "changedTransitions": 13
+          },
+          "final": {
+            "total": 26,
+            "max": 2,
+            "changedTransitions": 13
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 13,
+            "max": 1,
+            "changedTransitions": 13
+          },
+          "final": {
+            "total": 26,
+            "max": 2,
+            "changedTransitions": 13
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 16,
+      "dot": 4,
+      "angle": 0.7853981633974483,
+      "path": [
+        1,
+        0
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 400,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 16,
+      "dot": 4,
+      "angle": 0.7853981633974483,
+      "path": [
+        1,
+        0
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 400,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 16,
+      "dot": 4,
+      "angle": 0.7853981633974483,
+      "path": [
+        0,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 400,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 21,
+            "max": 2,
+            "changedTransitions": 19
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 16,
+      "dot": 4,
+      "angle": 0.7853981633974483,
+      "path": [
+        0,
+        1
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 400,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 21,
+            "max": 2,
+            "changedTransitions": 19
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 16,
+      "dot": 4,
+      "angle": 0.7853981633974483,
+      "path": [
+        1,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 400,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 21,
+            "max": 2,
+            "changedTransitions": 19
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 16,
+      "dot": 4,
+      "angle": 0.7853981633974483,
+      "path": [
+        1,
+        1
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 400,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 21,
+            "max": 2,
+            "changedTransitions": 19
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 24,
+      "dot": 4,
+      "angle": 0,
+      "path": [
+        1,
+        0
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 784,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 24,
+      "dot": 4,
+      "angle": 0,
+      "path": [
+        1,
+        0
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 784,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 24,
+      "dot": 4,
+      "angle": 0,
+      "path": [
+        0,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 784,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 18,
+            "max": 2,
+            "changedTransitions": 14
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 24,
+      "dot": 4,
+      "angle": 0,
+      "path": [
+        0,
+        1
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 784,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 18,
+            "max": 2,
+            "changedTransitions": 14
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 24,
+      "dot": 4,
+      "angle": 0,
+      "path": [
+        1,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 784,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 18,
+            "max": 2,
+            "changedTransitions": 14
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 24,
+      "dot": 4,
+      "angle": 0,
+      "path": [
+        1,
+        1
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 784,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 18,
+            "max": 2,
+            "changedTransitions": 14
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 24,
+      "dot": 4,
+      "angle": 1.5707963267948966,
+      "path": [
+        1,
+        0
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 784,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 24,
+      "dot": 4,
+      "angle": 1.5707963267948966,
+      "path": [
+        1,
+        0
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 784,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 24,
+      "dot": 4,
+      "angle": 1.5707963267948966,
+      "path": [
+        0,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 784,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 10,
+            "max": 1,
+            "changedTransitions": 10
+          },
+          "final": {
+            "total": 10,
+            "max": 1,
+            "changedTransitions": 10
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 10,
+            "max": 1,
+            "changedTransitions": 10
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 10,
+            "max": 1,
+            "changedTransitions": 10
+          },
+          "final": {
+            "total": 10,
+            "max": 1,
+            "changedTransitions": 10
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 10,
+            "max": 1,
+            "changedTransitions": 10
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 24,
+      "dot": 4,
+      "angle": 1.5707963267948966,
+      "path": [
+        0,
+        1
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 784,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 10,
+            "max": 1,
+            "changedTransitions": 10
+          },
+          "final": {
+            "total": 10,
+            "max": 1,
+            "changedTransitions": 10
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 10,
+            "max": 1,
+            "changedTransitions": 10
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 10,
+            "max": 1,
+            "changedTransitions": 10
+          },
+          "final": {
+            "total": 10,
+            "max": 1,
+            "changedTransitions": 10
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 10,
+            "max": 1,
+            "changedTransitions": 10
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 24,
+      "dot": 4,
+      "angle": 1.5707963267948966,
+      "path": [
+        1,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 784,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 10,
+            "max": 1,
+            "changedTransitions": 10
+          },
+          "final": {
+            "total": 10,
+            "max": 1,
+            "changedTransitions": 10
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 10,
+            "max": 1,
+            "changedTransitions": 10
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 10,
+            "max": 1,
+            "changedTransitions": 10
+          },
+          "final": {
+            "total": 10,
+            "max": 1,
+            "changedTransitions": 10
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 10,
+            "max": 1,
+            "changedTransitions": 10
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 24,
+      "dot": 4,
+      "angle": 1.5707963267948966,
+      "path": [
+        1,
+        1
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 784,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 10,
+            "max": 1,
+            "changedTransitions": 10
+          },
+          "final": {
+            "total": 10,
+            "max": 1,
+            "changedTransitions": 10
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 10,
+            "max": 1,
+            "changedTransitions": 10
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 10,
+            "max": 1,
+            "changedTransitions": 10
+          },
+          "final": {
+            "total": 10,
+            "max": 1,
+            "changedTransitions": 10
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 10,
+            "max": 1,
+            "changedTransitions": 10
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 24,
+      "dot": 4,
+      "angle": 3.141592653589793,
+      "path": [
+        1,
+        0
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 784,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 24,
+      "dot": 4,
+      "angle": 3.141592653589793,
+      "path": [
+        1,
+        0
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 784,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 24,
+      "dot": 4,
+      "angle": 3.141592653589793,
+      "path": [
+        0,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 784,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 14,
+            "max": 1,
+            "changedTransitions": 14
+          },
+          "final": {
+            "total": 14,
+            "max": 1,
+            "changedTransitions": 14
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 14,
+            "max": 1,
+            "changedTransitions": 14
+          },
+          "final": {
+            "total": 14,
+            "max": 1,
+            "changedTransitions": 14
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 24,
+      "dot": 4,
+      "angle": 3.141592653589793,
+      "path": [
+        0,
+        1
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 784,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 14,
+            "max": 1,
+            "changedTransitions": 14
+          },
+          "final": {
+            "total": 14,
+            "max": 1,
+            "changedTransitions": 14
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 14,
+            "max": 1,
+            "changedTransitions": 14
+          },
+          "final": {
+            "total": 14,
+            "max": 1,
+            "changedTransitions": 14
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 24,
+      "dot": 4,
+      "angle": 3.141592653589793,
+      "path": [
+        1,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 784,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 14,
+            "max": 1,
+            "changedTransitions": 14
+          },
+          "final": {
+            "total": 14,
+            "max": 1,
+            "changedTransitions": 14
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 14,
+            "max": 1,
+            "changedTransitions": 14
+          },
+          "final": {
+            "total": 14,
+            "max": 1,
+            "changedTransitions": 14
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 24,
+      "dot": 4,
+      "angle": 3.141592653589793,
+      "path": [
+        1,
+        1
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 784,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 14,
+            "max": 1,
+            "changedTransitions": 14
+          },
+          "final": {
+            "total": 14,
+            "max": 1,
+            "changedTransitions": 14
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 14,
+            "max": 1,
+            "changedTransitions": 14
+          },
+          "final": {
+            "total": 14,
+            "max": 1,
+            "changedTransitions": 14
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 24,
+      "dot": 4,
+      "angle": 0.7853981633974483,
+      "path": [
+        1,
+        0
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 784,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 24,
+      "dot": 4,
+      "angle": 0.7853981633974483,
+      "path": [
+        1,
+        0
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 784,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 24,
+      "dot": 4,
+      "angle": 0.7853981633974483,
+      "path": [
+        0,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 784,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 15,
+            "max": 2,
+            "changedTransitions": 14
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 24,
+      "dot": 4,
+      "angle": 0.7853981633974483,
+      "path": [
+        0,
+        1
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 784,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 15,
+            "max": 2,
+            "changedTransitions": 14
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 24,
+      "dot": 4,
+      "angle": 0.7853981633974483,
+      "path": [
+        1,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 784,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 15,
+            "max": 2,
+            "changedTransitions": 14
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 24,
+      "dot": 4,
+      "angle": 0.7853981633974483,
+      "path": [
+        1,
+        1
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 784,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 15,
+            "max": 2,
+            "changedTransitions": 14
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 0,
+      "path": [
+        1,
+        0
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 0,
+      "path": [
+        1,
+        0
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 0,
+      "path": [
+        0,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 12,
+            "max": 2,
+            "changedTransitions": 10
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 0,
+      "path": [
+        0,
+        1
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 12,
+            "max": 2,
+            "changedTransitions": 10
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 0,
+      "path": [
+        1,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 12,
+            "max": 2,
+            "changedTransitions": 10
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 0,
+      "path": [
+        1,
+        1
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 12,
+            "max": 2,
+            "changedTransitions": 10
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 1.5707963267948966,
+      "path": [
+        1,
+        0
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 1.5707963267948966,
+      "path": [
+        1,
+        0
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 1.5707963267948966,
+      "path": [
+        0,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 6,
+            "max": 1,
+            "changedTransitions": 6
+          },
+          "final": {
+            "total": 33,
+            "max": 3,
+            "changedTransitions": 18
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 6,
+            "max": 1,
+            "changedTransitions": 6
+          },
+          "final": {
+            "total": 6,
+            "max": 1,
+            "changedTransitions": 6
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 1.5707963267948966,
+      "path": [
+        0,
+        1
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 6,
+            "max": 1,
+            "changedTransitions": 6
+          },
+          "final": {
+            "total": 33,
+            "max": 3,
+            "changedTransitions": 18
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 6,
+            "max": 1,
+            "changedTransitions": 6
+          },
+          "final": {
+            "total": 6,
+            "max": 1,
+            "changedTransitions": 6
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 1.5707963267948966,
+      "path": [
+        1,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 6,
+            "max": 1,
+            "changedTransitions": 6
+          },
+          "final": {
+            "total": 33,
+            "max": 3,
+            "changedTransitions": 18
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 6,
+            "max": 1,
+            "changedTransitions": 6
+          },
+          "final": {
+            "total": 6,
+            "max": 1,
+            "changedTransitions": 6
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 1.5707963267948966,
+      "path": [
+        1,
+        1
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 6,
+            "max": 1,
+            "changedTransitions": 6
+          },
+          "final": {
+            "total": 33,
+            "max": 3,
+            "changedTransitions": 18
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 6,
+            "max": 1,
+            "changedTransitions": 6
+          },
+          "final": {
+            "total": 6,
+            "max": 1,
+            "changedTransitions": 6
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 3.141592653589793,
+      "path": [
+        1,
+        0
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 3.141592653589793,
+      "path": [
+        1,
+        0
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 3.141592653589793,
+      "path": [
+        0,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 14,
+            "max": 2,
+            "changedTransitions": 10
+          },
+          "final": {
+            "total": 52,
+            "max": 5,
+            "changedTransitions": 22
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 14,
+            "max": 2,
+            "changedTransitions": 10
+          },
+          "final": {
+            "total": 14,
+            "max": 2,
+            "changedTransitions": 10
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 3.141592653589793,
+      "path": [
+        0,
+        1
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 14,
+            "max": 2,
+            "changedTransitions": 10
+          },
+          "final": {
+            "total": 52,
+            "max": 5,
+            "changedTransitions": 22
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 14,
+            "max": 2,
+            "changedTransitions": 10
+          },
+          "final": {
+            "total": 14,
+            "max": 2,
+            "changedTransitions": 10
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 3.141592653589793,
+      "path": [
+        1,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 14,
+            "max": 2,
+            "changedTransitions": 10
+          },
+          "final": {
+            "total": 52,
+            "max": 5,
+            "changedTransitions": 22
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 14,
+            "max": 2,
+            "changedTransitions": 10
+          },
+          "final": {
+            "total": 14,
+            "max": 2,
+            "changedTransitions": 10
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 3.141592653589793,
+      "path": [
+        1,
+        1
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 14,
+            "max": 2,
+            "changedTransitions": 10
+          },
+          "final": {
+            "total": 52,
+            "max": 5,
+            "changedTransitions": 22
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 14,
+            "max": 2,
+            "changedTransitions": 10
+          },
+          "final": {
+            "total": 14,
+            "max": 2,
+            "changedTransitions": 10
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 0.7853981633974483,
+      "path": [
+        1,
+        0
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 0.7853981633974483,
+      "path": [
+        1,
+        0
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 0.7853981633974483,
+      "path": [
+        0,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 83,
+            "max": 6,
+            "changedTransitions": 23
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 0.7853981633974483,
+      "path": [
+        0,
+        1
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 83,
+            "max": 6,
+            "changedTransitions": 23
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 0.7853981633974483,
+      "path": [
+        1,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 83,
+            "max": 6,
+            "changedTransitions": 23
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 0.7853981633974483,
+      "path": [
+        1,
+        1
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 83,
+            "max": 6,
+            "changedTransitions": 23
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 48,
+      "dot": 4,
+      "angle": 0,
+      "path": [
+        1,
+        0
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 2704,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 48,
+      "dot": 4,
+      "angle": 0,
+      "path": [
+        1,
+        0
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 2704,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 48,
+      "dot": 4,
+      "angle": 0,
+      "path": [
+        0,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 2704,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 2,
+            "max": 1,
+            "changedTransitions": 2
+          },
+          "final": {
+            "total": 41,
+            "max": 5,
+            "changedTransitions": 20
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 2,
+            "max": 1,
+            "changedTransitions": 2
+          },
+          "final": {
+            "total": 2,
+            "max": 1,
+            "changedTransitions": 2
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 48,
+      "dot": 4,
+      "angle": 0,
+      "path": [
+        0,
+        1
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 2704,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 2,
+            "max": 1,
+            "changedTransitions": 2
+          },
+          "final": {
+            "total": 41,
+            "max": 5,
+            "changedTransitions": 20
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 2,
+            "max": 1,
+            "changedTransitions": 2
+          },
+          "final": {
+            "total": 2,
+            "max": 1,
+            "changedTransitions": 2
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 48,
+      "dot": 4,
+      "angle": 0,
+      "path": [
+        1,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 2704,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 2,
+            "max": 1,
+            "changedTransitions": 2
+          },
+          "final": {
+            "total": 41,
+            "max": 5,
+            "changedTransitions": 20
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 2,
+            "max": 1,
+            "changedTransitions": 2
+          },
+          "final": {
+            "total": 2,
+            "max": 1,
+            "changedTransitions": 2
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 48,
+      "dot": 4,
+      "angle": 0,
+      "path": [
+        1,
+        1
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 2704,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 2,
+            "max": 1,
+            "changedTransitions": 2
+          },
+          "final": {
+            "total": 41,
+            "max": 5,
+            "changedTransitions": 20
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 2,
+            "max": 1,
+            "changedTransitions": 2
+          },
+          "final": {
+            "total": 2,
+            "max": 1,
+            "changedTransitions": 2
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 48,
+      "dot": 4,
+      "angle": 1.5707963267948966,
+      "path": [
+        1,
+        0
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 2704,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 48,
+      "dot": 4,
+      "angle": 1.5707963267948966,
+      "path": [
+        1,
+        0
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 2704,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 48,
+      "dot": 4,
+      "angle": 1.5707963267948966,
+      "path": [
+        0,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 2704,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 4,
+            "max": 1,
+            "changedTransitions": 4
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 48,
+      "dot": 4,
+      "angle": 1.5707963267948966,
+      "path": [
+        0,
+        1
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 2704,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 4,
+            "max": 1,
+            "changedTransitions": 4
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 48,
+      "dot": 4,
+      "angle": 1.5707963267948966,
+      "path": [
+        1,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 2704,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 4,
+            "max": 1,
+            "changedTransitions": 4
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 48,
+      "dot": 4,
+      "angle": 1.5707963267948966,
+      "path": [
+        1,
+        1
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 2704,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 4,
+            "max": 1,
+            "changedTransitions": 4
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 48,
+      "dot": 4,
+      "angle": 3.141592653589793,
+      "path": [
+        1,
+        0
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 2704,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 48,
+      "dot": 4,
+      "angle": 3.141592653589793,
+      "path": [
+        1,
+        0
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 2704,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 48,
+      "dot": 4,
+      "angle": 3.141592653589793,
+      "path": [
+        0,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 2704,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 33,
+            "max": 3,
+            "changedTransitions": 18
+          },
+          "final": {
+            "total": 36,
+            "max": 4,
+            "changedTransitions": 18
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 33,
+            "max": 3,
+            "changedTransitions": 18
+          },
+          "final": {
+            "total": 33,
+            "max": 3,
+            "changedTransitions": 18
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 48,
+      "dot": 4,
+      "angle": 3.141592653589793,
+      "path": [
+        0,
+        1
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 2704,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 33,
+            "max": 3,
+            "changedTransitions": 18
+          },
+          "final": {
+            "total": 36,
+            "max": 4,
+            "changedTransitions": 18
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 33,
+            "max": 3,
+            "changedTransitions": 18
+          },
+          "final": {
+            "total": 33,
+            "max": 3,
+            "changedTransitions": 18
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 48,
+      "dot": 4,
+      "angle": 3.141592653589793,
+      "path": [
+        1,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 2704,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 33,
+            "max": 3,
+            "changedTransitions": 18
+          },
+          "final": {
+            "total": 36,
+            "max": 4,
+            "changedTransitions": 18
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 33,
+            "max": 3,
+            "changedTransitions": 18
+          },
+          "final": {
+            "total": 33,
+            "max": 3,
+            "changedTransitions": 18
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 48,
+      "dot": 4,
+      "angle": 3.141592653589793,
+      "path": [
+        1,
+        1
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 2704,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 33,
+            "max": 3,
+            "changedTransitions": 18
+          },
+          "final": {
+            "total": 36,
+            "max": 4,
+            "changedTransitions": 18
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 33,
+            "max": 3,
+            "changedTransitions": 18
+          },
+          "final": {
+            "total": 33,
+            "max": 3,
+            "changedTransitions": 18
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 48,
+      "dot": 4,
+      "angle": 0.7853981633974483,
+      "path": [
+        1,
+        0
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 2704,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 48,
+      "dot": 4,
+      "angle": 0.7853981633974483,
+      "path": [
+        1,
+        0
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 2704,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 48,
+      "dot": 4,
+      "angle": 0.7853981633974483,
+      "path": [
+        0,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 2704,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 26,
+            "max": 3,
+            "changedTransitions": 15
+          },
+          "final": {
+            "total": 59,
+            "max": 5,
+            "changedTransitions": 22
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 9,
+            "max": 1,
+            "changedTransitions": 9
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 26,
+            "max": 3,
+            "changedTransitions": 15
+          },
+          "final": {
+            "total": 26,
+            "max": 3,
+            "changedTransitions": 15
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 9,
+            "max": 1,
+            "changedTransitions": 9
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 48,
+      "dot": 4,
+      "angle": 0.7853981633974483,
+      "path": [
+        0,
+        1
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 2704,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 26,
+            "max": 3,
+            "changedTransitions": 15
+          },
+          "final": {
+            "total": 59,
+            "max": 5,
+            "changedTransitions": 22
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 9,
+            "max": 1,
+            "changedTransitions": 9
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 26,
+            "max": 3,
+            "changedTransitions": 15
+          },
+          "final": {
+            "total": 26,
+            "max": 3,
+            "changedTransitions": 15
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 9,
+            "max": 1,
+            "changedTransitions": 9
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 48,
+      "dot": 4,
+      "angle": 0.7853981633974483,
+      "path": [
+        1,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 2704,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 26,
+            "max": 3,
+            "changedTransitions": 15
+          },
+          "final": {
+            "total": 59,
+            "max": 5,
+            "changedTransitions": 22
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 9,
+            "max": 1,
+            "changedTransitions": 9
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 26,
+            "max": 3,
+            "changedTransitions": 15
+          },
+          "final": {
+            "total": 26,
+            "max": 3,
+            "changedTransitions": 15
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 9,
+            "max": 1,
+            "changedTransitions": 9
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 48,
+      "dot": 4,
+      "angle": 0.7853981633974483,
+      "path": [
+        1,
+        1
+      ],
+      "follow": false,
+      "frames": 24,
+      "comparedPerTransition": 2704,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 26,
+            "max": 3,
+            "changedTransitions": 15
+          },
+          "final": {
+            "total": 59,
+            "max": 5,
+            "changedTransitions": 22
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 9,
+            "max": 1,
+            "changedTransitions": 9
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 26,
+            "max": 3,
+            "changedTransitions": 15
+          },
+          "final": {
+            "total": 26,
+            "max": 3,
+            "changedTransitions": 15
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 9,
+            "max": 1,
+            "changedTransitions": 9
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    }
+  ],
+  "ablations": [
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 0,
+      "path": [
+        0,
+        0
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 0,
+      "path": [
+        0,
+        1
+      ],
+      "follow": true,
+      "outline": false,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 0,
+      "path": [
+        0,
+        1
+      ],
+      "follow": true,
+      "lighting": false,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 12,
+            "max": 2,
+            "changedTransitions": 10
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 0,
+      "path": [
+        0,
+        1
+      ],
+      "follow": true,
+      "shadow": true,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 12,
+            "max": 2,
+            "changedTransitions": 10
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 0,
+      "path": [
+        0,
+        1
+      ],
+      "follow": true,
+      "tod": "evening",
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 195,
+            "max": 19,
+            "changedTransitions": 14
+          },
+          "final": {
+            "total": 303,
+            "max": 29,
+            "changedTransitions": 18
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 195,
+            "max": 19,
+            "changedTransitions": 14
+          },
+          "final": {
+            "total": 291,
+            "max": 28,
+            "changedTransitions": 14
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 0,
+      "path": [
+        0,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 12,
+            "max": 2,
+            "changedTransitions": 10
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 0.7853981633974483,
+      "path": [
+        0,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 83,
+            "max": 6,
+            "changedTransitions": 23
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 1.5707963267948966,
+      "path": [
+        0,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 6,
+            "max": 1,
+            "changedTransitions": 6
+          },
+          "final": {
+            "total": 33,
+            "max": 3,
+            "changedTransitions": 18
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 6,
+            "max": 1,
+            "changedTransitions": 6
+          },
+          "final": {
+            "total": 6,
+            "max": 1,
+            "changedTransitions": 6
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 2.356194490192345,
+      "path": [
+        0,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 18,
+            "max": 3,
+            "changedTransitions": 13
+          },
+          "final": {
+            "total": 27,
+            "max": 4,
+            "changedTransitions": 16
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 18,
+            "max": 3,
+            "changedTransitions": 13
+          },
+          "final": {
+            "total": 24,
+            "max": 4,
+            "changedTransitions": 13
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 3.141592653589793,
+      "path": [
+        0,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 14,
+            "max": 2,
+            "changedTransitions": 10
+          },
+          "final": {
+            "total": 52,
+            "max": 5,
+            "changedTransitions": 22
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 14,
+            "max": 2,
+            "changedTransitions": 10
+          },
+          "final": {
+            "total": 14,
+            "max": 2,
+            "changedTransitions": 10
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 3.9269908169872414,
+      "path": [
+        0,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 6,
+            "max": 1,
+            "changedTransitions": 6
+          },
+          "final": {
+            "total": 6,
+            "max": 1,
+            "changedTransitions": 6
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 6,
+            "max": 1,
+            "changedTransitions": 6
+          },
+          "final": {
+            "total": 6,
+            "max": 1,
+            "changedTransitions": 6
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 4.71238898038469,
+      "path": [
+        0,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 8,
+            "max": 2,
+            "changedTransitions": 7
+          },
+          "final": {
+            "total": 23,
+            "max": 4,
+            "changedTransitions": 14
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 8,
+            "max": 2,
+            "changedTransitions": 7
+          },
+          "final": {
+            "total": 10,
+            "max": 3,
+            "changedTransitions": 7
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 5.497787143782138,
+      "path": [
+        0,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 8,
+            "max": 2,
+            "changedTransitions": 7
+          },
+          "final": {
+            "total": 70,
+            "max": 5,
+            "changedTransitions": 23
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 8,
+            "max": 2,
+            "changedTransitions": 7
+          },
+          "final": {
+            "total": 8,
+            "max": 2,
+            "changedTransitions": 7
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 0,
+      "path": [
+        0,
+        1
+      ],
+      "follow": true,
+      "pose": 0,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 12,
+            "max": 2,
+            "changedTransitions": 9
+          },
+          "final": {
+            "total": 139,
+            "max": 10,
+            "changedTransitions": 23
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 12,
+            "max": 2,
+            "changedTransitions": 9
+          },
+          "final": {
+            "total": 12,
+            "max": 2,
+            "changedTransitions": 9
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 0,
+      "path": [
+        0,
+        1
+      ],
+      "follow": true,
+      "pose": 0.25,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 12,
+            "max": 2,
+            "changedTransitions": 10
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 0,
+      "path": [
+        0,
+        1
+      ],
+      "follow": true,
+      "pose": 0.5,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 12,
+            "max": 2,
+            "changedTransitions": 9
+          },
+          "final": {
+            "total": 139,
+            "max": 10,
+            "changedTransitions": 23
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 12,
+            "max": 2,
+            "changedTransitions": 9
+          },
+          "final": {
+            "total": 12,
+            "max": 2,
+            "changedTransitions": 9
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 0,
+      "path": [
+        0,
+        1
+      ],
+      "follow": true,
+      "pose": 0.75,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "baseline": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 28,
+            "max": 2,
+            "changedTransitions": 21
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 0,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0
+    }
+  ],
+  "witness": {
+    "frames": [
+      2,
+      3
+    ],
+    "changes": {
+      "count": 1,
+      "max": 88,
+      "examples": [
+        {
+          "pixel": 343,
+          "before": [
+            24,
+            55,
+            61,
+            255
+          ],
+          "after": [
+            47,
+            143,
+            138,
+            255
+          ]
+        }
+      ]
+    },
+    "raw": {
+      "count": 0,
+      "max": 0,
+      "examples": []
+    },
+    "candidate": {
+      "count": 0,
+      "max": 0,
+      "examples": []
+    },
+    "depths": [
+      {
+        "pixel": [
+          19,
+          9
+        ],
+        "center": {
+          "a": 0.5145299145299145,
+          "b": 0.5164835164835165
+        },
+        "neighbors": [
+          {
+            "a": 0.515018315018315,
+            "b": 0.5167277167277168
+          },
+          {
+            "a": 0.5133089133089133,
+            "b": 0.515018315018315
+          },
+          {
+            "a": 0.5137973137973137,
+            "b": 0.5155067155067155
+          },
+          {
+            "a": 0.5164835164835165,
+            "b": 0.5181929181929182
+          }
+        ]
+      }
+    ],
+    "width": 36
+  },
+  "regressions": [
+    {
+      "name": "occlusion/background A/B",
+      "cases": [
+        {
+          "x": 0,
+          "z": 2.5,
+          "shadow": true,
+          "character": 187,
+          "background": 1109,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 0,
+          "z": 2.5,
+          "shadow": false,
+          "character": 187,
+          "background": 1109,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 13,
+          "z": -10,
+          "shadow": true,
+          "character": 187,
+          "background": 1109,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 13,
+          "z": -10,
+          "shadow": false,
+          "character": 187,
+          "background": 1109,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 14,
+          "z": -10,
+          "shadow": true,
+          "character": 187,
+          "background": 1109,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 14,
+          "z": -10,
+          "shadow": false,
+          "character": 187,
+          "background": 1109,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": -7.5,
+          "z": -4.9,
+          "shadow": true,
+          "character": 187,
+          "background": 1109,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 1
+        },
+        {
+          "x": -7.5,
+          "z": -4.9,
+          "shadow": false,
+          "character": 187,
+          "background": 1109,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 1
+        },
+        {
+          "x": -7.5,
+          "z": -9.5,
+          "shadow": true,
+          "character": 0,
+          "background": 1296,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": -7.5,
+          "z": -9.5,
+          "shadow": false,
+          "character": 0,
+          "background": 1296,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": -9.5,
+          "z": -8,
+          "shadow": true,
+          "character": 66,
+          "background": 1230,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": -9.5,
+          "z": -8,
+          "shadow": false,
+          "character": 66,
+          "background": 1230,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 9.8,
+          "z": -5,
+          "shadow": true,
+          "character": 187,
+          "background": 1109,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 9.8,
+          "z": -5,
+          "shadow": false,
+          "character": 187,
+          "background": 1109,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 0,
+          "z": 0,
+          "shadow": true,
+          "character": 187,
+          "background": 1109,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 0,
+          "z": 0,
+          "shadow": false,
+          "character": 187,
+          "background": 1109,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 12,
+          "z": -13.5,
+          "shadow": true,
+          "character": 112,
+          "background": 1184,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 12,
+          "z": -13.5,
+          "shadow": false,
+          "character": 112,
+          "background": 1184,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 12,
+          "z": -13,
+          "shadow": true,
+          "character": 102,
+          "background": 1194,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 12,
+          "z": -13,
+          "shadow": false,
+          "character": 102,
+          "background": 1194,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 12,
+          "z": -12.5,
+          "shadow": true,
+          "character": 112,
+          "background": 1184,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 12,
+          "z": -12.5,
+          "shadow": false,
+          "character": 112,
+          "background": 1184,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 12.5,
+          "z": -13.5,
+          "shadow": true,
+          "character": 23,
+          "background": 1273,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 12.5,
+          "z": -13.5,
+          "shadow": false,
+          "character": 23,
+          "background": 1273,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 12.5,
+          "z": -13,
+          "shadow": true,
+          "character": 6,
+          "background": 1290,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 12.5,
+          "z": -13,
+          "shadow": false,
+          "character": 6,
+          "background": 1290,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 12.5,
+          "z": -12.5,
+          "shadow": true,
+          "character": 19,
+          "background": 1277,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 12.5,
+          "z": -12.5,
+          "shadow": false,
+          "character": 19,
+          "background": 1277,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 13,
+          "z": -13.5,
+          "shadow": true,
+          "character": 0,
+          "background": 1296,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 13,
+          "z": -13.5,
+          "shadow": false,
+          "character": 0,
+          "background": 1296,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 13,
+          "z": -13,
+          "shadow": true,
+          "character": 0,
+          "background": 1296,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 13,
+          "z": -13,
+          "shadow": false,
+          "character": 0,
+          "background": 1296,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 13,
+          "z": -12.5,
+          "shadow": true,
+          "character": 5,
+          "background": 1291,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 13,
+          "z": -12.5,
+          "shadow": false,
+          "character": 5,
+          "background": 1291,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 13.5,
+          "z": -13.5,
+          "shadow": true,
+          "character": 13,
+          "background": 1283,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 13.5,
+          "z": -13.5,
+          "shadow": false,
+          "character": 13,
+          "background": 1283,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 13.5,
+          "z": -13,
+          "shadow": true,
+          "character": 7,
+          "background": 1289,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 13.5,
+          "z": -13,
+          "shadow": false,
+          "character": 7,
+          "background": 1289,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 13.5,
+          "z": -12.5,
+          "shadow": true,
+          "character": 28,
+          "background": 1268,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 13.5,
+          "z": -12.5,
+          "shadow": false,
+          "character": 28,
+          "background": 1268,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 14,
+          "z": -13.5,
+          "shadow": true,
+          "character": 71,
+          "background": 1225,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 14,
+          "z": -13.5,
+          "shadow": false,
+          "character": 71,
+          "background": 1225,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 14,
+          "z": -13,
+          "shadow": true,
+          "character": 52,
+          "background": 1244,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 14,
+          "z": -13,
+          "shadow": false,
+          "character": 52,
+          "background": 1244,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 14,
+          "z": -12.5,
+          "shadow": true,
+          "character": 54,
+          "background": 1242,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        },
+        {
+          "x": 14,
+          "z": -12.5,
+          "shadow": false,
+          "character": 54,
+          "background": 1242,
+          "rawAB": 0,
+          "idChanged": 0,
+          "outside": 0,
+          "changed": 0
+        }
+      ]
+    }
+  ],
+  "ui": {
+    "backgrounds": [
+      {
+        "key": "color-vertical",
+        "result": {
+          "scroll": {
+            "dx": 0,
+            "dy": 17
+          },
+          "compared": 34710,
+          "changed": 0,
+          "maxChannelDelta": 0,
+          "examples": [],
+          "excluded": 3810,
+          "exclusion": "視野の非共通部分と両画像の1px外周（輪郭の隣接参照）。物体や差分値による除外なし",
+          "status": "比較範囲で差分なし"
+        }
+      },
+      {
+        "key": "color-diagonal",
+        "result": {
+          "scroll": {
+            "dx": 12,
+            "dy": -12
+          },
+          "compared": 33200,
+          "changed": 0,
+          "maxChannelDelta": 0,
+          "examples": [],
+          "excluded": 5320,
+          "exclusion": "視野の非共通部分と両画像の1px外周（輪郭の隣接参照）。物体や差分値による除外なし",
+          "status": "比較範囲で差分なし"
+        }
+      },
+      {
+        "key": "color-horizontal",
+        "result": {
+          "scroll": {
+            "dx": 17,
+            "dy": 0
+          },
+          "compared": 34132,
+          "changed": 0,
+          "maxChannelDelta": 0,
+          "examples": [],
+          "excluded": 4388,
+          "exclusion": "視野の非共通部分と両画像の1px外周（輪郭の隣接参照）。物体や差分値による除外なし",
+          "status": "比較範囲で差分なし"
+        }
+      },
+      {
+        "key": "color-walk",
+        "result": {
+          "scroll": {
+            "dx": 0,
+            "dy": 0
+          },
+          "compared": 37736,
+          "changed": 0,
+          "maxChannelDelta": 0,
+          "examples": [],
+          "excluded": 784,
+          "exclusion": "視野の非共通部分と両画像の1px外周（輪郭の隣接参照）。物体や差分値による除外なし",
+          "status": "比較範囲で差分なし"
+        }
+      },
+      {
+        "key": "color-trees",
+        "result": {
+          "scroll": {
+            "dx": 17,
+            "dy": 0
+          },
+          "compared": 34132,
+          "changed": 0,
+          "maxChannelDelta": 0,
+          "examples": [],
+          "excluded": 4388,
+          "exclusion": "視野の非共通部分と両画像の1px外周（輪郭の隣接参照）。物体や差分値による除外なし",
+          "status": "比較範囲で差分なし"
+        }
+      }
+    ],
+    "stationary": {
+      "start": {
+        "ticks": 0,
+        "time": 0,
+        "shaderTime": 0,
+        "player": {
+          "gx": 0,
+          "gy": 18
+        },
+        "phase": 0,
+        "idleT": 0,
+        "moving": false,
+        "snapA": 0,
+        "smoothA": 0,
+        "curDir": 0,
+        "dirHold": 0,
+        "moveAcc": 0,
+        "expression": {
+          "autoBlink": false,
+          "blinkWait": 2.5,
+          "seq": [],
+          "seqT": 0,
+          "emote": null
+        },
+        "auto": {
+          "i": 1,
+          "wait": 0,
+          "stuck": 0
+        },
+        "camera": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0.8191520442889918,
+          -0.573576436351046,
+          0,
+          0,
+          0.573576436351046,
+          0.8191520442889918,
+          0,
+          0,
+          28.102855536411607,
+          41.36089814625892,
+          1
+        ],
+        "worldSeed": 11
+      },
+      "end": {
+        "ticks": 60,
+        "time": 1.0000000000000013,
+        "shaderTime": 1.0000000000000013,
+        "player": {
+          "gx": 0,
+          "gy": 18
+        },
+        "phase": 0.5624999999999996,
+        "idleT": 0,
+        "moving": true,
+        "snapA": 0,
+        "smoothA": 0,
+        "curDir": 0,
+        "dirHold": 59,
+        "moveAcc": 0.8399999999999963,
+        "expression": {
+          "autoBlink": false,
+          "blinkWait": 2.5,
+          "seq": [],
+          "seqT": 0,
+          "emote": null
+        },
+        "auto": {
+          "i": 1,
+          "wait": 0,
+          "stuck": 0
+        },
+        "camera": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0.8191520442889918,
+          -0.573576436351046,
+          0,
+          0,
+          0.573576436351046,
+          0.8191520442889918,
+          0,
+          0,
+          28.102855536411607,
+          41.36089814625892,
+          1
+        ],
+        "worldSeed": 11
+      }
+    },
+    "frozen": {
+      "ticks": 30,
+      "time": 0.49999999999999994,
+      "shaderTime": 0.49999999999999994,
+      "player": {
+        "gx": 0,
+        "gy": 1
+      },
+      "phase": 0.7812499999999998,
+      "idleT": 0,
+      "moving": true,
+      "snapA": 3.141592653589793,
+      "smoothA": -3.1338054239615083,
+      "curDir": 4,
+      "dirHold": 29,
+      "moveAcc": 0.9199999999999982,
+      "expression": {
+        "autoBlink": false,
+        "blinkWait": 2.5,
+        "seq": [],
+        "seqT": 0,
+        "emote": null
+      },
+      "auto": {
+        "i": 1,
+        "wait": 0,
+        "stuck": 0
+      },
+      "camera": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0.8191520442889918,
+        -0.573576436351046,
+        0,
+        0,
+        0.573576436351046,
+        0.8191520442889918,
+        0,
+        0,
+        29.190791845232923,
+        40.59911694173018,
+        1
+      ],
+      "worldSeed": 11
+    },
+    "counts": [
+      {
+        "variant": "baseline",
+        "reads": 0,
+        "result": {
+          "status": "complete",
+          "reason": null,
+          "warmupSeconds": 0.05,
+          "requestedSeconds": 0.1,
+          "measuredSeconds": 0.11666666666666664,
+          "renderedFrames": 7,
+          "logicUpdates": 7,
+          "renderedFps": 60.000000000000014,
+          "logicHz": 60.000000000000014,
+          "frameIntervals": {
+            "count": 7,
+            "meanMs": 16.666666666666664,
+            "medianMs": 16.666666666666657,
+            "p95Ms": 16.66666666666667,
+            "maxMs": 16.66666666666667,
+            "over50ms": 0
+          },
+          "cpuSubmission": {
+            "count": 7,
+            "meanMs": 1.1999999999700646,
+            "medianMs": 0.5,
+            "p95Ms": 4.299999999930151,
+            "maxMs": 4.299999999930151,
+            "over50ms": 0
+          },
+          "gpuMs": null,
+          "gpuNote": "未取得。RAF間隔・CPU描画命令発行時間はGPU時間ではありません",
+          "readPixels": false,
+          "video": "外部録画は自動検出できません。結果の申告欄を参照",
+          "pacing": "通常RAF描画、既存STEPロジック。描画60fpsへ制限していない",
+          "passJudgment": null
+        }
+      },
+      {
+        "variant": "anchored",
+        "reads": 0,
+        "result": {
+          "status": "complete",
+          "reason": null,
+          "warmupSeconds": 0.05,
+          "requestedSeconds": 0.1,
+          "measuredSeconds": 0.10000000000000012,
+          "renderedFrames": 6,
+          "logicUpdates": 6,
+          "renderedFps": 59.99999999999993,
+          "logicHz": 59.99999999999993,
+          "frameIntervals": {
+            "count": 6,
+            "meanMs": 16.666666666666686,
+            "medianMs": 16.666666666666686,
+            "p95Ms": 16.666666666666686,
+            "maxMs": 16.666666666666686,
+            "over50ms": 0
+          },
+          "cpuSubmission": {
+            "count": 6,
+            "meanMs": 1.0499999999883585,
+            "medianMs": 0.8999999999068677,
+            "p95Ms": 1.3000000000465661,
+            "maxMs": 1.3000000000465661,
+            "over50ms": 0
+          },
+          "gpuMs": null,
+          "gpuNote": "未取得。RAF間隔・CPU描画命令発行時間はGPU時間ではありません",
+          "readPixels": false,
+          "video": "外部録画は自動検出できません。結果の申告欄を参照",
+          "pacing": "通常RAF描画、既存STEPロジック。描画60fpsへ制限していない",
+          "passJudgment": null
+        }
+      }
+    ],
+    "returnedVariant": "baseline",
+    "controlsDisabled": false
+  },
+  "animation": [
+    {
+      "variant": "baseline",
+      "walk": 187,
+      "blink": 6
+    },
+    {
+      "variant": "anchored",
+      "walk": 187,
+      "blink": 6
+    }
+  ],
+  "errors": []
+}

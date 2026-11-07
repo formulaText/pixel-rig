@@ -1,0 +1,71 @@
+{
+  "results": [
+    {
+      "name": "portrait",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 3,
+      "switches": [
+        {
+          "variant": "anchored",
+          "time": 0.6000000000000002,
+          "build": "local-f3381bd52c31-1794047999444"
+        },
+        {
+          "variant": "precise",
+          "time": 0.6666666666666671,
+          "build": "local-f3381bd52c31-1794047999444"
+        },
+        {
+          "variant": "baseline",
+          "time": 0.6666666666666671,
+          "build": "local-f3381bd52c31-1794047999444"
+        },
+        {
+          "variant": "precise",
+          "time": 0.7000000000000005,
+          "build": "local-f3381bd52c31-1794047999444"
+        }
+      ],
+      "readbacks": 0,
+      "performanceMeasured": false,
+      "returnVariant": "baseline"
+    },
+    {
+      "name": "landscape",
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "dpr": 3,
+      "switches": [
+        {
+          "variant": "anchored",
+          "time": 0.6833333333333338,
+          "build": "local-f3381bd52c31-1794047999444"
+        },
+        {
+          "variant": "precise",
+          "time": 0.7000000000000005,
+          "build": "local-f3381bd52c31-1794047999444"
+        },
+        {
+          "variant": "baseline",
+          "time": 0.6500000000000004,
+          "build": "local-f3381bd52c31-1794047999444"
+        },
+        {
+          "variant": "precise",
+          "time": 0.733333333333334,
+          "build": "local-f3381bd52c31-1794047999444"
+        }
+      ],
+      "readbacks": 0,
+      "performanceMeasured": false,
+      "returnVariant": "baseline"
+    }
+  ],
+  "errors": []
+}

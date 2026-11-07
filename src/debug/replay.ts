@@ -1,7 +1,12 @@
 // Replay time is integer ticks at the existing logic STEP, independent of RAF cadence.
 export interface InputSegment { seconds: number; x: number; y: number }
-export interface Preset { label: string; start: [number, number]; inputs: InputSegment[] }
+export interface Preset { label: string; start: [number, number]; inputs: InputSegment[]; study?: boolean; stationary?: boolean }
 export const presets: Record<string, Preset> = {
+  'color-vertical': { label:'色比較：縦移動', start:[0,2.5], inputs:[{seconds:2,x:0,y:-1},{seconds:2,x:0,y:1}], study:true },
+  'color-diagonal': { label:'色比較：斜め移動', start:[0,2.5], inputs:[{seconds:2,x:1,y:1},{seconds:2,x:-1,y:-1}], study:true },
+  'color-horizontal': { label:'色比較：横移動', start:[0,2.5], inputs:[{seconds:2,x:1,y:0},{seconds:2,x:-1,y:0}], study:true },
+  'color-walk': { label:'色比較：位置固定の歩行', start:[0,2.5], inputs:[{seconds:4,x:0,y:1}], study:true, stationary:true },
+  'color-trees': { label:'色比較：木との重なり', start:[11,-13], inputs:[{seconds:2,x:1,y:0},{seconds:2,x:-1,y:0}], study:true },
   still: { label:'静止', start:[0, 2.5], inputs:[{seconds:6, x:0, y:0}] },
   horizontal: { label:'横移動', start:[0, 2.5], inputs:[{seconds:2, x:1, y:0}, {seconds:2, x:-1, y:0}, {seconds:2, x:0, y:0}] },
   vertical: { label:'縦移動', start:[0, 2.5], inputs:[{seconds:2, x:0, y:-1}, {seconds:2, x:0, y:1}, {seconds:2, x:0, y:0}] },

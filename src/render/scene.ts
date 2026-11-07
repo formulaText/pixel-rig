@@ -12,6 +12,8 @@ import { decalScene } from '../world/decals';
 import { player, setPlayerWorld } from '../gameplay/player';
 import { makeGlyphTex } from '../character/face';
 import { stageCells, faceCells } from '../debug/strips';
+import { characterStudy } from '../debug/character-study';
+import { anchoredCharacterND, configureColorDepth } from './character-depth-experiment';
 let rtLo: THREE.WebGLRenderTarget, rtHi: THREE.WebGLRenderTarget, rtND: THREE.WebGLRenderTarget, cmpRT: THREE.WebGLRenderTarget, rtWLo: THREE.WebGLRenderTarget, rtWHi: THREE.WebGLRenderTarget, rtWND: THREE.WebGLRenderTarget;
 let prevTx = texel();
 /* ---- キャラ単体 ---- */
@@ -77,13 +79,15 @@ function renderWorld(o: RenderOptions, X: number, Z: number, camX: number, camYu
   blobMat.uniforms.uRad.value.set(rxp, Math.max(1, Math.round(rxp * 0.42)));
   const needND = o.f3 || o.face === 'pixel';
   const colorRT = o.f2 ? rtWLo : rtWHi;
+  configureColorDepth(rtWLo, characterStudy.variant === 'precise' && o.f2);
+  configureColorDepth(rtWHi, characterStudy.variant === 'precise' && !o.f2);
   pass(worldScene, worldCam, colorRT, true);
   pass(decalScene, worldCam, colorRT, false);
   if (capture.blob !== false) pass(blobScene, worldCam, colorRT, false);
   if (capture.character !== false) pass(charScene, worldCam, colorRT, false);
   if (needND) {
     pass(worldScene, worldCam, rtWND, true, ndWorld);
-    if (capture.character !== false) pass(charScene, worldCam, rtWND, false, ndChar);
+    if (capture.character !== false) pass(charScene, worldCam, rtWND, false, characterStudy.variant !== 'baseline' ? anchoredCharacterND : ndChar);
   }
   setPost(o, rtWLo, rtWHi, rtWND, W, H, WORLD_FAR - WORLD_NEAR, needND);
   computeStamps(worldCam, W, H, o.face);
