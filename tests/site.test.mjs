@@ -74,6 +74,7 @@ test('リポジトリ配下・両系統のリンクとJS/CSS参照、無改変�
   for (const path of ['index.html', 'candidate/index.html', 'stable/index.html']) {
     const html = readFileSync(join(options.site, path), 'utf8');
     for (const [, link] of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
+      if (link.startsWith('data:')) continue; // インラインfaviconはHTTP参照ではない。
       const url = new URL(link, `https://example.test/pixel-rig/${path}`);
       assert(url.pathname.startsWith('/pixel-rig/'), `base外: ${url}`);
       let local = url.pathname.slice('/pixel-rig/'.length);
