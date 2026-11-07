@@ -86,7 +86,7 @@ const TOD: Record<TimeOfDay, { dir: [number, number, number]; col: [number, numb
 const P = { none:0, brick:1, plankH:2, plankV:3, shingle:4, stone:5, bark:6 };
 const T = { grass:0, meadow:1, dirt:2, sand:3, cobble:4, water:5 };
 
-const state: AppState = { S:32, dot:4, face:'pixel', f1:true, f2:true, f3:true, f4:true, auto:true, compare:true, tod:'day', shadow:true };
+const state: AppState = { S:32, dot:4, face:'pixel', f1:true, f2:true, f3:true, f4:true, auto:true, compare:false, tod:'day', shadow:true };
 const texel = () => (2 * FR) / state.S;
 
 

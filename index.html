@@ -20,6 +20,36 @@
       <div class="joy" id="joy"><i id="knob"></i></div>
     </section>
     <aside class="panel">
+      <details class="sec validation" id="validation">
+        <summary>検証 — 再生・測定・結果コピー</summary>
+        <p class="note">プリセットを選ぶと時刻0で停止します。入力列を繰り返し再生します。</p>
+        <fieldset id="v-conditions">
+          <label for="v-preset">検証プリセット</label><select id="v-preset"></select>
+          <details><summary>seed・入力列・時刻・測定条件</summary>
+          <label for="v-seed">乱数seed（ワールド・瞬き）</label><input id="v-seed" type="number" min="0" max="4294967295" step="1" value="11" inputmode="numeric">
+
+            <label for="v-inputs">入力列（seconds：秒、x：横、y：縦／−1〜1）</label><textarea id="v-inputs" rows="4"></textarea>
+            <label for="v-time">固定する時刻（秒／0〜600）</label><input id="v-time" type="number" min="0" max="600" step="0.1" value="0"><button class="btn ghost" id="v-seek">時刻を固定</button>
+            <label for="v-duration">測定時間（合格基準ではありません）</label><select id="v-duration"><option value="quick">短時間：準備5秒＋測定10秒</option><option value="standard">継続：準備30秒＋測定60秒</option></select>
+            <label><input id="v-recording" type="checkbox">外部の画面録画中（自己申告）</label>
+            <p class="note">描画設定は通常操作で選んでから検証を開始します。入力・seedの変更はリセットで適用します。</p>
+          </details>
+        </fieldset>
+        <div class="validation-actions"><button class="btn" id="v-play">再生</button><button class="btn ghost" id="v-reset">リセット</button><button class="btn ghost" id="v-step">1コマ進む</button><button class="btn ghost" id="v-copy">結果コピー</button></div>
+        <p id="v-clock"></p><p id="v-message" role="status" aria-live="polite"></p>
+        <div class="validation-actions"><button class="btn" id="v-measure">性能測定</button><button class="btn ghost" id="v-stop-measure">測定を終了</button></div>
+        <p id="v-performance">性能は未測定です</p>
+        <p class="note">測定はリセットして再生開始。画像比較・読出しを停止します。画面録画も停止してください。GPU時間は未取得です。</p>
+        <details><summary>画素比較・バッファ</summary>
+          <div class="validation-actions"><button class="btn ghost" id="v-base">比較基準</button><button class="btn ghost" id="v-compare">画素比較</button></div>
+          <p class="note">比較基準→進行→画素比較。キャラ・足元影・既存アニメを別描画に分離。静止背景は時刻0、スクロール補正後の全共通領域を比較（外周1px除く）。建物・木の影の差分も記録します。性能値とは別の検査です。</p>
+          <label for="v-buffer">表示バッファ</label><select id="v-buffer"><option value="final">最終画面</option><option value="color">色（合成前）</option><option value="normal">法線・分類（既存形式）</option><option value="depth">描画深度（加工済み）</option><option value="shadow">影（既存形式）</option></select>
+          <p class="note">法線・描画深度は輪郭またはドット顔ON、影は影ONで有効。未生成は黒表示。照明用の本来の3D深度ではありません。</p>
+        </details>
+        <label for="v-result">結果（コピー失敗時も選択できます）</label><textarea id="v-result" rows="5" readonly></textarea>
+        <button class="btn ghost" id="v-exit">通常操作へ戻る</button>
+      </details>
+      <fieldset id="normal-controls">
       <div class="sec">
         <h2>照明</h2>
         <div class="row">
@@ -114,7 +144,7 @@
         </div>
         <div class="row">
           <label>比較表示を更新</label>
-          <button class="tg on" id="tgCmp" role="switch" aria-checked="true"><span class="sw"></span></button>
+          <button class="tg" id="tgCmp" role="switch" aria-checked="false"><span class="sw"></span></button>
         </div>
       </div>
 
@@ -122,6 +152,7 @@
         <button class="btn" id="bake">スプライトシートを焼き出す（8方向×4コマ）</button>
         <p class="note">ステップ1〜3・顔の表現の現在の設定で、昼の光の条件で焼き出します。</p>
       </div>
+</fieldset>
 <div class="sec build-info"><h2>研究アプリ · v5再現（r128）</h2><p id="status"></p><p>ビルドID：<code id="build-id"></code></p><p>元コミット：<code id="commit"></code></p><p>ビルド日時：<span id="built-at"></span></p><a href="../">入口へ戻る</a></div>
     </aside>
   </div>

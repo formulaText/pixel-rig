@@ -1,3 +1,4 @@
+import { random } from '../core/random';
 import type { EmoteKey } from '../core/types';
 import { EMOTES, STEP, TAU } from '../core/constants';
 import { J } from './rig';
@@ -12,9 +13,9 @@ function tickExpr(){
     expr.blinkWait -= STEP;
     if (expr.blinkWait <= 0) {
       expr.seq = [[1,3],[2,4],[1,3]];
-      if (Math.random() < 0.15) expr.seq.push([0,5],[1,3],[2,4],[1,3]);
+      if (random() < 0.15) expr.seq.push([0,5],[1,3],[2,4],[1,3]);
       expr.seqT = expr.seq[0][1];
-      expr.blinkWait = 2 + Math.random() * 4;
+      expr.blinkWait = 2 + random() * 4;
     }
   }
 }

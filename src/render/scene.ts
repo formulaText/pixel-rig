@@ -55,7 +55,8 @@ function updateWorldFrustum(){
   worldCam.bottom = -Hl * tx; worldCam.top = (H - Hl) * tx;
   worldCam.updateProjectionMatrix();
 }
-function renderWorld(o: RenderOptions, X: number, Z: number, camX: number, camYup: number, cpx: number, cpy: number){
+export interface CaptureOptions { target?: THREE.WebGLRenderTarget; character?: boolean; blob?: boolean }
+function renderWorld(o: RenderOptions, X: number, Z: number, camX: number, camYup: number, cpx: number, cpy: number, capture: CaptureOptions = {}){
   const tx = texel();
   applyLight('world');
   shared.uToon.value = o.f1 ? 1 : 0;
@@ -78,16 +79,17 @@ function renderWorld(o: RenderOptions, X: number, Z: number, camX: number, camYu
   const colorRT = o.f2 ? rtWLo : rtWHi;
   pass(worldScene, worldCam, colorRT, true);
   pass(decalScene, worldCam, colorRT, false);
-  pass(blobScene, worldCam, colorRT, false);
-  pass(charScene, worldCam, colorRT, false);
+  if (capture.blob !== false) pass(blobScene, worldCam, colorRT, false);
+  if (capture.character !== false) pass(charScene, worldCam, colorRT, false);
   if (needND) {
     pass(worldScene, worldCam, rtWND, true, ndWorld);
-    pass(charScene, worldCam, rtWND, false, ndChar);
+    if (capture.character !== false) pass(charScene, worldCam, rtWND, false, ndChar);
   }
   setPost(o, rtWLo, rtWHi, rtWND, W, H, WORLD_FAR - WORLD_NEAR, needND);
   computeStamps(worldCam, W, H, o.face);
   setIcon(worldCam, W, H);
-  renderer.setRenderTarget(null);
+  if (capture.character === false) { postMat.uniforms.uStamp.value = 0; postMat.uniforms.uIcon.value.w = 0; }
+  renderer.setRenderTarget(capture.target || null);
   renderer.setClearColor(0x000000, 1); renderer.clear();
   renderer.render(postScene, postCam);
 }
@@ -131,4 +133,4 @@ function resize(){
 
 
 
-export { cmpRT, renderSprite, W, H, worldCam, renderWorld, rebuild, resize };
+export { rtWLo, rtWHi, rtWND, cmpRT, renderSprite, W, H, worldCam, renderWorld, rebuild, resize };

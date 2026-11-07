@@ -65,3 +65,18 @@ dialog::backdrop{background:rgba(10,8,25,.6)}
 
 .build-info { font-size:12px; overflow-wrap:anywhere; }
 .build-info a { display:inline-block; padding:10px 0; color:var(--accent); }
+
+fieldset{border:0;min-width:0;padding:0}
+#normal-controls{display:flex;flex-direction:column;gap:20px}
+fieldset:disabled{opacity:.55}
+.validation summary{cursor:pointer;font-weight:700;padding:10px 0;min-height:44px}
+.validation select,.validation input[type=number],.validation textarea{width:100%;font:inherit;font-size:16px;line-height:1.4;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:10px;margin:4px 0 10px}
+.validation label{display:block;margin-top:6px}
+.validation-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+.validation .btn{min-height:44px;padding:10px 6px}
+#v-message,#v-performance{font-size:12px;overflow-wrap:anywhere;margin:8px 0}
+#v-result{font-size:12px;user-select:text;-webkit-user-select:text}
+
+@media (orientation:landscape) and (min-width:600px) and (max-width:899px){
+  .layout:has(#validation[open]){grid-template-columns:1fr 360px;grid-template-rows:1fr}
+}

@@ -69,3 +69,8 @@ function applyPose(stepped: boolean){
 
 
 export { phase, idleT, moving, smoothA, snapA, moveAcc, simTime, curDir, dirHold, tick, applyPose };
+
+export function resetLogic() {
+  phase = idleT = smoothA = snapA = moveAcc = simTime = curDir = dirHold = 0;
+  moving = wasMoving = false;
+}
