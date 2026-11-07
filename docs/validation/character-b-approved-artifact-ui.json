@@ -1,0 +1,74 @@
+{
+  "track": "candidate",
+  "artifact": "gh-42367092877-1-6db4a155d49f",
+  "rebuilt": false,
+  "results": [
+    {
+      "name": "portrait",
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "dpr": 3,
+      "switches": [
+        {
+          "variant": "anchored",
+          "time": 0.4333333333333333,
+          "build": "gh-42367092877-1-6db4a155d49f"
+        },
+        {
+          "variant": "precise",
+          "time": 0.7000000000000005,
+          "build": "gh-42367092877-1-6db4a155d49f"
+        },
+        {
+          "variant": "baseline",
+          "time": 0.7500000000000007,
+          "build": "gh-42367092877-1-6db4a155d49f"
+        },
+        {
+          "variant": "precise",
+          "time": 0.6333333333333336,
+          "build": "gh-42367092877-1-6db4a155d49f"
+        }
+      ],
+      "readbacks": 0,
+      "performanceMeasured": false,
+      "returnVariant": "baseline"
+    },
+    {
+      "name": "landscape",
+      "viewport": {
+        "width": 852,
+        "height": 393
+      },
+      "dpr": 3,
+      "switches": [
+        {
+          "variant": "anchored",
+          "time": 0.7833333333333341,
+          "build": "gh-42367092877-1-6db4a155d49f"
+        },
+        {
+          "variant": "precise",
+          "time": 0.7666666666666674,
+          "build": "gh-42367092877-1-6db4a155d49f"
+        },
+        {
+          "variant": "baseline",
+          "time": 0.6666666666666671,
+          "build": "gh-42367092877-1-6db4a155d49f"
+        },
+        {
+          "variant": "precise",
+          "time": 0.733333333333334,
+          "build": "gh-42367092877-1-6db4a155d49f"
+        }
+      ],
+      "readbacks": 0,
+      "performanceMeasured": false,
+      "returnVariant": "baseline"
+    }
+  ],
+  "errors": []
+}
