@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-07",
+  "issue": "V6-02 / M0 実機確認待ち",
+  "referenceSha256": "0f821957cc2f5b46edd31bb37382724cf3e33dbd6cc251036cefb0e9cb938d9c",
+  "browser": "156.0.8078.79",
+  "renderer": "Chromium / SwiftShader",
+  "mapSeed": 11,
+  "randomSeed": 20261107,
+  "clock": "manual RAF 1000/60 ms, performance.now origin 0; transitions >30 ticks advance tick directly then render two frames; explicit 4s resume pause",
+  "measurement": "readPixels comparison; not performance measurement; no video",
+  "cases": 357,
+  "renderComparisons": 336,
+  "pngComparisons": 21,
+  "differentRgbaBytes": 0,
+  "maxChannelDifference": 0,
+  "comparisonStripsMatch": true,
+  "stateAndCameraMatch": true,
+  "comparedRgbaBytes": 29973412,
+  "consoleOrHttpErrors": [],
+  "viewports": [
+    {
+      "width": 393,
+      "height": 852,
+      "dpr": 3
+    },
+    {
+      "width": 852,
+      "height": 393,
+      "dpr": 3
+    },
+    {
+      "width": 1281,
+      "height": 801,
+      "dpr": 1.25
+    }
+  ],
+  "builtSiteSmoke": {
+    "viewports": [
+      "393x852 DPR3",
+      "852x393 DPR3"
+    ],
+    "paths": [
+      "/pixel-rig/candidate/",
+      "/pixel-rig/stable/"
+    ],
+    "identity": true,
+    "returnLink": true,
+    "reload": true,
+    "controls": true,
+    "pngDownload": true,
+    "noExternalRequests": true,
+    "errors": []
+  },
+  "normalPerformance": "未測定。比較用readPixels・手動時計の値を通常fpsとして扱わない。",
+  "iphoneSafari": "未検証。依頼者のM0確認待ち。"
+}
