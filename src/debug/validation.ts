@@ -163,7 +163,7 @@ function refresh() {
   }
 }
 export function result() { return { schema:'pixel-rig-validation-1',conditions:conditions(),performance:lastPerformance ?? (performanceRun ? {conditions:performanceConditions,result:performanceRun.result(),endState:snapshot()} : null),pixelComparison:lastComparison,notices,
-  knownIssues:['PNG保存は保留','色ちらつき：輪郭深度の丸めに由来する成分を調査中。候補は部分改善・実機未確認・未採用'],acceptance:'自動的な性能合格・実機確認・採用承認を意味しません' }; }
+  knownIssues:['PNG保存は保留','色ちらつき：Aは実機で部分改善、Bは追加の深度精度比較・実機未確認。いずれも未採用。性能測定は見た目の改善確認後'],acceptance:'自動的な性能合格・実機確認・採用承認を意味しません' }; }
 function showResult() { input('v-result').value=JSON.stringify(result(),null,2); }
 export function bindValidation(render:(options?:CaptureOptions)=>void) {
   draw=render;

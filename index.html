@@ -26,12 +26,12 @@
         <fieldset id="v-conditions">
           <label for="v-preset">検証プリセット</label><select id="v-preset"></select>
           <label for="v-character-variant">キャラの色比較（実験・未採用）</label>
-          <select id="v-character-variant"><option value="baseline">変更前（初期表示）</option><option value="anchored">候補A：輪郭の深度基準を固定</option></select>
-          <p class="note">「色比較」の5プリセットを使用。切替時は同条件の先頭へ戻ります。候補は部分改善で、実機未確認です。縦・斜めの色、横の見た目、位置固定の歩行、輪郭・重なりを比較してください。</p>
+          <select id="v-character-variant"><option value="baseline">変更前（初期表示）</option><option value="anchored">候補A：輪郭の深度基準を固定</option><option value="precise">候補B：A＋色描画の深度精度を上げる</option></select>
+          <p class="note">Aは実機で部分改善、Bは実機未確認・未採用です。まずA／Bで縦・斜め移動の眉付近・袖／手・足首を比較してください。切替時は同条件の先頭へ戻ります。横・位置固定歩行・木との重なりは退行確認用です。性能測定は見た目の改善確認後に行います。</p>
           <details><summary>色の切分け（通常の実機確認では変更不要）</summary>
             <label><input id="v-freeze-pose" type="checkbox">姿勢・向き・瞬きを固定（正面・歩行の1姿勢）</label>
             <label><input id="v-fixed-camera" type="checkbox">カメラを固定</label>
-            <p class="note">この2設定は「色比較」プリセットだけに適用。候補Aは輪郭判定だけを変更し、合成前から変化する色は残ります。通常操作へ戻ると変更前へ戻ります。</p>
+            <p class="note">この2設定は「色比較」プリセットだけに適用。通常操作へ戻ると変更前へ戻ります。</p>
           </details>
           <details><summary>seed・入力列・時刻・測定条件</summary>
           <label for="v-seed">乱数seed（ワールド・瞬き）</label><input id="v-seed" type="number" min="0" max="4294967295" step="1" value="11" inputmode="numeric">

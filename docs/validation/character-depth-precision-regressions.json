@@ -1,0 +1,3026 @@
+{
+  "browser": "156.0.8078.79",
+  "renderer": "SwiftShader",
+  "method": "24 integer positions per fixed pose/direction/light; foot-aligned S+4 ROI; raw targets, zero tolerance. ID diagnostic retains geometry/material sort IDs and sides. Counts are changed pixel-transitions, not unique pixels or device incidence. No performance measurements.",
+  "aggregate": {
+    "anchored": {
+      "color": 88,
+      "final": 132,
+      "normal": 2,
+      "coverage": 10,
+      "browColor": 10,
+      "browFinal": 10
+    },
+    "precise": {
+      "color": 2,
+      "final": 10,
+      "normal": 2,
+      "coverage": 0,
+      "browColor": 0,
+      "browFinal": 0
+    }
+  },
+  "matrix": [
+    {
+      "S": 32,
+      "dot": 4,
+      "path": [
+        1,
+        1
+      ],
+      "follow": true,
+      "targetPart": "sleeve-hand",
+      "angle": 4.71238898038469,
+      "pose": 0,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "anchored": {
+          "color": {
+            "total": 26,
+            "max": 3,
+            "changedTransitions": 16
+          },
+          "final": {
+            "total": 44,
+            "max": 6,
+            "changedTransitions": 16
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 10,
+            "max": 1,
+            "changedTransitions": 10
+          },
+          "browColor": {
+            "total": 4,
+            "max": 1,
+            "changedTransitions": 4
+          },
+          "browFinal": {
+            "total": 4,
+            "max": 1,
+            "changedTransitions": 4
+          }
+        },
+        "precise": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "browColor": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "browFinal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 72,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0,
+      "maskAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "path": [
+        1,
+        1
+      ],
+      "follow": true,
+      "targetPart": "ankle",
+      "angle": 2.356194490192345,
+      "pose": 0,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "anchored": {
+          "color": {
+            "total": 26,
+            "max": 3,
+            "changedTransitions": 18
+          },
+          "final": {
+            "total": 32,
+            "max": 4,
+            "changedTransitions": 18
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "browColor": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "browFinal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "precise": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "browColor": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "browFinal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 58,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0,
+      "maskAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "path": [
+        1,
+        1
+      ],
+      "follow": true,
+      "targetPart": "face-bang",
+      "angle": 1.5707963267948966,
+      "pose": 0.75,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "anchored": {
+          "color": {
+            "total": 18,
+            "max": 2,
+            "changedTransitions": 17
+          },
+          "final": {
+            "total": 24,
+            "max": 2,
+            "changedTransitions": 17
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "browColor": {
+            "total": 6,
+            "max": 1,
+            "changedTransitions": 6
+          },
+          "browFinal": {
+            "total": 6,
+            "max": 1,
+            "changedTransitions": 6
+          }
+        },
+        "precise": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "browColor": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "browFinal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 28,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0,
+      "maskAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 3.9269908169872414,
+      "pose": 0,
+      "path": [
+        1,
+        1
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "anchored": {
+          "color": {
+            "total": 18,
+            "max": 2,
+            "changedTransitions": 14
+          },
+          "final": {
+            "total": 32,
+            "max": 4,
+            "changedTransitions": 16
+          },
+          "normal": {
+            "total": 2,
+            "max": 1,
+            "changedTransitions": 2
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "browColor": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "browFinal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "precise": {
+          "color": {
+            "total": 2,
+            "max": 1,
+            "changedTransitions": 2
+          },
+          "final": {
+            "total": 10,
+            "max": 5,
+            "changedTransitions": 2
+          },
+          "normal": {
+            "total": 2,
+            "max": 1,
+            "changedTransitions": 2
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "browColor": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "browFinal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 61,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0,
+      "maskAB": 0,
+      "group": "residual-control"
+    }
+  ],
+  "ablations": [
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 0,
+      "pose": 0,
+      "path": [
+        0,
+        0
+      ],
+      "follow": true,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "anchored": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "browColor": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "browFinal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "precise": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "browColor": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "browFinal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 48,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0,
+      "maskAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 0,
+      "pose": 0,
+      "path": [
+        0,
+        1
+      ],
+      "follow": true,
+      "outline": false,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "anchored": {
+          "color": {
+            "total": 12,
+            "max": 2,
+            "changedTransitions": 9
+          },
+          "final": {
+            "total": 12,
+            "max": 2,
+            "changedTransitions": 9
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "browColor": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "browFinal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "precise": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "browColor": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "browFinal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 33,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0,
+      "maskAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 0,
+      "pose": 0,
+      "path": [
+        0,
+        1
+      ],
+      "follow": true,
+      "lighting": false,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "anchored": {
+          "color": {
+            "total": 12,
+            "max": 2,
+            "changedTransitions": 9
+          },
+          "final": {
+            "total": 12,
+            "max": 2,
+            "changedTransitions": 9
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "browColor": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "browFinal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "precise": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "browColor": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "browFinal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 33,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0,
+      "maskAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 0,
+      "pose": 0,
+      "path": [
+        0,
+        1
+      ],
+      "follow": true,
+      "shadow": true,
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "anchored": {
+          "color": {
+            "total": 12,
+            "max": 2,
+            "changedTransitions": 9
+          },
+          "final": {
+            "total": 12,
+            "max": 2,
+            "changedTransitions": 9
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "browColor": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "browFinal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        },
+        "precise": {
+          "color": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "final": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "browColor": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "browFinal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          }
+        }
+      },
+      "rawAB": 33,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0,
+      "maskAB": 0
+    },
+    {
+      "S": 32,
+      "dot": 4,
+      "angle": 0,
+      "pose": 0,
+      "path": [
+        0,
+        1
+      ],
+      "follow": true,
+      "tod": "evening",
+      "frames": 24,
+      "comparedPerTransition": 1296,
+      "metrics": {
+        "anchored": {
+          "color": {
+            "total": 216,
+            "max": 21,
+            "changedTransitions": 17
+          },
+          "final": {
+            "total": 340,
+            "max": 34,
+            "changedTransitions": 17
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "browColor": {
+            "total": 34,
+            "max": 4,
+            "changedTransitions": 11
+          },
+          "browFinal": {
+            "total": 34,
+            "max": 4,
+            "changedTransitions": 11
+          }
+        },
+        "precise": {
+          "color": {
+            "total": 204,
+            "max": 20,
+            "changedTransitions": 14
+          },
+          "final": {
+            "total": 328,
+            "max": 33,
+            "changedTransitions": 14
+          },
+          "normal": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "coverage": {
+            "total": 0,
+            "max": 0,
+            "changedTransitions": 0
+          },
+          "browColor": {
+            "total": 34,
+            "max": 4,
+            "changedTransitions": 11
+          },
+          "browFinal": {
+            "total": 34,
+            "max": 4,
+            "changedTransitions": 11
+          }
+        }
+      },
+      "rawAB": 33,
+      "normalAB": 0,
+      "coverageAB": 0,
+      "classificationAB": 0,
+      "maskAB": 0
+    }
+  ],
+  "witnesses": {
+    "sleeve-hand": {
+      "condition": {
+        "S": 32,
+        "dot": 4,
+        "path": [
+          1,
+          1
+        ],
+        "follow": true,
+        "targetPart": "sleeve-hand",
+        "angle": 4.71238898038469,
+        "pose": 0
+      },
+      "steps": [
+        0,
+        1
+      ],
+      "pixel": [
+        18,
+        7
+      ],
+      "origin": "bottom-left of foot-aligned S+4 ROI",
+      "partA": [
+        "hand-L",
+        "sleeve-L"
+      ],
+      "partB": [
+        "hand-L",
+        "hand-L"
+      ],
+      "colorA": [
+        [
+          242,
+          194,
+          155,
+          153
+        ],
+        [
+          26,
+          80,
+          87,
+          255
+        ]
+      ],
+      "colorB": [
+        [
+          242,
+          194,
+          155,
+          153
+        ],
+        [
+          242,
+          194,
+          155,
+          153
+        ]
+      ],
+      "finalA": [
+        [
+          255,
+          233,
+          188,
+          255
+        ],
+        [
+          40,
+          102,
+          110,
+          255
+        ]
+      ],
+      "finalB": [
+        [
+          255,
+          233,
+          188,
+          255
+        ],
+        [
+          255,
+          233,
+          188,
+          255
+        ]
+      ],
+      "normalA": [
+        [
+          195,
+          176
+        ],
+        [
+          195,
+          176
+        ]
+      ],
+      "normalB": [
+        [
+          195,
+          176
+        ],
+        [
+          195,
+          176
+        ]
+      ],
+      "depthProbe": [
+        {
+          "step": 0,
+          "part": "hand-L",
+          "normal": [
+            0.5314727425575256,
+            0.3830071985721588,
+            0.7555409073829651
+          ],
+          "rasterDepth": 0.49214044213294983,
+          "round16": 32252,
+          "round24": 8256746
+        },
+        {
+          "step": 0,
+          "part": "sleeve-L",
+          "normal": [
+            0.8166086077690125,
+            -0.23704226315021515,
+            0.5262711048126221
+          ],
+          "rasterDepth": 0.492142915725708,
+          "round16": 32253,
+          "round24": 8256788
+        },
+        {
+          "step": 1,
+          "part": "hand-L",
+          "normal": [
+            0.5314727425575256,
+            0.3830071985721588,
+            0.7555409073829651
+          ],
+          "rasterDepth": 0.4902808666229248,
+          "round16": 32131,
+          "round24": 8225548
+        },
+        {
+          "step": 1,
+          "part": "sleeve-L",
+          "normal": [
+            0.8166086077690125,
+            -0.23704226315021515,
+            0.5262711048126221
+          ],
+          "rasterDepth": 0.490283340215683,
+          "round16": 32131,
+          "round24": 8225589
+        }
+      ],
+      "movementControls": [
+        {
+          "path": [
+            0,
+            1
+          ],
+          "variant": "anchored",
+          "parts": [
+            "hand-L",
+            "sleeve-L"
+          ],
+          "color": [
+            [
+              242,
+              194,
+              155,
+              153
+            ],
+            [
+              26,
+              80,
+              87,
+              255
+            ]
+          ],
+          "final": [
+            [
+              255,
+              233,
+              188,
+              255
+            ],
+            [
+              40,
+              102,
+              110,
+              255
+            ]
+          ]
+        },
+        {
+          "path": [
+            0,
+            1
+          ],
+          "variant": "precise",
+          "parts": [
+            "hand-L",
+            "hand-L"
+          ],
+          "color": [
+            [
+              242,
+              194,
+              155,
+              153
+            ],
+            [
+              242,
+              194,
+              155,
+              153
+            ]
+          ],
+          "final": [
+            [
+              255,
+              233,
+              188,
+              255
+            ],
+            [
+              255,
+              233,
+              188,
+              255
+            ]
+          ]
+        },
+        {
+          "path": [
+            1,
+            1
+          ],
+          "variant": "anchored",
+          "parts": [
+            "hand-L",
+            "sleeve-L"
+          ],
+          "color": [
+            [
+              242,
+              194,
+              155,
+              153
+            ],
+            [
+              26,
+              80,
+              87,
+              255
+            ]
+          ],
+          "final": [
+            [
+              255,
+              233,
+              188,
+              255
+            ],
+            [
+              40,
+              102,
+              110,
+              255
+            ]
+          ]
+        },
+        {
+          "path": [
+            1,
+            1
+          ],
+          "variant": "precise",
+          "parts": [
+            "hand-L",
+            "hand-L"
+          ],
+          "color": [
+            [
+              242,
+              194,
+              155,
+              153
+            ],
+            [
+              242,
+              194,
+              155,
+              153
+            ]
+          ],
+          "final": [
+            [
+              255,
+              233,
+              188,
+              255
+            ],
+            [
+              255,
+              233,
+              188,
+              255
+            ]
+          ]
+        },
+        {
+          "path": [
+            0,
+            0
+          ],
+          "variant": "anchored",
+          "parts": [
+            "hand-L",
+            "hand-L"
+          ],
+          "color": [
+            [
+              242,
+              194,
+              155,
+              153
+            ],
+            [
+              242,
+              194,
+              155,
+              153
+            ]
+          ],
+          "final": [
+            [
+              255,
+              233,
+              188,
+              255
+            ],
+            [
+              255,
+              233,
+              188,
+              255
+            ]
+          ]
+        },
+        {
+          "path": [
+            0,
+            0
+          ],
+          "variant": "precise",
+          "parts": [
+            "hand-L",
+            "hand-L"
+          ],
+          "color": [
+            [
+              242,
+              194,
+              155,
+              153
+            ],
+            [
+              242,
+              194,
+              155,
+              153
+            ]
+          ],
+          "final": [
+            [
+              255,
+              233,
+              188,
+              255
+            ],
+            [
+              255,
+              233,
+              188,
+              255
+            ]
+          ]
+        }
+      ]
+    },
+    "ankle": {
+      "condition": {
+        "S": 32,
+        "dot": 4,
+        "path": [
+          1,
+          1
+        ],
+        "follow": true,
+        "targetPart": "ankle",
+        "angle": 2.356194490192345,
+        "pose": 0
+      },
+      "steps": [
+        1,
+        2
+      ],
+      "pixel": [
+        18,
+        3
+      ],
+      "origin": "bottom-left of foot-aligned S+4 ROI",
+      "partA": [
+        "boot-R",
+        "pants-R"
+      ],
+      "partB": [
+        "pants-R",
+        "pants-R"
+      ],
+      "colorA": [
+        [
+          162,
+          107,
+          65,
+          255
+        ],
+        [
+          59,
+          63,
+          107,
+          255
+        ]
+      ],
+      "colorB": [
+        [
+          59,
+          63,
+          107,
+          255
+        ],
+        [
+          59,
+          63,
+          107,
+          255
+        ]
+      ],
+      "finalA": [
+        [
+          197,
+          133,
+          85,
+          255
+        ],
+        [
+          78,
+          83,
+          133,
+          255
+        ]
+      ],
+      "finalB": [
+        [
+          78,
+          83,
+          133,
+          255
+        ],
+        [
+          78,
+          83,
+          133,
+          255
+        ]
+      ],
+      "normalA": [
+        [
+          43,
+          70
+        ],
+        [
+          43,
+          70
+        ]
+      ],
+      "normalB": [
+        [
+          43,
+          70
+        ],
+        [
+          43,
+          70
+        ]
+      ],
+      "depthProbe": [
+        {
+          "step": 1,
+          "part": "boot-R",
+          "normal": [
+            -2.7755575615628914e-17,
+            0.8191520571708679,
+            0.5735764503479004
+          ],
+          "rasterDepth": 0.49461182951927185,
+          "round16": 32414,
+          "round24": 8298209
+        },
+        {
+          "step": 1,
+          "part": "pants-R",
+          "normal": [
+            -0.6629722118377686,
+            -0.4501001238822937,
+            0.5982288718223572
+          ],
+          "rasterDepth": 0.49460187554359436,
+          "round16": 32414,
+          "round24": 8298042
+        },
+        {
+          "step": 2,
+          "part": "boot-R",
+          "normal": [
+            -2.7755575615628914e-17,
+            0.8191520571708679,
+            0.5735764503479004
+          ],
+          "rasterDepth": 0.4927522838115692,
+          "round16": 32293,
+          "round24": 8267011
+        },
+        {
+          "step": 2,
+          "part": "pants-R",
+          "normal": [
+            -0.6629722118377686,
+            -0.4501001238822937,
+            0.5982288718223572
+          ],
+          "rasterDepth": 0.4927423298358917,
+          "round16": 32292,
+          "round24": 8266844
+        }
+      ],
+      "movementControls": [
+        {
+          "path": [
+            0,
+            1
+          ],
+          "variant": "anchored",
+          "parts": [
+            "boot-R",
+            "pants-R"
+          ],
+          "color": [
+            [
+              162,
+              107,
+              65,
+              255
+            ],
+            [
+              59,
+              63,
+              107,
+              255
+            ]
+          ],
+          "final": [
+            [
+              197,
+              133,
+              85,
+              255
+            ],
+            [
+              78,
+              83,
+              133,
+              255
+            ]
+          ]
+        },
+        {
+          "path": [
+            0,
+            1
+          ],
+          "variant": "precise",
+          "parts": [
+            "pants-R",
+            "pants-R"
+          ],
+          "color": [
+            [
+              59,
+              63,
+              107,
+              255
+            ],
+            [
+              59,
+              63,
+              107,
+              255
+            ]
+          ],
+          "final": [
+            [
+              78,
+              83,
+              133,
+              255
+            ],
+            [
+              78,
+              83,
+              133,
+              255
+            ]
+          ]
+        },
+        {
+          "path": [
+            1,
+            1
+          ],
+          "variant": "anchored",
+          "parts": [
+            "boot-R",
+            "pants-R"
+          ],
+          "color": [
+            [
+              162,
+              107,
+              65,
+              255
+            ],
+            [
+              59,
+              63,
+              107,
+              255
+            ]
+          ],
+          "final": [
+            [
+              197,
+              133,
+              85,
+              255
+            ],
+            [
+              78,
+              83,
+              133,
+              255
+            ]
+          ]
+        },
+        {
+          "path": [
+            1,
+            1
+          ],
+          "variant": "precise",
+          "parts": [
+            "pants-R",
+            "pants-R"
+          ],
+          "color": [
+            [
+              59,
+              63,
+              107,
+              255
+            ],
+            [
+              59,
+              63,
+              107,
+              255
+            ]
+          ],
+          "final": [
+            [
+              78,
+              83,
+              133,
+              255
+            ],
+            [
+              78,
+              83,
+              133,
+              255
+            ]
+          ]
+        },
+        {
+          "path": [
+            0,
+            0
+          ],
+          "variant": "anchored",
+          "parts": [
+            "boot-R",
+            "boot-R"
+          ],
+          "color": [
+            [
+              162,
+              107,
+              65,
+              255
+            ],
+            [
+              162,
+              107,
+              65,
+              255
+            ]
+          ],
+          "final": [
+            [
+              197,
+              133,
+              85,
+              255
+            ],
+            [
+              197,
+              133,
+              85,
+              255
+            ]
+          ]
+        },
+        {
+          "path": [
+            0,
+            0
+          ],
+          "variant": "precise",
+          "parts": [
+            "pants-R",
+            "pants-R"
+          ],
+          "color": [
+            [
+              59,
+              63,
+              107,
+              255
+            ],
+            [
+              59,
+              63,
+              107,
+              255
+            ]
+          ],
+          "final": [
+            [
+              78,
+              83,
+              133,
+              255
+            ],
+            [
+              78,
+              83,
+              133,
+              255
+            ]
+          ]
+        }
+      ]
+    },
+    "face-bang": {
+      "condition": {
+        "S": 32,
+        "dot": 4,
+        "path": [
+          1,
+          1
+        ],
+        "follow": true,
+        "targetPart": "face-bang",
+        "angle": 1.5707963267948966,
+        "pose": 0.75
+      },
+      "steps": [
+        1,
+        2
+      ],
+      "pixel": [
+        23,
+        17
+      ],
+      "origin": "bottom-left of foot-aligned S+4 ROI",
+      "partA": [
+        "hair-cap",
+        "bang-right"
+      ],
+      "partB": [
+        "bang-right",
+        "bang-right"
+      ],
+      "colorA": [
+        [
+          196,
+          98,
+          45,
+          255
+        ],
+        [
+          211,
+          139,
+          91,
+          255
+        ]
+      ],
+      "colorB": [
+        [
+          211,
+          139,
+          91,
+          255
+        ],
+        [
+          211,
+          139,
+          91,
+          255
+        ]
+      ],
+      "finalA": [
+        [
+          236,
+          123,
+          62,
+          255
+        ],
+        [
+          253,
+          170,
+          115,
+          255
+        ]
+      ],
+      "finalB": [
+        [
+          253,
+          170,
+          115,
+          255
+        ],
+        [
+          253,
+          170,
+          115,
+          255
+        ]
+      ],
+      "normalA": [
+        [
+          132,
+          218
+        ],
+        [
+          132,
+          218
+        ]
+      ],
+      "normalB": [
+        [
+          132,
+          218
+        ],
+        [
+          132,
+          218
+        ]
+      ],
+      "depthProbe": [
+        {
+          "step": 1,
+          "part": "hair-cap",
+          "normal": [
+            0.767751157283783,
+            0.03376523405313492,
+            0.639857828617096
+          ],
+          "rasterDepth": 0.4815654456615448,
+          "round16": 31559,
+          "round24": 8079327
+        },
+        {
+          "step": 1,
+          "part": "bang-right",
+          "normal": [
+            0.03903799504041672,
+            0.7063045501708984,
+            0.7068309783935547
+          ],
+          "rasterDepth": 0.48155421018600464,
+          "round16": 31559,
+          "round24": 8079139
+        },
+        {
+          "step": 2,
+          "part": "hair-cap",
+          "normal": [
+            0.767751157283783,
+            0.03376523405313492,
+            0.639857828617096
+          ],
+          "rasterDepth": 0.4797058701515198,
+          "round16": 31438,
+          "round24": 8048129
+        },
+        {
+          "step": 2,
+          "part": "bang-right",
+          "normal": [
+            0.03903799504041672,
+            0.7063045501708984,
+            0.7068309783935547
+          ],
+          "rasterDepth": 0.479694664478302,
+          "round16": 31437,
+          "round24": 8047941
+        }
+      ],
+      "movementControls": [
+        {
+          "path": [
+            0,
+            1
+          ],
+          "variant": "anchored",
+          "parts": [
+            "hair-cap",
+            "bang-right"
+          ],
+          "color": [
+            [
+              196,
+              98,
+              45,
+              255
+            ],
+            [
+              211,
+              139,
+              91,
+              255
+            ]
+          ],
+          "final": [
+            [
+              236,
+              123,
+              62,
+              255
+            ],
+            [
+              253,
+              170,
+              115,
+              255
+            ]
+          ]
+        },
+        {
+          "path": [
+            0,
+            1
+          ],
+          "variant": "precise",
+          "parts": [
+            "bang-right",
+            "bang-right"
+          ],
+          "color": [
+            [
+              211,
+              139,
+              91,
+              255
+            ],
+            [
+              211,
+              139,
+              91,
+              255
+            ]
+          ],
+          "final": [
+            [
+              253,
+              170,
+              115,
+              255
+            ],
+            [
+              253,
+              170,
+              115,
+              255
+            ]
+          ]
+        },
+        {
+          "path": [
+            1,
+            1
+          ],
+          "variant": "anchored",
+          "parts": [
+            "hair-cap",
+            "bang-right"
+          ],
+          "color": [
+            [
+              196,
+              98,
+              45,
+              255
+            ],
+            [
+              211,
+              139,
+              91,
+              255
+            ]
+          ],
+          "final": [
+            [
+              236,
+              123,
+              62,
+              255
+            ],
+            [
+              253,
+              170,
+              115,
+              255
+            ]
+          ]
+        },
+        {
+          "path": [
+            1,
+            1
+          ],
+          "variant": "precise",
+          "parts": [
+            "bang-right",
+            "bang-right"
+          ],
+          "color": [
+            [
+              211,
+              139,
+              91,
+              255
+            ],
+            [
+              211,
+              139,
+              91,
+              255
+            ]
+          ],
+          "final": [
+            [
+              253,
+              170,
+              115,
+              255
+            ],
+            [
+              253,
+              170,
+              115,
+              255
+            ]
+          ]
+        },
+        {
+          "path": [
+            0,
+            0
+          ],
+          "variant": "anchored",
+          "parts": [
+            "hair-cap",
+            "hair-cap"
+          ],
+          "color": [
+            [
+              196,
+              98,
+              45,
+              255
+            ],
+            [
+              196,
+              98,
+              45,
+              255
+            ]
+          ],
+          "final": [
+            [
+              236,
+              123,
+              62,
+              255
+            ],
+            [
+              236,
+              123,
+              62,
+              255
+            ]
+          ]
+        },
+        {
+          "path": [
+            0,
+            0
+          ],
+          "variant": "precise",
+          "parts": [
+            "bang-right",
+            "bang-right"
+          ],
+          "color": [
+            [
+              211,
+              139,
+              91,
+              255
+            ],
+            [
+              211,
+              139,
+              91,
+              255
+            ]
+          ],
+          "final": [
+            [
+              253,
+              170,
+              115,
+              255
+            ],
+            [
+              253,
+              170,
+              115,
+              255
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "residual": {
+    "condition": {
+      "S": 32,
+      "dot": 4,
+      "angle": 3.9269908169872414,
+      "pose": 0,
+      "path": [
+        1,
+        1
+      ],
+      "follow": true
+    },
+    "steps": [
+      5,
+      6
+    ],
+    "pixel": [
+      16,
+      23
+    ],
+    "parts": [
+      "hair-cap",
+      "ahoge"
+    ],
+    "color": [
+      [
+        211,
+        139,
+        91,
+        255
+      ],
+      [
+        196,
+        98,
+        45,
+        255
+      ]
+    ],
+    "normal": [
+      [
+        109,
+        227
+      ],
+      [
+        178,
+        79
+      ]
+    ],
+    "depthProbe": [
+      {
+        "step": 5,
+        "part": "hair-cap",
+        "normal": [
+          -0.1461426019668579,
+          0.7840608954429626,
+          0.6032335758209229
+        ],
+        "rasterDepth": 0.4695097804069519,
+        "round16": 30769,
+        "round24": 7877067
+      },
+      {
+        "step": 5,
+        "part": "ahoge",
+        "normal": [
+          0.39467018842697144,
+          -0.3827764093875885,
+          0.8352950215339661
+        ],
+        "rasterDepth": 0.4695097804069519,
+        "round16": 30769,
+        "round24": 7877067
+      },
+      {
+        "step": 6,
+        "part": "hair-cap",
+        "normal": [
+          -0.1461426019668579,
+          0.7840608954429626,
+          0.6032335758209229
+        ],
+        "rasterDepth": 0.46765023469924927,
+        "round16": 30647,
+        "round24": 7845869
+      },
+      {
+        "step": 6,
+        "part": "ahoge",
+        "normal": [
+          0.39467018842697144,
+          -0.3827764093875885,
+          0.8352950215339661
+        ],
+        "rasterDepth": 0.4676502048969269,
+        "round16": 30647,
+        "round24": 7845868
+      }
+    ]
+  },
+  "effects": {
+    "overlap": [
+      {
+        "x": 0,
+        "z": 2.5,
+        "shadow": true,
+        "character": 187,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": 0,
+        "z": 2.5,
+        "shadow": false,
+        "character": 187,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": 13,
+        "z": -10,
+        "shadow": true,
+        "character": 187,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": 13,
+        "z": -10,
+        "shadow": false,
+        "character": 187,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": 14,
+        "z": -10,
+        "shadow": true,
+        "character": 187,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": 14,
+        "z": -10,
+        "shadow": false,
+        "character": 187,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": -7.5,
+        "z": -4.9,
+        "shadow": true,
+        "character": 187,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 11,
+        "rawChanged": 11,
+        "finalChanged": 11
+      },
+      {
+        "x": -7.5,
+        "z": -4.9,
+        "shadow": false,
+        "character": 187,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 11,
+        "rawChanged": 11,
+        "finalChanged": 11
+      },
+      {
+        "x": -7.5,
+        "z": -9.5,
+        "shadow": true,
+        "character": 0,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": -7.5,
+        "z": -9.5,
+        "shadow": false,
+        "character": 0,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": -9.5,
+        "z": -8,
+        "shadow": true,
+        "character": 66,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 8,
+        "rawChanged": 8,
+        "finalChanged": 8
+      },
+      {
+        "x": -9.5,
+        "z": -8,
+        "shadow": false,
+        "character": 66,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 8,
+        "rawChanged": 8,
+        "finalChanged": 8
+      },
+      {
+        "x": 9.8,
+        "z": -5,
+        "shadow": true,
+        "character": 187,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 5,
+        "rawChanged": 5,
+        "finalChanged": 5
+      },
+      {
+        "x": 9.8,
+        "z": -5,
+        "shadow": false,
+        "character": 187,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 5,
+        "rawChanged": 5,
+        "finalChanged": 5
+      },
+      {
+        "x": 0,
+        "z": 0,
+        "shadow": true,
+        "character": 187,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": 0,
+        "z": 0,
+        "shadow": false,
+        "character": 187,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": 12,
+        "z": -13.5,
+        "shadow": true,
+        "character": 112,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": 12,
+        "z": -13.5,
+        "shadow": false,
+        "character": 112,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": 12,
+        "z": -13,
+        "shadow": true,
+        "character": 102,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": 12,
+        "z": -13,
+        "shadow": false,
+        "character": 102,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": 12,
+        "z": -12.5,
+        "shadow": true,
+        "character": 112,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": 12,
+        "z": -12.5,
+        "shadow": false,
+        "character": 112,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": 12.5,
+        "z": -13.5,
+        "shadow": true,
+        "character": 23,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": 12.5,
+        "z": -13.5,
+        "shadow": false,
+        "character": 23,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": 12.5,
+        "z": -13,
+        "shadow": true,
+        "character": 6,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": 12.5,
+        "z": -13,
+        "shadow": false,
+        "character": 6,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": 12.5,
+        "z": -12.5,
+        "shadow": true,
+        "character": 19,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": 12.5,
+        "z": -12.5,
+        "shadow": false,
+        "character": 19,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": 13,
+        "z": -13.5,
+        "shadow": true,
+        "character": 0,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": 13,
+        "z": -13.5,
+        "shadow": false,
+        "character": 0,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": 13,
+        "z": -13,
+        "shadow": true,
+        "character": 0,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": 13,
+        "z": -13,
+        "shadow": false,
+        "character": 0,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": 13,
+        "z": -12.5,
+        "shadow": true,
+        "character": 5,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": 13,
+        "z": -12.5,
+        "shadow": false,
+        "character": 5,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": 13.5,
+        "z": -13.5,
+        "shadow": true,
+        "character": 13,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": 13.5,
+        "z": -13.5,
+        "shadow": false,
+        "character": 13,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": 13.5,
+        "z": -13,
+        "shadow": true,
+        "character": 7,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": 13.5,
+        "z": -13,
+        "shadow": false,
+        "character": 7,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": 13.5,
+        "z": -12.5,
+        "shadow": true,
+        "character": 28,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": 13.5,
+        "z": -12.5,
+        "shadow": false,
+        "character": 28,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": 14,
+        "z": -13.5,
+        "shadow": true,
+        "character": 71,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": 14,
+        "z": -13.5,
+        "shadow": false,
+        "character": 71,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": 14,
+        "z": -13,
+        "shadow": true,
+        "character": 52,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": 14,
+        "z": -13,
+        "shadow": false,
+        "character": 52,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": 14,
+        "z": -12.5,
+        "shadow": true,
+        "character": 54,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      },
+      {
+        "x": 14,
+        "z": -12.5,
+        "shadow": false,
+        "character": 54,
+        "idChanged": 0,
+        "maskChanged": 0,
+        "occlusionChanged": 0,
+        "outside": 0,
+        "rawChanged": 0,
+        "finalChanged": 0
+      }
+    ],
+    "animation": [
+      {
+        "variant": "anchored",
+        "face": "pixel",
+        "walk": 187,
+        "blink": 6,
+        "emotion": 44
+      },
+      {
+        "variant": "anchored",
+        "face": "3d",
+        "walk": 187,
+        "blink": 0,
+        "emotion": 40
+      },
+      {
+        "variant": "anchored",
+        "face": "uv",
+        "walk": 187,
+        "blink": 0,
+        "emotion": 40
+      },
+      {
+        "variant": "precise",
+        "face": "pixel",
+        "walk": 185,
+        "blink": 6,
+        "emotion": 44
+      },
+      {
+        "variant": "precise",
+        "face": "3d",
+        "walk": 185,
+        "blink": 0,
+        "emotion": 40
+      },
+      {
+        "variant": "precise",
+        "face": "uv",
+        "walk": 185,
+        "blink": 0,
+        "emotion": 40
+      }
+    ],
+    "depth": {
+      "baseline": [
+        16,
+        24
+      ],
+      "anchored": [
+        16,
+        24
+      ],
+      "precise": [
+        24,
+        24
+      ]
+    },
+    "highPrecision": [
+      {
+        "variant": "baseline",
+        "bits": [
+          16,
+          16
+        ]
+      },
+      {
+        "variant": "anchored",
+        "bits": [
+          16,
+          16
+        ]
+      },
+      {
+        "variant": "precise",
+        "bits": [
+          16,
+          24
+        ]
+      }
+    ],
+    "restoration": [
+      {
+        "variant": "baseline",
+        "color": 0,
+        "nd": 0,
+        "final": 0
+      },
+      {
+        "variant": "anchored",
+        "color": 0,
+        "nd": 0,
+        "final": 0
+      }
+    ],
+    "memory": [
+      {
+        "cycle": 0,
+        "variant": "precise",
+        "textures": 11
+      },
+      {
+        "cycle": 0,
+        "variant": "anchored",
+        "textures": 10
+      },
+      {
+        "cycle": 0,
+        "variant": "baseline",
+        "textures": 10
+      },
+      {
+        "cycle": 1,
+        "variant": "precise",
+        "textures": 11
+      },
+      {
+        "cycle": 1,
+        "variant": "anchored",
+        "textures": 10
+      },
+      {
+        "cycle": 1,
+        "variant": "baseline",
+        "textures": 10
+      },
+      {
+        "cycle": 2,
+        "variant": "precise",
+        "textures": 11
+      },
+      {
+        "cycle": 2,
+        "variant": "anchored",
+        "textures": 10
+      },
+      {
+        "cycle": 2,
+        "variant": "baseline",
+        "textures": 10
+      },
+      {
+        "cycle": 3,
+        "variant": "precise",
+        "textures": 11
+      },
+      {
+        "cycle": 3,
+        "variant": "anchored",
+        "textures": 10
+      },
+      {
+        "cycle": 3,
+        "variant": "baseline",
+        "textures": 10
+      },
+      {
+        "cycle": 4,
+        "variant": "precise",
+        "textures": 11
+      },
+      {
+        "cycle": 4,
+        "variant": "anchored",
+        "textures": 10
+      },
+      {
+        "cycle": 4,
+        "variant": "baseline",
+        "textures": 10
+      },
+      {
+        "cycle": 5,
+        "variant": "precise",
+        "textures": 11
+      },
+      {
+        "cycle": 5,
+        "variant": "anchored",
+        "textures": 10
+      },
+      {
+        "cycle": 5,
+        "variant": "baseline",
+        "textures": 10
+      }
+    ]
+  },
+  "ui": {
+    "background": [
+      {
+        "key": "color-vertical",
+        "result": {
+          "scroll": {
+            "dx": 0,
+            "dy": 17
+          },
+          "compared": 34710,
+          "changed": 0,
+          "maxChannelDelta": 0,
+          "examples": [],
+          "excluded": 3810,
+          "exclusion": "視野の非共通部分と両画像の1px外周（輪郭の隣接参照）。物体や差分値による除外なし",
+          "status": "比較範囲で差分なし"
+        },
+        "AB": 15
+      },
+      {
+        "key": "color-diagonal",
+        "result": {
+          "scroll": {
+            "dx": 12,
+            "dy": -12
+          },
+          "compared": 33200,
+          "changed": 0,
+          "maxChannelDelta": 0,
+          "examples": [],
+          "excluded": 5320,
+          "exclusion": "視野の非共通部分と両画像の1px外周（輪郭の隣接参照）。物体や差分値による除外なし",
+          "status": "比較範囲で差分なし"
+        },
+        "AB": 12
+      },
+      {
+        "key": "color-horizontal",
+        "result": {
+          "scroll": {
+            "dx": 17,
+            "dy": 0
+          },
+          "compared": 34132,
+          "changed": 0,
+          "maxChannelDelta": 0,
+          "examples": [],
+          "excluded": 4388,
+          "exclusion": "視野の非共通部分と両画像の1px外周（輪郭の隣接参照）。物体や差分値による除外なし",
+          "status": "比較範囲で差分なし"
+        },
+        "AB": 16
+      },
+      {
+        "key": "color-walk",
+        "result": {
+          "scroll": {
+            "dx": 0,
+            "dy": 0
+          },
+          "compared": 37736,
+          "changed": 0,
+          "maxChannelDelta": 0,
+          "examples": [],
+          "excluded": 784,
+          "exclusion": "視野の非共通部分と両画像の1px外周（輪郭の隣接参照）。物体や差分値による除外なし",
+          "status": "比較範囲で差分なし"
+        },
+        "AB": 15
+      },
+      {
+        "key": "color-trees",
+        "result": {
+          "scroll": {
+            "dx": 17,
+            "dy": 0
+          },
+          "compared": 34132,
+          "changed": 0,
+          "maxChannelDelta": 0,
+          "examples": [],
+          "excluded": 4388,
+          "exclusion": "視野の非共通部分と両画像の1px外周（輪郭の隣接参照）。物体や差分値による除外なし",
+          "status": "比較範囲で差分なし"
+        },
+        "AB": 23
+      }
+    ],
+    "stationary": {
+      "start": {
+        "ticks": 0,
+        "time": 0,
+        "shaderTime": 0,
+        "player": {
+          "gx": 0,
+          "gy": 18
+        },
+        "phase": 0,
+        "idleT": 0,
+        "moving": false,
+        "snapA": 0,
+        "smoothA": 0,
+        "curDir": 0,
+        "dirHold": 0,
+        "moveAcc": 0,
+        "expression": {
+          "autoBlink": false,
+          "blinkWait": 2.5,
+          "seq": [],
+          "seqT": 0,
+          "emote": null
+        },
+        "auto": {
+          "i": 1,
+          "wait": 0,
+          "stuck": 0
+        },
+        "camera": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0.8191520442889918,
+          -0.573576436351046,
+          0,
+          0,
+          0.573576436351046,
+          0.8191520442889918,
+          0,
+          0,
+          28.102855536411607,
+          41.36089814625892,
+          1
+        ],
+        "worldSeed": 11
+      },
+      "end": {
+        "ticks": 60,
+        "time": 1.0000000000000013,
+        "shaderTime": 1.0000000000000013,
+        "player": {
+          "gx": 0,
+          "gy": 18
+        },
+        "phase": 0.5624999999999996,
+        "idleT": 0,
+        "moving": true,
+        "snapA": 0,
+        "smoothA": 0,
+        "curDir": 0,
+        "dirHold": 59,
+        "moveAcc": 0.8399999999999963,
+        "expression": {
+          "autoBlink": false,
+          "blinkWait": 2.5,
+          "seq": [],
+          "seqT": 0,
+          "emote": null
+        },
+        "auto": {
+          "i": 1,
+          "wait": 0,
+          "stuck": 0
+        },
+        "camera": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0.8191520442889918,
+          -0.573576436351046,
+          0,
+          0,
+          0.573576436351046,
+          0.8191520442889918,
+          0,
+          0,
+          28.102855536411607,
+          41.36089814625892,
+          1
+        ],
+        "worldSeed": 11
+      }
+    },
+    "options": [
+      "baseline",
+      "anchored",
+      "precise"
+    ],
+    "switches": [
+      {
+        "variant": "baseline",
+        "actual": "baseline",
+        "time": 0
+      },
+      {
+        "variant": "anchored",
+        "actual": "anchored",
+        "time": 0
+      },
+      {
+        "variant": "precise",
+        "actual": "precise",
+        "time": 0
+      }
+    ],
+    "normalReads": 0,
+    "returnedVariant": "baseline"
+  },
+  "errors": []
+}
