@@ -20,6 +20,10 @@ try{
   await p.goto('http://127.0.0.1:5177/');await ready();
   let c=await recorded();assert.equal(c.mode,'通常操作');assert.equal(c.characterStudy.variant,'precise');assert.equal(c.characterStudy.selection,'default');
   if(process.env.EXPECTED_BUILD_ID)assert.equal(c.build.buildId,process.env.EXPECTED_BUILD_ID);
+  await p.locator('#v-seed').evaluate(e=>e.value='-1');
+  await p.selectOption('#v-character-variant','baseline');
+  c=await recorded();assert.equal(c.mode,'通常操作');assert.equal(c.characterStudy.variant,'precise');assert.equal(await p.locator('#v-character-variant').inputValue(),'default');
+  await p.locator('#v-seed').evaluate(e=>e.value='11');
   // The app never persisted variants. Preserve unrelated data and ignore stale
   // hypothetical comparison settings instead of clearing origin-wide storage.
   await p.evaluate(()=>{localStorage.setItem('unrelated-user-setting','keep');localStorage.setItem('characterStudy',JSON.stringify({variant:'baseline'}));sessionStorage.setItem('variant','baseline');});

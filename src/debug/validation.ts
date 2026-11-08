@@ -174,9 +174,14 @@ export function bindValidation(render:(options?:CaptureOptions)=>void) {
   el<HTMLSelectElement>('v-character-variant').value=characterStudy.selection;
   el('v-character-variant').addEventListener('change',()=>{
     stopMeasurement('比較方式の変更');
+    const previous=characterStudy.selection;
     characterStudy.selection=el<HTMLSelectElement>('v-character-variant').value as CharacterSelection;
     try { resetValidation(); notice('同じ経路の先頭へ戻りました。「再生」で変更前／候補を比較してください'); }
-    catch(e) { notice((e as Error).message); }
+    catch(e) {
+      characterStudy.selection=previous;
+      el<HTMLSelectElement>('v-character-variant').value=previous;
+      notice((e as Error).message);
+    }
   });
   for (const [id,key] of [['v-freeze-pose','freezePose'],['v-fixed-camera','fixedCamera']] as const) {
     input(id).addEventListener('change',()=>{
