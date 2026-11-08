@@ -20,6 +20,7 @@ function geometry(shape:string){
  return shapes[shape]=new THREE.LatheGeometry(pts,24);
 }
 function drawBitmap(g:CanvasRenderingContext2D,b:Bitmap,r:Rect,angle=0,opacity=1,scale=1){
+ if(r.w<=0||r.h<=0||opacity<=0)return;
  const x=Math.round(r.x*FACE_W),y=Math.round(r.y*FACE_H),w=Math.max(1,Math.round(r.w*FACE_W)),h=Math.max(1,Math.round(r.h*FACE_H));
  // Inverse nearest sampling into a local integer grid. The source image is never mutated.
  const c=Math.cos(angle*Math.PI/180),s=Math.sin(angle*Math.PI/180);
@@ -33,7 +34,7 @@ export function faceCanvas(f:FaceData,eyeState:number,mouth:boolean,open:boolean
  drawBitmap(g,f.extra,{x:0,y:0,w:1,h:1});
  for(const side of ['left','right']as const){
   const e=f.eyes[side],r={...e.rect},closed=eyeState===2,half=eyeState===1;
-  if(closed||half){const h=closed?e.minHeight:(e.rect.h+e.minHeight)/2;r.y=e.rect.y+e.rect.h*e.closeAt-h*e.closeAt;r.h=h;}
+  if(closed||half){const minimum=Math.min(e.minHeight,e.rect.h),h=closed?minimum:(e.rect.h+minimum)/2;r.y=e.rect.y+e.rect.h*e.closeAt-h*e.closeAt;r.h=h;}
   drawBitmap(g,closed&&f.blinkMode==='image'?e.closed:e.image,r,0,1,e.imageScale);
   const hi=e.highlight;if(hi.show&&!(hi.hideClosed&&(closed||half)))drawBitmap(g,[['#ffffff']],{x:r.x+hi.x*r.w,y:r.y+hi.y*r.h,w:hi.w*r.w,h:hi.h*r.h},0,hi.opacity);
   const b=f.brows[side],ex=b.expressions[expression];if(b.neutralVisible||expression!=='neutral')drawBitmap(g,b.image,{...b.rect,y:b.rect.y+ex.dy},side==='left'?ex.angle:-ex.angle,1,b.imageScale);

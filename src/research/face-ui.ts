@@ -89,7 +89,7 @@ export function bindFaceEditor(){
  $('face-eye-state').onchange=()=>{research.preview.eyes=$<HTMLSelectElement>('face-eye-state').value as any;expr.seq=[];};
  $('face-expression').onchange=()=>{research.preview.expression=$<HTMLSelectElement>('face-expression').value as any;if(research.preview.expression!=='neutral'){research.values.face.legacy=false;dirtyFace();}refresh();};
  $('face-hair').onchange=()=>research.preview.hair=$<HTMLInputElement>('face-hair').checked;
- $('face-mouth-open').onchange=()=>{research.preview.mouthOpen=$<HTMLInputElement>('face-mouth-open').checked;updateEditor();};
+ $('face-mouth-open').onchange=()=>{research.preview.mouthOpen=$<HTMLInputElement>('face-mouth-open').checked;research.values.face.legacy=false;dirtyFace();refresh();};
  $('face-pen').onclick=()=>{tool='pen';message('描く：選択した部位の範囲をなぞってください');};$('face-erase').onclick=()=>{tool='erase';message('消しゴム：選択した部位の範囲をなぞってください');};
  $('face-color').oninput=()=>color=$<HTMLInputElement>('face-color').value;
  for(const c of ['#2a1f3d','#5266aa','#ffffff','#bd7054','#c64747']){const b=document.createElement('button');b.className='face-swatch';b.style.background=c;b.setAttribute('aria-label','色 '+c);b.onclick=()=>{color=c;$<HTMLInputElement>('face-color').value=c;};$('face-palette').append(b);}

@@ -17,7 +17,7 @@ const D='#2a1f3d',C='#5266aa';
 export const blank=(w:number,h:number):Bitmap=>Array.from({length:h},()=>Array(w).fill(''));
 function eye(x:number):Eye{return {imageScale:1,rect:{x,y:.375,w:.125,h:.25},image:[[D,D],[D,D],[C,C]],closed:[[D,D]],closeAt:.65,minHeight:1/24,highlight:{show:true,x:.5,y:0,w:.5,h:1/3,opacity:1,hideClosed:true}};}
 function brow(x:number):Brow{return {imageScale:1,rect:{x,y:.25,w:.15625,h:1/12},image:[[D,D]],neutralVisible:false,expressions:{neutral:{dy:0,angle:0},angry:{dy:.02,angle:20},sad:{dy:-.02,angle:-20}}};}
-export function originalFace():FaceData{return {preset:'original',legacy:true,region:{width:.82,height:.62,x:0,y:0},linkEyes:true,linkBrows:true,mirrorArtwork:false,eyes:{left:eye(.625),right:eye(.25)},brows:{left:brow(.609375),right:brow(.234375)},blinkMode:'image',mouth:{imageScale:1,rect:{x:.4375,y:.75,w:.125,h:1/12},image:[[D,D]],open:[[D,D],[D,D]]},extra:blank(FACE_W,FACE_H),nose:{x:.5,y:.65}};}
+export function originalFace():FaceData{return {preset:'original',legacy:true,region:{width:.82,height:.62,x:0,y:0},linkEyes:true,linkBrows:true,mirrorArtwork:false,eyes:{left:eye(.625),right:eye(.25)},brows:{left:brow(.609375),right:brow(.234375)},blinkMode:'image',mouth:{imageScale:1,rect:{x:.4375,y:.75,w:.125,h:.125},image:[['',''],[D,D],['','']],open:[[D,D],[D,D],[D,D]]},extra:blank(FACE_W,FACE_H),nose:{x:.5,y:.65}};}
 export function facePreset(name:string):FaceData{
  const f=originalFace();f.preset=name;if(name==='original')return f;f.legacy=false;
  if(name==='small'){for(const s of ['left','right']as const){f.eyes[s].rect.w=.09375;f.eyes[s].rect.h=.166667;f.eyes[s].image=[[D],[D]];f.eyes[s].highlight.show=false;}}
