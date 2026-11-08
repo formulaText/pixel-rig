@@ -1,5 +1,223 @@
 {
   "openEyeRoundtrip": true,
+  "highlightGlyphs": [
+    {
+      "direction": 0,
+      "tick": 0,
+      "same": true,
+      "glyphs": [
+        [
+          200,
+          140,
+          0
+        ],
+        [
+          184,
+          140,
+          0
+        ]
+      ],
+      "nonHighlightChanges": 0
+    },
+    {
+      "direction": 0,
+      "tick": 151,
+      "same": true,
+      "glyphs": [
+        [
+          200,
+          140,
+          1
+        ],
+        [
+          184,
+          140,
+          1
+        ]
+      ],
+      "nonHighlightChanges": 0
+    },
+    {
+      "direction": 0,
+      "tick": 154,
+      "same": true,
+      "glyphs": [
+        [
+          200,
+          140,
+          2
+        ],
+        [
+          184,
+          140,
+          2
+        ]
+      ],
+      "nonHighlightChanges": 0
+    },
+    {
+      "direction": 0,
+      "tick": 159,
+      "same": true,
+      "glyphs": [
+        [
+          200,
+          140,
+          1
+        ],
+        [
+          184,
+          140,
+          1
+        ]
+      ],
+      "nonHighlightChanges": 0
+    },
+    {
+      "direction": 1,
+      "tick": 0,
+      "same": true,
+      "glyphs": [
+        [
+          208,
+          140,
+          3
+        ],
+        [
+          204,
+          132,
+          0
+        ]
+      ],
+      "nonHighlightChanges": 0
+    },
+    {
+      "direction": 1,
+      "tick": 151,
+      "same": true,
+      "glyphs": [
+        [
+          208,
+          140,
+          4
+        ],
+        [
+          204,
+          132,
+          1
+        ]
+      ],
+      "nonHighlightChanges": 0
+    },
+    {
+      "direction": 1,
+      "tick": 154,
+      "same": true,
+      "glyphs": [
+        [
+          208,
+          140,
+          5
+        ],
+        [
+          204,
+          132,
+          2
+        ]
+      ],
+      "nonHighlightChanges": 0
+    },
+    {
+      "direction": 1,
+      "tick": 159,
+      "same": true,
+      "glyphs": [
+        [
+          208,
+          140,
+          4
+        ],
+        [
+          204,
+          132,
+          1
+        ]
+      ],
+      "nonHighlightChanges": 0
+    },
+    {
+      "direction": 7,
+      "tick": 0,
+      "same": true,
+      "glyphs": [
+        [
+          180,
+          132,
+          0
+        ],
+        [
+          176,
+          140,
+          3
+        ]
+      ],
+      "nonHighlightChanges": 0
+    },
+    {
+      "direction": 7,
+      "tick": 151,
+      "same": true,
+      "glyphs": [
+        [
+          180,
+          132,
+          1
+        ],
+        [
+          176,
+          140,
+          4
+        ]
+      ],
+      "nonHighlightChanges": 0
+    },
+    {
+      "direction": 7,
+      "tick": 154,
+      "same": true,
+      "glyphs": [
+        [
+          180,
+          132,
+          2
+        ],
+        [
+          176,
+          140,
+          5
+        ]
+      ],
+      "nonHighlightChanges": 0
+    },
+    {
+      "direction": 7,
+      "tick": 159,
+      "same": true,
+      "glyphs": [
+        [
+          180,
+          132,
+          1
+        ],
+        [
+          176,
+          140,
+          4
+        ]
+      ],
+      "nonHighlightChanges": 0
+    }
+  ],
   "idleFrozen": true,
   "walkPreserved": true,
   "tilt": {

@@ -53,7 +53,7 @@ export function computeEditableStamps(cam:THREE.Camera,rx:number,ry:number,u:Rec
   const side=keys[i],e=f.eyes[side],old=u[i?'uEye1':'uEye0'].value as THREE.Vector3;
   place(i,e.rect,base.eyes[side].rect,old,J.eyeA[i].position,glyph.w,glyph.h);
   // Preserve the adopted blink/narrow glyph exactly when its artwork is unchanged.
-  const compatible=stampUniforms.uResearchHighlight.value===0&&compatibleEyes[i]&&(f.blinkMode==='image'||eye===0);
+  const compatible=compatibleEyes[i]&&(f.blinkMode==='image'||eye===0);
   originals[i].set(old.x,old.y,compatible?old.z:-1);
   originals[i].x=rects[i].x;originals[i].y=rects[i].y;
   if(rects[i].z!==glyph.w||rects[i].w!==glyph.h)originals[i].z=-1;

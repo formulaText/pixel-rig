@@ -136,14 +136,22 @@ void main(){
       for(int i=0;i<4;i++){
         vec4 part=researchInk(p,uResearchRects[i],float(i));
         if(i>=2 && uBrowFrontOnly>.5)part=vec4(0.0);
-        if(i<2){if(i==0 && uResearchOriginalEyes[0].z>=0.0)part=glyphAt(p,uResearchOriginalEyes[0]);if(i==1 && uResearchOriginalEyes[1].z>=0.0)part=glyphAt(p,uResearchOriginalEyes[1]);}
+        if(i<2){
+          if(i==0 && uResearchOriginalEyes[0].z>=0.0)part=glyphAt(p,uResearchOriginalEyes[0]);
+          if(i==1 && uResearchOriginalEyes[1].z>=0.0)part=glyphAt(p,uResearchOriginalEyes[1]);
+          // Keep the adopted narrow/half/closed glyph, changing only its white highlight.
+          if(uResearchHighlight>.5 && uResearchOriginalEyes[i].z>=0.0 && part.a>.5 && part.r>.95 && part.g>.94 && part.b>.9){
+            float factor=highlightFactor(uResearchEyeWorld[i],uResearchEyeNormal,uResearchEyeViewNormal,uHighlight.y);
+            part.rgb=mix(vec3(36.0,26.0,56.0)/255.0,part.rgb,uHighlight.x*factor);
+          }
+        }
         ink=vec4(part.rgb*part.a,part.a)+ink*(1.0-part.a);
       }
       vec4 mouth=researchInk(p,uResearchRects[4],4.0);ink=vec4(mouth.rgb*mouth.a,mouth.a)+ink*(1.0-mouth.a);
       c.rgb=c.rgb*(1.0-ink.a)+ink.rgb;
       if(uResearchHighlight>.5){for(int i=0;i<2;i++){
         vec4 hi=researchInk(p,uResearchRects[i],float(i+6));
-        if(hi.a>0.0){float factor=highlightFactor(uResearchEyeWorld[i],uResearchEyeNormal,uResearchEyeViewNormal,uHighlight.y);
+        if(uResearchOriginalEyes[i].z<0.0 && hi.a>0.0){float factor=highlightFactor(uResearchEyeWorld[i],uResearchEyeNormal,uResearchEyeViewNormal,uHighlight.y);
         c.rgb=mix(c.rgb,hi.rgb,hi.a*uHighlight.x*factor);}
       }}
     }
