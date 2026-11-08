@@ -1,0 +1,16 @@
+[
+  {
+    "message": "端末内へ保存しました",
+    "options": [
+      "保存0"
+    ],
+    "storage": true
+  },
+  {
+    "message": "再生時刻は0〜600秒にしてください",
+    "options": [
+      "保存0"
+    ],
+    "storage": true
+  }
+]

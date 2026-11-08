@@ -49,6 +49,7 @@ function researchTick(i:number){
  setReplayInput(inputAt(inputs,i%240,STEP));expr.autoBlink=p.blink;tick(i*STEP*1000);
 }
 export function seekLook(ticks:number){resetLook();for(let i=0;i<ticks;i++)lookClock.single(researchTick);}
+export async function seekLongLook(ticks:number,progress:(n:number)=>void){resetLook();for(let i=0;i<ticks;){const end=Math.min(ticks,i+3000);for(;i<end;i++)lookClock.single(researchTick);progress(i/ticks);await new Promise(resolve=>setTimeout(resolve,0));}}
 export function stepLook(){lookClock.pause();lookClock.single(researchTick);}
 export function renderLook(dt=0){
  if(!research.active)return false;
