@@ -128,3 +128,9 @@ fieldset:disabled{opacity:.55}
 #look-direction-state{font-size:12px;text-align:center}
 @media(orientation:landscape) and (min-width:600px){.look-active .layout{grid-template-columns:minmax(240px,1fr) minmax(320px,42vw);grid-template-rows:minmax(0,1fr)}}
 @media(min-width:1000px){.look-active .layout{grid-template-columns:minmax(360px,1fr) minmax(380px,42vw)}.look-active .panel{padding:16px 24px}.look-toolbar-buttons{max-width:600px;margin:auto}.look-save-row{max-width:600px;margin:4px auto}}
+
+/* Look candidate controls keep complete-copy beside local browser save. */
+.look-save-row{grid-template-columns:minmax(0,1fr) 54px 105px}
+.look-save-row .btn{padding:7px 4px;font-size:12px;min-height:36px}
+.homura-options{display:flex;flex-wrap:wrap;gap:5px}.homura-options h3{width:100%}
+.homura-options button[aria-pressed="true"],#look-light-scene-day[aria-pressed="true"],#look-light-scene-dark[aria-pressed="true"],#look-light-scene-lamp[aria-pressed="true"],#look-light-scene-boundary[aria-pressed="true"]{background:var(--accent,#8c79ff);color:#141223}

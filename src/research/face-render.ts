@@ -1,3 +1,4 @@
+import {highlightLightGLSL,highlightFactorGLSL} from './highlight-light';
 import * as THREE from 'three';
 import {J} from '../character/rig';
 import {curEye} from '../character/expression';
@@ -6,14 +7,18 @@ import {FACE_W,FACE_H,FACE_HIGHLIGHT_COLOR,type FaceData,type Bitmap,type Rect} 
 const head=J.head.children[0] as THREE.Mesh;
 const originalGeometry=head.geometry,originalMaterial=head.material as THREE.ShaderMaterial;
 const hair=J.head.children.slice(1,7);
-let revision=0,seen=-1,lastFace:FaceData|null=null,lastMouth=false,lastExpression='',textures:THREE.CanvasTexture[]=[];
+// Color alpha already carries material classification, not body transparency.
+const taggedHead=originalMaterial.clone();taggedHead.uniforms={...originalMaterial.uniforms,uAlpha:{value:.65}};
+let revision=0,seen=-1,lastFace:FaceData|null=null,lastMouth=false,lastExpression='',textures:THREE.CanvasTexture[]=[],hiTextures:THREE.CanvasTexture[]=[];
 export const faceResources={updates:0};
 export function dirtyFace(){revision++;}
 export function faceRevision(){return revision;}
 const shapes:Record<string,THREE.BufferGeometry>={original:originalGeometry};
-const mat=new THREE.ShaderMaterial({uniforms:{...originalMaterial.uniforms,tResearchFace:{value:null},uFaceRegion:{value:new THREE.Vector4()},uFaceOffset:{value:new THREE.Vector2()}},vertexShader:originalMaterial.vertexShader.replace('void main(){','varying vec3 vFaceLocal;\nvoid main(){\n vFaceLocal=position;'),fragmentShader:originalMaterial.fragmentShader.replace('void main(){','varying vec3 vFaceLocal;\nuniform sampler2D tResearchFace;uniform vec4 uFaceRegion;uniform vec2 uFaceOffset;\nvoid main(){').replace('gl_FragColor = vec4(c * tint, uAlpha);',`vec2 faceUV=vec2((vFaceLocal.x-uFaceOffset.x)/uFaceRegion.x+0.5,(vFaceLocal.y-uFaceOffset.y)/uFaceRegion.y+0.5);
+const mat=new THREE.ShaderMaterial({uniforms:{...originalMaterial.uniforms,uAlpha:{value:.6},tResearchFace:{value:null},uFaceRegion:{value:new THREE.Vector4()},uFaceOffset:{value:new THREE.Vector2()},tResearchHighlight:{value:null},uHighlight:{value:new THREE.Vector2(1,0)},uSeparateHighlight:{value:0}},vertexShader:originalMaterial.vertexShader.replace('void main(){','varying vec3 vFaceLocal;\nvoid main(){\n vFaceLocal=position;'),fragmentShader:originalMaterial.fragmentShader.replace('void main(){',highlightLightGLSL.slice(highlightLightGLSL.indexOf('float researchLighting('))+highlightFactorGLSL+'\nvoid main(){').replace('void main(){','varying vec3 vFaceLocal;\nuniform sampler2D tResearchFace;uniform sampler2D tResearchHighlight;uniform vec2 uHighlight;uniform float uSeparateHighlight;uniform vec4 uFaceRegion;uniform vec2 uFaceOffset;\nvoid main(){').replace('gl_FragColor = vec4(c * tint, uAlpha);',`vec2 faceUV=vec2((vFaceLocal.x-uFaceOffset.x)/uFaceRegion.x+0.5,(vFaceLocal.y-uFaceOffset.y)/uFaceRegion.y+0.5);
  if(vFaceLocal.z>0.03 && faceUV.x>=0.0 && faceUV.x<=1.0 && faceUV.y>=0.0 && faceUV.y<=1.0){vec4 ink=texture2D(tResearchFace,faceUV);c=mix(c,ink.rgb,ink.a);}
- gl_FragColor=vec4(c*tint,uAlpha);`)});
+ vec3 result=c*tint;
+ if(uSeparateHighlight>.5 && vFaceLocal.z>0.03 && faceUV.x>=0.0 && faceUV.x<=1.0 && faceUV.y>=0.0 && faceUV.y<=1.0){vec4 hi=texture2D(tResearchHighlight,faceUV);result=mix(result,hi.rgb,hi.a*uHighlight.x*highlightFactor(vWorld,normalize(vWN),normalize(vN),uHighlight.y));}
+ gl_FragColor=vec4(result,uAlpha);`)});
 function geometry(shape:string){
  if(shapes[shape])return shapes[shape];
  if(shape==='round')return shapes[shape]=new THREE.SphereGeometry(.44,24,18).scale(1.03,.94,1.03);
@@ -30,28 +35,31 @@ function drawBitmap(g:CanvasRenderingContext2D,b:Bitmap,r:Rect,angle=0,opacity=1
   const color=b[iy]?.[ix];if(color){g.globalAlpha=opacity;g.fillStyle=color;g.fillRect(x+dx,y+dy,1,1);}
  }g.globalAlpha=1;
 }
-export function faceCanvas(f:FaceData,eyeState:number,mouth:boolean,open:boolean,expression:Preview['expression'],layer='all'){
+export function faceCanvas(f:FaceData,eyeState:number,mouth:boolean,open:boolean,expression:Preview['expression'],layer='all',highlights=true,brows=true){
  const canvas=document.createElement('canvas');canvas.width=FACE_W;canvas.height=FACE_H;const g=canvas.getContext('2d')!;
  if(layer==='all'||layer==='extra')drawBitmap(g,f.extra,{x:0,y:0,w:1,h:1});
  for(const side of ['left','right']as const){
   const e=f.eyes[side],r={...e.rect},closed=eyeState===2,half=eyeState===1;
   if(closed||half){const minimum=Math.min(e.minHeight,e.rect.h),h=closed?minimum:(e.rect.h+minimum)/2;r.y=e.rect.y+e.rect.h*e.closeAt-h*e.closeAt;r.h=h;}
   if(layer==='all'||layer==='eye-'+side)drawBitmap(g,closed&&f.blinkMode==='image'?e.closed:e.image,r,0,1,e.imageScale);
-  const hi=e.highlight;if((layer==='all'||layer==='eye-'+side)&&hi.show&&!(hi.hideClosed&&(closed||half)))drawBitmap(g,[[FACE_HIGHLIGHT_COLOR]],{x:r.x+hi.x*r.w,y:r.y+hi.y*r.h,w:hi.w*r.w,h:hi.h*r.h},0,hi.opacity);
-  const b=f.brows[side],ex=b.expressions[expression];if((layer==='all'||layer==='brow-'+side)&&(b.neutralVisible||expression!=='neutral'))drawBitmap(g,b.image,{...b.rect,y:b.rect.y+ex.dy},side==='left'?ex.angle:-ex.angle,1,b.imageScale);
+  const hi=e.highlight;if(((highlights&&(layer==='all'||layer==='eye-'+side))||layer==='highlight-'+side||layer==='highlights')&&hi.show&&!(hi.hideClosed&&(closed||half)))drawBitmap(g,[[FACE_HIGHLIGHT_COLOR]],{x:r.x+hi.x*r.w,y:r.y+hi.y*r.h,w:hi.w*r.w,h:hi.h*r.h},0,hi.opacity);
+  const b=f.brows[side],ex=b.expressions[expression];if(brows&&(layer==='all'||layer==='brow-'+side)&&(b.neutralVisible||expression!=='neutral'))drawBitmap(g,b.image,{...b.rect,y:b.rect.y+ex.dy},side==='left'?ex.angle:-ex.angle,1,b.imageScale);
  }
  if(mouth&&(layer==='all'||layer==='mouth'))drawBitmap(g,open?f.mouth.open:f.mouth.image,f.mouth.rect,0,1,f.mouth.imageScale);
  return canvas;
 }
 export function applyResearchFace(){
  const v=effectiveLook(),p=research.preview,f=v.face;
+ const expression=JSON.stringify([p.expression,p.mouthOpen,v.highlightOpacity,v.highlightLight,v.browMode]);
  head.geometry=geometry(v.head.shape);J.head.scale.setScalar(v.head.size);for(const h of hair)h.visible=p.hair;
- if(f.legacy){head.material=originalMaterial;return;}
- if(lastFace!==f||seen!==revision||lastMouth!==v.mouth||lastExpression!==p.expression+String(p.mouthOpen)){
-  textures.forEach(t=>t.dispose());textures=[0,1,2].map(eye=>{const t=new THREE.CanvasTexture(faceCanvas(f,eye,v.mouth,p.mouthOpen,p.expression));t.minFilter=t.magFilter=THREE.NearestFilter;t.generateMipmaps=false;return t;});
-  faceResources.updates++;lastFace=f;seen=revision;lastMouth=v.mouth;lastExpression=p.expression+String(p.mouthOpen);
+ if(f.legacy){head.material=v.browMode==='front-overlay'?taggedHead:originalMaterial;return;}
+ mat.uniforms.uAlpha.value=v.browMode==='front-overlay'?.65:.6;
+ if(lastFace!==f||seen!==revision||lastMouth!==v.mouth||lastExpression!==expression){
+  textures.forEach(t=>t.dispose());hiTextures.forEach(t=>t.dispose());hiTextures=[0,1,2].map(eye=>{const t=new THREE.CanvasTexture(faceCanvas(f,eye,false,false,p.expression,'highlights'));t.minFilter=t.magFilter=THREE.NearestFilter;t.generateMipmaps=false;return t;});textures=[0,1,2].map(eye=>{const t=new THREE.CanvasTexture(faceCanvas(f,eye,v.mouth,p.mouthOpen,p.expression,'all',v.highlightLight===0&&v.highlightOpacity===1,v.browMode==='original'));t.minFilter=t.magFilter=THREE.NearestFilter;t.generateMipmaps=false;return t;});
+  faceResources.updates++;lastFace=f;seen=revision;lastMouth=v.mouth;lastExpression=expression;
  }
  const eye=p.eyes==='closed'?2:p.eyes==='open'||!p.blink?0:curEye();
+ mat.uniforms.uSeparateHighlight.value=v.highlightLight>0||v.highlightOpacity!==1?1:0;mat.uniforms.uHighlight.value.set(v.highlightOpacity,v.highlightLight);mat.uniforms.tResearchHighlight.value=hiTextures[Math.min(2,eye)];
  mat.uniforms.tResearchFace.value=textures[Math.min(2,eye)];mat.uniforms.uFaceRegion.value.set(.88*f.region.width,.88*f.region.height,0,0);mat.uniforms.uFaceOffset.value.set(.88*f.region.x,.88*f.region.y);
  head.material=mat;
 }

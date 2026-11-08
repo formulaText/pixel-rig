@@ -13,7 +13,7 @@ function operation(label:string,fn:()=>void|Promise<void>){if(operationBusy)retu
  const end=()=>{get('look-panel').inert=false;document.querySelector<HTMLElement>('.look-dock')!.inert=false;operationBusy=false;for(const e of document.querySelectorAll<HTMLButtonElement>('[data-save-action]')){e.disabled=false;e.removeAttribute('aria-busy');}refreshSaveState();};
  try{const pending=fn();if(pending){get('look-panel').inert=true;document.querySelector<HTMLElement>('.look-dock')!.inert=true;pending.catch(e=>message(label+'できませんでした。'+storageError(e))).finally(end);}else end();}catch(e){message(label+'できませんでした。'+storageError(e));end();}}
 
-export function lookDocument():LookDocument{return {schema:4,name:get<HTMLInputElement>('look-name').value.trim()||'研究設定',buildId:__BUILD_INFO__.buildId,values:clone(research.values),preview:clone(research.preview),playback:{ticks:lookClock.ticks,paused:lookClock.paused}};}
+export function lookDocument():LookDocument{return {schema:5,name:get<HTMLInputElement>('look-name').value.trim()||'研究設定',buildId:__BUILD_INFO__.buildId,values:clone(research.values),preview:clone(research.preview),playback:{ticks:lookClock.ticks,paused:lookClock.paused}};}
 function message(s:string){get('look-message').textContent=s;const e=get('look-operation-result');if(e)e.textContent=s;}
 function safe(fn:()=>void){try{fn();}catch(e){message((e as Error).message);}}
 export function refreshLookUI(){

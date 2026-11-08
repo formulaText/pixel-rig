@@ -1,13 +1,16 @@
+import {highlightLightGLSL,highlightFactorGLSL} from './highlight-light';
 // Isolated research extension. Original shader is retained in render/shaders.ts.
 export const LOOK_POST_FS = `
 uniform sampler2D tColor; uniform sampler2D tHi; uniform sampler2D tND; uniform sampler2D tDepth; uniform sampler2D tGlyph; uniform sampler2D tIcon;
 uniform vec2 uRes; uniform float uF2; uniform float uF3; uniform float uNDOn;
-uniform vec3 uLightDir; uniform float uRange; uniform float uTexel;
+${highlightLightGLSL}
+${highlightFactorGLSL}
+uniform float uRange; uniform float uTexel;
 uniform float uStamp; uniform vec2 uGlyph; uniform float uAtlasCols;
 uniform vec3 uEye0; uniform vec3 uEye1; uniform vec3 uBrow0; uniform vec3 uBrow1;
 uniform float uLookMode; uniform float uLookOn; uniform vec3 uLookInk; uniform vec3 uLookInnerInk; uniform vec2 uLookOpacity; uniform vec4 uMouth;
 uniform vec4 uIcon; uniform vec2 uIconSize; uniform float uIconCols;
-uniform float uResearchStamp; uniform sampler2D tResearchStamp; uniform vec4 uResearchRects[6]; uniform vec3 uResearchOriginalEyes[2];
+uniform float uResearchHighlight;uniform vec2 uHighlight;uniform float uBrowFrontOnly;uniform float uBrowOverlay;uniform vec3 uResearchEyeWorld[2];uniform vec3 uResearchEyeNormal;uniform vec3 uResearchEyeViewNormal;uniform float uResearchStamp; uniform sampler2D tResearchStamp; uniform vec4 uResearchRects[6]; uniform vec3 uResearchOriginalEyes[2];
 varying vec2 vUv;
 const vec3 INK = vec3(0.10, 0.06, 0.17);
 vec4 srcAt(vec2 uv){
@@ -64,7 +67,7 @@ vec4 researchInk(vec2 p,vec4 r,float tile){
  if(r.z<=0.0||r.w<=0.0)return vec4(0.0);
  vec2 d=p-r.xy;
  if(d.x<0.0||d.y<0.0||d.x>=r.z||d.y>=r.w)return vec4(0.0);
- return texture2D(tResearchStamp,vec2((tile+(d.x+0.5)/r.z)/6.0,(d.y+0.5)/r.w));
+ return texture2D(tResearchStamp,vec2((tile+(d.x+0.5)/r.z)/8.0,(d.y+0.5)/r.w));
 }
 void main(){
   vec2 t = 1.0 / uRes;
@@ -128,15 +131,37 @@ void main(){
   if(uResearchStamp>.5 && meChar){
     float rawA=texture2D(tColor,paintUv).a;
     // Shared color pass already resolved hair/background depth. Never paint over it.
-    if(rawA>.5 && rawA<.8){
+    if(uResearchStamp<1.5 && rawA>.5 && rawA<.8){
       vec4 ink=researchInk(p,uResearchRects[5],5.0);ink.rgb*=ink.a;
       for(int i=0;i<4;i++){
         vec4 part=researchInk(p,uResearchRects[i],float(i));
-        if(i<2){if(i==0 && uResearchOriginalEyes[0].z>=0.0)part=glyphAt(p,uResearchOriginalEyes[0]);if(i==1 && uResearchOriginalEyes[1].z>=0.0)part=glyphAt(p,uResearchOriginalEyes[1]);}
+        if(i>=2 && uBrowFrontOnly>.5)part=vec4(0.0);
+        if(i<2){
+          if(i==0 && uResearchOriginalEyes[0].z>=0.0)part=glyphAt(p,uResearchOriginalEyes[0]);
+          if(i==1 && uResearchOriginalEyes[1].z>=0.0)part=glyphAt(p,uResearchOriginalEyes[1]);
+          // Keep the adopted narrow/half/closed glyph, changing only its white highlight.
+          if(uResearchHighlight>.5 && uResearchOriginalEyes[i].z>=0.0 && part.a>.5 && part.r>.95 && part.g>.94 && part.b>.9){
+            float factor=highlightFactor(uResearchEyeWorld[i],uResearchEyeNormal,uResearchEyeViewNormal,uHighlight.y);
+            part.rgb=mix(vec3(36.0,26.0,56.0)/255.0,part.rgb,uHighlight.x*factor);
+          }
+        }
         ink=vec4(part.rgb*part.a,part.a)+ink*(1.0-part.a);
       }
       vec4 mouth=researchInk(p,uResearchRects[4],4.0);ink=vec4(mouth.rgb*mouth.a,mouth.a)+ink*(1.0-mouth.a);
       c.rgb=c.rgb*(1.0-ink.a)+ink.rgb;
+      if(uResearchHighlight>.5){for(int i=0;i<2;i++){
+        vec4 hi=researchInk(p,uResearchRects[i],float(i+6));
+        if(uResearchOriginalEyes[i].z<0.0 && hi.a>0.0){float factor=highlightFactor(uResearchEyeWorld[i],uResearchEyeNormal,uResearchEyeViewNormal,uHighlight.y);
+        c.rgb=mix(c.rgb,hi.rgb,hi.a*uHighlight.x*factor);}
+      }}
+    }
+  }
+  // Brow-only exception: the visible ND owner must still be this character.
+  // World foreground already won depth before this pass. Eyes never use this path.
+  if(uResearchStamp>.5 && meChar && uBrowOverlay>0.0){
+    float owner=texture2D(tColor,vUv).a;
+    if((owner>.63 && owner<.68)||(owner>.88 && owner<.92)){
+      for(int i=2;i<4;i++){vec4 brow=researchInk(p,uResearchRects[i],float(i));c.rgb=mix(c.rgb,brow.rgb,brow.a*uBrowOverlay);}
     }
   }
   if (uIcon.w > 0.5) {
