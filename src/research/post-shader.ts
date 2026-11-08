@@ -37,7 +37,10 @@ void nb(vec2 uv, float g, vec4 me, float meS, inout float found, inout float bId
   vec4 q = decodeND(uv);
   if (q.w < 0.5) return;
   bool sameObj = abs(q.w - me.w) < 0.5;
-  bool closer = sameObj ? (q.z - me.z) * uRange > g : texture2D(tDepth, uv).r < meS - 0.00001;
+  // Two packed-depth codes cover a one-code rounding change at each endpoint.
+  // Research-only: do not assign foreground paint at an ambiguous internal edge.
+  float paintGuard=(uLookOn>.5 && uLookMode>.5 && abs(me.w-2.0)<.5)?2.0*uRange/4095.0:0.0;
+  bool closer = sameObj ? (q.z - me.z) * uRange > g+paintGuard : texture2D(tDepth, uv).r < meS - 0.00001;
   if (closer) {
     bool choose = found < 0.5 || abs(q.w - 2.0) < 0.5;
     if(uLookOn>.5 && uLookMode>.5 && found>.5){
