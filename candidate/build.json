@@ -1,11 +1,11 @@
 {
-  "buildId": "gh-42471513195-1-7b114597ff81",
-  "commit": "7b114597ff81430f6fa30d625ff441c2de77bba9",
-  "builtAt": "2026-11-08T10:29:59.836Z",
+  "buildId": "gh-42499556503-1-ad8c949c933c",
+  "commit": "ad8c949c933c51b84339275b5b6fb03092abc88c",
+  "builtAt": "2026-11-08T16:22:52.715Z",
   "files": {
     "THIRD_PARTY_LICENSES.txt": "f2781316acfa25b7d520ea7edbc6056ca375999291ab54da4df293496a26362a",
-    "assets/index-BJ5KQFBy.css": "3d7a8132a11359c516a3c7871c0bdd44b363b386f61804aaf4e08e27e0b8b1c5",
-    "assets/index-DVGNtQLm.js": "3a046b44ae627d1462000158c4d01d1c8165994aba4a011ed366f6e548644421",
-    "index.html": "9be0fc249031c7420a02a8eef34beb7df68c86e202ca2dc65b8fef0d1b3f792c"
+    "assets/index-BVBs5i3U.js": "f72fcd8f364481120b33871d28fd264a0bfa85a5efd4fd435a46aa879d0657a6",
+    "assets/index-DPJV-Gfu.css": "777a1531d83bcba166f8dc9e9e9455680cd9fc15e86787b6f7c5e8d4941bc17a",
+    "index.html": "b30ec1b96b9f66c77de2c0b7353746b9ba25b34a371c41cb1eeebc6abc107ce8"
   }
 }
