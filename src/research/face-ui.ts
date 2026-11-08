@@ -90,7 +90,8 @@ export function bindFaceEditor(){
  $('face-expression').onchange=()=>{research.preview.expression=$<HTMLSelectElement>('face-expression').value as any;if(research.preview.expression!=='neutral'){dirtyFace();}refresh();};
  $('face-hair').onchange=()=>research.preview.hair=$<HTMLInputElement>('face-hair').checked;
  $('face-mouth-open').onchange=()=>{research.preview.mouthOpen=$<HTMLInputElement>('face-mouth-open').checked;dirtyFace();refresh();};
- $('face-pen').onclick=()=>{tool='pen';message('描く：選択した部位の範囲をなぞってください');};$('face-erase').onclick=()=>{tool='erase';message('消しゴム：選択した部位の範囲をなぞってください');};
+ const selectTool=(value:string)=>{tool=value;for(const id of ['pen','erase']){$('face-'+id).setAttribute('aria-pressed',String(id===tool));$('face-'+id).classList.toggle('ghost',id!==tool);}};selectTool('pen');
+ $('face-pen').onclick=()=>{selectTool('pen');message('描く：選択した部位の範囲をなぞってください');};$('face-erase').onclick=()=>{selectTool('erase');message('消しゴム：選択した部位の範囲をなぞってください');};
  $('face-color').oninput=()=>color=$<HTMLInputElement>('face-color').value;
  for(const c of ['#241a38','#3f5aa6','#fffaf0','#bd7054','#c64747']){const b=document.createElement('button');b.className='face-swatch';b.style.background=c;b.setAttribute('aria-label','色 '+c);b.onclick=()=>{color=c;$<HTMLInputElement>('face-color').value=c;};$('face-palette').append(b);}
  const grid=$<HTMLCanvasElement>('face-grid');grid.onpointerdown=e=>{if(e.button!==0)return;e.preventDefault();beforeStroke=snapshot();painting=true;lastCell='';grid.setPointerCapture(e.pointerId);paint(e);};grid.onpointermove=e=>{if(painting){e.preventDefault();paint(e);}};
