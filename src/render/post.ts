@@ -13,7 +13,7 @@ import { curEye, expr } from '../character/expression';
 const postMat = new THREE.ShaderMaterial({
   uniforms:{
     tColor:{value:null}, tHi:{value:null}, tND:{value:null}, tDepth:{value:null}, tGlyph:{value:null}, tIcon:{value:makeIconTex()},
-    uLookOn:{value:0}, uLookInk:{value:new THREE.Color(.10,.06,.17)}, uLookOpacity:{value:new THREE.Vector2(1,1)}, uMouth:{value:new THREE.Vector4()},
+    uLookOn:{value:0}, uLookInk:{value:new THREE.Color(.10,.06,.17)}, uLookInnerInk:{value:new THREE.Color(.10,.06,.17)}, uLookOpacity:{value:new THREE.Vector2(1,1)}, uMouth:{value:new THREE.Vector4()},
     uRes:{value:new THREE.Vector2(1, 1)}, uF2:{value:1}, uF3:{value:1}, uNDOn:{value:1},
     uLightDir:shared.uLightDir, uRange:{value:1}, uTexel:{value:0.1},
     uStamp:{value:0}, uGlyph:{value:new THREE.Vector2(1, 1)}, uAtlasCols:{value:ATLAS_COLS},
@@ -88,6 +88,7 @@ function computeStamps(cam: THREE.Camera, rx: number, ry: number, face: FaceMode
 function computeResearchStamps(cam: THREE.Camera,rx:number,ry:number,face:FaceMode){
   computeStamps(cam,rx,ry,face);
   const u=postMat.uniforms;u.uMouth.value.set(0,0,0,0);
+  if(research.active&&!effectiveLook().face.legacy){u.uStamp.value=0;return;}
   if(!research.active||!effectiveLook().mouth||face!=='pixel')return;
   J.headC.getWorldPosition(_c);_v.set(0,.18,.43);J.head.localToWorld(_v);_n.copy(_v).sub(_c).normalize();
   if(_n.dot(shared.uCamB.value)>.15){_v.project(cam);u.uMouth.value.set(Math.round((_v.x*.5+.5)*rx-1),Math.round((_v.y*.5+.5)*ry),2,1);}

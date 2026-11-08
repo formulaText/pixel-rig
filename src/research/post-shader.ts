@@ -5,7 +5,7 @@ uniform vec2 uRes; uniform float uF2; uniform float uF3; uniform float uNDOn;
 uniform vec3 uLightDir; uniform float uRange; uniform float uTexel;
 uniform float uStamp; uniform vec2 uGlyph; uniform float uAtlasCols;
 uniform vec3 uEye0; uniform vec3 uEye1; uniform vec3 uBrow0; uniform vec3 uBrow1;
-uniform float uLookOn; uniform vec3 uLookInk; uniform vec2 uLookOpacity; uniform vec4 uMouth;
+uniform float uLookOn; uniform vec3 uLookInk; uniform vec3 uLookInnerInk; uniform vec2 uLookOpacity; uniform vec4 uMouth;
 uniform vec4 uIcon; uniform vec2 uIconSize; uniform float uIconCols;
 varying vec2 vUv;
 const vec3 INK = vec3(0.10, 0.06, 0.17);
@@ -75,7 +75,7 @@ void main(){
         vec4 line = vec4(mix(uLookOn>.5?uLookInk:INK, nc * 0.3, 0.35), 1.0);
         c = uLookOn>.5 ? mix(c,line,uLookOpacity.x) : line;
       } else if (meChar) {
-        vec3 line = mix(c.rgb * 0.5, uLookOn>.5?uLookInk:INK, 0.3);
+        vec3 line = mix(c.rgb * 0.5, uLookOn>.5?uLookInnerInk:INK, 0.3);
         c.rgb = uLookOn>.5 ? mix(c.rgb,line,uLookOpacity.y) : line;
       } else if (me.w > 0.5) {
         c.rgb = mix(c.rgb * 0.62, INK, 0.12);
