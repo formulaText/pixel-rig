@@ -39,8 +39,8 @@ export function bindLook(){
 
  get('look-open').addEventListener('click',()=>{enterLook();refreshLookUI();safe(list);});
  for(const [k,[min,max]]of Object.entries(limits))for(const suffix of ['','-number'])get('look-'+k+suffix).addEventListener('input',e=>{
-  const value=Number((e.target as HTMLInputElement).value);if(!Number.isFinite(value)||value<min||value>max){message(`${labels[k]}は${min}〜${max}です`);return;}
-  (research.values as any)[k]=value;refreshLookUI();
+  const value=(e.target as HTMLInputElement).valueAsNumber;if(!Number.isFinite(value)||value<min||value>max){message(`${labels[k]}は${min}〜${max}です`);return;}
+  (research.values as any)[k]=value;for(const peer of ['','-number']){const input=get<HTMLInputElement>('look-'+k+peer);if(input!==e.target)input.value=String(value);}
  });
  panel.querySelectorAll<HTMLButtonElement>('[data-look-reset]').forEach(b=>b.onclick=()=>{const k=b.dataset.lookReset as keyof LookValues;(research.values as any)[k]=clone(BASE[k]);refreshLookUI();});
  get('look-innerOutlineColor').oninput=()=>{research.values.innerOutlineColor=get<HTMLInputElement>('look-innerOutlineColor').value;};

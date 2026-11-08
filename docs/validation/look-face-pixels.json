@@ -963,11 +963,11 @@
   "sourceSha256": {
     "src/research/face-data.ts": "0792c1c44339500cc471007ce0b4d3a397c2c593ad9aec7e63e43bf70cac9b64",
     "src/research/face-render.ts": "78021a7bf529598c5be8234308145a912e83ebb2ff13f7539c5628178e0ad118",
-    "src/research/face-ui.ts": "65c2396eb885dc119feedc692e1366cbd67d164d768d9bf46f4d7af9c8fff0eb",
+    "src/research/face-ui.ts": "6175a2b15168a4e683720d3f5237b7946f7312367dc889deb44bfc05b4db6372",
     "src/research/model.ts": "94efcd6b543d9ec75a82d181b9a55b56b6f99da24983d9fccc6f4b6cbd51f9bc",
     "src/research/performance.ts": "30097b207d68df177ad69bc5e40c697cf11378300e05ece5847b1957c19e5f69",
     "src/research/post-shader.ts": "4ba919b325bfe3bcf441728cea1ecd4d5323f0d64c7b110b53577288f8a61e5e",
     "src/research/runtime.ts": "992b470f652a2c5dda459e68a09ec31c03e783ce938c2c9e672dcf8f3240a9c7",
-    "src/research/ui.ts": "fde02f2dea9b782fb01a22a1713c03ebcb6c381d194ad8370fb961bbd6b1a2a4"
+    "src/research/ui.ts": "3954f4400782a395efe7ec1e337d8e4cb65052bf8d319fce1fb86859825dd1c9"
   }
 }
