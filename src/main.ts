@@ -1,4 +1,6 @@
 import './style.css';
+import { renderLook } from './research/runtime';
+import { bindLook } from './research/ui';
 import { STEP, state, texel, SINP, COSP, DIR_NAMES } from './core/constants';
 import { tick, simTime, applyPose, snapA, smoothA, curDir } from './gameplay/logic';
 import { shared } from './materials/shared';
@@ -22,6 +24,7 @@ function frame(now: number){
   const dt = Math.min(0.1, (now - lastT) / 1000);
   lastT = now;
   fps = fps * 0.93 + (1 / Math.max(dt, 1e-3)) * 0.07;
+  if(renderLook(dt)) { acc=0; return; }
   let n = 0;
   if(active) { acc=0; n=advanceValidation(dt); }
   else {
@@ -67,6 +70,7 @@ new ResizeObserver(resize).observe(stage);
 rebuild();
 resize();
 bindValidation(drawWorld);
+bindLook();
 document.addEventListener('visibilitychange',()=>{ lastT=performance.now(); acc=0; });
 requestAnimationFrame(frame);
 

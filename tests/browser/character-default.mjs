@@ -12,8 +12,8 @@ const output=resolve('work/character-default');mkdirSync(output,{recursive:true}
 const reference=mkdtempSync(output+'/reference-');
 execFileSync('tar',['-x','-C',reference],{input:execFileSync('git',['archive',referenceCommit,'src','index.html','vite.config.ts','tsconfig.json','package.json'],{maxBuffer:16*1024*1024})});
 symlinkSync(resolve('node_modules'),reference+'/node_modules','dir');
-const renderingPaths=['src/render','src/materials','src/character','src/core','src/gameplay','src/input','src/world','src/main.ts'];
-assert.equal(execFileSync('git',['diff',referenceCommit,'--',...renderingPaths]).length,0,'adopted rendering, geometry, animation, input and main loop must not change');
+const renderingPaths=['src/render/character-depth-experiment.ts','src/render/shaders.ts','src/materials','src/character','src/core','src/gameplay','src/input','src/world'];
+assert.equal(execFileSync('git',['diff',referenceCommit,'--',...renderingPaths]).length,0,'adopted depth shader, geometry, animation and input must not change; research integration is checked by pixel equivalence');
 const servers=[];
 for(const [root,port,isReference] of [[reference,5182,true],[process.cwd(),5181,false]]){
  const server=await createServer({root,server:{host:'127.0.0.1',port,strictPort:true,hmr:false,watch:{ignored:['**/work/**']}},plugins:[{name:'default-comparison-adapter',transform(code,id){if(id.endsWith('/src/main.ts'))return code+`

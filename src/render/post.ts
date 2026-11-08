@@ -1,9 +1,11 @@
+import { research, effectiveLook } from '../research/model';
 import type { RenderOptions, FaceMode } from '../core/types';
 import * as THREE from 'three';
 import { makeIconTex, glyph } from '../character/face';
 import { shared, v3 } from '../materials/shared';
 import { ATLAS_COLS, ICONS, texel, EMOTES } from '../core/constants';
-import { POST_VS, POST_FS } from './shaders';
+import { POST_VS } from './shaders';
+import { LOOK_POST_FS } from '../research/post-shader';
 import { renderer } from './renderer';
 import { J } from '../character/rig';
 import { curEye, expr } from '../character/expression';
@@ -11,13 +13,14 @@ import { curEye, expr } from '../character/expression';
 const postMat = new THREE.ShaderMaterial({
   uniforms:{
     tColor:{value:null}, tHi:{value:null}, tND:{value:null}, tDepth:{value:null}, tGlyph:{value:null}, tIcon:{value:makeIconTex()},
+    uLookOn:{value:0}, uLookInk:{value:new THREE.Color(.10,.06,.17)}, uLookOpacity:{value:new THREE.Vector2(1,1)}, uMouth:{value:new THREE.Vector4()},
     uRes:{value:new THREE.Vector2(1, 1)}, uF2:{value:1}, uF3:{value:1}, uNDOn:{value:1},
     uLightDir:shared.uLightDir, uRange:{value:1}, uTexel:{value:0.1},
     uStamp:{value:0}, uGlyph:{value:new THREE.Vector2(1, 1)}, uAtlasCols:{value:ATLAS_COLS},
     uEye0:{value:v3(0, 0, -1)}, uEye1:{value:v3(0, 0, -1)}, uBrow0:{value:v3(0, 0, -1)}, uBrow1:{value:v3(0, 0, -1)},
     uIcon:{value:new THREE.Vector4(0, 0, 0, 0)}, uIconSize:{value:new THREE.Vector2(9, 9)}, uIconCols:{value:ICONS.length}
   },
-  vertexShader:POST_VS, fragmentShader:POST_FS, depthTest:false, depthWrite:false
+  vertexShader:POST_VS, fragmentShader:LOOK_POST_FS, depthTest:false, depthWrite:false
 });
 const postScene = new THREE.Scene();
 const postQuad = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), postMat);
@@ -82,6 +85,13 @@ function computeStamps(cam: THREE.Camera, rx: number, ry: number, face: FaceMode
     browU.set(ex, ey + glyph.h + 1, bk < 0 ? -1 : 6 + bk * 2 + (left ? 0 : 1));
   });
 }
+function computeResearchStamps(cam: THREE.Camera,rx:number,ry:number,face:FaceMode){
+  computeStamps(cam,rx,ry,face);
+  const u=postMat.uniforms;u.uMouth.value.set(0,0,0,0);
+  if(!research.active||!effectiveLook().mouth||face!=='pixel')return;
+  J.headC.getWorldPosition(_c);_v.set(0,.18,.43);J.head.localToWorld(_v);_n.copy(_v).sub(_c).normalize();
+  if(_n.dot(shared.uCamB.value)>.15){_v.project(cam);u.uMouth.value.set(Math.round((_v.x*.5+.5)*rx-1),Math.round((_v.y*.5+.5)*ry),2,1);}
+}
 function setIcon(cam: THREE.Camera, rx: number, ry: number){
   const u = postMat.uniforms, e = expr.emote;
   if (!e || e.t > e.dur - 0.12) { u.uIcon.value.w = 0; return; }
@@ -96,4 +106,4 @@ function setIcon(cam: THREE.Camera, rx: number, ry: number){
 }
 
 
-export { postMat, postScene, postCam, mkRT, pass, setPost, computeStamps, setIcon };
+export { postMat, postScene, postCam, mkRT, pass, setPost, computeStamps, computeResearchStamps, setIcon };
