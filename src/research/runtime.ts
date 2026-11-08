@@ -23,7 +23,7 @@ let saved:typeof state|null=null,blink=true;
 export function enterLook(){
  if(research.active)return;
  if(validationActive)leaveValidation();saved={...state};blink=expr.autoBlink;
- research.active=true;characterStudy.selection='default';state.auto=false;state.compare=false;state.face='pixel';state.S=32;state.dot=4;
+ research.active=true;characterStudy.selection='default';state.auto=false;state.compare=false;state.face='pixel';state.S=32;state.dot=4;state.shadow=true;
  document.body.classList.add('look-active');document.getElementById('look-panel')!.hidden=false;
  document.getElementById('normal-controls')!.hidden=true;document.getElementById('validation')!.hidden=true;
  resetLook();rebuild();resize();

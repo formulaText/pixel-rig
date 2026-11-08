@@ -12,6 +12,7 @@ try{
  const p=await browser.newPage({viewport,deviceScaleFactor:3,hasTouch:true,isMobile:true});p.on('pageerror',e=>errors.push(e.message));p.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
  await p.addInitScript(()=>{window.reads=0;for(const C of [WebGLRenderingContext,WebGL2RenderingContext]){const fn=C.prototype.readPixels;C.prototype.readPixels=function(...a){window.reads++;return fn.apply(this,a);};}});
  await p.goto('http://127.0.0.1:5185/?study=look');await p.waitForFunction(()=>window.lookTest);
+ await p.evaluate(()=>{lookTest.look.exitLook();lookTest.state.shadow=false;lookTest.look.enterLook();});assert.equal(await p.evaluate(()=>lookTest.state.shadow),true);
  const click=async id=>p.locator('#'+id).evaluate(e=>e.click());
  const snapshot=()=>p.evaluate(()=>{const {look,model,J}=lookTest;look.renderLook();return {ticks:look.lookClock.ticks,head:J.head.matrixWorld.elements.slice(),torso:J.torso.matrixWorld.elements.slice(),values:JSON.parse(JSON.stringify(model.effectiveLook()))};});
  // Compare the active default research compositor with unmodified B on the exact same pose and buffers.
@@ -32,7 +33,8 @@ try{
  await p.evaluate(()=>Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async()=>{throw Error('denied');}}}));await click('look-copy');assert.match(await p.locator('#look-message').textContent(),/コピーできません/);
  assert.equal(await p.evaluate(()=>window.reads),0);assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
  await p.locator('#look-panel').evaluate(e=>e.parentElement.scrollTop=0);await p.screenshot({path:`${output}/${name}.png`});
- await click('look-exit');assert.equal(await p.evaluate(()=>lookTest.model.research.active),false);assert.equal(await p.evaluate(()=>lookTest.characterStudy.variant),'precise');assert.equal(await p.evaluate(()=>lookTest.J.head.position.y),.56);
+ await click('look-exit');assert.equal(await p.evaluate(()=>lookTest.model.research.active),false);assert.equal(await p.evaluate(()=>lookTest.characterStudy.variant),'precise');assert.equal(await p.evaluate(()=>lookTest.J.head.position.y),.56);assert.equal(await p.evaluate(()=>lookTest.state.shadow),true);
+ await p.evaluate(()=>{lookTest.state.shadow=false;lookTest.look.enterLook();lookTest.look.exitLook();});assert.equal(await p.evaluate(()=>lookTest.state.shadow),false);
  results.push({name,directions:8,motions:5,storageRoundTrip:true,clipboardRoundTrip:true,rejectedInvalid:true,normalReads:0});await p.close();
  }
  assert.deepEqual(errors,[]);writeFileSync(output+'/foundation.json',JSON.stringify({results,errors},null,2));console.log('Look foundation: two orientations, controls/comparison/8 directions/motions/storage/errors/return passed');

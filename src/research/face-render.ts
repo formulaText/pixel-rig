@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import {J} from '../character/rig';
 import {curEye} from '../character/expression';
 import {effectiveLook,research,type Preview} from './model';
-import {FACE_W,FACE_H,type FaceData,type Bitmap,type Rect} from './face-data';
+import {FACE_W,FACE_H,FACE_HIGHLIGHT_COLOR,type FaceData,type Bitmap,type Rect} from './face-data';
 const head=J.head.children[0] as THREE.Mesh;
 const originalGeometry=head.geometry,originalMaterial=head.material as THREE.ShaderMaterial;
 const hair=J.head.children.slice(1,7);
@@ -36,7 +36,7 @@ export function faceCanvas(f:FaceData,eyeState:number,mouth:boolean,open:boolean
   const e=f.eyes[side],r={...e.rect},closed=eyeState===2,half=eyeState===1;
   if(closed||half){const minimum=Math.min(e.minHeight,e.rect.h),h=closed?minimum:(e.rect.h+minimum)/2;r.y=e.rect.y+e.rect.h*e.closeAt-h*e.closeAt;r.h=h;}
   drawBitmap(g,closed&&f.blinkMode==='image'?e.closed:e.image,r,0,1,e.imageScale);
-  const hi=e.highlight;if(hi.show&&!(hi.hideClosed&&(closed||half)))drawBitmap(g,[['#ffffff']],{x:r.x+hi.x*r.w,y:r.y+hi.y*r.h,w:hi.w*r.w,h:hi.h*r.h},0,hi.opacity);
+  const hi=e.highlight;if(hi.show&&!(hi.hideClosed&&(closed||half)))drawBitmap(g,[[FACE_HIGHLIGHT_COLOR]],{x:r.x+hi.x*r.w,y:r.y+hi.y*r.h,w:hi.w*r.w,h:hi.h*r.h},0,hi.opacity);
   const b=f.brows[side],ex=b.expressions[expression];if(b.neutralVisible||expression!=='neutral')drawBitmap(g,b.image,{...b.rect,y:b.rect.y+ex.dy},side==='left'?ex.angle:-ex.angle,1,b.imageScale);
  }
  if(mouth)drawBitmap(g,open?f.mouth.open:f.mouth.image,f.mouth.rect,0,1,f.mouth.imageScale);

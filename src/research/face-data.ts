@@ -1,5 +1,6 @@
 // This grid belongs to the current research, not a universal character format.
 export const FACE_W=32,FACE_H=24;
+export const FACE_HIGHLIGHT_COLOR='#fffaf0';
 export type Bitmap=string[][]; // transparent is ''; source pixels never resampled by placement
 export interface Rect{x:number;y:number;w:number;h:number}
 export interface Part{rect:Rect;image:Bitmap;imageScale:number}
@@ -13,7 +14,8 @@ export interface FaceData{
  blinkMode:'shrink'|'image';mouth:Part&{open:Bitmap};extra:Bitmap;nose:{x:number;y:number};
 }
 const cp=<T>(v:T):T=>JSON.parse(JSON.stringify(v));
-const D='#2a1f3d',C='#5266aa';
+// Exact adopted S32 glyph colors (GLYPH_COLORS), separated highlight is W.
+const D='#241a38',C='#3f5aa6';
 export const blank=(w:number,h:number):Bitmap=>Array.from({length:h},()=>Array(w).fill(''));
 function eye(x:number):Eye{return {imageScale:1,rect:{x,y:.375,w:.125,h:.25},image:[[D,D],[D,D],[C,C]],closed:[[D,D]],closeAt:.65,minHeight:1/24,highlight:{show:true,x:.5,y:0,w:.5,h:1/3,opacity:1,hideClosed:true}};}
 function brow(x:number):Brow{return {imageScale:1,rect:{x,y:.25,w:.15625,h:1/12},image:[[D,D]],neutralVisible:false,expressions:{neutral:{dy:0,angle:0},angry:{dy:.02,angle:20},sad:{dy:-.02,angle:-20}}};}

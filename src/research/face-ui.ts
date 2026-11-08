@@ -4,7 +4,7 @@ import {dirtyFace,faceCanvas} from './face-render';
 import {refreshLookUI,lookDocument} from './ui';
 import {expr} from '../character/expression';
 const $=<T extends HTMLElement=HTMLElement>(id:string)=>document.getElementById(id)as T;
-let part='eyes',side:Side='left',layer='normal',tool='pen',color='#2a1f3d',history:string[]=[],future:string[]=[];
+let part='eyes',side:Side='left',layer='normal',tool='pen',color='#241a38',history:string[]=[],future:string[]=[];
 let beforeStroke='',painting=false,lastCell='';
 const current=()=>part==='extra'?null:part==='mouth'?research.values.face.mouth:research.values.face[part as 'eyes'|'brows'][side];
 const bitmap=():Bitmap=>{const f=research.values.face,p=current();return part==='extra'?f.extra:part==='eyes'&&layer==='closed'?(p as Eye).closed:part==='mouth'&&layer==='open'?f.mouth.open:p!.image;};
@@ -76,7 +76,7 @@ export function bindFaceEditor(){
  <label>眉の比較表情<select id="face-expression"><option value="neutral">通常</option><option value="angry">きりっと</option><option value="sad">困り眉</option></select></label>
  <p>左右はキャラクター本人から見た左右です。配置の連動とハイライトは独立です。鼻・そばかすは「追加描画」に描くと、まばたきの変形を受けません。</p>
  <label>編集する部位<select id="face-part"><option value="eyes">目</option><option value="brows">眉</option><option value="mouth">口</option><option value="extra">追加描画（鼻・そばかす）</option></select></label><label>左右<select id="face-side"><option value="left">本人の左</option><option value="right">本人の右</option></select></label><label>編集する絵柄<select id="face-layer"><option value="normal">通常</option><option value="closed">閉じ目（目）</option><option value="open">開口（口）</option></select></label>
- <div class="validation-actions"><button class="btn" id="face-pen">描く</button><button class="btn ghost" id="face-erase">消しゴム</button><button class="btn ghost" id="face-undo">元に戻す</button><button class="btn ghost" id="face-redo">やり直す</button></div><label>描く色<input type="color" id="face-color" value="#2a1f3d"></label><div id="face-palette"></div>
+ <div class="validation-actions"><button class="btn" id="face-pen">描く</button><button class="btn ghost" id="face-erase">消しゴム</button><button class="btn ghost" id="face-undo">元に戻す</button><button class="btn ghost" id="face-redo">やり直す</button></div><label>描く色<input type="color" id="face-color" value="#241a38"></label><div id="face-palette"></div>
  <canvas id="face-grid" width="320" height="240" aria-label="顔のドット編集格子"></canvas><p class="note" id="face-grid-info"></p><p class="note">格子内は描画操作、格子の外はスクロールです。配置範囲を変えても元の絵柄は保持します。保存・コピーは下の研究設定に顔も含みます。</p>
  <details><summary>選択した部位の配置・絵柄・閉じ目・ハイライト</summary><div id="face-part-fields"></div></details><p id="face-message" role="status"></p></details>`;
   // Selecting the unedited original explicitly retains its original renderer.
@@ -92,7 +92,7 @@ export function bindFaceEditor(){
  $('face-mouth-open').onchange=()=>{research.preview.mouthOpen=$<HTMLInputElement>('face-mouth-open').checked;research.values.face.legacy=false;dirtyFace();refresh();};
  $('face-pen').onclick=()=>{tool='pen';message('描く：選択した部位の範囲をなぞってください');};$('face-erase').onclick=()=>{tool='erase';message('消しゴム：選択した部位の範囲をなぞってください');};
  $('face-color').oninput=()=>color=$<HTMLInputElement>('face-color').value;
- for(const c of ['#2a1f3d','#5266aa','#ffffff','#bd7054','#c64747']){const b=document.createElement('button');b.className='face-swatch';b.style.background=c;b.setAttribute('aria-label','色 '+c);b.onclick=()=>{color=c;$<HTMLInputElement>('face-color').value=c;};$('face-palette').append(b);}
+ for(const c of ['#241a38','#3f5aa6','#fffaf0','#bd7054','#c64747']){const b=document.createElement('button');b.className='face-swatch';b.style.background=c;b.setAttribute('aria-label','色 '+c);b.onclick=()=>{color=c;$<HTMLInputElement>('face-color').value=c;};$('face-palette').append(b);}
  const grid=$<HTMLCanvasElement>('face-grid');grid.onpointerdown=e=>{if(e.button!==0)return;e.preventDefault();beforeStroke=snapshot();painting=true;lastCell='';grid.setPointerCapture(e.pointerId);paint(e);};grid.onpointermove=e=>{if(painting){e.preventDefault();paint(e);}};
  const end=()=>{if(painting){painting=false;remember(beforeStroke);refresh();}};grid.onpointerup=end;grid.onpointercancel=end;grid.onlostpointercapture=end;
  $('face-undo').onclick=()=>{if(history.length){future.push(snapshot());research.values=JSON.parse(history.pop()!);dirtyFace();refresh();}};$('face-redo').onclick=()=>{if(future.length){history.push(snapshot());research.values=JSON.parse(future.pop()!);dirtyFace();refresh();}};

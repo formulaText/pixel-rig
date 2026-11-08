@@ -961,13 +961,13 @@
   },
   "errors": [],
   "sourceSha256": {
-    "src/research/face-data.ts": "0792c1c44339500cc471007ce0b4d3a397c2c593ad9aec7e63e43bf70cac9b64",
-    "src/research/face-render.ts": "78021a7bf529598c5be8234308145a912e83ebb2ff13f7539c5628178e0ad118",
-    "src/research/face-ui.ts": "6175a2b15168a4e683720d3f5237b7946f7312367dc889deb44bfc05b4db6372",
+    "src/research/face-data.ts": "26751124f0c476ad9398310f080c496af608a7b85437cecc7fdb7ee761e40236",
+    "src/research/face-render.ts": "e9b0b138a27eb417618c6788e33ceebcf442d50c1a77a1cebdff808806380de6",
+    "src/research/face-ui.ts": "7e7bf1f942eb714af65fb29b340a73c9ec02054c9cb582dfc27eb422c6c9a23f",
     "src/research/model.ts": "94efcd6b543d9ec75a82d181b9a55b56b6f99da24983d9fccc6f4b6cbd51f9bc",
     "src/research/performance.ts": "30097b207d68df177ad69bc5e40c697cf11378300e05ece5847b1957c19e5f69",
     "src/research/post-shader.ts": "4ba919b325bfe3bcf441728cea1ecd4d5323f0d64c7b110b53577288f8a61e5e",
-    "src/research/runtime.ts": "992b470f652a2c5dda459e68a09ec31c03e783ce938c2c9e672dcf8f3240a9c7",
+    "src/research/runtime.ts": "0b3a5c952b94004a1a197a0408ad3ce4ec9478bb4c37aba8ec7845c6a627bd6f",
     "src/research/ui.ts": "3954f4400782a395efe7ec1e337d8e4cb65052bf8d319fce1fb86859825dd1c9"
   }
 }
