@@ -1,11 +1,11 @@
 {
-  "buildId": "gh-42367092877-1-6db4a155d49f",
-  "commit": "6db4a155d49f97017395401448af45d1cf6cf995",
-  "builtAt": "2026-11-07T11:11:26.922Z",
+  "buildId": "gh-42431015275-1-cd919b341526",
+  "commit": "cd919b34152684307a613e6224368aef440f3f35",
+  "builtAt": "2026-11-08T00:43:27.357Z",
   "files": {
     "THIRD_PARTY_LICENSES.txt": "f2781316acfa25b7d520ea7edbc6056ca375999291ab54da4df293496a26362a",
-    "assets/index-Baf9xsZW.js": "24ae6a2bd765e8895d5c7215d6a0d6c2e1aad5c56621efc316bdec6d2af5dcbb",
+    "assets/index-AP574Ctg.js": "a0c1a22d3ac3b95a5b9e143e3fe88a306a8afeca51e16bbe2f40a50e9bc9fed1",
     "assets/index-Cy0vK645.css": "6c86cd398e63eea0231fe509dfce07124b83e12d564bcec23f14df7730fb6c49",
-    "index.html": "8afcc96e17da52f089d2f4455a3f40ee1576277e74a223b25366a8edba9c73bc"
+    "index.html": "dd82f3f7d68a1d4b9ce2113a89f1ba2ff0f7ccd750cd50f6733e83b3db2642d0"
   }
 }

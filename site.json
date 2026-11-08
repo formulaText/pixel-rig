@@ -1,14 +1,14 @@
 {
   "schema": 1,
   "stable": {
-    "buildId": "gh-42367092877-1-6db4a155d49f",
-    "commit": "6db4a155d49f97017395401448af45d1cf6cf995",
-    "builtAt": "2026-11-07T11:11:26.922Z",
+    "buildId": "gh-42431015275-1-cd919b341526",
+    "commit": "cd919b34152684307a613e6224368aef440f3f35",
+    "builtAt": "2026-11-08T00:43:27.357Z",
     "files": {
       "THIRD_PARTY_LICENSES.txt": "f2781316acfa25b7d520ea7edbc6056ca375999291ab54da4df293496a26362a",
-      "assets/index-Baf9xsZW.js": "24ae6a2bd765e8895d5c7215d6a0d6c2e1aad5c56621efc316bdec6d2af5dcbb",
+      "assets/index-AP574Ctg.js": "a0c1a22d3ac3b95a5b9e143e3fe88a306a8afeca51e16bbe2f40a50e9bc9fed1",
       "assets/index-Cy0vK645.css": "6c86cd398e63eea0231fe509dfce07124b83e12d564bcec23f14df7730fb6c49",
-      "index.html": "8afcc96e17da52f089d2f4455a3f40ee1576277e74a223b25366a8edba9c73bc"
+      "index.html": "dd82f3f7d68a1d4b9ce2113a89f1ba2ff0f7ccd750cd50f6733e83b3db2642d0"
     }
   },
   "candidate": {
@@ -29,24 +29,24 @@
   },
   "approval": {
     "approver": "formulaText",
-    "buildId": "gh-42367092877-1-6db4a155d49f",
-    "statement": "候補BをiPhone 17／Safariで確認しました。\nビルド gh-42367092877-1-6db4a155d49f の候補Bを採用し、\nPR #11のマージと確認済み版への昇格を承認します。",
-    "source": "https://github.com/formulaText/pixel-rig/pull/11#issuecomment-6714078858",
+    "buildId": "gh-42431015275-1-cd919b341526",
+    "statement": "2026-11-08 JST／受領元：本Codexスレッド。承認者formulaText、実行者Codex。\n\n承認原文：\n候補Bの既定化について、公開された検証候補をiPhone 17／Safariで確認しました。\n次の3点すべて問題ありませんでした。\n・Bを手動選択せず、起動直後に縦・斜め移動\n・変更前の比較方式を選択後、通常操作へ戻って縦・斜め移動\n・再読み込み後の通常描画\n\nこの既定化の検証候補を採用し、対応PRのマージと\n確認済み版への昇格を承認します。\n\n対象照合（Codexによる特定、原文への追記を区別）：直前の完了報告、PR #12、配信run 42431015275、現在のpages-state 00604104 が全て gh-42431015275-1-cd919b341526 / cd919b34152684307a613e6224368aef440f3f35 に一致。他候補への更新なし。最新CI 42430207543成功。3点の実機結果を受領し、再ビルドなし昇格を実行する。残差10条件とまばたき時の未確定変化は保持する。",
+    "source": "https://github.com/formulaText/pixel-rig/pull/12#issuecomment-6715827989",
     "actor": "formulaText",
     "triggeringActor": "formulaText",
     "executorLabel": "Codex",
-    "requestUrl": "https://github.com/formulaText/pixel-rig/pull/11#issuecomment-6714194574",
-    "runUrl": "https://github.com/formulaText/pixel-rig/actions/runs/42423300994/attempts/1",
-    "at": "2026-11-07T23:01:50.192Z"
+    "requestUrl": "https://github.com/formulaText/pixel-rig/pull/12#issuecomment-6715833359",
+    "runUrl": "https://github.com/formulaText/pixel-rig/actions/runs/42436001589/attempts/1",
+    "at": "2026-11-08T01:51:20.170Z"
   },
   "lastOperation": {
-    "operation": "candidate",
+    "operation": "promote",
     "actor": "formulaText",
     "triggeringActor": "formulaText",
     "executorLabel": "Codex",
-    "requestUrl": "https://github.com/formulaText/pixel-rig/pull/12#issuecomment-6715189943",
-    "runUrl": "https://github.com/formulaText/pixel-rig/actions/runs/42431015275/attempts/1",
+    "requestUrl": "https://github.com/formulaText/pixel-rig/pull/12#issuecomment-6715833359",
+    "runUrl": "https://github.com/formulaText/pixel-rig/actions/runs/42436001589/attempts/1",
     "buildId": "gh-42431015275-1-cd919b341526",
-    "at": "2026-11-08T00:43:46.612Z"
+    "at": "2026-11-08T01:51:20.170Z"
   }
 }
