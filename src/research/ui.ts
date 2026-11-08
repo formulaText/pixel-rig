@@ -5,7 +5,7 @@ declare const __BUILD_INFO__:{buildId:string};
 const get=<T extends HTMLElement=HTMLElement>(id:string)=>document.getElementById(id) as T;
 const labels:Record<string,string>={headTilt:'頭を上げる角度（度）',headIdle:'頭の待機振幅（倍）',bodyIdle:'胴体の待機振幅（倍）',idleSpeed:'待機速度（倍）',outerOpacity:'外周線の不透明度',innerOpacity:'内部線の不透明度'};
 const storageKey='pixel-rig-look-library-v1';
-export function lookDocument():LookDocument{return {schema:2,name:get<HTMLInputElement>('look-name').value.trim()||'研究設定',buildId:__BUILD_INFO__.buildId,values:clone(research.values),preview:clone(research.preview),playback:{ticks:lookClock.ticks,paused:lookClock.paused}};}
+export function lookDocument():LookDocument{return {schema:3,name:get<HTMLInputElement>('look-name').value.trim()||'研究設定',buildId:__BUILD_INFO__.buildId,values:clone(research.values),preview:clone(research.preview),playback:{ticks:lookClock.ticks,paused:lookClock.paused}};}
 function message(s:string){get('look-message').textContent=s;}
 function safe(fn:()=>void){try{fn();}catch(e){message((e as Error).message);}}
 export function refreshLookUI(){

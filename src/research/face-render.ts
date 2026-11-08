@@ -9,6 +9,7 @@ const hair=J.head.children.slice(1,7);
 let revision=0,seen=-1,lastFace:FaceData|null=null,lastMouth=false,lastExpression='',textures:THREE.CanvasTexture[]=[];
 export const faceResources={updates:0};
 export function dirtyFace(){revision++;}
+export function faceRevision(){return revision;}
 const shapes:Record<string,THREE.BufferGeometry>={original:originalGeometry};
 const mat=new THREE.ShaderMaterial({uniforms:{...originalMaterial.uniforms,tResearchFace:{value:null},uFaceRegion:{value:new THREE.Vector4()},uFaceOffset:{value:new THREE.Vector2()}},vertexShader:originalMaterial.vertexShader.replace('void main(){','varying vec3 vFaceLocal;\nvoid main(){\n vFaceLocal=position;'),fragmentShader:originalMaterial.fragmentShader.replace('void main(){','varying vec3 vFaceLocal;\nuniform sampler2D tResearchFace;uniform vec4 uFaceRegion;uniform vec2 uFaceOffset;\nvoid main(){').replace('gl_FragColor = vec4(c * tint, uAlpha);',`vec2 faceUV=vec2((vFaceLocal.x-uFaceOffset.x)/uFaceRegion.x+0.5,(vFaceLocal.y-uFaceOffset.y)/uFaceRegion.y+0.5);
  if(vFaceLocal.z>0.03 && faceUV.x>=0.0 && faceUV.x<=1.0 && faceUV.y>=0.0 && faceUV.y<=1.0){vec4 ink=texture2D(tResearchFace,faceUV);c=mix(c,ink.rgb,ink.a);}
@@ -29,17 +30,17 @@ function drawBitmap(g:CanvasRenderingContext2D,b:Bitmap,r:Rect,angle=0,opacity=1
   const color=b[iy]?.[ix];if(color){g.globalAlpha=opacity;g.fillStyle=color;g.fillRect(x+dx,y+dy,1,1);}
  }g.globalAlpha=1;
 }
-export function faceCanvas(f:FaceData,eyeState:number,mouth:boolean,open:boolean,expression:Preview['expression']){
+export function faceCanvas(f:FaceData,eyeState:number,mouth:boolean,open:boolean,expression:Preview['expression'],layer='all'){
  const canvas=document.createElement('canvas');canvas.width=FACE_W;canvas.height=FACE_H;const g=canvas.getContext('2d')!;
- drawBitmap(g,f.extra,{x:0,y:0,w:1,h:1});
+ if(layer==='all'||layer==='extra')drawBitmap(g,f.extra,{x:0,y:0,w:1,h:1});
  for(const side of ['left','right']as const){
   const e=f.eyes[side],r={...e.rect},closed=eyeState===2,half=eyeState===1;
   if(closed||half){const minimum=Math.min(e.minHeight,e.rect.h),h=closed?minimum:(e.rect.h+minimum)/2;r.y=e.rect.y+e.rect.h*e.closeAt-h*e.closeAt;r.h=h;}
-  drawBitmap(g,closed&&f.blinkMode==='image'?e.closed:e.image,r,0,1,e.imageScale);
-  const hi=e.highlight;if(hi.show&&!(hi.hideClosed&&(closed||half)))drawBitmap(g,[[FACE_HIGHLIGHT_COLOR]],{x:r.x+hi.x*r.w,y:r.y+hi.y*r.h,w:hi.w*r.w,h:hi.h*r.h},0,hi.opacity);
-  const b=f.brows[side],ex=b.expressions[expression];if(b.neutralVisible||expression!=='neutral')drawBitmap(g,b.image,{...b.rect,y:b.rect.y+ex.dy},side==='left'?ex.angle:-ex.angle,1,b.imageScale);
+  if(layer==='all'||layer==='eye-'+side)drawBitmap(g,closed&&f.blinkMode==='image'?e.closed:e.image,r,0,1,e.imageScale);
+  const hi=e.highlight;if((layer==='all'||layer==='eye-'+side)&&hi.show&&!(hi.hideClosed&&(closed||half)))drawBitmap(g,[[FACE_HIGHLIGHT_COLOR]],{x:r.x+hi.x*r.w,y:r.y+hi.y*r.h,w:hi.w*r.w,h:hi.h*r.h},0,hi.opacity);
+  const b=f.brows[side],ex=b.expressions[expression];if((layer==='all'||layer==='brow-'+side)&&(b.neutralVisible||expression!=='neutral'))drawBitmap(g,b.image,{...b.rect,y:b.rect.y+ex.dy},side==='left'?ex.angle:-ex.angle,1,b.imageScale);
  }
- if(mouth)drawBitmap(g,open?f.mouth.open:f.mouth.image,f.mouth.rect,0,1,f.mouth.imageScale);
+ if(mouth&&(layer==='all'||layer==='mouth'))drawBitmap(g,open?f.mouth.open:f.mouth.image,f.mouth.rect,0,1,f.mouth.imageScale);
  return canvas;
 }
 export function applyResearchFace(){

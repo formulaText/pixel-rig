@@ -7,6 +7,7 @@ uniform float uStamp; uniform vec2 uGlyph; uniform float uAtlasCols;
 uniform vec3 uEye0; uniform vec3 uEye1; uniform vec3 uBrow0; uniform vec3 uBrow1;
 uniform float uLookOn; uniform vec3 uLookInk; uniform vec3 uLookInnerInk; uniform vec2 uLookOpacity; uniform vec4 uMouth;
 uniform vec4 uIcon; uniform vec2 uIconSize; uniform float uIconCols;
+uniform float uResearchStamp; uniform sampler2D tResearchStamp; uniform vec4 uResearchRects[6]; uniform vec3 uResearchOriginalEyes[2];
 varying vec2 vUv;
 const vec3 INK = vec3(0.10, 0.06, 0.17);
 vec4 srcAt(vec2 uv){
@@ -50,6 +51,12 @@ vec4 glyphAt(vec2 p, vec3 e){
   vec2 d = p - e.xy;
   if (d.x < 0.0 || d.y < 0.0 || d.x >= uGlyph.x || d.y >= uGlyph.y) return vec4(0.0);
   return texture2D(tGlyph, vec2((e.z * uGlyph.x + d.x + 0.5) / (uGlyph.x * uAtlasCols), (d.y + 0.5) / uGlyph.y));
+}
+vec4 researchInk(vec2 p,vec4 r,float tile){
+ if(r.z<=0.0||r.w<=0.0)return vec4(0.0);
+ vec2 d=p-r.xy;
+ if(d.x<0.0||d.y<0.0||d.x>=r.z||d.y>=r.w)return vec4(0.0);
+ return texture2D(tResearchStamp,vec2((tile+(d.x+0.5)/r.z)/6.0,(d.y+0.5)/r.w));
 }
 void main(){
   vec2 t = 1.0 / uRes;
@@ -95,6 +102,20 @@ void main(){
     if (g.a > 0.5) c = vec4(g.rgb, 1.0);
     vec2 md=p-uMouth.xy;
     if(uLookOn>.5 && skin && md.x>=0.0 && md.y>=0.0 && md.x<uMouth.z && md.y<uMouth.w) c=vec4(INK,1.0);
+  }
+  if(uResearchStamp>.5 && meChar){
+    float rawA=texture2D(tColor,vUv).a;
+    // Shared color pass already resolved hair/background depth. Never paint over it.
+    if(rawA>.5 && rawA<.8){
+      vec4 ink=researchInk(p,uResearchRects[5],5.0);ink.rgb*=ink.a;
+      for(int i=0;i<4;i++){
+        vec4 part=researchInk(p,uResearchRects[i],float(i));
+        if(i<2){if(i==0 && uResearchOriginalEyes[0].z>=0.0)part=glyphAt(p,uResearchOriginalEyes[0]);if(i==1 && uResearchOriginalEyes[1].z>=0.0)part=glyphAt(p,uResearchOriginalEyes[1]);}
+        ink=vec4(part.rgb*part.a,part.a)+ink*(1.0-part.a);
+      }
+      vec4 mouth=researchInk(p,uResearchRects[4],4.0);ink=vec4(mouth.rgb*mouth.a,mouth.a)+ink*(1.0-mouth.a);
+      c.rgb=c.rgb*(1.0-ink.a)+ink.rgb;
+    }
   }
   if (uIcon.w > 0.5) {
     vec2 d = p - uIcon.xy;

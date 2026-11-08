@@ -1,3 +1,4 @@
+import {scaleResearchStamps} from './face-stamps';
 import {sampleLookMeasurement,interruptLookMeasurement} from './performance';
 import {applyResearchFace,restoreResearchFace} from './face-render';
 import * as THREE from 'three';
@@ -37,7 +38,7 @@ export function exitLook(){
  worldScene.visible=decalScene.visible=true;characterStudy.selection='default';
  if(saved)Object.assign(state,saved);expr.autoBlink=blink;expr.seq=[];expr.emote=null;
  resetLogic();resetInput();setReplayInput(null);seedRuntime(null);resetWorld(11);setPlayerWorld(0,2.5);
- postMat.uniforms.uLookOn.value=0;postMat.uniforms.uMouth.value.set(0,0,0,0);
+ postMat.uniforms.uResearchStamp.value=0;postMat.uniforms.uLookOn.value=0;postMat.uniforms.uMouth.value.set(0,0,0,0);
  document.body.classList.remove('look-active');document.getElementById('look-panel')!.hidden=true;
  document.getElementById('normal-controls')!.hidden=false;document.getElementById('validation')!.hidden=false;
  canvas.style.transform='';rebuild();resize();
@@ -77,7 +78,7 @@ export function renderLook(dt=0){
  if(high){
   u.tColor.value=rtWHi.texture;u.uF2.value=1;u.uF3.value=0;u.uRes.value.set(W*4,H*4);u.uGlyph.value.multiplyScalar(4);
   for(const k of ['uEye0','uEye1','uBrow0','uBrow1']){u[k].value.x*=4;u[k].value.y*=4;}
-  u.uMouth.value.multiplyScalar(4);renderer.setRenderTarget(null);renderer.clear();renderer.render(postScene,postCam);u.uGlyph.value.multiplyScalar(.25);
+  scaleResearchStamps(4);u.uMouth.value.multiplyScalar(4);renderer.setRenderTarget(null);renderer.clear();renderer.render(postScene,postCam);u.uGlyph.value.multiplyScalar(.25);
  }
  canvas.style.transform=p.zoom===1?'':`scale(${p.zoom})`;canvas.style.transformOrigin='50% 65%';
  const status=document.getElementById('look-time');if(status)status.textContent=`${research.baseline?'基準':'調整中'} · ${lookClock.paused?'停止':'再生'} ${t.toFixed(2)}秒 · ${dir+1}/8方向 · ${p.view==='dot'?'ドット絵':'3D確認'}`;

@@ -10,18 +10,18 @@ const current=()=>part==='extra'?null:part==='mouth'?research.values.face.mouth:
 const bitmap=():Bitmap=>{const f=research.values.face,p=current();return part==='extra'?f.extra:part==='eyes'&&layer==='closed'?(p as Eye).closed:part==='mouth'&&layer==='open'?f.mouth.open:p!.image;};
 function snapshot(){return JSON.stringify(research.values);}
 function remember(old:string){if(old!==snapshot()){history.push(old);if(history.length>60)history.shift();future=[];}}
-function changed(){research.values.face.legacy=false;dirtyFace();updateEditor();}
+function changed(){dirtyFace();updateEditor();}
 function message(s:string){$('face-message').textContent=s;}
-function mutate(fn:()=>void,activate=true,refreshFields=true){const old=snapshot();try{fn();if(activate)research.values.face.legacy=false;validateDocument(lookDocument());remember(old);dirtyFace();updateEditor();}catch(e){research.values=JSON.parse(old);message((e as Error).message);}if(refreshFields)refresh();}
+function mutate(fn:()=>void,refreshFields=true){const old=snapshot();try{fn();validateDocument(lookDocument());remember(old);dirtyFace();updateEditor();}catch(e){research.values=JSON.parse(old);message((e as Error).message);}if(refreshFields)refresh();}
 function valueAt(path:string){return path.split('.').reduce((o:any,k)=>o[k],research.values);}
 function put(path:string,value:any){const keys=path.split('.'),last=keys.pop()!;const o=keys.reduce((a:any,k)=>a[k],research.values);o[last]=value;}
 function baseAt(path:string){return path.split('.').reduce((o:any,k)=>o[k],BASE);}
 function num(path:string,label:string,min:number,max:number,step:number){return `<label>${label}<div class="look-range"><input type="range" data-face-value="${path}" min="${min}" max="${max}" step="${step}"><input type="number" aria-label="${label}" data-face-value="${path}" min="${min}" max="${max}" step="${step}"><button type="button" class="btn ghost" data-face-reset="${path}">初期値</button></div></label>`;}
 function check(path:string,label:string){return `<label><input type="checkbox" data-face-value="${path}">${label}</label><button class="btn ghost" data-face-reset="${path}">初期値</button>`;}
 function bindFields(root:HTMLElement){
- root.querySelectorAll<HTMLInputElement>('[data-face-value]').forEach(e=>{const path=e.dataset.faceValue!;if(e.type==='checkbox')e.checked=valueAt(path);else e.value=String(valueAt(path));e.onchange=()=>mutate(()=>{put(path,e.type==='checkbox'?e.checked:e.valueAsNumber);if(part==='eyes'||part==='brows'){const prefix=`face.${part}.${side}.`;if(path.startsWith(prefix)&&!path.startsWith(prefix+'highlight.'))syncSide(research.values.face,part,side);}},!path.startsWith('head.')&&!path.startsWith('face.nose.')&&!['face.linkEyes','face.linkBrows','face.mirrorArtwork'].includes(path));});
- root.querySelectorAll<HTMLInputElement>('input[type=range][data-face-value]').forEach(e=>{e.oninput=()=>{const path=e.dataset.faceValue!;mutate(()=>{put(path,e.valueAsNumber);if((part==='eyes'||part==='brows')&&path.startsWith(`face.${part}.${side}.`)&&!path.includes('.highlight.'))syncSide(research.values.face,part,side);},!path.startsWith('head.')&&!path.startsWith('face.nose.'),false);root.querySelectorAll<HTMLInputElement>('[data-face-value]').forEach(pair=>{if(pair.dataset.faceValue===path)pair.value=String(valueAt(path));});};});
- root.querySelectorAll<HTMLButtonElement>('[data-face-reset]').forEach(b=>b.onclick=()=>mutate(()=>{const path=b.dataset.faceReset!;put(path,clone(baseAt(path)));if(path.startsWith(`face.${part}.${side}.`)&&!path.includes('.highlight.')&&(part==='eyes'||part==='brows'))syncSide(research.values.face,part,side);},!b.dataset.faceReset!.startsWith('head.')&&!b.dataset.faceReset!.startsWith('face.nose.')&&!['face.linkEyes','face.linkBrows','face.mirrorArtwork'].includes(b.dataset.faceReset!)));
+ root.querySelectorAll<HTMLInputElement>('[data-face-value]').forEach(e=>{const path=e.dataset.faceValue!;if(e.type==='checkbox')e.checked=valueAt(path);else e.value=String(valueAt(path));e.onchange=()=>mutate(()=>{put(path,e.type==='checkbox'?e.checked:e.valueAsNumber);if(part==='eyes'||part==='brows'){const prefix=`face.${part}.${side}.`;if(path.startsWith(prefix)&&!path.startsWith(prefix+'highlight.'))syncSide(research.values.face,part,side);}});});
+ root.querySelectorAll<HTMLInputElement>('input[type=range][data-face-value]').forEach(e=>{e.oninput=()=>{const path=e.dataset.faceValue!;mutate(()=>{put(path,e.valueAsNumber);if((part==='eyes'||part==='brows')&&path.startsWith(`face.${part}.${side}.`)&&!path.includes('.highlight.'))syncSide(research.values.face,part,side);},false);root.querySelectorAll<HTMLInputElement>('[data-face-value]').forEach(pair=>{if(pair.dataset.faceValue===path)pair.value=String(valueAt(path));});};});
+ root.querySelectorAll<HTMLButtonElement>('[data-face-reset]').forEach(b=>b.onclick=()=>mutate(()=>{const path=b.dataset.faceReset!;put(path,clone(baseAt(path)));if(path.startsWith(`face.${part}.${side}.`)&&!path.includes('.highlight.')&&(part==='eyes'||part==='brows'))syncSide(research.values.face,part,side);}));
 }
 function fields(){
  const p=current(),prefix=part==='mouth'?'face.mouth':`face.${part}.${side}`;
@@ -38,7 +38,7 @@ function fields(){
  if(part==='eyes')$('face-copy-highlight').onclick=()=>mutate(()=>{const f=research.values.face;f.eyes[side==='left'?'right':'left'].highlight=clone(f.eyes[side].highlight);});
 }
 function refresh(){
- $('face-legacy').textContent=research.values.face.legacy?'現在の顔を元の方式で再現中。編集すると頭表面への適用へ切り替わります。':'編集顔を頭表面へ適用中。髪は深度に従って顔を隠します。';
+ $('face-legacy').textContent=research.values.face.legacy?'元のドット配置で編集。設定操作では描画方式を変更しません。':'頭表面の顔を編集。設定操作では描画方式を変更しません。髪は深度に従って顔を隠します。';
  $('face-undo').toggleAttribute('disabled',history.length===0);$('face-redo').toggleAttribute('disabled',future.length===0);
  for(const key of ['shape'])$<HTMLSelectElement>('face-head-'+key).value=research.values.head.shape;
  $<HTMLSelectElement>('face-blink-mode').value=research.values.face.blinkMode;
@@ -87,9 +87,9 @@ export function bindFaceEditor(){
  for(const id of ['part','side','layer'])$('face-'+id).onchange=()=>{part=$<HTMLSelectElement>('face-part').value;side=$<HTMLSelectElement>('face-side').value as Side;layer=$<HTMLSelectElement>('face-layer').value;fields();updateEditor();};
  $('face-blink-mode').onchange=()=>mutate(()=>research.values.face.blinkMode=$<HTMLSelectElement>('face-blink-mode').value as any);
  $('face-eye-state').onchange=()=>{research.preview.eyes=$<HTMLSelectElement>('face-eye-state').value as any;expr.seq=[];};
- $('face-expression').onchange=()=>{research.preview.expression=$<HTMLSelectElement>('face-expression').value as any;if(research.preview.expression!=='neutral'){research.values.face.legacy=false;dirtyFace();}refresh();};
+ $('face-expression').onchange=()=>{research.preview.expression=$<HTMLSelectElement>('face-expression').value as any;if(research.preview.expression!=='neutral'){dirtyFace();}refresh();};
  $('face-hair').onchange=()=>research.preview.hair=$<HTMLInputElement>('face-hair').checked;
- $('face-mouth-open').onchange=()=>{research.preview.mouthOpen=$<HTMLInputElement>('face-mouth-open').checked;research.values.face.legacy=false;dirtyFace();refresh();};
+ $('face-mouth-open').onchange=()=>{research.preview.mouthOpen=$<HTMLInputElement>('face-mouth-open').checked;dirtyFace();refresh();};
  $('face-pen').onclick=()=>{tool='pen';message('描く：選択した部位の範囲をなぞってください');};$('face-erase').onclick=()=>{tool='erase';message('消しゴム：選択した部位の範囲をなぞってください');};
  $('face-color').oninput=()=>color=$<HTMLInputElement>('face-color').value;
  for(const c of ['#241a38','#3f5aa6','#fffaf0','#bd7054','#c64747']){const b=document.createElement('button');b.className='face-swatch';b.style.background=c;b.setAttribute('aria-label','色 '+c);b.onclick=()=>{color=c;$<HTMLInputElement>('face-color').value=c;};$('face-palette').append(b);}
