@@ -1,0 +1,553 @@
+{
+  "results": [
+    {
+      "orientation": "portrait",
+      "view": "dot",
+      "openModePixelDifference": 0,
+      "returnPixelDifference": 0,
+      "orderPixelDifference": 0,
+      "storagePixelDifference": 0,
+      "baselinePixelDifference": 0,
+      "positions": [
+        {
+          "axis": "x",
+          "n": -0.06,
+          "ink": 12,
+          "initialInk": 12,
+          "visibleSkinPixels": 12,
+          "rects": [
+            [
+              49,
+              45,
+              2,
+              3
+            ],
+            [
+              45,
+              45,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "axis": "x",
+          "n": 0.06,
+          "ink": 12,
+          "initialInk": 12,
+          "visibleSkinPixels": 12,
+          "rects": [
+            [
+              51,
+              45,
+              2,
+              3
+            ],
+            [
+              47,
+              45,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "axis": "y",
+          "n": -0.06,
+          "ink": 10,
+          "initialInk": 12,
+          "visibleSkinPixels": 10,
+          "rects": [
+            [
+              50,
+              44,
+              2,
+              3
+            ],
+            [
+              46,
+              44,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "axis": "y",
+          "n": 0.06,
+          "ink": 12,
+          "initialInk": 12,
+          "visibleSkinPixels": 12,
+          "rects": [
+            [
+              50,
+              46,
+              2,
+              3
+            ],
+            [
+              46,
+              46,
+              2,
+              3
+            ]
+          ]
+        }
+      ],
+      "blink": [
+        {
+          "tick": 0,
+          "playing": false,
+          "eye": 0
+        },
+        {
+          "tick": 0,
+          "playing": true,
+          "eye": 0
+        },
+        {
+          "tick": 151,
+          "playing": false,
+          "eye": 1
+        },
+        {
+          "tick": 151,
+          "playing": true,
+          "eye": 1
+        },
+        {
+          "tick": 154,
+          "playing": false,
+          "eye": 2
+        },
+        {
+          "tick": 154,
+          "playing": true,
+          "eye": 2
+        },
+        {
+          "tick": 159,
+          "playing": false,
+          "eye": 1
+        },
+        {
+          "tick": 159,
+          "playing": true,
+          "eye": 1
+        }
+      ]
+    },
+    {
+      "orientation": "portrait",
+      "view": "3d",
+      "openModePixelDifference": 0,
+      "returnPixelDifference": 0,
+      "orderPixelDifference": 0,
+      "storagePixelDifference": 0,
+      "baselinePixelDifference": 0,
+      "positions": [
+        {
+          "axis": "x",
+          "n": -0.06,
+          "ink": 185,
+          "initialInk": 192,
+          "visibleSkinPixels": 185,
+          "rects": [
+            [
+              196,
+              180,
+              8,
+              12
+            ],
+            [
+              180,
+              180,
+              8,
+              12
+            ]
+          ]
+        },
+        {
+          "axis": "x",
+          "n": 0.06,
+          "ink": 185,
+          "initialInk": 192,
+          "visibleSkinPixels": 185,
+          "rects": [
+            [
+              204,
+              180,
+              8,
+              12
+            ],
+            [
+              188,
+              180,
+              8,
+              12
+            ]
+          ]
+        },
+        {
+          "axis": "y",
+          "n": -0.06,
+          "ink": 154,
+          "initialInk": 192,
+          "visibleSkinPixels": 154,
+          "rects": [
+            [
+              200,
+              176,
+              8,
+              12
+            ],
+            [
+              184,
+              176,
+              8,
+              12
+            ]
+          ]
+        },
+        {
+          "axis": "y",
+          "n": 0.06,
+          "ink": 192,
+          "initialInk": 192,
+          "visibleSkinPixels": 192,
+          "rects": [
+            [
+              200,
+              184,
+              8,
+              12
+            ],
+            [
+              184,
+              184,
+              8,
+              12
+            ]
+          ]
+        }
+      ],
+      "blink": [
+        {
+          "tick": 0,
+          "playing": false,
+          "eye": 0
+        },
+        {
+          "tick": 0,
+          "playing": true,
+          "eye": 0
+        },
+        {
+          "tick": 151,
+          "playing": false,
+          "eye": 1
+        },
+        {
+          "tick": 151,
+          "playing": true,
+          "eye": 1
+        },
+        {
+          "tick": 154,
+          "playing": false,
+          "eye": 2
+        },
+        {
+          "tick": 154,
+          "playing": true,
+          "eye": 2
+        },
+        {
+          "tick": 159,
+          "playing": false,
+          "eye": 1
+        },
+        {
+          "tick": 159,
+          "playing": true,
+          "eye": 1
+        }
+      ]
+    },
+    {
+      "orientation": "landscape",
+      "view": "dot",
+      "openModePixelDifference": 0,
+      "returnPixelDifference": 0,
+      "orderPixelDifference": 0,
+      "storagePixelDifference": 0,
+      "baselinePixelDifference": 0,
+      "positions": [
+        {
+          "axis": "x",
+          "n": -0.06,
+          "ink": 12,
+          "initialInk": 12,
+          "visibleSkinPixels": 12,
+          "rects": [
+            [
+              61,
+              44,
+              2,
+              3
+            ],
+            [
+              57,
+              44,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "axis": "x",
+          "n": 0.06,
+          "ink": 12,
+          "initialInk": 12,
+          "visibleSkinPixels": 12,
+          "rects": [
+            [
+              63,
+              44,
+              2,
+              3
+            ],
+            [
+              59,
+              44,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "axis": "y",
+          "n": -0.06,
+          "ink": 10,
+          "initialInk": 12,
+          "visibleSkinPixels": 10,
+          "rects": [
+            [
+              62,
+              43,
+              2,
+              3
+            ],
+            [
+              58,
+              43,
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "axis": "y",
+          "n": 0.06,
+          "ink": 12,
+          "initialInk": 12,
+          "visibleSkinPixels": 12,
+          "rects": [
+            [
+              62,
+              45,
+              2,
+              3
+            ],
+            [
+              58,
+              45,
+              2,
+              3
+            ]
+          ]
+        }
+      ],
+      "blink": [
+        {
+          "tick": 0,
+          "playing": false,
+          "eye": 0
+        },
+        {
+          "tick": 0,
+          "playing": true,
+          "eye": 0
+        },
+        {
+          "tick": 151,
+          "playing": false,
+          "eye": 1
+        },
+        {
+          "tick": 151,
+          "playing": true,
+          "eye": 1
+        },
+        {
+          "tick": 154,
+          "playing": false,
+          "eye": 2
+        },
+        {
+          "tick": 154,
+          "playing": true,
+          "eye": 2
+        },
+        {
+          "tick": 159,
+          "playing": false,
+          "eye": 1
+        },
+        {
+          "tick": 159,
+          "playing": true,
+          "eye": 1
+        }
+      ]
+    },
+    {
+      "orientation": "landscape",
+      "view": "3d",
+      "openModePixelDifference": 0,
+      "returnPixelDifference": 0,
+      "orderPixelDifference": 0,
+      "storagePixelDifference": 0,
+      "baselinePixelDifference": 0,
+      "positions": [
+        {
+          "axis": "x",
+          "n": -0.06,
+          "ink": 185,
+          "initialInk": 192,
+          "visibleSkinPixels": 185,
+          "rects": [
+            [
+              244,
+              176,
+              8,
+              12
+            ],
+            [
+              228,
+              176,
+              8,
+              12
+            ]
+          ]
+        },
+        {
+          "axis": "x",
+          "n": 0.06,
+          "ink": 185,
+          "initialInk": 192,
+          "visibleSkinPixels": 185,
+          "rects": [
+            [
+              252,
+              176,
+              8,
+              12
+            ],
+            [
+              236,
+              176,
+              8,
+              12
+            ]
+          ]
+        },
+        {
+          "axis": "y",
+          "n": -0.06,
+          "ink": 154,
+          "initialInk": 192,
+          "visibleSkinPixels": 154,
+          "rects": [
+            [
+              248,
+              172,
+              8,
+              12
+            ],
+            [
+              232,
+              172,
+              8,
+              12
+            ]
+          ]
+        },
+        {
+          "axis": "y",
+          "n": 0.06,
+          "ink": 192,
+          "initialInk": 192,
+          "visibleSkinPixels": 192,
+          "rects": [
+            [
+              248,
+              180,
+              8,
+              12
+            ],
+            [
+              232,
+              180,
+              8,
+              12
+            ]
+          ]
+        }
+      ],
+      "blink": [
+        {
+          "tick": 0,
+          "playing": false,
+          "eye": 0
+        },
+        {
+          "tick": 0,
+          "playing": true,
+          "eye": 0
+        },
+        {
+          "tick": 151,
+          "playing": false,
+          "eye": 1
+        },
+        {
+          "tick": 151,
+          "playing": true,
+          "eye": 1
+        },
+        {
+          "tick": 154,
+          "playing": false,
+          "eye": 2
+        },
+        {
+          "tick": 154,
+          "playing": true,
+          "eye": 2
+        },
+        {
+          "tick": 159,
+          "playing": false,
+          "eye": 1
+        },
+        {
+          "tick": 159,
+          "playing": true,
+          "eye": 1
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

@@ -164,7 +164,7 @@ function refresh() {
   }
 }
 export function result() { return { schema:'pixel-rig-validation-1',conditions:conditions(),performance:lastPerformance ?? (performanceRun ? {conditions:performanceConditions,result:performanceRun.result(),endState:snapshot()} : null),pixelComparison:lastComparison,notices,
-  knownIssues:['PNG保存は保留','Bは既存ビルドで実機確認・採用済み。既定化した新ビルドは実機確認待ち','自動検査10条件の差分は残存。まばたき時の変化は原因未確定で別件'],acceptance:'自動的な性能合格・実機確認・採用承認を意味しません' }; }
+  knownIssues:['PNG保存は保留','Bと通常既定化は指定成果物で実機採用済み。ルック研究の調整値は未採用','自動検査10条件の差分は残存。まばたき時の変化は原因未確定で別件'],acceptance:'自動的な性能合格・実機確認・採用承認を意味しません' }; }
 function showResult() { input('v-result').value=JSON.stringify(result(),null,2); }
 export function bindValidation(render:(options?:CaptureOptions)=>void) {
   draw=render;

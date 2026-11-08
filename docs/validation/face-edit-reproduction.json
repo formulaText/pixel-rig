@@ -1,0 +1,68 @@
+[
+  {
+    "view": "dot",
+    "op": "blink",
+    "initialLegacy": true,
+    "changedLegacy": false,
+    "returnedLegacy": false,
+    "sourceUnchanged": true,
+    "editorUnchanged": true,
+    "changedImage": true,
+    "returnedImageMatches": false
+  },
+  {
+    "view": "dot",
+    "op": "x",
+    "initialLegacy": true,
+    "changedLegacy": false,
+    "returnedLegacy": false,
+    "sourceUnchanged": true,
+    "editorUnchanged": true,
+    "changedImage": true,
+    "returnedImageMatches": false
+  },
+  {
+    "view": "dot",
+    "op": "y",
+    "initialLegacy": true,
+    "changedLegacy": false,
+    "returnedLegacy": false,
+    "sourceUnchanged": true,
+    "editorUnchanged": true,
+    "changedImage": true,
+    "returnedImageMatches": false
+  },
+  {
+    "view": "3d",
+    "op": "blink",
+    "initialLegacy": true,
+    "changedLegacy": false,
+    "returnedLegacy": false,
+    "sourceUnchanged": true,
+    "editorUnchanged": true,
+    "changedImage": true,
+    "returnedImageMatches": false
+  },
+  {
+    "view": "3d",
+    "op": "x",
+    "initialLegacy": true,
+    "changedLegacy": false,
+    "returnedLegacy": false,
+    "sourceUnchanged": true,
+    "editorUnchanged": true,
+    "changedImage": true,
+    "returnedImageMatches": false
+  },
+  {
+    "view": "3d",
+    "op": "y",
+    "initialLegacy": true,
+    "changedLegacy": false,
+    "returnedLegacy": false,
+    "sourceUnchanged": true,
+    "editorUnchanged": true,
+    "changedImage": true,
+    "returnedImageMatches": false
+  }
+]

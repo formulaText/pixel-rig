@@ -1,0 +1,23 @@
+{
+  "results": [
+    {
+      "name": "portrait",
+      "directions": 8,
+      "motions": 5,
+      "storageRoundTrip": true,
+      "clipboardRoundTrip": true,
+      "rejectedInvalid": true,
+      "normalReads": 0
+    },
+    {
+      "name": "landscape",
+      "directions": 8,
+      "motions": 5,
+      "storageRoundTrip": true,
+      "clipboardRoundTrip": true,
+      "rejectedInvalid": true,
+      "normalReads": 0
+    }
+  ],
+  "errors": []
+}

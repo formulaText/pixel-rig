@@ -42,3 +42,15 @@ jobs:
         run: node tests/browser/look.mjs
         env:
           CHROMIUM_PATH: /usr/bin/google-chrome
+      - name: 構造化した顔の操作・保存・深度・移動安定性
+        run: node tests/browser/look-face.mjs && node tests/browser/look-pixels.mjs
+        env:
+          CHROMIUM_PATH: /usr/bin/google-chrome
+      - name: 顔編集の描画整合性（実UI・3D／ドット・往復・順序・復元）
+        run: node tests/browser/look-face-consistency.mjs
+        env:
+          CHROMIUM_PATH: /usr/bin/google-chrome
+      - name: ビルド済み統合研究画面の保存・表示・測定記録・通常復帰
+        run: node tests/browser/look-built.mjs
+        env:
+          CHROMIUM_PATH: /usr/bin/google-chrome

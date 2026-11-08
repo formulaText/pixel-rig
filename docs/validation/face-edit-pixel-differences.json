@@ -1,0 +1,86 @@
+[
+  {
+    "version": "before",
+    "view": "dot",
+    "operation": "blink",
+    "changedPixels": 10,
+    "returnedPixels": 10
+  },
+  {
+    "version": "after",
+    "view": "dot",
+    "operation": "blink",
+    "changedPixels": 0,
+    "returnedPixels": 0
+  },
+  {
+    "version": "before",
+    "view": "dot",
+    "operation": "x",
+    "changedPixels": 10,
+    "returnedPixels": 10
+  },
+  {
+    "version": "after",
+    "view": "dot",
+    "operation": "x",
+    "changedPixels": 0,
+    "returnedPixels": 0
+  },
+  {
+    "version": "before",
+    "view": "dot",
+    "operation": "y",
+    "changedPixels": 10,
+    "returnedPixels": 10
+  },
+  {
+    "version": "after",
+    "view": "dot",
+    "operation": "y",
+    "changedPixels": 0,
+    "returnedPixels": 0
+  },
+  {
+    "version": "before",
+    "view": "3d",
+    "operation": "blink",
+    "changedPixels": 166,
+    "returnedPixels": 166
+  },
+  {
+    "version": "after",
+    "view": "3d",
+    "operation": "blink",
+    "changedPixels": 0,
+    "returnedPixels": 0
+  },
+  {
+    "version": "before",
+    "view": "3d",
+    "operation": "x",
+    "changedPixels": 161,
+    "returnedPixels": 166
+  },
+  {
+    "version": "after",
+    "view": "3d",
+    "operation": "x",
+    "changedPixels": 0,
+    "returnedPixels": 0
+  },
+  {
+    "version": "before",
+    "view": "3d",
+    "operation": "y",
+    "changedPixels": 168,
+    "returnedPixels": 166
+  },
+  {
+    "version": "after",
+    "view": "3d",
+    "operation": "y",
+    "changedPixels": 0,
+    "returnedPixels": 0
+  }
+]

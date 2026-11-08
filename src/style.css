@@ -91,3 +91,11 @@ fieldset:disabled{opacity:.55}
 .look-panel button{min-height:44px}
 .look-active .layout{grid-template-rows:minmax(190px,42dvh) 1fr}
 @media(orientation:landscape) and (min-width:600px){.look-active .layout{grid-template-columns:minmax(220px,1fr) 360px;grid-template-rows:1fr}}
+#face-grid{width:100%;max-width:400px;height:auto;display:block;touch-action:none;image-rendering:pixelated;border:2px solid var(--line);margin-top:12px}
+.face-swatch{width:44px;height:44px;border:2px solid var(--line);border-radius:8px;margin:4px}
+.look-panel .note{font-size:12px;color:var(--sub)}
+.look-panel select{max-width:100%}
+.look-panel button:disabled{opacity:.4}
+.look-dock{display:none;position:absolute;bottom:10px;left:8px;right:8px;z-index:3;justify-content:center;gap:5px}
+.look-active .look-dock{display:flex}
+.look-dock .btn{width:auto;padding:8px;font-size:12px;min-height:36px;box-shadow:0 1px 5px #0006}

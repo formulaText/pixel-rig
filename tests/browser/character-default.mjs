@@ -23,6 +23,9 @@ import {mkRT} from './render/post';
 import {renderer} from './render/renderer';
 import {setPlayerWorld} from './gameplay/player';
 import {expr,triggerEmote} from './character/expression';
+import {seedRuntime} from './core/random';
+// Seed the simulation after GPU resource construction; Three UUID allocation also consumes Math.random.
+seedRuntime(20261107);
 ${isReference ? "characterStudy.variant='precise';" : ''}
 window.probe={validation,scene,renderer,state,expr,triggerEmote,drawWorld,setPlayerWorld,characterStudy,mkRT};`;}}]});
  await server.listen();servers.push(server);
