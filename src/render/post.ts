@@ -15,7 +15,7 @@ const postMat = new THREE.ShaderMaterial({
   uniforms:{
     ...stampUniforms,
     tColor:{value:null}, tHi:{value:null}, tND:{value:null}, tDepth:{value:null}, tGlyph:{value:null}, tIcon:{value:makeIconTex()},
-    uLookOn:{value:0}, uLookInk:{value:new THREE.Color(.10,.06,.17)}, uLookInnerInk:{value:new THREE.Color(.10,.06,.17)}, uLookOpacity:{value:new THREE.Vector2(1,1)}, uMouth:{value:new THREE.Vector4()},
+    uLookMode:{value:0}, uLookOn:{value:0}, uLookInk:{value:new THREE.Color(.10,.06,.17)}, uLookInnerInk:{value:new THREE.Color(.10,.06,.17)}, uLookOpacity:{value:new THREE.Vector2(1,1)}, uMouth:{value:new THREE.Vector4()},
     uRes:{value:new THREE.Vector2(1, 1)}, uF2:{value:1}, uF3:{value:1}, uNDOn:{value:1},
     uLightDir:shared.uLightDir, uRange:{value:1}, uTexel:{value:0.1},
     uStamp:{value:0}, uGlyph:{value:new THREE.Vector2(1, 1)}, uAtlasCols:{value:ATLAS_COLS},

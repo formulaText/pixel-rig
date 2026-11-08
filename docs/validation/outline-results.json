@@ -1,0 +1,8588 @@
+{
+  "synthetic": [
+    {
+      "mode": 0,
+      "opacity": 0,
+      "outer": [
+        40,
+        75,
+        110,
+        0
+      ],
+      "redBoundary": [
+        245,
+        184,
+        120,
+        255
+      ],
+      "redCenter": [
+        220,
+        35,
+        50,
+        255
+      ],
+      "skinCenter": [
+        245,
+        184,
+        120,
+        255
+      ],
+      "filled": 100,
+      "bbox": [
+        3,
+        3,
+        12,
+        12
+      ],
+      "uncovered": 100
+    },
+    {
+      "mode": 0,
+      "opacity": 0.5,
+      "outer": [
+        41,
+        52,
+        75,
+        128
+      ],
+      "redBoundary": [
+        169,
+        126,
+        88,
+        255
+      ],
+      "redCenter": [
+        220,
+        35,
+        50,
+        255
+      ],
+      "skinCenter": [
+        245,
+        184,
+        120,
+        255
+      ],
+      "filled": 140,
+      "bbox": [
+        2,
+        2,
+        13,
+        13
+      ],
+      "uncovered": 84
+    },
+    {
+      "mode": 0,
+      "opacity": 1,
+      "outer": [
+        42,
+        29,
+        41,
+        255
+      ],
+      "redBoundary": [
+        93,
+        69,
+        55,
+        255
+      ],
+      "redCenter": [
+        220,
+        35,
+        50,
+        255
+      ],
+      "skinCenter": [
+        245,
+        184,
+        120,
+        255
+      ],
+      "filled": 140,
+      "bbox": [
+        2,
+        2,
+        13,
+        13
+      ],
+      "uncovered": 84
+    },
+    {
+      "mode": 1,
+      "opacity": 0,
+      "outer": [
+        245,
+        184,
+        120,
+        255
+      ],
+      "redBoundary": [
+        220,
+        35,
+        50,
+        255
+      ],
+      "redCenter": [
+        220,
+        35,
+        50,
+        255
+      ],
+      "skinCenter": [
+        245,
+        184,
+        120,
+        255
+      ],
+      "filled": 140,
+      "bbox": [
+        2,
+        2,
+        13,
+        13
+      ],
+      "uncovered": 84
+    },
+    {
+      "mode": 1,
+      "opacity": 0.5,
+      "outer": [
+        144,
+        107,
+        80,
+        255
+      ],
+      "redBoundary": [
+        152,
+        26,
+        40,
+        255
+      ],
+      "redCenter": [
+        220,
+        35,
+        50,
+        255
+      ],
+      "skinCenter": [
+        245,
+        184,
+        120,
+        255
+      ],
+      "filled": 140,
+      "bbox": [
+        2,
+        2,
+        13,
+        13
+      ],
+      "uncovered": 84
+    },
+    {
+      "mode": 1,
+      "opacity": 1,
+      "outer": [
+        42,
+        29,
+        41,
+        255
+      ],
+      "redBoundary": [
+        85,
+        17,
+        31,
+        255
+      ],
+      "redCenter": [
+        220,
+        35,
+        50,
+        255
+      ],
+      "skinCenter": [
+        245,
+        184,
+        120,
+        255
+      ],
+      "filled": 140,
+      "bbox": [
+        2,
+        2,
+        13,
+        13
+      ],
+      "uncovered": 84
+    },
+    {
+      "mode": 2,
+      "opacity": 0,
+      "outer": [
+        40,
+        75,
+        110,
+        0
+      ],
+      "redBoundary": [
+        220,
+        35,
+        50,
+        255
+      ],
+      "redCenter": [
+        220,
+        35,
+        50,
+        255
+      ],
+      "skinCenter": [
+        245,
+        184,
+        120,
+        255
+      ],
+      "filled": 100,
+      "bbox": [
+        3,
+        3,
+        12,
+        12
+      ],
+      "uncovered": 84
+    },
+    {
+      "mode": 2,
+      "opacity": 0.5,
+      "outer": [
+        40,
+        75,
+        110,
+        0
+      ],
+      "redBoundary": [
+        152,
+        26,
+        40,
+        255
+      ],
+      "redCenter": [
+        220,
+        35,
+        50,
+        255
+      ],
+      "skinCenter": [
+        245,
+        184,
+        120,
+        255
+      ],
+      "filled": 100,
+      "bbox": [
+        3,
+        3,
+        12,
+        12
+      ],
+      "uncovered": 48
+    },
+    {
+      "mode": 2,
+      "opacity": 1,
+      "outer": [
+        40,
+        75,
+        110,
+        0
+      ],
+      "redBoundary": [
+        85,
+        17,
+        31,
+        255
+      ],
+      "redCenter": [
+        220,
+        35,
+        50,
+        255
+      ],
+      "skinCenter": [
+        245,
+        184,
+        120,
+        255
+      ],
+      "filled": 100,
+      "bbox": [
+        3,
+        3,
+        12,
+        12
+      ],
+      "uncovered": 48
+    }
+  ],
+  "dimensions": [
+    {
+      "direction": 0,
+      "mode": "legacy",
+      "opacity": 0,
+      "width": 12,
+      "height": 22,
+      "coverage": 195,
+      "uncovered": 160,
+      "facePalettePixels": 10
+    },
+    {
+      "direction": 0,
+      "mode": "legacy",
+      "opacity": 0.5,
+      "width": 14,
+      "height": 24,
+      "coverage": 253,
+      "uncovered": 129,
+      "facePalettePixels": 10
+    },
+    {
+      "direction": 0,
+      "mode": "legacy",
+      "opacity": 1,
+      "width": 14,
+      "height": 24,
+      "coverage": 253,
+      "uncovered": 129,
+      "facePalettePixels": 10
+    },
+    {
+      "direction": 0,
+      "mode": "underpaint",
+      "opacity": 0,
+      "width": 14,
+      "height": 24,
+      "coverage": 253,
+      "uncovered": 135,
+      "facePalettePixels": 10
+    },
+    {
+      "direction": 0,
+      "mode": "underpaint",
+      "opacity": 0.5,
+      "width": 14,
+      "height": 24,
+      "coverage": 253,
+      "uncovered": 133,
+      "facePalettePixels": 10
+    },
+    {
+      "direction": 0,
+      "mode": "underpaint",
+      "opacity": 1,
+      "width": 14,
+      "height": 24,
+      "coverage": 253,
+      "uncovered": 133,
+      "facePalettePixels": 10
+    },
+    {
+      "direction": 0,
+      "mode": "inset",
+      "opacity": 0,
+      "width": 12,
+      "height": 22,
+      "coverage": 195,
+      "uncovered": 135,
+      "facePalettePixels": 10
+    },
+    {
+      "direction": 0,
+      "mode": "inset",
+      "opacity": 0.5,
+      "width": 12,
+      "height": 22,
+      "coverage": 195,
+      "uncovered": 91,
+      "facePalettePixels": 10
+    },
+    {
+      "direction": 0,
+      "mode": "inset",
+      "opacity": 1,
+      "width": 12,
+      "height": 22,
+      "coverage": 195,
+      "uncovered": 91,
+      "facePalettePixels": 10
+    },
+    {
+      "direction": 1,
+      "mode": "legacy",
+      "opacity": 0,
+      "width": 13,
+      "height": 23,
+      "coverage": 190,
+      "uncovered": 162,
+      "facePalettePixels": 7
+    },
+    {
+      "direction": 1,
+      "mode": "legacy",
+      "opacity": 0.5,
+      "width": 15,
+      "height": 25,
+      "coverage": 245,
+      "uncovered": 140,
+      "facePalettePixels": 7
+    },
+    {
+      "direction": 1,
+      "mode": "legacy",
+      "opacity": 1,
+      "width": 15,
+      "height": 25,
+      "coverage": 245,
+      "uncovered": 140,
+      "facePalettePixels": 7
+    },
+    {
+      "direction": 1,
+      "mode": "underpaint",
+      "opacity": 0,
+      "width": 15,
+      "height": 25,
+      "coverage": 245,
+      "uncovered": 144,
+      "facePalettePixels": 5
+    },
+    {
+      "direction": 1,
+      "mode": "underpaint",
+      "opacity": 0.5,
+      "width": 15,
+      "height": 25,
+      "coverage": 245,
+      "uncovered": 143,
+      "facePalettePixels": 5
+    },
+    {
+      "direction": 1,
+      "mode": "underpaint",
+      "opacity": 1,
+      "width": 15,
+      "height": 25,
+      "coverage": 245,
+      "uncovered": 143,
+      "facePalettePixels": 5
+    },
+    {
+      "direction": 1,
+      "mode": "inset",
+      "opacity": 0,
+      "width": 13,
+      "height": 23,
+      "coverage": 190,
+      "uncovered": 144,
+      "facePalettePixels": 5
+    },
+    {
+      "direction": 1,
+      "mode": "inset",
+      "opacity": 0.5,
+      "width": 13,
+      "height": 23,
+      "coverage": 190,
+      "uncovered": 109,
+      "facePalettePixels": 5
+    },
+    {
+      "direction": 1,
+      "mode": "inset",
+      "opacity": 1,
+      "width": 13,
+      "height": 23,
+      "coverage": 190,
+      "uncovered": 109,
+      "facePalettePixels": 5
+    },
+    {
+      "direction": 2,
+      "mode": "legacy",
+      "opacity": 0,
+      "width": 13,
+      "height": 24,
+      "coverage": 184,
+      "uncovered": 173,
+      "facePalettePixels": 1
+    },
+    {
+      "direction": 2,
+      "mode": "legacy",
+      "opacity": 0.5,
+      "width": 15,
+      "height": 26,
+      "coverage": 242,
+      "uncovered": 145,
+      "facePalettePixels": 1
+    },
+    {
+      "direction": 2,
+      "mode": "legacy",
+      "opacity": 1,
+      "width": 15,
+      "height": 26,
+      "coverage": 242,
+      "uncovered": 145,
+      "facePalettePixels": 1
+    },
+    {
+      "direction": 2,
+      "mode": "underpaint",
+      "opacity": 0,
+      "width": 15,
+      "height": 26,
+      "coverage": 242,
+      "uncovered": 153,
+      "facePalettePixels": 1
+    },
+    {
+      "direction": 2,
+      "mode": "underpaint",
+      "opacity": 0.5,
+      "width": 15,
+      "height": 26,
+      "coverage": 242,
+      "uncovered": 147,
+      "facePalettePixels": 1
+    },
+    {
+      "direction": 2,
+      "mode": "underpaint",
+      "opacity": 1,
+      "width": 15,
+      "height": 26,
+      "coverage": 242,
+      "uncovered": 147,
+      "facePalettePixels": 1
+    },
+    {
+      "direction": 2,
+      "mode": "inset",
+      "opacity": 0,
+      "width": 13,
+      "height": 24,
+      "coverage": 184,
+      "uncovered": 153,
+      "facePalettePixels": 1
+    },
+    {
+      "direction": 2,
+      "mode": "inset",
+      "opacity": 0.5,
+      "width": 13,
+      "height": 24,
+      "coverage": 184,
+      "uncovered": 106,
+      "facePalettePixels": 1
+    },
+    {
+      "direction": 2,
+      "mode": "inset",
+      "opacity": 1,
+      "width": 13,
+      "height": 24,
+      "coverage": 184,
+      "uncovered": 106,
+      "facePalettePixels": 1
+    },
+    {
+      "direction": 3,
+      "mode": "legacy",
+      "opacity": 0,
+      "width": 13,
+      "height": 23,
+      "coverage": 195,
+      "uncovered": 183,
+      "facePalettePixels": 0
+    },
+    {
+      "direction": 3,
+      "mode": "legacy",
+      "opacity": 0.5,
+      "width": 15,
+      "height": 25,
+      "coverage": 252,
+      "uncovered": 163,
+      "facePalettePixels": 0
+    },
+    {
+      "direction": 3,
+      "mode": "legacy",
+      "opacity": 1,
+      "width": 15,
+      "height": 25,
+      "coverage": 252,
+      "uncovered": 163,
+      "facePalettePixels": 0
+    },
+    {
+      "direction": 3,
+      "mode": "underpaint",
+      "opacity": 0,
+      "width": 15,
+      "height": 25,
+      "coverage": 252,
+      "uncovered": 164,
+      "facePalettePixels": 0
+    },
+    {
+      "direction": 3,
+      "mode": "underpaint",
+      "opacity": 0.5,
+      "width": 15,
+      "height": 25,
+      "coverage": 252,
+      "uncovered": 164,
+      "facePalettePixels": 0
+    },
+    {
+      "direction": 3,
+      "mode": "underpaint",
+      "opacity": 1,
+      "width": 15,
+      "height": 25,
+      "coverage": 252,
+      "uncovered": 164,
+      "facePalettePixels": 0
+    },
+    {
+      "direction": 3,
+      "mode": "inset",
+      "opacity": 0,
+      "width": 13,
+      "height": 23,
+      "coverage": 195,
+      "uncovered": 164,
+      "facePalettePixels": 0
+    },
+    {
+      "direction": 3,
+      "mode": "inset",
+      "opacity": 0.5,
+      "width": 13,
+      "height": 23,
+      "coverage": 195,
+      "uncovered": 124,
+      "facePalettePixels": 0
+    },
+    {
+      "direction": 3,
+      "mode": "inset",
+      "opacity": 1,
+      "width": 13,
+      "height": 23,
+      "coverage": 195,
+      "uncovered": 124,
+      "facePalettePixels": 0
+    },
+    {
+      "direction": 4,
+      "mode": "legacy",
+      "opacity": 0,
+      "width": 12,
+      "height": 22,
+      "coverage": 203,
+      "uncovered": 194,
+      "facePalettePixels": 0
+    },
+    {
+      "direction": 4,
+      "mode": "legacy",
+      "opacity": 0.5,
+      "width": 14,
+      "height": 24,
+      "coverage": 261,
+      "uncovered": 175,
+      "facePalettePixels": 0
+    },
+    {
+      "direction": 4,
+      "mode": "legacy",
+      "opacity": 1,
+      "width": 14,
+      "height": 24,
+      "coverage": 261,
+      "uncovered": 175,
+      "facePalettePixels": 0
+    },
+    {
+      "direction": 4,
+      "mode": "underpaint",
+      "opacity": 0,
+      "width": 14,
+      "height": 24,
+      "coverage": 261,
+      "uncovered": 176,
+      "facePalettePixels": 0
+    },
+    {
+      "direction": 4,
+      "mode": "underpaint",
+      "opacity": 0.5,
+      "width": 14,
+      "height": 24,
+      "coverage": 261,
+      "uncovered": 175,
+      "facePalettePixels": 0
+    },
+    {
+      "direction": 4,
+      "mode": "underpaint",
+      "opacity": 1,
+      "width": 14,
+      "height": 24,
+      "coverage": 261,
+      "uncovered": 175,
+      "facePalettePixels": 0
+    },
+    {
+      "direction": 4,
+      "mode": "inset",
+      "opacity": 0,
+      "width": 12,
+      "height": 22,
+      "coverage": 203,
+      "uncovered": 176,
+      "facePalettePixels": 0
+    },
+    {
+      "direction": 4,
+      "mode": "inset",
+      "opacity": 0.5,
+      "width": 12,
+      "height": 22,
+      "coverage": 203,
+      "uncovered": 133,
+      "facePalettePixels": 0
+    },
+    {
+      "direction": 4,
+      "mode": "inset",
+      "opacity": 1,
+      "width": 12,
+      "height": 22,
+      "coverage": 203,
+      "uncovered": 133,
+      "facePalettePixels": 0
+    },
+    {
+      "direction": 5,
+      "mode": "legacy",
+      "opacity": 0,
+      "width": 13,
+      "height": 22,
+      "coverage": 195,
+      "uncovered": 179,
+      "facePalettePixels": 0
+    },
+    {
+      "direction": 5,
+      "mode": "legacy",
+      "opacity": 0.5,
+      "width": 15,
+      "height": 24,
+      "coverage": 252,
+      "uncovered": 157,
+      "facePalettePixels": 0
+    },
+    {
+      "direction": 5,
+      "mode": "legacy",
+      "opacity": 1,
+      "width": 15,
+      "height": 24,
+      "coverage": 252,
+      "uncovered": 157,
+      "facePalettePixels": 0
+    },
+    {
+      "direction": 5,
+      "mode": "underpaint",
+      "opacity": 0,
+      "width": 15,
+      "height": 24,
+      "coverage": 252,
+      "uncovered": 160,
+      "facePalettePixels": 0
+    },
+    {
+      "direction": 5,
+      "mode": "underpaint",
+      "opacity": 0.5,
+      "width": 15,
+      "height": 24,
+      "coverage": 252,
+      "uncovered": 157,
+      "facePalettePixels": 0
+    },
+    {
+      "direction": 5,
+      "mode": "underpaint",
+      "opacity": 1,
+      "width": 15,
+      "height": 24,
+      "coverage": 252,
+      "uncovered": 157,
+      "facePalettePixels": 0
+    },
+    {
+      "direction": 5,
+      "mode": "inset",
+      "opacity": 0,
+      "width": 13,
+      "height": 22,
+      "coverage": 195,
+      "uncovered": 160,
+      "facePalettePixels": 0
+    },
+    {
+      "direction": 5,
+      "mode": "inset",
+      "opacity": 0.5,
+      "width": 13,
+      "height": 22,
+      "coverage": 195,
+      "uncovered": 123,
+      "facePalettePixels": 0
+    },
+    {
+      "direction": 5,
+      "mode": "inset",
+      "opacity": 1,
+      "width": 13,
+      "height": 22,
+      "coverage": 195,
+      "uncovered": 123,
+      "facePalettePixels": 0
+    },
+    {
+      "direction": 6,
+      "mode": "legacy",
+      "opacity": 0,
+      "width": 13,
+      "height": 23,
+      "coverage": 183,
+      "uncovered": 169,
+      "facePalettePixels": 2
+    },
+    {
+      "direction": 6,
+      "mode": "legacy",
+      "opacity": 0.5,
+      "width": 15,
+      "height": 25,
+      "coverage": 241,
+      "uncovered": 141,
+      "facePalettePixels": 2
+    },
+    {
+      "direction": 6,
+      "mode": "legacy",
+      "opacity": 1,
+      "width": 15,
+      "height": 25,
+      "coverage": 241,
+      "uncovered": 141,
+      "facePalettePixels": 2
+    },
+    {
+      "direction": 6,
+      "mode": "underpaint",
+      "opacity": 0,
+      "width": 15,
+      "height": 25,
+      "coverage": 241,
+      "uncovered": 148,
+      "facePalettePixels": 2
+    },
+    {
+      "direction": 6,
+      "mode": "underpaint",
+      "opacity": 0.5,
+      "width": 15,
+      "height": 25,
+      "coverage": 241,
+      "uncovered": 142,
+      "facePalettePixels": 2
+    },
+    {
+      "direction": 6,
+      "mode": "underpaint",
+      "opacity": 1,
+      "width": 15,
+      "height": 25,
+      "coverage": 241,
+      "uncovered": 142,
+      "facePalettePixels": 2
+    },
+    {
+      "direction": 6,
+      "mode": "inset",
+      "opacity": 0,
+      "width": 13,
+      "height": 23,
+      "coverage": 183,
+      "uncovered": 148,
+      "facePalettePixels": 2
+    },
+    {
+      "direction": 6,
+      "mode": "inset",
+      "opacity": 0.5,
+      "width": 13,
+      "height": 23,
+      "coverage": 183,
+      "uncovered": 103,
+      "facePalettePixels": 2
+    },
+    {
+      "direction": 6,
+      "mode": "inset",
+      "opacity": 1,
+      "width": 13,
+      "height": 23,
+      "coverage": 183,
+      "uncovered": 103,
+      "facePalettePixels": 2
+    },
+    {
+      "direction": 7,
+      "mode": "legacy",
+      "opacity": 0,
+      "width": 13,
+      "height": 23,
+      "coverage": 192,
+      "uncovered": 166,
+      "facePalettePixels": 7
+    },
+    {
+      "direction": 7,
+      "mode": "legacy",
+      "opacity": 0.5,
+      "width": 15,
+      "height": 25,
+      "coverage": 248,
+      "uncovered": 145,
+      "facePalettePixels": 7
+    },
+    {
+      "direction": 7,
+      "mode": "legacy",
+      "opacity": 1,
+      "width": 15,
+      "height": 25,
+      "coverage": 248,
+      "uncovered": 145,
+      "facePalettePixels": 7
+    },
+    {
+      "direction": 7,
+      "mode": "underpaint",
+      "opacity": 0,
+      "width": 15,
+      "height": 25,
+      "coverage": 248,
+      "uncovered": 149,
+      "facePalettePixels": 5
+    },
+    {
+      "direction": 7,
+      "mode": "underpaint",
+      "opacity": 0.5,
+      "width": 15,
+      "height": 25,
+      "coverage": 248,
+      "uncovered": 147,
+      "facePalettePixels": 5
+    },
+    {
+      "direction": 7,
+      "mode": "underpaint",
+      "opacity": 1,
+      "width": 15,
+      "height": 25,
+      "coverage": 248,
+      "uncovered": 147,
+      "facePalettePixels": 5
+    },
+    {
+      "direction": 7,
+      "mode": "inset",
+      "opacity": 0,
+      "width": 13,
+      "height": 23,
+      "coverage": 192,
+      "uncovered": 149,
+      "facePalettePixels": 5
+    },
+    {
+      "direction": 7,
+      "mode": "inset",
+      "opacity": 0.5,
+      "width": 13,
+      "height": 23,
+      "coverage": 192,
+      "uncovered": 110,
+      "facePalettePixels": 5
+    },
+    {
+      "direction": 7,
+      "mode": "inset",
+      "opacity": 1,
+      "width": 13,
+      "height": 23,
+      "coverage": 192,
+      "uncovered": 110,
+      "facePalettePixels": 5
+    }
+  ],
+  "movement": [
+    {
+      "shape": "original",
+      "preset": "original",
+      "motion": "still",
+      "direction": 0,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 253
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 253
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 253
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "original",
+      "motion": "still",
+      "direction": 1,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 245
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 245
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 245
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "original",
+      "motion": "still",
+      "direction": 2,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 242
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 242
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 242
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "original",
+      "motion": "still",
+      "direction": 3,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "original",
+      "motion": "still",
+      "direction": 4,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 261
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 261
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 261
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "original",
+      "motion": "still",
+      "direction": 5,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "original",
+      "motion": "still",
+      "direction": 6,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 241
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 241
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 241
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "original",
+      "motion": "still",
+      "direction": 7,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 248
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 248
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 248
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "original",
+      "motion": "idle",
+      "direction": 0,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 259
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 259
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 259
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "original",
+      "motion": "idle",
+      "direction": 1,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 244
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 244
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 244
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "original",
+      "motion": "idle",
+      "direction": 2,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 247
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 247
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 247
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "original",
+      "motion": "idle",
+      "direction": 3,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "original",
+      "motion": "idle",
+      "direction": 4,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 271
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 271
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 271
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "original",
+      "motion": "idle",
+      "direction": 5,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 253
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 253
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 253
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "original",
+      "motion": "idle",
+      "direction": 6,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 1,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 242
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 242
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 242
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "original",
+      "motion": "idle",
+      "direction": 7,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 251
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 251
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 251
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "original",
+      "motion": "walk",
+      "direction": 0,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 247
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 247
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 247
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "original",
+      "motion": "walk",
+      "direction": 1,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 256
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 256
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 256
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "original",
+      "motion": "walk",
+      "direction": 2,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 258
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 258
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 258
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "original",
+      "motion": "walk",
+      "direction": 3,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 263
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 263
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 263
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "original",
+      "motion": "walk",
+      "direction": 4,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 262
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 262
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 262
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "original",
+      "motion": "walk",
+      "direction": 5,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 265
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 265
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 265
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "original",
+      "motion": "walk",
+      "direction": 6,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 263
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 263
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 263
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "original",
+      "motion": "walk",
+      "direction": 7,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 250
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 250
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 250
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "expressive",
+      "motion": "still",
+      "direction": 0,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 253
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 253
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 253
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "expressive",
+      "motion": "still",
+      "direction": 1,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 245
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 245
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 245
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "expressive",
+      "motion": "still",
+      "direction": 2,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 242
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 242
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 242
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "expressive",
+      "motion": "still",
+      "direction": 3,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "expressive",
+      "motion": "still",
+      "direction": 4,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 261
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 261
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 261
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "expressive",
+      "motion": "still",
+      "direction": 5,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "expressive",
+      "motion": "still",
+      "direction": 6,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 241
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 241
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 241
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "expressive",
+      "motion": "still",
+      "direction": 7,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 248
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 248
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 248
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "expressive",
+      "motion": "idle",
+      "direction": 0,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 259
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 259
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 259
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "expressive",
+      "motion": "idle",
+      "direction": 1,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 244
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 244
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 244
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "expressive",
+      "motion": "idle",
+      "direction": 2,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 247
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 247
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 247
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "expressive",
+      "motion": "idle",
+      "direction": 3,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "expressive",
+      "motion": "idle",
+      "direction": 4,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 271
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 271
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 271
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "expressive",
+      "motion": "idle",
+      "direction": 5,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 253
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 253
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 253
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "expressive",
+      "motion": "idle",
+      "direction": 6,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 1,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 242
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 242
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 242
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "expressive",
+      "motion": "idle",
+      "direction": 7,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 251
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 251
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 251
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "expressive",
+      "motion": "walk",
+      "direction": 0,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 247
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 247
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 247
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "expressive",
+      "motion": "walk",
+      "direction": 1,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 256
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 256
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 256
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "expressive",
+      "motion": "walk",
+      "direction": 2,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 258
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 258
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 258
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "expressive",
+      "motion": "walk",
+      "direction": 3,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 263
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 263
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 263
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "expressive",
+      "motion": "walk",
+      "direction": 4,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 262
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 262
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 262
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "expressive",
+      "motion": "walk",
+      "direction": 5,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 265
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 265
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 265
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "expressive",
+      "motion": "walk",
+      "direction": 6,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 263
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 263
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 263
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "original",
+      "preset": "expressive",
+      "motion": "walk",
+      "direction": 7,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 250
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 250
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 250
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "original",
+      "motion": "still",
+      "direction": 0,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 253
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 253
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 253
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "original",
+      "motion": "still",
+      "direction": 1,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 245
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 245
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 245
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "original",
+      "motion": "still",
+      "direction": 2,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 243
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 243
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 243
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "original",
+      "motion": "still",
+      "direction": 3,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "original",
+      "motion": "still",
+      "direction": 4,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 261
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 261
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 261
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "original",
+      "motion": "still",
+      "direction": 5,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "original",
+      "motion": "still",
+      "direction": 6,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 242
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 242
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 242
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "original",
+      "motion": "still",
+      "direction": 7,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 248
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 248
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 248
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "original",
+      "motion": "idle",
+      "direction": 0,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 259
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 259
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 259
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "original",
+      "motion": "idle",
+      "direction": 1,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 245
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 245
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 245
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "original",
+      "motion": "idle",
+      "direction": 2,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 249
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 249
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 249
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "original",
+      "motion": "idle",
+      "direction": 3,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "original",
+      "motion": "idle",
+      "direction": 4,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 271
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 271
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 271
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "original",
+      "motion": "idle",
+      "direction": 5,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 253
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 253
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 253
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "original",
+      "motion": "idle",
+      "direction": 6,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 1,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 243
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 243
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 243
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "original",
+      "motion": "idle",
+      "direction": 7,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 1,
+      "legacyVertical": 1,
+      "legacyDiagonal": 1,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 251
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 1,
+          "legacyDiagonal": 1,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 251
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 1,
+          "legacyDiagonal": 1,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 251
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "original",
+      "motion": "walk",
+      "direction": 0,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 247
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 247
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 247
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "original",
+      "motion": "walk",
+      "direction": 1,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 256
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 256
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 256
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "original",
+      "motion": "walk",
+      "direction": 2,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 258
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 258
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 258
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "original",
+      "motion": "walk",
+      "direction": 3,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 263
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 263
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 263
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "original",
+      "motion": "walk",
+      "direction": 4,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 262
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 262
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 262
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "original",
+      "motion": "walk",
+      "direction": 5,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 265
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 265
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 265
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "original",
+      "motion": "walk",
+      "direction": 6,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 263
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 263
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 263
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "original",
+      "motion": "walk",
+      "direction": 7,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 250
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 250
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 250
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "expressive",
+      "motion": "still",
+      "direction": 0,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 253
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 253
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 253
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "expressive",
+      "motion": "still",
+      "direction": 1,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 245
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 245
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 245
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "expressive",
+      "motion": "still",
+      "direction": 2,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 243
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 243
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 243
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "expressive",
+      "motion": "still",
+      "direction": 3,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "expressive",
+      "motion": "still",
+      "direction": 4,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 261
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 261
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 261
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "expressive",
+      "motion": "still",
+      "direction": 5,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "expressive",
+      "motion": "still",
+      "direction": 6,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 242
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 242
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 242
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "expressive",
+      "motion": "still",
+      "direction": 7,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 248
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 248
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 248
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "expressive",
+      "motion": "idle",
+      "direction": 0,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 259
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 259
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 259
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "expressive",
+      "motion": "idle",
+      "direction": 1,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 245
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 245
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 245
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "expressive",
+      "motion": "idle",
+      "direction": 2,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 249
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 249
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 249
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "expressive",
+      "motion": "idle",
+      "direction": 3,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "expressive",
+      "motion": "idle",
+      "direction": 4,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 271
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 271
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 271
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "expressive",
+      "motion": "idle",
+      "direction": 5,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 253
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 253
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 253
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "expressive",
+      "motion": "idle",
+      "direction": 6,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 1,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 243
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 243
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 243
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "expressive",
+      "motion": "idle",
+      "direction": 7,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 1,
+      "legacyVertical": 1,
+      "legacyDiagonal": 1,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 251
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 1,
+          "legacyDiagonal": 1,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 251
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 1,
+          "legacyDiagonal": 1,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 251
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "expressive",
+      "motion": "walk",
+      "direction": 0,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 247
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 247
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 247
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "expressive",
+      "motion": "walk",
+      "direction": 1,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 256
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 256
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 256
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "expressive",
+      "motion": "walk",
+      "direction": 2,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 258
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 258
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 258
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "expressive",
+      "motion": "walk",
+      "direction": 3,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 263
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 263
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 263
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "expressive",
+      "motion": "walk",
+      "direction": 4,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 262
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 262
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 262
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "expressive",
+      "motion": "walk",
+      "direction": 5,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 265
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 265
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 265
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "expressive",
+      "motion": "walk",
+      "direction": 6,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 263
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 263
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 263
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "round",
+      "preset": "expressive",
+      "motion": "walk",
+      "direction": 7,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 250
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 250
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 250
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "original",
+      "motion": "still",
+      "direction": 0,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 253
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 253
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 253
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "original",
+      "motion": "still",
+      "direction": 1,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 244
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 244
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 244
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "original",
+      "motion": "still",
+      "direction": 2,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 242
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 242
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 242
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "original",
+      "motion": "still",
+      "direction": 3,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 251
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 251
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 251
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "original",
+      "motion": "still",
+      "direction": 4,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 261
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 261
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 261
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "original",
+      "motion": "still",
+      "direction": 5,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 251
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 251
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 251
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "original",
+      "motion": "still",
+      "direction": 6,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 241
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 241
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 241
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "original",
+      "motion": "still",
+      "direction": 7,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 247
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 247
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 247
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "original",
+      "motion": "idle",
+      "direction": 0,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 259
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 259
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 259
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "original",
+      "motion": "idle",
+      "direction": 1,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 244
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 244
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 244
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "original",
+      "motion": "idle",
+      "direction": 2,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 246
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 246
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 246
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "original",
+      "motion": "idle",
+      "direction": 3,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 251
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 251
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 251
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "original",
+      "motion": "idle",
+      "direction": 4,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 271
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 271
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 271
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "original",
+      "motion": "idle",
+      "direction": 5,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "original",
+      "motion": "idle",
+      "direction": 6,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 1,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 241
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 241
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 241
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "original",
+      "motion": "idle",
+      "direction": 7,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 250
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 250
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 250
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "original",
+      "motion": "walk",
+      "direction": 0,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 247
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 247
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 247
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "original",
+      "motion": "walk",
+      "direction": 1,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 255
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 255
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 255
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "original",
+      "motion": "walk",
+      "direction": 2,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 258
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 258
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 258
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "original",
+      "motion": "walk",
+      "direction": 3,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 262
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 262
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 262
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "original",
+      "motion": "walk",
+      "direction": 4,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 262
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 262
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 262
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "original",
+      "motion": "walk",
+      "direction": 5,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 264
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 264
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 264
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "original",
+      "motion": "walk",
+      "direction": 6,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 263
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 263
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 263
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "original",
+      "motion": "walk",
+      "direction": 7,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 249
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 249
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 249
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "expressive",
+      "motion": "still",
+      "direction": 0,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 253
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 253
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 253
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "expressive",
+      "motion": "still",
+      "direction": 1,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 244
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 244
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 244
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "expressive",
+      "motion": "still",
+      "direction": 2,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 242
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 242
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 242
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "expressive",
+      "motion": "still",
+      "direction": 3,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 251
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 251
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 251
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "expressive",
+      "motion": "still",
+      "direction": 4,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 261
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 261
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 261
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "expressive",
+      "motion": "still",
+      "direction": 5,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 251
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 251
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 251
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "expressive",
+      "motion": "still",
+      "direction": 6,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 241
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 241
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 241
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "expressive",
+      "motion": "still",
+      "direction": 7,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 247
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 247
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 247
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "expressive",
+      "motion": "idle",
+      "direction": 0,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 259
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 259
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 259
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "expressive",
+      "motion": "idle",
+      "direction": 1,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 244
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 244
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 244
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "expressive",
+      "motion": "idle",
+      "direction": 2,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 246
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 246
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 246
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "expressive",
+      "motion": "idle",
+      "direction": 3,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 251
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 251
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 251
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "expressive",
+      "motion": "idle",
+      "direction": 4,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 271
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 271
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 271
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "expressive",
+      "motion": "idle",
+      "direction": 5,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 252
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "expressive",
+      "motion": "idle",
+      "direction": 6,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 1,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 241
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 241
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 241
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "expressive",
+      "motion": "idle",
+      "direction": 7,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 250
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 250
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 250
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "expressive",
+      "motion": "walk",
+      "direction": 0,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 247
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 247
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 247
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "expressive",
+      "motion": "walk",
+      "direction": 1,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 255
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 255
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 255
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "expressive",
+      "motion": "walk",
+      "direction": 2,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 258
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 258
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 258
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "expressive",
+      "motion": "walk",
+      "direction": 3,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 262
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 262
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 262
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "expressive",
+      "motion": "walk",
+      "direction": 4,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 262
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 262
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 262
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "expressive",
+      "motion": "walk",
+      "direction": 5,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 264
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 264
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 264
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "expressive",
+      "motion": "walk",
+      "direction": 6,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 263
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 263
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 263
+        }
+      ],
+      "variant": "precise"
+    },
+    {
+      "shape": "cylinder",
+      "preset": "expressive",
+      "motion": "walk",
+      "direction": 7,
+      "vertical": 0,
+      "diagonal": 0,
+      "sourceVertical": 0,
+      "sourceND": 0,
+      "legacyVertical": 0,
+      "legacyDiagonal": 0,
+      "newChangedPixels": 0,
+      "counts": [
+        {
+          "opacity": 0,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 249
+        },
+        {
+          "opacity": 0.5,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 249
+        },
+        {
+          "opacity": 1,
+          "vertical": 0,
+          "diagonal": 0,
+          "legacyVertical": 0,
+          "legacyDiagonal": 0,
+          "newDiagonalPixels": 0,
+          "color": 0,
+          "nd": 0,
+          "silhouette": 0,
+          "filled": 249
+        }
+      ],
+      "variant": "precise"
+    }
+  ],
+  "blink": [
+    {
+      "tick": 0,
+      "diff": 0
+    },
+    {
+      "tick": 151,
+      "diff": 0
+    },
+    {
+      "tick": 154,
+      "diff": 0
+    },
+    {
+      "tick": 159,
+      "diff": 0
+    }
+  ],
+  "overlaps": [
+    {
+      "point": [
+        13,
+        -10
+      ],
+      "color": 0,
+      "nd": 0,
+      "farBackground": 0
+    },
+    {
+      "point": [
+        -7.5,
+        -4.9
+      ],
+      "color": 0,
+      "nd": 0,
+      "farBackground": 0
+    },
+    {
+      "point": [
+        8,
+        10
+      ],
+      "color": 0,
+      "nd": 0,
+      "farBackground": 0
+    }
+  ],
+  "errors": []
+}

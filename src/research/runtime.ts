@@ -73,7 +73,7 @@ export function renderLook(dt=0){
  worldScene.visible=decalScene.visible=p.background==='map';
  const u=postMat.uniforms;u.uLookOn.value=1;u.uLookInk.value.set(v.outlineColor);if(v.outlineColor===BASE.outlineColor)u.uLookInk.value.setRGB(.10,.06,.17);
  u.uLookInnerInk.value.set(v.innerOutlineColor);if(v.innerOutlineColor===BASE.innerOutlineColor)u.uLookInnerInk.value.setRGB(.10,.06,.17);
- u.uLookOpacity.value.set(v.outerOpacity,v.innerOpacity);
+ u.uLookOpacity.value.set(v.outerOpacity,v.innerOpacity);u.uLookMode.value=v.outlineMode==='underpaint'?1:v.outlineMode==='inset'?2:0;
  const high=p.view==='3d', scale=high?4:1;if(canvas.width!==W*scale||canvas.height!==H*scale)renderer.setSize(W*scale,H*scale,false);
  renderWorld({f1:!high,f2:!high,f3:!high,face:'pixel'},X,Z,Math.round(player.gx),-Math.round(player.gy)+Math.round(.9*COSP/texel()),player.gx,player.gy,{blob:p.background==='map',skipComposite:high});
  if(high){

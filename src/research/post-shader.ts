@@ -5,7 +5,7 @@ uniform vec2 uRes; uniform float uF2; uniform float uF3; uniform float uNDOn;
 uniform vec3 uLightDir; uniform float uRange; uniform float uTexel;
 uniform float uStamp; uniform vec2 uGlyph; uniform float uAtlasCols;
 uniform vec3 uEye0; uniform vec3 uEye1; uniform vec3 uBrow0; uniform vec3 uBrow1;
-uniform float uLookOn; uniform vec3 uLookInk; uniform vec3 uLookInnerInk; uniform vec2 uLookOpacity; uniform vec4 uMouth;
+uniform float uLookMode; uniform float uLookOn; uniform vec3 uLookInk; uniform vec3 uLookInnerInk; uniform vec2 uLookOpacity; uniform vec4 uMouth;
 uniform vec4 uIcon; uniform vec2 uIconSize; uniform float uIconCols;
 uniform float uResearchStamp; uniform sampler2D tResearchStamp; uniform vec4 uResearchRects[6]; uniform vec3 uResearchOriginalEyes[2];
 varying vec2 vUv;
@@ -37,9 +37,17 @@ void nb(vec2 uv, float g, vec4 me, float meS, inout float found, inout float bId
   vec4 q = decodeND(uv);
   if (q.w < 0.5) return;
   bool sameObj = abs(q.w - me.w) < 0.5;
-  bool closer = sameObj ? (q.z - me.z) * uRange > g : texture2D(tDepth, uv).r < meS - 0.00001;
+  // Two packed-depth codes cover a one-code rounding change at each endpoint.
+  // Research-only: do not assign foreground paint at an ambiguous internal edge.
+  float paintGuard=(uLookOn>.5 && uLookMode>.5 && abs(me.w-2.0)<.5)?2.0*uRange/4095.0:0.0;
+  bool closer = sameObj ? (q.z - me.z) * uRange > g+paintGuard : texture2D(tDepth, uv).r < meS - 0.00001;
   if (closer) {
-    if (found < 0.5 || abs(q.w - 2.0) < 0.5) { bId = q.w; bUv = uv; }
+    bool choose = found < 0.5 || abs(q.w - 2.0) < 0.5;
+    if(uLookOn>.5 && uLookMode>.5 && found>.5){
+      vec4 prior=decodeND(bUv);
+      choose=abs(prior.w-q.w)<.5 ? q.z>prior.z : texture2D(tDepth,uv).r<texture2D(tDepth,bUv).r;
+    }
+    if (choose) { bId = q.w; bUv = uv; }
     found = 1.0;
   } else if (sameObj && me.w > 0.5) {
     vec3 n1 = fullN(me), n2 = fullN(q);
@@ -61,6 +69,8 @@ vec4 researchInk(vec2 p,vec4 r,float tile){
 void main(){
   vec2 t = 1.0 / uRes;
   vec4 c = srcAt(vUv);
+  vec2 paintUv=vUv;
+  bool ownPaint=uLookOn>.5 && uLookMode>.5;
   bool cov = c.a > 0.5;
   vec4 me = vec4(0.0);
   if (uNDOn > 0.5) me = decodeND(vUv);
@@ -80,10 +90,18 @@ void main(){
       if (abs(bId - 2.0) < 0.5 && !meChar) {
         vec3 nc = srcAt(bUv).rgb;
         vec4 line = vec4(mix(uLookOn>.5?uLookInk:INK, nc * 0.3, 0.35), 1.0);
-        c = uLookOn>.5 ? mix(c,line,uLookOpacity.x) : line;
+        if(ownPaint){
+          // Keep the old line footprint, but give it foreground paint at every opacity.
+          // Inset is a diagnostic alternative: it does not extend the silhouette.
+          if(uLookMode<1.5){c=vec4(mix(nc,line.rgb,uLookOpacity.x),1.0);paintUv=bUv;}
+        }else c = uLookOn>.5 ? mix(c,line,uLookOpacity.x) : line;
       } else if (meChar) {
         vec3 line = mix(c.rgb * 0.5, uLookOn>.5?uLookInnerInk:INK, 0.3);
-        c.rgb = uLookOn>.5 ? mix(c.rgb,line,uLookOpacity.y) : line;
+        if(ownPaint && abs(bId-2.0)<.5){
+          vec3 fill=srcAt(bUv).rgb;
+          line=mix(fill*.5,uLookInnerInk,.3);
+          c=vec4(mix(fill,line,uLookOpacity.y),1.0);paintUv=bUv;
+        }else c.rgb = uLookOn>.5 ? mix(c.rgb,line,uLookOpacity.y) : line;
       } else if (me.w > 0.5) {
         c.rgb = mix(c.rgb * 0.62, INK, 0.12);
       }
@@ -91,9 +109,13 @@ void main(){
       c.rgb = min(c.rgb * 1.15 + 0.04, vec3(1.0));
     }
   }
+  if(ownPaint && uLookMode>1.5 && meChar && uF3>.5){
+    bool edge=abs(decodeND(vUv+vec2(t.x,0.0)).w-2.0)>.5 || abs(decodeND(vUv-vec2(t.x,0.0)).w-2.0)>.5 || abs(decodeND(vUv+vec2(0.0,t.y)).w-2.0)>.5 || abs(decodeND(vUv-vec2(0.0,t.y)).w-2.0)>.5;
+    if(edge)c.rgb=mix(c.rgb,mix(uLookInk,c.rgb*.3,.35),uLookOpacity.x);
+  }
   vec2 p = floor(vUv * uRes);
   if (uStamp > 0.5 && meChar) {
-    float rawA = texture2D(tColor, vUv).a;
+    float rawA = texture2D(tColor, paintUv).a;
     bool skin = uF2 > 0.5 ? (rawA > 0.5 && rawA < 0.8) : true;
     vec4 g = vec4(0.0);
     if (skin) { g = glyphAt(p, uEye0); if (g.a < 0.5) g = glyphAt(p, uEye1); }
@@ -104,7 +126,7 @@ void main(){
     if(uLookOn>.5 && skin && md.x>=0.0 && md.y>=0.0 && md.x<uMouth.z && md.y<uMouth.w) c=vec4(INK,1.0);
   }
   if(uResearchStamp>.5 && meChar){
-    float rawA=texture2D(tColor,vUv).a;
+    float rawA=texture2D(tColor,paintUv).a;
     // Shared color pass already resolved hair/background depth. Never paint over it.
     if(rawA>.5 && rawA<.8){
       vec4 ink=researchInk(p,uResearchRects[5],5.0);ink.rgb*=ink.a;
