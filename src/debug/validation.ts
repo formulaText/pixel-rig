@@ -13,7 +13,7 @@ import { ReplayClock, inputAt, parseInputs, presets } from './replay';
 import { PerformanceRun } from './metrics';
 import { comparePixels, differingPixels, type PixelFrame } from './pixels';
 import { type BufferView } from './buffers';
-import { characterStudy, type CharacterVariant } from './character-study';
+import { characterStudy, DEFAULT_CHARACTER_VARIANT, type CharacterSelection } from './character-study';
 
 declare const __BUILD_INFO__: {buildId:string; commit:string; builtAt:string};
 const el = <T extends HTMLElement=HTMLElement>(id:string) => document.getElementById(id) as T;
@@ -57,7 +57,7 @@ function conditions() {
     replay:'入力列を秒数から既存STEPへ丸めて繰返し。リセットで時刻0・乱数先頭・初期位置へ戻る',
     stepSeconds:STEP, viewport:{width:innerWidth,height:innerHeight,dpr:devicePixelRatio,orientation:innerWidth>innerHeight?'横':'縦',bufferWidth:W,bufferHeight:H},
     browser:navigator.userAgent, characters:1, pointLights:state.tod==='day'?0:LAMPS.length, shadowLights:state.shadow?1:0,
-    qualityAdjustment:'なし', characterStudy:{...characterStudy,presetControlsActive:studyPreset()}, bufferView, recording:input('v-recording').checked?'録画中（申告）':'録画なし（申告・自動検出不可）', state:snapshot() };
+    qualityAdjustment:'なし', characterStudy:{...characterStudy,defaultVariant:DEFAULT_CHARACTER_VARIANT,presetControlsActive:studyPreset()}, bufferView, recording:input('v-recording').checked?'録画中（申告）':'録画なし（申告・自動検出不可）', state:snapshot() };
 }
 function fingerprint() { return JSON.stringify({settings:settings(),seed,preset,inputs,W,H,characterStudy}); }
 function notice(text:string) { el('v-message').textContent=text; }
@@ -91,9 +91,10 @@ function lockControls() {
   el<HTMLSelectElement>('v-buffer').disabled=measuring;
 }
 export function leaveValidation() {
-  characterStudy.variant='baseline'; characterStudy.freezePose=false; characterStudy.fixedCamera=false;
-  el<HTMLSelectElement>('v-character-variant').value='baseline'; input('v-freeze-pose').checked=false; input('v-fixed-camera').checked=false;
-  stopMeasurement('通常操作へ復帰'); active=false; clock.reset(); setReplayInput(null); seedRuntime(null); resetInput(); resetLogic(); resetWorld(11);
+  stopMeasurement('通常操作へ復帰');
+  characterStudy.selection='default'; characterStudy.freezePose=false; characterStudy.fixedCamera=false;
+  el<HTMLSelectElement>('v-character-variant').value='default'; input('v-freeze-pose').checked=false; input('v-fixed-camera').checked=false;
+  active=false; clock.reset(); setReplayInput(null); seedRuntime(null); resetInput(); resetLogic(); resetWorld(11);
   bufferView='final'; el<HTMLSelectElement>('v-buffer').value='final';
   if(savedSettings) applySettings(savedSettings);
   setPlayerWorld(0,2.5); shared.uTime.value=0; baseline=null; el<HTMLDetailsElement>('validation').open=false; draw(); lockControls(); refresh(); notice('通常操作に戻りました');
@@ -163,15 +164,17 @@ function refresh() {
   }
 }
 export function result() { return { schema:'pixel-rig-validation-1',conditions:conditions(),performance:lastPerformance ?? (performanceRun ? {conditions:performanceConditions,result:performanceRun.result(),endState:snapshot()} : null),pixelComparison:lastComparison,notices,
-  knownIssues:['PNG保存は保留','色ちらつき：Aは実機で部分改善、Bは追加の深度精度比較・実機未確認。いずれも未採用。性能測定は見た目の改善確認後'],acceptance:'自動的な性能合格・実機確認・採用承認を意味しません' }; }
+  knownIssues:['PNG保存は保留','Bは既存ビルドで実機確認・採用済み。既定化した新ビルドは実機確認待ち','自動検査10条件の差分は残存。まばたき時の変化は原因未確定で別件'],acceptance:'自動的な性能合格・実機確認・採用承認を意味しません' }; }
 function showResult() { input('v-result').value=JSON.stringify(result(),null,2); }
 export function bindValidation(render:(options?:CaptureOptions)=>void) {
   draw=render;
   el('v-preset').innerHTML=Object.entries(presets).map(([key,p])=>`<option value="${key}">${p.label}</option>`).join('');
   el<HTMLSelectElement>('v-preset').value='still';
+  // Do not restore a browser-retained comparison as the normal rendering mode.
+  el<HTMLSelectElement>('v-character-variant').value=characterStudy.selection;
   el('v-character-variant').addEventListener('change',()=>{
     stopMeasurement('比較方式の変更');
-    characterStudy.variant=el<HTMLSelectElement>('v-character-variant').value as CharacterVariant;
+    characterStudy.selection=el<HTMLSelectElement>('v-character-variant').value as CharacterSelection;
     try { resetValidation(); notice('同じ経路の先頭へ戻りました。「再生」で変更前／候補を比較してください'); }
     catch(e) { notice((e as Error).message); }
   });

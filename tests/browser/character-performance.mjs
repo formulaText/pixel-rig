@@ -19,7 +19,7 @@ try{
   await p.goto('http://127.0.0.1:5177/?study=color');await p.waitForFunction(()=>document.getElementById('hud').textContent.includes('fps'));
   assert.equal(await p.evaluate(()=>typeof window.__validation),'undefined');
   assert.equal(await p.evaluate(()=>window.__reads),0);
-  assert.equal(await p.locator('#validation').getAttribute('open'),'');assert.equal(await p.locator('#v-character-variant').inputValue(),'baseline');
+  assert.equal(await p.locator('#validation').getAttribute('open'),'');assert.equal(await p.locator('#v-character-variant').inputValue(),'default');
   await p.selectOption('#v-preset','color-vertical');await p.selectOption('#v-character-variant',variant);
   await p.locator('#v-play').tap();await p.waitForTimeout(300);await p.locator('#v-play').tap();
   const stopped=await p.locator('#v-clock').textContent();await p.waitForTimeout(100);assert.equal(await p.locator('#v-clock').textContent(),stopped);
@@ -36,7 +36,7 @@ try{
   assert(JSON.parse(await p.locator('#v-result').inputValue()).performance);
   await p.locator('#v-exit').tap();assert.equal(await p.locator('#normal-controls').isDisabled(),false);
   await p.locator('#validation>summary').tap();await p.locator('#v-copy').tap();
-  const returned=JSON.parse(await p.locator('#v-result').inputValue());assert.equal(returned.conditions.mode,'通常操作');assert.equal(returned.conditions.state.ticks,0);assert.equal(returned.conditions.characterStudy.variant,'baseline');
+  const returned=JSON.parse(await p.locator('#v-result').inputValue());assert.equal(returned.conditions.mode,'通常操作');assert.equal(returned.conditions.state.ticks,0);assert.equal(returned.conditions.characterStudy.variant,'precise');
   const stage=await p.locator('#stage').boundingBox();await p.mouse.move(stage.x+stage.width/2,stage.y+stage.height/2);await p.mouse.down();await p.mouse.move(stage.x+stage.width/2+30,stage.y+stage.height/2);await p.waitForTimeout(200);await p.mouse.up();
   assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
   await p.selectOption('#v-preset','color-vertical');await p.selectOption('#v-character-variant',variant);

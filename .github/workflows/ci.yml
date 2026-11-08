@@ -11,6 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
+          fetch-depth: 0 # Compare normal rendering with the adopted B source commit.
           persist-credentials: false
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
@@ -31,5 +32,9 @@ jobs:
           CHARACTER_CI: '1'
       - name: ビルド済みA／B比較UI（性能測定は保留）
         run: npm run test:character-built
+        env:
+          CHROMIUM_PATH: /usr/bin/google-chrome
+      - name: 採用済みBと通常既定描画の同条件一致・状態遷移
+        run: node tests/browser/character-default.mjs
         env:
           CHROMIUM_PATH: /usr/bin/google-chrome
