@@ -1,0 +1,312 @@
+{
+  "openEyeRoundtrip": true,
+  "idleFrozen": true,
+  "walkPreserved": true,
+  "tilt": {
+    "rows": [
+      -0.20943951023931953,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "max": 0.025832775944174782
+  },
+  "brows": {
+    "rows": [
+      {
+        "direction": 1,
+        "hidden": true
+      },
+      {
+        "direction": 2,
+        "hidden": true
+      },
+      {
+        "direction": 3,
+        "hidden": true
+      },
+      {
+        "direction": 4,
+        "hidden": true
+      },
+      {
+        "direction": 5,
+        "hidden": true
+      },
+      {
+        "direction": 6,
+        "hidden": true
+      },
+      {
+        "direction": 7,
+        "hidden": true
+      }
+    ],
+    "blinkChanges": true
+  },
+  "storageAndManualCopyRoundtrip": true,
+  "hair": [
+    {
+      "style": "original",
+      "skin": 10
+    },
+    {
+      "style": "eyes-visible",
+      "skin": 12
+    }
+  ],
+  "browHairPixels": {
+    "onHair": 8,
+    "unexpected": 0
+  },
+  "occlusion": [
+    {
+      "view": "dot",
+      "foregroundBlocksBrow": true
+    },
+    {
+      "view": "3d",
+      "foregroundBlocksBrow": true
+    }
+  ],
+  "lighting": {
+    "day": 218,
+    "dark": 146,
+    "lamp": 216,
+    "undimmed": 255,
+    "samples": [
+      147,
+      147,
+      147,
+      147,
+      147,
+      148,
+      148,
+      148,
+      149,
+      149,
+      149,
+      150,
+      150,
+      151,
+      151,
+      152,
+      152,
+      153,
+      154,
+      154,
+      155,
+      156,
+      156,
+      157,
+      158,
+      159,
+      160,
+      160,
+      161,
+      162,
+      163,
+      164,
+      165,
+      166,
+      167,
+      168,
+      169,
+      170,
+      171,
+      172,
+      173,
+      174,
+      175,
+      176,
+      177,
+      179,
+      180,
+      181,
+      182,
+      183,
+      184,
+      185,
+      186,
+      186,
+      187,
+      188,
+      189,
+      189,
+      190,
+      190,
+      191,
+      191,
+      191,
+      191,
+      195,
+      199,
+      202,
+      206,
+      209,
+      211,
+      213,
+      215,
+      217,
+      218,
+      218,
+      219,
+      219,
+      218,
+      218,
+      217,
+      216
+    ],
+    "maxStep": 4
+  },
+  "movement": [
+    {
+      "motion": "still",
+      "direction": 0,
+      "vertical": 0,
+      "diagonal": 0
+    },
+    {
+      "motion": "still",
+      "direction": 1,
+      "vertical": 0,
+      "diagonal": 0
+    },
+    {
+      "motion": "still",
+      "direction": 2,
+      "vertical": 0,
+      "diagonal": 0
+    },
+    {
+      "motion": "still",
+      "direction": 3,
+      "vertical": 0,
+      "diagonal": 0
+    },
+    {
+      "motion": "still",
+      "direction": 4,
+      "vertical": 0,
+      "diagonal": 0
+    },
+    {
+      "motion": "still",
+      "direction": 5,
+      "vertical": 0,
+      "diagonal": 0
+    },
+    {
+      "motion": "still",
+      "direction": 6,
+      "vertical": 0,
+      "diagonal": 0
+    },
+    {
+      "motion": "still",
+      "direction": 7,
+      "vertical": 0,
+      "diagonal": 0
+    },
+    {
+      "motion": "idle",
+      "direction": 0,
+      "vertical": 0,
+      "diagonal": 0
+    },
+    {
+      "motion": "idle",
+      "direction": 1,
+      "vertical": 0,
+      "diagonal": 0
+    },
+    {
+      "motion": "idle",
+      "direction": 2,
+      "vertical": 0,
+      "diagonal": 0
+    },
+    {
+      "motion": "idle",
+      "direction": 3,
+      "vertical": 0,
+      "diagonal": 0
+    },
+    {
+      "motion": "idle",
+      "direction": 4,
+      "vertical": 0,
+      "diagonal": 0
+    },
+    {
+      "motion": "idle",
+      "direction": 5,
+      "vertical": 0,
+      "diagonal": 0
+    },
+    {
+      "motion": "idle",
+      "direction": 6,
+      "vertical": 0,
+      "diagonal": 0
+    },
+    {
+      "motion": "idle",
+      "direction": 7,
+      "vertical": 0,
+      "diagonal": 0
+    },
+    {
+      "motion": "walk",
+      "direction": 0,
+      "vertical": 0,
+      "diagonal": 0
+    },
+    {
+      "motion": "walk",
+      "direction": 1,
+      "vertical": 0,
+      "diagonal": 0
+    },
+    {
+      "motion": "walk",
+      "direction": 2,
+      "vertical": 0,
+      "diagonal": 0
+    },
+    {
+      "motion": "walk",
+      "direction": 3,
+      "vertical": 0,
+      "diagonal": 0
+    },
+    {
+      "motion": "walk",
+      "direction": 4,
+      "vertical": 0,
+      "diagonal": 0
+    },
+    {
+      "motion": "walk",
+      "direction": 5,
+      "vertical": 0,
+      "diagonal": 0
+    },
+    {
+      "motion": "walk",
+      "direction": 6,
+      "vertical": 0,
+      "diagonal": 0
+    },
+    {
+      "motion": "walk",
+      "direction": 7,
+      "vertical": 0,
+      "diagonal": 0
+    }
+  ]
+}

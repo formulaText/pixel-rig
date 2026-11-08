@@ -1,3 +1,4 @@
+import {bindHomuraUI} from './research/homura-ui';
 import {organizeLookUI} from './research/layout';
 import {bindFaceEditor} from './research/face-ui';
 import './style.css';
@@ -75,6 +76,7 @@ bindValidation(drawWorld);
 bindLook();
 bindFaceEditor();
 organizeLookUI();
+bindHomuraUI();
 document.addEventListener('visibilitychange',()=>{ lastT=performance.now(); acc=0; });
 requestAnimationFrame(frame);
 

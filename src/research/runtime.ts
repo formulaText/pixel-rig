@@ -1,3 +1,5 @@
+import {frontWeight,previewAngle} from './look-presets';
+import {applyLookHair,restoreLookHair} from './look-hair';
 import {scaleResearchStamps} from './face-stamps';
 import {sampleLookMeasurement,interruptLookMeasurement} from './performance';
 import {applyResearchFace,restoreResearchFace} from './face-render';
@@ -30,11 +32,11 @@ export function enterLook(){
  resetLook();rebuild();resize();
 }
 export function resetLook(){
- lookClock.reset();resetLogic();resetInput();seedRuntime(11);resetWorld(11);setPlayerWorld(0,2.5);
+ lookClock.reset();resetLogic();resetInput();seedRuntime(11);resetWorld(11);const site=research.preview.lightSite;setPlayerWorld(site==='lamp'||site==='boundary'?3:0,site==='dark'?7:site==='lamp'?1.8:site==='boundary'?5:2.5);
  expr.seq=[];expr.seqT=0;expr.emote=null;expr.blinkWait=2.5;shared.uTime.value=0;
 }
 export function exitLook(){
- interruptLookMeasurement('通常操作へ戻りました');research.active=false;restoreResearchFace();lookClock.reset();J.head.position.y=.56;J.head.scale.setScalar(1);
+ interruptLookMeasurement('通常操作へ戻りました');research.active=false;restoreResearchFace();restoreLookHair();lookClock.reset();J.head.position.y=.56;J.head.scale.setScalar(1);
  worldScene.visible=decalScene.visible=true;characterStudy.selection='default';
  if(saved)Object.assign(state,saved);expr.autoBlink=blink;expr.seq=[];expr.emote=null;
  resetLogic();resetInput();setReplayInput(null);seedRuntime(null);resetWorld(11);setPlayerWorld(0,2.5);
@@ -56,18 +58,20 @@ export function renderLook(dt=0){
  const cpuStart=performance.now(),updates=lookClock.advance(dt,researchTick);const p=research.preview,v=effectiveLook();
  state.tod=p.light;state.face='pixel';characterStudy.selection='default';
  const t=lookClock.seconds,dir=p.autoDirection?Math.floor(t/2)%8:p.direction;
+ const angle=previewAngle(t,p.direction,p.autoDirection,v.headTiltScope==='front'),front=frontWeight(angle);
  setFace('pixel');J.head.position.y=.56;
  if(p.motion==='vertical'||p.motion==='diagonal')applyPose(true);
  else if(p.motion==='walk')walkPose(Math.floor(t/CYCLE*4)%4/4);
  else {
-  const b=p.motion==='still'?-1:(Math.floor(idleT*v.idleSpeed/.6)%2?1:-1);
+  const b=v.idleMotion==='none'?0:p.motion==='still'?-1:(Math.floor(idleT*v.idleSpeed/.6)%2?1:-1);
   idlePose(b);const dy=J.torso.position.y;
-  J.torso.position.y=dy*v.bodyIdle;J.head.position.y=.56+dy*(v.headIdle-v.bodyIdle);J.head.rotation.x*=v.headIdle;
+  const headIdle=v.headIdle*(v.frontFringe==='still'?1-front:1);
+  J.torso.position.y=v.idleMotion==='none'?0:dy*v.bodyIdle;J.head.position.y=.56+(v.idleMotion==='none'?0:dy*(headIdle-v.bodyIdle));J.head.rotation.x*=headIdle;
  }
- J.head.rotation.x-=v.headTilt*Math.PI/180;applyResearchFace();
+ J.head.rotation.x-=v.headTilt*Math.PI/180*(v.headTiltScope==='front'?front:1);applyResearchFace();applyLookHair(v);
  if(p.eyes==='closed'){expr.seq=[[2,999]];}else if(p.eyes==='open'||!p.blink){expr.seq=[];}
  J.motion.position.set(0,0,0);J.motion.rotation.set(0,0,0);
- J.root.rotation.y=dir*TAU/8;
+ J.root.rotation.y=angle;
  const X=player.gx*texel(),Z=player.gy*texel()/SINP;
  J.root.position.set(X,0,Z);shared.uTime.value=simTime;
  worldScene.visible=decalScene.visible=p.background==='map';
