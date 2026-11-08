@@ -46,7 +46,7 @@ export function bindLook(){
 
  get('look-open').addEventListener('click',()=>{enterLook();refreshLookUI();safe(list);});
  for(const [k,[min,max]]of Object.entries(limits))for(const suffix of ['','-number'])get('look-'+k+suffix).addEventListener('input',e=>{
-  const shown=(e.target as HTMLInputElement).valueAsNumber;const value=shown/(k.endsWith('Opacity')?100:1);if(!Number.isFinite(value)||value<min||value>max){message(`${labels[k]}は${min}〜${max}です`);return;}
+  const shown=(e.target as HTMLInputElement).valueAsNumber;const value=shown/(k.endsWith('Opacity')?100:1);if(!Number.isFinite(value)||value<min||value>max){message(`${labels[k]}は${k.endsWith('Opacity')?min*100:min}〜${k.endsWith('Opacity')?max*100:max}です`);return;}
   (research.values as any)[k]=value;for(const peer of ['','-number']){const input=get<HTMLInputElement>('look-'+k+peer);if(input!==e.target)input.value=String(shown);}
  });
  panel.querySelectorAll<HTMLButtonElement>('[data-look-reset]').forEach(b=>b.onclick=()=>{const k=b.dataset.lookReset as keyof LookValues;(research.values as any)[k]=clone(BASE[k]);refreshLookUI();});
