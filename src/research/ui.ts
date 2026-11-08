@@ -1,23 +1,30 @@
+import {readLibrary,persistDocument,storageError} from './storage';
 import {startLookMeasurement,lookMeasurementResult,bindLookMeasurement} from './performance';
 import {BASE,PREVIEW,research,clone,limits,validateDocument,type LookDocument,type Preview,type LookValues} from './model';
-import {enterLook,exitLook,lookClock,resetLook,stepLook,seekLook} from './runtime';
+import {enterLook,exitLook,lookClock,resetLook,stepLook,seekLook,seekLongLook} from './runtime';
 declare const __BUILD_INFO__:{buildId:string};
 const get=<T extends HTMLElement=HTMLElement>(id:string)=>document.getElementById(id) as T;
 const labels:Record<string,string>={headTilt:'頭を上げる角度（度）',headIdle:'頭の待機振幅（倍）',bodyIdle:'胴体の待機振幅（倍）',idleSpeed:'待機速度（倍）',outerOpacity:'外周線の不透明度',innerOpacity:'内部線の不透明度'};
-const storageKey='pixel-rig-look-library-v1';
+let savedSignature='',savedName='',operationBusy=false;
+const signature=()=>JSON.stringify([get<HTMLInputElement>('look-name')?.value.trim(),research.values,research.preview]);
+export function refreshSaveState(){const e=get('look-save-state');if(!e)return;e.textContent=operationBusy?'処理中…':savedSignature===signature()?`保存済み：${savedName}`:'未保存の変更あり';}
+function markSaved(name:string){savedName=name;savedSignature=signature();refreshSaveState();}
+function operation(label:string,fn:()=>void|Promise<void>){if(operationBusy)return;operationBusy=true;message(label+'中…');refreshSaveState();for(const e of document.querySelectorAll<HTMLButtonElement>('[data-save-action]')){e.disabled=true;e.setAttribute('aria-busy','true');}
+ const end=()=>{get('look-panel').inert=false;document.querySelector<HTMLElement>('.look-dock')!.inert=false;operationBusy=false;for(const e of document.querySelectorAll<HTMLButtonElement>('[data-save-action]')){e.disabled=false;e.removeAttribute('aria-busy');}refreshSaveState();};
+ try{const pending=fn();if(pending){get('look-panel').inert=true;document.querySelector<HTMLElement>('.look-dock')!.inert=true;pending.catch(e=>message(label+'できませんでした。'+storageError(e))).finally(end);}else end();}catch(e){message(label+'できませんでした。'+storageError(e));end();}}
+
 export function lookDocument():LookDocument{return {schema:3,name:get<HTMLInputElement>('look-name').value.trim()||'研究設定',buildId:__BUILD_INFO__.buildId,values:clone(research.values),preview:clone(research.preview),playback:{ticks:lookClock.ticks,paused:lookClock.paused}};}
-function message(s:string){get('look-message').textContent=s;}
+function message(s:string){get('look-message').textContent=s;const e=get('look-operation-result');if(e)e.textContent=s;}
 function safe(fn:()=>void){try{fn();}catch(e){message((e as Error).message);}}
 export function refreshLookUI(){
  for(const k of Object.keys(limits))for(const suffix of ['','-number'])(get<HTMLInputElement>('look-'+k+suffix)).value=String(research.values[k as keyof LookValues]);
  get<HTMLInputElement>('look-mouth').checked=research.values.mouth;get<HTMLInputElement>('look-outlineColor').value=research.values.outlineColor;get<HTMLInputElement>('look-innerOutlineColor').value=research.values.innerOutlineColor;
  for(const k of ['view','background','motion','direction','zoom','light']as const)get<HTMLSelectElement>('look-'+k).value=String(research.preview[k]);
  for(const k of ['blink','autoDirection']as const)get<HTMLInputElement>('look-'+k).checked=research.preview[k];
- get<HTMLSelectElement>('look-compare').value=research.baseline?'baseline':'draft';
+ get<HTMLSelectElement>('look-compare').value=research.baseline?'baseline':'draft';window.dispatchEvent(new Event('look-controls-refreshed'));refreshSaveState();
 }
-export function applyLookDocument(value:unknown){const d=validateDocument(value);research.values=d.values;research.preview=d.preview;research.baseline=false;get<HTMLInputElement>('look-name').value=d.name;seekLook(d.playback.ticks);lookClock.paused=d.playback.paused;refreshLookUI();window.dispatchEvent(new Event('look-restored'));}
-function library():Record<string,LookDocument>{const raw=localStorage.getItem(storageKey);if(!raw)return Object.create(null);const v=JSON.parse(raw);if(!v||typeof v!=='object'||Array.isArray(v))throw Error('保存領域の形式が不正です。上書きしません');return Object.assign(Object.create(null),v);}
-function list(){const names=Object.keys(library());const sel=get<HTMLSelectElement>('look-saved');sel.replaceChildren(...names.map(n=>{const o=document.createElement('option');o.value=o.textContent=n;return o;}));}
+export function applyLookDocument(value:unknown){const d=validateDocument(value);research.values=d.values;research.preview=d.preview;research.baseline=false;get<HTMLInputElement>('look-name').value=d.name;const finish=()=>{lookClock.paused=d.playback.paused;refreshLookUI();window.dispatchEvent(new Event('look-restored'));};if(d.playback.ticks>36000)return seekLongLook(d.playback.ticks,n=>message(`再生位置を復元中… ${Math.round(n*100)}%`)).then(finish);seekLook(d.playback.ticks);finish();}
+function list(selected=get<HTMLSelectElement>('look-saved').value){const names=Object.keys(readLibrary());const sel=get<HTMLSelectElement>('look-saved');sel.replaceChildren(...names.map(n=>{const o=document.createElement('option');o.value=o.textContent=n;return o;}));if(names.includes(selected))sel.value=selected;}
 export function bindLook(){
  const panel=document.createElement('section');panel.id='look-panel';panel.className='validation look-panel';panel.hidden=true;
  const select=(key:string,label:string,opts:[string,string][])=>`<label>${label}<select id="look-${key}">${opts.map(([v,l])=>`<option value="${v}">${l}</option>`).join('')}</select></label>`;
@@ -49,10 +56,10 @@ export function bindLook(){
  for(const k of ['blink','autoDirection']as const)get('look-'+k).onchange=()=>{research.preview[k]=get<HTMLInputElement>('look-'+k).checked;if(k==='blink'){import('../character/expression').then(({expr})=>{expr.seq=[];expr.autoBlink=research.preview.blink;});}};
  get('look-compare').onchange=()=>{research.baseline=get<HTMLSelectElement>('look-compare').value==='baseline';};
  get('look-play').onclick=()=>{lookClock.paused=!lookClock.paused;};get('look-step').onclick=stepLook;get('look-reset-time').onclick=resetLook;get('look-exit').onclick=exitLook;
- get('look-save').onclick=()=>safe(()=>{const d=validateDocument(lookDocument()),all=library();if(Object.keys(all).length>=30&&!all[d.name])throw Error('保存は30件までです');all[d.name]=d;localStorage.setItem(storageKey,JSON.stringify(all));list();get<HTMLSelectElement>('look-saved').value=d.name;message('端末内へ保存しました');});
- get('look-load').onclick=()=>safe(()=>{const d=library()[get<HTMLSelectElement>('look-saved').value];if(!d)throw Error('保存済み設定を選んでください');applyLookDocument(d);message('設定を復元しました');});
- get('look-paste').onclick=()=>safe(()=>{const text=get<HTMLTextAreaElement>('look-json').value;if(text.length>150000)throw Error('設定が大きすぎます');applyLookDocument(JSON.parse(text));message('貼り付けた設定を復元しました');});
- get('look-copy').onclick=async()=>{try{const text=JSON.stringify(validateDocument(lookDocument()),null,2);get<HTMLTextAreaElement>('look-json').value=text;await navigator.clipboard.writeText(text);message('設定をコピーしました');}catch(e){message('コピーできませんでした。内容欄を長押しして手動コピーできます。'+(e as Error).message);}};
+ get('look-save').onclick=()=>operation('保存',()=>{const d=persistDocument(lookDocument());list(d.name);if(get<HTMLSelectElement>('look-saved').value!==d.name)throw Error('保存は完了しましたが一覧を更新できません。再読み込みして保存済み一覧を確認してください。');markSaved(d.name);message(`保存しました：${d.name}（この端末のブラウザ）`);});
+ get('look-load').onclick=()=>operation('復元',()=>{const d=readLibrary()[get<HTMLSelectElement>('look-saved').value];if(!d)throw Error('保存済み設定を選んでください。');const finish=()=>{markSaved(d.name);message('設定を復元しました：'+d.name);};const result=applyLookDocument(d);if(result)return result.then(finish);finish();});
+ get('look-paste').onclick=()=>operation('貼り付け復元',()=>{const text=get<HTMLTextAreaElement>('look-json').value;if(text.length>150000)throw Error('設定が大きすぎます');const finish=()=>{refreshSaveState();message('貼り付けた設定を復元しました。この端末に残す場合は保存してください。');};const result=applyLookDocument(JSON.parse(text));if(result)return result.then(finish);finish();});
+ get('look-copy').onclick=()=>operation('コピー',async()=>{get('look-json').closest('details')!.open=true;const text=JSON.stringify(validateDocument(lookDocument()),null,2);get<HTMLTextAreaElement>('look-json').value=text;try{await navigator.clipboard.writeText(text);message('設定をコピーしました（ファイルの書き出しではありません）。');}catch(e){throw Error('コピーできませんでした。内容欄を長押しして手動コピーできます。'+(e as Error).message);}});
  bindLookMeasurement();get('look-measure').onclick=()=>safe(()=>{lookClock.paused=false;startLookMeasurement(lookDocument());});get('look-measure-copy').onclick=async()=>{try{const result=lookMeasurementResult();if(!result)throw Error('測定結果がありません');const text=JSON.stringify(result,null,2);get<HTMLTextAreaElement>('look-measure-result').value=text;await navigator.clipboard.writeText(text);message('測定結果をコピーしました');}catch(e){message('測定結果をコピーできませんでした。'+(e as Error).message);}};
  refreshLookUI();if(new URLSearchParams(location.search).get('study')==='look'){enterLook();refreshLookUI();safe(list);}
 }

@@ -28,10 +28,10 @@ function fields(){
  let html='';if(p){for(const [k,l,max]of [['x','配置範囲の横位置',1],['y','配置範囲の縦位置',1],['w','配置範囲の幅',.5],['h','配置範囲の高さ',.5]]as const)html+=num(prefix+'.rect.'+k,l,k==='w'||k==='h'?1/48:0,max,1/96);
  html+=num(prefix+'.imageScale','絵柄の拡大率（配置範囲は維持）',.5,2,.05);}
  if(part==='eyes'){
- html+=num(prefix+'.closeAt','閉じる基準位置（目の上端0・下端1）',0,1,.05)+num(prefix+'.minHeight','閉じ目の最小高さ（顔に対する比）',1/24,.2,1/96);
+ html+='<details><summary>まばたき・ハイライトの詳細</summary>';html+=num(prefix+'.closeAt','閉じる基準位置（目の上端0・下端1）',0,1,.05)+num(prefix+'.minHeight','閉じ目の最小高さ（顔に対する比）',1/24,.2,1/96);
  html+=check(prefix+'.highlight.show','ハイライトを表示')+check(prefix+'.highlight.hideClosed','閉じ目・半目ではハイライトを隠す');
  for(const [k,label]of [['x','横位置'],['y','縦位置'],['w','幅'],['h','高さ'],['opacity','不透明度']])html+=num(prefix+'.highlight.'+k,'ハイライトの'+label,0,1,.05);
- html+='<button class="btn ghost" id="face-copy-highlight">反対の目にも同じ側のハイライト</button>';
+ html+='<button class="btn ghost" id="face-copy-highlight">反対の目にも同じ側のハイライト</button></details>';
  }
  if(part==='brows'){html+=check(prefix+'.neutralVisible','通常表情でも眉を表示');const ex=research.preview.expression;html+=num(prefix+'.expressions.'+ex+'.dy','選択中の表情：眉の上下移動',-.15,.15,.01)+num(prefix+'.expressions.'+ex+'.angle','選択中の表情：眉の角度',-35,35,1);}
  $('face-part-fields').innerHTML=html;bindFields($('face-part-fields'));
@@ -44,7 +44,7 @@ function refresh(){
  $<HTMLSelectElement>('face-blink-mode').value=research.values.face.blinkMode;
  $<HTMLSelectElement>('face-eye-state').value=research.preview.eyes;$<HTMLSelectElement>('face-expression').value=research.preview.expression;
  $<HTMLInputElement>('face-hair').checked=research.preview.hair;$<HTMLInputElement>('face-mouth-open').checked=research.preview.mouthOpen;
- bindFields($('face-general'));fields();updateEditor();refreshLookUI();
+ bindFields($('look-face-editor')||$('look-panel'));fields();updateEditor();refreshLookUI();
 }
 function updateEditor(){
  const canvas=$<HTMLCanvasElement>('face-grid'),g=canvas.getContext('2d')!;g.clearRect(0,0,320,240);g.fillStyle='#d8b69c';g.fillRect(0,0,320,240);
@@ -75,7 +75,7 @@ export function bindFaceEditor(){
  <label>目の表示<select id="face-eye-state"><option value="auto">まばたき設定に従う</option><option value="open">開いた目を固定</option><option value="closed">閉じた目を固定</option></select></label><label><input type="checkbox" id="face-mouth-open">開口状態を表示</label>
  <label>眉の比較表情<select id="face-expression"><option value="neutral">通常</option><option value="angry">きりっと</option><option value="sad">困り眉</option></select></label>
  <p>左右はキャラクター本人から見た左右です。配置の連動とハイライトは独立です。鼻・そばかすは「追加描画」に描くと、まばたきの変形を受けません。</p>
- <label>編集する部位<select id="face-part"><option value="eyes">目</option><option value="brows">眉</option><option value="mouth">口</option><option value="extra">追加描画（鼻・そばかす）</option></select></label><label>左右<select id="face-side"><option value="left">本人の左</option><option value="right">本人の右</option></select></label><label>編集する絵柄<select id="face-layer"><option value="normal">通常</option><option value="closed">閉じ目（目）</option><option value="open">開口（口）</option></select></label>
+ <label>編集する部位<select id="face-part"><option value="brows">眉</option><option value="eyes" selected>目</option><option value="extra">追加描画（鼻・そばかす）</option><option value="mouth">口</option></select></label><label>左右<select id="face-side"><option value="left">本人の左</option><option value="right">本人の右</option></select></label><label>編集する絵柄<select id="face-layer"><option value="normal">通常</option><option value="closed">閉じ目（目）</option><option value="open">開口（口）</option></select></label>
  <div class="validation-actions"><button class="btn" id="face-pen">描く</button><button class="btn ghost" id="face-erase">消しゴム</button><button class="btn ghost" id="face-undo">元に戻す</button><button class="btn ghost" id="face-redo">やり直す</button></div><label>描く色<input type="color" id="face-color" value="#241a38"></label><div id="face-palette"></div>
  <canvas id="face-grid" width="320" height="240" aria-label="顔のドット編集格子"></canvas><p class="note" id="face-grid-info"></p><p class="note">格子内は描画操作、格子の外はスクロールです。配置範囲を変えても元の絵柄は保持します。保存・コピーは下の研究設定に顔も含みます。</p>
  <details><summary>選択した部位の配置・絵柄・閉じ目・ハイライト</summary><div id="face-part-fields"></div></details><p id="face-message" role="status"></p></details>`;
@@ -84,7 +84,7 @@ export function bindFaceEditor(){
  $('face-duplicate').onclick=()=>{const name=$<HTMLInputElement>('look-name');research.values=clone(research.values);name.value=(name.value+' の複製').slice(0,60);message('研究設定を複製しました。名前付き保存で別に残せます');dirtyFace();refresh();};
  $('face-reset').onclick=()=>{const old=snapshot();research.values.face=originalFace();research.values.head=clone(BASE.head);remember(old);dirtyFace();refresh();};
  $('face-head-shape').onchange=()=>{const old=snapshot();research.values.head.shape=$<HTMLSelectElement>('face-head-shape').value as any;remember(old);refresh();};
- for(const id of ['part','side','layer'])$('face-'+id).onchange=()=>{part=$<HTMLSelectElement>('face-part').value;side=$<HTMLSelectElement>('face-side').value as Side;layer=$<HTMLSelectElement>('face-layer').value;fields();updateEditor();};
+ for(const id of ['part','side','layer'])$('face-'+id).onchange=()=>{part=$<HTMLSelectElement>('face-part').value;side=$<HTMLSelectElement>('face-side').value as Side;const layers=$<HTMLSelectElement>('face-layer');for(const option of layers.options)option.disabled=option.value==='closed'?part!=='eyes':option.value==='open'?part!=='mouth':false;if(layers.selectedOptions[0].disabled)layers.value='normal';layer=layers.value;fields();updateEditor();};
  $('face-blink-mode').onchange=()=>mutate(()=>research.values.face.blinkMode=$<HTMLSelectElement>('face-blink-mode').value as any);
  $('face-eye-state').onchange=()=>{research.preview.eyes=$<HTMLSelectElement>('face-eye-state').value as any;expr.seq=[];};
  $('face-expression').onchange=()=>{research.preview.expression=$<HTMLSelectElement>('face-expression').value as any;if(research.preview.expression!=='neutral'){dirtyFace();}refresh();};

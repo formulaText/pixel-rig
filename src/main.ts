@@ -1,3 +1,4 @@
+import {organizeLookUI} from './research/layout';
 import {bindFaceEditor} from './research/face-ui';
 import './style.css';
 import { renderLook } from './research/runtime';
@@ -73,6 +74,7 @@ resize();
 bindValidation(drawWorld);
 bindLook();
 bindFaceEditor();
+organizeLookUI();
 document.addEventListener('visibilitychange',()=>{ lastT=performance.now(); acc=0; });
 requestAnimationFrame(frame);
 

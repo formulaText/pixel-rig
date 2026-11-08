@@ -20,7 +20,7 @@ export function validateDocument(input:unknown):LookDocument {
  if(typeof input.name!=='string'||!input.name.trim()||input.name.length>60)throw Error('設定名は1〜60文字にしてください');
  if(typeof input.buildId!=='string'||input.buildId.length>120)throw Error('ビルドIDが不正です');
  const v=input.values,p=input.preview;object(v);object(p);
- object(input.playback);if(!Number.isInteger(input.playback.ticks)||input.playback.ticks<0||input.playback.ticks>36000||typeof input.playback.paused!=='boolean')throw Error('再生時刻は0〜600秒にしてください');
+ object(input.playback);if(!Number.isInteger(input.playback.ticks)||input.playback.ticks<0||input.playback.ticks>5184000||typeof input.playback.paused!=='boolean')throw Error('再生位置は0〜24時間の範囲にしてください');
  for(const [k,[min,max]]of Object.entries(limits))if(typeof v[k]!=='number'||!Number.isFinite(v[k])||v[k]<min||v[k]>max)throw Error(`${k} は ${min}〜${max} の数値にしてください`);
  if(typeof v.mouth!=='boolean'||typeof v.outlineColor!=='string'||typeof v.innerOutlineColor!=='string'||(!/^#[0-9a-f]{6}$/i.test(v.outlineColor)||!/^#[0-9a-f]{6}$/i.test(v.innerOutlineColor)))throw Error('口の設定または輪郭色が不正です');
  object(v.head);if(!['original','round','cylinder'].includes(v.head.shape)||typeof v.head.size!=='number'||!Number.isFinite(v.head.size)||v.head.size<.9||v.head.size>1.1)throw Error('頭形状または大きさ（0.9〜1.1）が不正です');validateFace(v.face);

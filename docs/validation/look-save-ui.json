@@ -1,0 +1,41 @@
+{
+  "results": [
+    {
+      "name": "portrait",
+      "savedImmediately": true,
+      "reloaded": true,
+      "longReplaySaved": true,
+      "oldEntriesKept": true,
+      "quotaErrorVisible": true,
+      "selectedState": true,
+      "pressedState": true,
+      "previewHeight": 255.171875,
+      "toolbarBelowPreview": true
+    },
+    {
+      "name": "landscape",
+      "savedImmediately": true,
+      "reloaded": true,
+      "longReplaySaved": true,
+      "oldEntriesKept": true,
+      "quotaErrorVisible": true,
+      "selectedState": true,
+      "pressedState": true,
+      "previewHeight": 238.3125,
+      "toolbarBelowPreview": true
+    },
+    {
+      "name": "tablet",
+      "savedImmediately": true,
+      "reloaded": true,
+      "longReplaySaved": true,
+      "oldEntriesKept": true,
+      "quotaErrorVisible": true,
+      "selectedState": true,
+      "pressedState": true,
+      "previewHeight": 661.3125,
+      "toolbarBelowPreview": true
+    }
+  ],
+  "errors": []
+}
