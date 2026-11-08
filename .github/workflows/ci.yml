@@ -38,3 +38,7 @@ jobs:
         run: node tests/browser/character-default.mjs
         env:
           CHROMIUM_PATH: /usr/bin/google-chrome
+      - name: ルック研究基盤の比較・保存・復帰
+        run: node tests/browser/look.mjs
+        env:
+          CHROMIUM_PATH: /usr/bin/google-chrome

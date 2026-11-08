@@ -80,3 +80,14 @@ fieldset:disabled{opacity:.55}
 @media (orientation:landscape) and (min-width:600px) and (max-width:899px){
   .layout:has(#validation[open]){grid-template-columns:1fr 360px;grid-template-rows:1fr}
 }
+
+[hidden]{display:none!important}
+.look-active #look-open,.look-active #hint{display:none}
+.look-panel h2{font-size:17px;margin:8px 0}
+.look-panel input:not([type=range]):not([type=checkbox]):not([type=color]){width:100%;font-size:16px;padding:9px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+.look-range{display:grid;grid-template-columns:minmax(60px,1fr) 80px 70px;gap:6px;align-items:center}
+.look-range input[type=range]{width:100%}
+.look-panel input[type=color]{width:70px;height:44px;margin-left:12px}
+.look-panel button{min-height:44px}
+.look-active .layout{grid-template-rows:minmax(190px,42dvh) 1fr}
+@media(orientation:landscape) and (min-width:600px){.look-active .layout{grid-template-columns:minmax(220px,1fr) 360px;grid-template-rows:1fr}}

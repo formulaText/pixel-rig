@@ -4,7 +4,7 @@ import { texel, FR, SPRITE_NEAR, SPRITE_FAR, CAM_TARGET, CAM_DIR, state, CHAR_FO
 import { applyLight, setCamBasis, updateShadowMap, blobMesh, blobMat, blobScene } from './lighting';
 import { J, setFace, charScene } from '../character/rig';
 import { shared } from '../materials/shared';
-import { pass, setPost, computeStamps, postMat, postScene, postCam, setIcon, mkRT } from './post';
+import { pass, setPost, computeStamps, computeResearchStamps, postMat, postScene, postCam, setIcon, mkRT } from './post';
 import { ndChar, ndWorld } from '../materials/materials';
 import { renderer, stage, canvas } from './renderer';
 import { worldScene } from '../world/world';
@@ -57,7 +57,7 @@ function updateWorldFrustum(){
   worldCam.bottom = -Hl * tx; worldCam.top = (H - Hl) * tx;
   worldCam.updateProjectionMatrix();
 }
-export interface CaptureOptions { target?: THREE.WebGLRenderTarget; character?: boolean; blob?: boolean }
+export interface CaptureOptions { target?: THREE.WebGLRenderTarget; character?: boolean; blob?: boolean; skipComposite?: boolean }
 function renderWorld(o: RenderOptions, X: number, Z: number, camX: number, camYup: number, cpx: number, cpy: number, capture: CaptureOptions = {}){
   const tx = texel();
   applyLight('world');
@@ -90,9 +90,10 @@ function renderWorld(o: RenderOptions, X: number, Z: number, camX: number, camYu
     if (capture.character !== false) pass(charScene, worldCam, rtWND, false, characterStudy.variant !== 'baseline' ? anchoredCharacterND : ndChar);
   }
   setPost(o, rtWLo, rtWHi, rtWND, W, H, WORLD_FAR - WORLD_NEAR, needND);
-  computeStamps(worldCam, W, H, o.face);
+  computeResearchStamps(worldCam, W, H, o.face);
   setIcon(worldCam, W, H);
   if (capture.character === false) { postMat.uniforms.uStamp.value = 0; postMat.uniforms.uIcon.value.w = 0; }
+  if (capture.skipComposite) return;
   renderer.setRenderTarget(capture.target || null);
   renderer.setClearColor(0x000000, 1); renderer.clear();
   renderer.render(postScene, postCam);
