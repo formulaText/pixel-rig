@@ -1,0 +1,21 @@
+{
+  "results": [
+    {
+      "orientation": "portrait",
+      "ui": true,
+      "persistence": true,
+      "guides": true,
+      "resourceUpdatesPer30Frames": 0,
+      "normalReadPixels": 0
+    },
+    {
+      "orientation": "landscape",
+      "ui": true,
+      "persistence": true,
+      "guides": true,
+      "resourceUpdatesPer30Frames": 0,
+      "normalReadPixels": 0
+    }
+  ],
+  "errors": []
+}

@@ -22,7 +22,7 @@ export function validateDocument(input:unknown):LookDocument {
  const v=input.values,p=input.preview;object(v);object(p);
  object(input.playback);if(!Number.isInteger(input.playback.ticks)||input.playback.ticks<0||input.playback.ticks>36000||typeof input.playback.paused!=='boolean')throw Error('再生時刻は0〜600秒にしてください');
  for(const [k,[min,max]]of Object.entries(limits))if(typeof v[k]!=='number'||!Number.isFinite(v[k])||v[k]<min||v[k]>max)throw Error(`${k} は ${min}〜${max} の数値にしてください`);
- if(typeof v.mouth!=='boolean'||(!/^#[0-9a-f]{6}$/i.test(v.outlineColor)||!/^#[0-9a-f]{6}$/i.test(v.innerOutlineColor)))throw Error('口の設定または輪郭色が不正です');
+ if(typeof v.mouth!=='boolean'||typeof v.outlineColor!=='string'||typeof v.innerOutlineColor!=='string'||(!/^#[0-9a-f]{6}$/i.test(v.outlineColor)||!/^#[0-9a-f]{6}$/i.test(v.innerOutlineColor)))throw Error('口の設定または輪郭色が不正です');
  object(v.head);if(!['original','round','cylinder'].includes(v.head.shape)||typeof v.head.size!=='number'||!Number.isFinite(v.head.size)||v.head.size<.9||v.head.size>1.1)throw Error('頭形状または大きさ（0.9〜1.1）が不正です');validateFace(v.face);
  for(const [k,allowed]of Object.entries({view:['dot','3d'],background:['plain','map'],motion:['still','idle','walk','vertical','diagonal'],light:['day','evening','night'],eyes:['auto','open','closed'],expression:['neutral','angry','sad']}))if(!allowed.includes(p[k]))throw Error(`プレビューの ${k} が不正です`);
  if(typeof p.hair!=='boolean'||typeof p.mouthOpen!=='boolean')throw Error('髪・口の状態が不正です');

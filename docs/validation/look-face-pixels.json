@@ -1,0 +1,962 @@
+{
+  "results": [
+    {
+      "preset": "original",
+      "shape": "original",
+      "dir": 0,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 2
+    },
+    {
+      "preset": "original",
+      "shape": "original",
+      "dir": 1,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 3
+    },
+    {
+      "preset": "original",
+      "shape": "original",
+      "dir": 2,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "original",
+      "shape": "original",
+      "dir": 3,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "original",
+      "shape": "original",
+      "dir": 4,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "original",
+      "shape": "original",
+      "dir": 5,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "original",
+      "shape": "original",
+      "dir": 6,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "original",
+      "shape": "original",
+      "dir": 7,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 3
+    },
+    {
+      "preset": "original",
+      "shape": "round",
+      "dir": 0,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 2
+    },
+    {
+      "preset": "original",
+      "shape": "round",
+      "dir": 1,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 3
+    },
+    {
+      "preset": "original",
+      "shape": "round",
+      "dir": 2,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "original",
+      "shape": "round",
+      "dir": 3,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "original",
+      "shape": "round",
+      "dir": 4,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "original",
+      "shape": "round",
+      "dir": 5,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "original",
+      "shape": "round",
+      "dir": 6,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "original",
+      "shape": "round",
+      "dir": 7,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 3
+    },
+    {
+      "preset": "original",
+      "shape": "cylinder",
+      "dir": 0,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 2
+    },
+    {
+      "preset": "original",
+      "shape": "cylinder",
+      "dir": 1,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "original",
+      "shape": "cylinder",
+      "dir": 2,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "original",
+      "shape": "cylinder",
+      "dir": 3,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "original",
+      "shape": "cylinder",
+      "dir": 4,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "original",
+      "shape": "cylinder",
+      "dir": 5,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "original",
+      "shape": "cylinder",
+      "dir": 6,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "original",
+      "shape": "cylinder",
+      "dir": 7,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "small",
+      "shape": "original",
+      "dir": 0,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "small",
+      "shape": "original",
+      "dir": 1,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 2
+    },
+    {
+      "preset": "small",
+      "shape": "original",
+      "dir": 2,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "small",
+      "shape": "original",
+      "dir": 3,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "small",
+      "shape": "original",
+      "dir": 4,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "small",
+      "shape": "original",
+      "dir": 5,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "small",
+      "shape": "original",
+      "dir": 6,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "small",
+      "shape": "original",
+      "dir": 7,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 2
+    },
+    {
+      "preset": "small",
+      "shape": "round",
+      "dir": 0,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 2
+    },
+    {
+      "preset": "small",
+      "shape": "round",
+      "dir": 1,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 3
+    },
+    {
+      "preset": "small",
+      "shape": "round",
+      "dir": 2,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "small",
+      "shape": "round",
+      "dir": 3,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "small",
+      "shape": "round",
+      "dir": 4,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "small",
+      "shape": "round",
+      "dir": 5,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "small",
+      "shape": "round",
+      "dir": 6,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "small",
+      "shape": "round",
+      "dir": 7,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 3
+    },
+    {
+      "preset": "small",
+      "shape": "cylinder",
+      "dir": 0,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 2
+    },
+    {
+      "preset": "small",
+      "shape": "cylinder",
+      "dir": 1,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "small",
+      "shape": "cylinder",
+      "dir": 2,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "small",
+      "shape": "cylinder",
+      "dir": 3,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "small",
+      "shape": "cylinder",
+      "dir": 4,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "small",
+      "shape": "cylinder",
+      "dir": 5,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "small",
+      "shape": "cylinder",
+      "dir": 6,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "small",
+      "shape": "cylinder",
+      "dir": 7,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "expressive",
+      "shape": "original",
+      "dir": 0,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 2
+    },
+    {
+      "preset": "expressive",
+      "shape": "original",
+      "dir": 1,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 5
+    },
+    {
+      "preset": "expressive",
+      "shape": "original",
+      "dir": 2,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "expressive",
+      "shape": "original",
+      "dir": 3,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "expressive",
+      "shape": "original",
+      "dir": 4,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "expressive",
+      "shape": "original",
+      "dir": 5,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "expressive",
+      "shape": "original",
+      "dir": 6,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "expressive",
+      "shape": "original",
+      "dir": 7,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 5
+    },
+    {
+      "preset": "expressive",
+      "shape": "round",
+      "dir": 0,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 2
+    },
+    {
+      "preset": "expressive",
+      "shape": "round",
+      "dir": 1,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 5
+    },
+    {
+      "preset": "expressive",
+      "shape": "round",
+      "dir": 2,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "expressive",
+      "shape": "round",
+      "dir": 3,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "expressive",
+      "shape": "round",
+      "dir": 4,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "expressive",
+      "shape": "round",
+      "dir": 5,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "expressive",
+      "shape": "round",
+      "dir": 6,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "expressive",
+      "shape": "round",
+      "dir": 7,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 5
+    },
+    {
+      "preset": "expressive",
+      "shape": "cylinder",
+      "dir": 0,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 4
+    },
+    {
+      "preset": "expressive",
+      "shape": "cylinder",
+      "dir": 1,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 2
+    },
+    {
+      "preset": "expressive",
+      "shape": "cylinder",
+      "dir": 2,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "expressive",
+      "shape": "cylinder",
+      "dir": 3,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "expressive",
+      "shape": "cylinder",
+      "dir": 4,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "expressive",
+      "shape": "cylinder",
+      "dir": 5,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "expressive",
+      "shape": "cylinder",
+      "dir": 6,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 0
+    },
+    {
+      "preset": "expressive",
+      "shape": "cylinder",
+      "dir": 7,
+      "movementColor": 0,
+      "movementFinal": 0,
+      "coverageChanges": 0,
+      "paintNDChanges": 0,
+      "outsideSkin": 0,
+      "alphaChanges": 0,
+      "inkPixels": 2
+    }
+  ],
+  "overlaps": [
+    {
+      "shape": "original",
+      "point": [
+        13,
+        -10
+      ],
+      "ndChanges": 0,
+      "nonSkin": 0
+    },
+    {
+      "shape": "original",
+      "point": [
+        -7.5,
+        -4.9
+      ],
+      "ndChanges": 0,
+      "nonSkin": 0
+    },
+    {
+      "shape": "original",
+      "point": [
+        8,
+        10
+      ],
+      "ndChanges": 0,
+      "nonSkin": 0
+    },
+    {
+      "shape": "round",
+      "point": [
+        13,
+        -10
+      ],
+      "ndChanges": 0,
+      "nonSkin": 0
+    },
+    {
+      "shape": "round",
+      "point": [
+        -7.5,
+        -4.9
+      ],
+      "ndChanges": 0,
+      "nonSkin": 0
+    },
+    {
+      "shape": "round",
+      "point": [
+        8,
+        10
+      ],
+      "ndChanges": 0,
+      "nonSkin": 0
+    },
+    {
+      "shape": "cylinder",
+      "point": [
+        13,
+        -10
+      ],
+      "ndChanges": 0,
+      "nonSkin": 0
+    },
+    {
+      "shape": "cylinder",
+      "point": [
+        -7.5,
+        -4.9
+      ],
+      "ndChanges": 0,
+      "nonSkin": 0
+    },
+    {
+      "shape": "cylinder",
+      "point": [
+        8,
+        10
+      ],
+      "ndChanges": 0,
+      "nonSkin": 0
+    }
+  ],
+  "outlines": {
+    "innerChanged": 33,
+    "innerOutside": 0,
+    "outerChanged": 58,
+    "outerInside": 0
+  },
+  "blink": {
+    "extra": true,
+    "closedHighlightHidden": true
+  },
+  "errors": []
+}
