@@ -18,6 +18,8 @@ const server = await createServer({ server: { host: '127.0.0.1', port: 5175, str
   name: 'v6-02-test-adapter',
   transform(code, id) {
     if (id.endsWith('/src/main.ts')) return code + `
+// The original-v5 comparison explicitly uses the retained baseline renderer.
+characterStudy.variant='baseline';
 import * as logic from './gameplay/logic';
 import { expr } from './character/expression';
 import { auto } from './input/input';

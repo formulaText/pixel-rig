@@ -151,7 +151,7 @@ try {
  });
  for(const r of ui.backgrounds)assert.equal(r.result.changed,0,`${r.key}: background stability`);
  assert.deepEqual(ui.stationary.start.player,ui.stationary.end.player);assert.notEqual(ui.stationary.start.phase,ui.stationary.end.phase);
- assert.equal(ui.frozen.expression.autoBlink,false);ui.counts.forEach(r=>assert.equal(r.reads,0));assert.equal(ui.returnedVariant,'baseline');assert.equal(ui.controlsDisabled,false);
+ assert.equal(ui.frozen.expression.autoBlink,false);ui.counts.forEach(r=>assert.equal(r.reads,0));assert.equal(ui.returnedVariant,'precise');assert.equal(ui.controlsDisabled,false);
  const animation=await page.evaluate(()=>{
   const r=[];for(const variant of ['baseline','anchored']){
    const a=capture({variant,pose:0}),b=capture({variant,pose:.25}),c=capture({variant,pose:0,blink:2});

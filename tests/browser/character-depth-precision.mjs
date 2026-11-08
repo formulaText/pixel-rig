@@ -235,8 +235,8 @@ try {
  writeFileSync(`${output}/ui-inspection.json`,JSON.stringify(ui,null,2));
  ui.background.forEach(r=>{assert.equal(r.result.changed,0);});
  assert.deepEqual(ui.stationary.start.player,ui.stationary.end.player);assert.notEqual(ui.stationary.start.phase,ui.stationary.end.phase);
- assert.deepEqual(ui.options,['baseline','anchored','precise']);ui.switches.forEach(r=>{assert.equal(r.variant,r.actual);assert.equal(r.time,0);});
- assert.equal(ui.normalReads,0);assert.equal(ui.returnedVariant,'baseline');
+ assert.deepEqual(ui.options,['default','baseline','anchored','precise']);ui.switches.forEach(r=>{assert.equal(r.variant==='default'?'precise':r.variant,r.actual);assert.equal(r.time,0);});
+ assert.equal(ui.normalReads,0);assert.equal(ui.returnedVariant,'precise');
  const aggregate=Object.fromEntries(['anchored','precise'].map(v=>[v,Object.fromEntries(['color','final','normal','coverage','browColor','browFinal'].map(k=>[k,matrix.reduce((n,r)=>n+r.metrics[v][k].total,0)]))]));
  assert(aggregate.anchored.color>0,'test must detect A residual before compositing');assert(aggregate.precise.color<aggregate.anchored.color);assert(aggregate.precise.final<aggregate.anchored.final);
  assert.deepEqual(errors,[]);

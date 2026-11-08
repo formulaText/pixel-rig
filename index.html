@@ -25,13 +25,13 @@
         <p class="note">プリセットを選ぶと時刻0で停止します。入力列を繰り返し再生します。</p>
         <fieldset id="v-conditions">
           <label for="v-preset">検証プリセット</label><select id="v-preset"></select>
-          <label for="v-character-variant">キャラの色比較（実験・未採用）</label>
-          <select id="v-character-variant"><option value="baseline">変更前（初期表示）</option><option value="anchored">候補A：輪郭の深度基準を固定</option><option value="precise">候補B：A＋色描画の深度精度を上げる</option></select>
-          <p class="note">Aは実機で部分改善、Bは実機未確認・未採用です。まずA／Bで縦・斜め移動の眉付近・袖／手・足首を比較してください。切替時は同条件の先頭へ戻ります。横・位置固定歩行・木との重なりは退行確認用です。性能測定は見た目の改善確認後に行います。</p>
+          <label for="v-character-variant">キャラの色比較（通常は採用済みB）</label>
+          <select id="v-character-variant" autocomplete="off"><option value="default">通常の既定：採用済みB</option><option value="baseline">変更前（比較用）</option><option value="anchored">候補A：輪郭の深度基準を固定</option><option value="precise">候補B：A＋色描画の深度精度を上げる（採用済み）</option></select>
+          <p class="note">通常はBを自動使用します。比較用に選んだ方式はリセットしても維持し、「通常操作へ戻る」または再読み込みで既定Bへ戻ります。切替時は同条件の先頭へ戻ります。Bの既定化は新ビルドでの実機確認待ちです。</p>
           <details><summary>色の切分け（通常の実機確認では変更不要）</summary>
             <label><input id="v-freeze-pose" type="checkbox">姿勢・向き・瞬きを固定（正面・歩行の1姿勢）</label>
             <label><input id="v-fixed-camera" type="checkbox">カメラを固定</label>
-            <p class="note">この2設定は「色比較」プリセットだけに適用。通常操作へ戻ると変更前へ戻ります。</p>
+            <p class="note">この2設定は「色比較」プリセットだけに適用。通常操作へ戻ると解除され、採用済みBで描画します。</p>
           </details>
           <details><summary>seed・入力列・時刻・測定条件</summary>
           <label for="v-seed">乱数seed（ワールド・瞬き）</label><input id="v-seed" type="number" min="0" max="4294967295" step="1" value="11" inputmode="numeric">
