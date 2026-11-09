@@ -38,8 +38,9 @@ function atlas(f:FaceData,eye:number){
 export function scaleResearchStamps(k:number){if(stampUniforms.uResearchStamp.value===0)return;for(const r of rects)r.multiplyScalar(k);for(const e of originals){e.x*=k;e.y*=k;}}
 export function computeEditableStamps(cam:THREE.Camera,rx:number,ry:number,u:Record<string,any>){
  stampUniforms.uResearchStamp.value=0;
- if(!research.active||research.baseline)return;
- if(!effectiveLook().face.legacy&&effectiveLook().browMode==='original'){const status=document.getElementById('face-brow-effective');if(status)status.textContent='頭表面の顔：編集格子を曲面へ適用します。最終画素の寸法は向きと画素化で変わります。';return;}
+ if(!research.active)return;
+ if(research.baseline){const status=document.getElementById('face-brow-effective'),text='基準を表示中です。調整中へ戻ると研究設定の実効寸法を表示します。';if(status&&status.textContent!==text)status.textContent=text;return;}
+ if(!effectiveLook().face.legacy&&effectiveLook().browMode==='original'){const status=document.getElementById('face-brow-effective'),text='頭表面の顔：編集格子を曲面へ適用します。最終画素の寸法は向きと画素化で変わります。';if(status&&status.textContent!==text)status.textContent=text;return;}
  const f=effectiveLook().face,p=research.preview;
  const expression=JSON.stringify([p.expression,p.mouthOpen,effectiveLook().highlightOpacity,effectiveLook().highlightLight,effectiveLook().browMode]);
  const glyphKey=`${glyph.w},${glyph.h}`;

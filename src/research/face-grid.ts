@@ -11,6 +11,8 @@ export function browRaster(b:Brow,expression:Expression,side:Side){
  const x=Math.floor(cx-hx+1e-10),y=Math.floor(cy-hy+1e-10);
  const bounds={x,y,w:Math.ceil(cx+hx-1e-10)-x,h:Math.ceil(cy+hy-1e-10)-y};
  return {rect,bounds,angle:ex.angle*(side==='left'?1:-1),sample(px:number,py:number){
+  // The editable face canvas clips at the same fixed grid boundary.
+  if(px<0||py<0||px>=FACE_W||py>=FACE_H)return null;
   const dx=px-cx,dy=py-cy,rx=dx*c+dy*s,ry=-dx*s+dy*c;
   if(Math.abs(rx)>=rect.w/2||Math.abs(ry)>=rect.h/2)return null;
   const ix=Math.floor((rx/rect.w/b.imageScale+.5)*b.image[0].length),iy=Math.floor((ry/rect.h/b.imageScale+.5)*b.image.length);

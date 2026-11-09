@@ -27,3 +27,5 @@ test('brow rotation uses pixel aspect, keeps rotated area, and never rounds save
  for(const ex of ['neutral','angry','sad']){const r=grid.browRaster(b,ex,'left'),p=grid.browPixels(b,ex,'left');p.pixels.forEach((row,y)=>row.forEach((color,x)=>{const q=r.sample(r.bounds.x+x+.5,r.bounds.y+y+.5);assert.equal(color,q?b.image[q.y][q.x]:'');}));}
  assert.equal(grid.browRaster(b,'angry','left').rect.y,6,'0.02 shift quantizes to zero at 24 grid rows; source remains .02');
 });
+
+test('rotated brows cannot paint outside the editor face grid',()=>{const b=face.originalFace().brows.left;b.rect.x=0;b.rect.y=0;const r=grid.browRaster(b,'sad','left'),p=grid.browPixels(b,'sad','left');assert(r.bounds.y<0);p.pixels.forEach((row,y)=>row.forEach((color,x)=>{if(r.bounds.x+x<0||r.bounds.y+y<0)assert.equal(color,'');}));assert.equal(r.sample(-.1,.5),null);assert.equal(r.sample(.5,-.1),null);});
