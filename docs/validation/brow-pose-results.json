@@ -269,5 +269,553 @@
       }
     ],
     "max": 0.06578681698823335
+  },
+  "expressionMovement": [
+    {
+      "expression": "neutral",
+      "eyes": "open",
+      "direction": 0,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "neutral",
+      "eyes": "open",
+      "direction": 1,
+      "vertical": [
+        {
+          "x": 27,
+          "y": 17,
+          "before": [
+            236,
+            123,
+            62,
+            255
+          ],
+          "after": [
+            253,
+            170,
+            115,
+            255
+          ]
+        }
+      ],
+      "diagonal": [
+        {
+          "x": 27,
+          "y": 17,
+          "before": [
+            236,
+            123,
+            62,
+            255
+          ],
+          "after": [
+            253,
+            170,
+            115,
+            255
+          ]
+        }
+      ]
+    },
+    {
+      "expression": "neutral",
+      "eyes": "open",
+      "direction": 2,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "neutral",
+      "eyes": "open",
+      "direction": 3,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "neutral",
+      "eyes": "open",
+      "direction": 4,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "neutral",
+      "eyes": "open",
+      "direction": 5,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "neutral",
+      "eyes": "open",
+      "direction": 6,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "neutral",
+      "eyes": "open",
+      "direction": 7,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "neutral",
+      "eyes": "closed",
+      "direction": 0,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "neutral",
+      "eyes": "closed",
+      "direction": 1,
+      "vertical": [
+        {
+          "x": 27,
+          "y": 17,
+          "before": [
+            236,
+            123,
+            62,
+            255
+          ],
+          "after": [
+            253,
+            170,
+            115,
+            255
+          ]
+        }
+      ],
+      "diagonal": [
+        {
+          "x": 27,
+          "y": 17,
+          "before": [
+            236,
+            123,
+            62,
+            255
+          ],
+          "after": [
+            253,
+            170,
+            115,
+            255
+          ]
+        }
+      ]
+    },
+    {
+      "expression": "neutral",
+      "eyes": "closed",
+      "direction": 2,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "neutral",
+      "eyes": "closed",
+      "direction": 3,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "neutral",
+      "eyes": "closed",
+      "direction": 4,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "neutral",
+      "eyes": "closed",
+      "direction": 5,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "neutral",
+      "eyes": "closed",
+      "direction": 6,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "neutral",
+      "eyes": "closed",
+      "direction": 7,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "angry",
+      "eyes": "open",
+      "direction": 0,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "angry",
+      "eyes": "open",
+      "direction": 1,
+      "vertical": [
+        {
+          "x": 27,
+          "y": 17,
+          "before": [
+            236,
+            123,
+            62,
+            255
+          ],
+          "after": [
+            253,
+            170,
+            115,
+            255
+          ]
+        }
+      ],
+      "diagonal": [
+        {
+          "x": 27,
+          "y": 17,
+          "before": [
+            236,
+            123,
+            62,
+            255
+          ],
+          "after": [
+            253,
+            170,
+            115,
+            255
+          ]
+        }
+      ]
+    },
+    {
+      "expression": "angry",
+      "eyes": "open",
+      "direction": 2,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "angry",
+      "eyes": "open",
+      "direction": 3,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "angry",
+      "eyes": "open",
+      "direction": 4,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "angry",
+      "eyes": "open",
+      "direction": 5,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "angry",
+      "eyes": "open",
+      "direction": 6,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "angry",
+      "eyes": "open",
+      "direction": 7,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "angry",
+      "eyes": "closed",
+      "direction": 0,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "angry",
+      "eyes": "closed",
+      "direction": 1,
+      "vertical": [
+        {
+          "x": 27,
+          "y": 17,
+          "before": [
+            236,
+            123,
+            62,
+            255
+          ],
+          "after": [
+            253,
+            170,
+            115,
+            255
+          ]
+        }
+      ],
+      "diagonal": [
+        {
+          "x": 27,
+          "y": 17,
+          "before": [
+            236,
+            123,
+            62,
+            255
+          ],
+          "after": [
+            253,
+            170,
+            115,
+            255
+          ]
+        }
+      ]
+    },
+    {
+      "expression": "angry",
+      "eyes": "closed",
+      "direction": 2,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "angry",
+      "eyes": "closed",
+      "direction": 3,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "angry",
+      "eyes": "closed",
+      "direction": 4,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "angry",
+      "eyes": "closed",
+      "direction": 5,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "angry",
+      "eyes": "closed",
+      "direction": 6,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "angry",
+      "eyes": "closed",
+      "direction": 7,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "sad",
+      "eyes": "open",
+      "direction": 0,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "sad",
+      "eyes": "open",
+      "direction": 1,
+      "vertical": [
+        {
+          "x": 27,
+          "y": 17,
+          "before": [
+            236,
+            123,
+            62,
+            255
+          ],
+          "after": [
+            253,
+            170,
+            115,
+            255
+          ]
+        }
+      ],
+      "diagonal": [
+        {
+          "x": 27,
+          "y": 17,
+          "before": [
+            236,
+            123,
+            62,
+            255
+          ],
+          "after": [
+            253,
+            170,
+            115,
+            255
+          ]
+        }
+      ]
+    },
+    {
+      "expression": "sad",
+      "eyes": "open",
+      "direction": 2,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "sad",
+      "eyes": "open",
+      "direction": 3,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "sad",
+      "eyes": "open",
+      "direction": 4,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "sad",
+      "eyes": "open",
+      "direction": 5,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "sad",
+      "eyes": "open",
+      "direction": 6,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "sad",
+      "eyes": "open",
+      "direction": 7,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "sad",
+      "eyes": "closed",
+      "direction": 0,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "sad",
+      "eyes": "closed",
+      "direction": 1,
+      "vertical": [
+        {
+          "x": 27,
+          "y": 17,
+          "before": [
+            236,
+            123,
+            62,
+            255
+          ],
+          "after": [
+            253,
+            170,
+            115,
+            255
+          ]
+        }
+      ],
+      "diagonal": [
+        {
+          "x": 27,
+          "y": 17,
+          "before": [
+            236,
+            123,
+            62,
+            255
+          ],
+          "after": [
+            253,
+            170,
+            115,
+            255
+          ]
+        }
+      ]
+    },
+    {
+      "expression": "sad",
+      "eyes": "closed",
+      "direction": 2,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "sad",
+      "eyes": "closed",
+      "direction": 3,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "sad",
+      "eyes": "closed",
+      "direction": 4,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "sad",
+      "eyes": "closed",
+      "direction": 5,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "sad",
+      "eyes": "closed",
+      "direction": 6,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "sad",
+      "eyes": "closed",
+      "direction": 7,
+      "vertical": [],
+      "diagonal": []
+    }
+  ],
+  "movementReference": {
+    "commit": "737c26d011f9a2e1a3b7cead3097b8cfb0d41a7f",
+    "conditions": 48,
+    "referenceDifferencesExactlyEqual": true,
+    "residualConditions": 6
   }
 }
