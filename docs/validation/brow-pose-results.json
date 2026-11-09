@@ -1,0 +1,821 @@
+{
+  "expressions": [
+    {
+      "view": "dot",
+      "expression": "neutral",
+      "rects": [
+        [
+          50,
+          38,
+          3,
+          1
+        ],
+        [
+          46,
+          38,
+          3,
+          1
+        ]
+      ]
+    },
+    {
+      "view": "dot",
+      "expression": "angry",
+      "rects": [
+        [
+          49,
+          38,
+          4,
+          2
+        ],
+        [
+          45,
+          38,
+          4,
+          2
+        ]
+      ]
+    },
+    {
+      "view": "dot",
+      "expression": "sad",
+      "rects": [
+        [
+          49,
+          38,
+          4,
+          2
+        ],
+        [
+          45,
+          38,
+          4,
+          2
+        ]
+      ]
+    },
+    {
+      "view": "3d",
+      "expression": "neutral",
+      "rects": [
+        [
+          200,
+          152,
+          12,
+          4
+        ],
+        [
+          184,
+          152,
+          12,
+          4
+        ]
+      ]
+    },
+    {
+      "view": "3d",
+      "expression": "angry",
+      "rects": [
+        [
+          196,
+          152,
+          16,
+          8
+        ],
+        [
+          180,
+          152,
+          16,
+          8
+        ]
+      ]
+    },
+    {
+      "view": "3d",
+      "expression": "sad",
+      "rects": [
+        [
+          196,
+          152,
+          16,
+          8
+        ],
+        [
+          180,
+          152,
+          16,
+          8
+        ]
+      ]
+    }
+  ],
+  "poses": [
+    {
+      "view": "dot",
+      "motion": "walk",
+      "headEqual": true,
+      "facePixelsEqual": true
+    },
+    {
+      "view": "dot",
+      "motion": "still",
+      "headEqual": true,
+      "facePixelsEqual": true
+    },
+    {
+      "view": "dot",
+      "motion": "vertical",
+      "headEqual": true,
+      "facePixelsEqual": true
+    },
+    {
+      "view": "dot",
+      "motion": "diagonal",
+      "headEqual": true,
+      "facePixelsEqual": true
+    },
+    {
+      "view": "dot",
+      "motion": "idle",
+      "headEqual": true,
+      "facePixelsEqual": true
+    },
+    {
+      "view": "dot",
+      "motion": "walk",
+      "headEqual": true,
+      "facePixelsEqual": true
+    },
+    {
+      "view": "dot",
+      "motion": "idle",
+      "headEqual": true,
+      "facePixelsEqual": true
+    },
+    {
+      "view": "3d",
+      "motion": "walk",
+      "headEqual": true,
+      "facePixelsEqual": true
+    },
+    {
+      "view": "3d",
+      "motion": "still",
+      "headEqual": true,
+      "facePixelsEqual": true
+    },
+    {
+      "view": "3d",
+      "motion": "vertical",
+      "headEqual": true,
+      "facePixelsEqual": true
+    },
+    {
+      "view": "3d",
+      "motion": "diagonal",
+      "headEqual": true,
+      "facePixelsEqual": true
+    },
+    {
+      "view": "3d",
+      "motion": "idle",
+      "headEqual": true,
+      "facePixelsEqual": true
+    },
+    {
+      "view": "3d",
+      "motion": "walk",
+      "headEqual": true,
+      "facePixelsEqual": true
+    },
+    {
+      "view": "3d",
+      "motion": "idle",
+      "headEqual": true,
+      "facePixelsEqual": true
+    }
+  ],
+  "gridAndPaintRoundtrip": true,
+  "shapeDistanceVisibility": true,
+  "saveReloadCopy": true,
+  "playing": [
+    {
+      "motion": "idle",
+      "ticks": 10,
+      "restored": true
+    },
+    {
+      "motion": "walk",
+      "ticks": 10,
+      "restored": true
+    },
+    {
+      "motion": "vertical",
+      "ticks": 10,
+      "restored": true
+    },
+    {
+      "motion": "diagonal",
+      "ticks": 10,
+      "restored": true
+    },
+    {
+      "motion": "idle",
+      "ticks": 10,
+      "restored": true
+    }
+  ],
+  "directions": {
+    "rows": [
+      {
+        "direction": 0,
+        "head": -0.12363323129985823,
+        "brow": 1
+      },
+      {
+        "direction": 1,
+        "head": -0.06,
+        "brow": 0
+      },
+      {
+        "direction": 2,
+        "head": -0.06,
+        "brow": 0
+      },
+      {
+        "direction": 3,
+        "head": -0.06,
+        "brow": 0
+      },
+      {
+        "direction": 4,
+        "head": -0.06,
+        "brow": 0
+      },
+      {
+        "direction": 5,
+        "head": -0.06,
+        "brow": 0
+      },
+      {
+        "direction": 6,
+        "head": -0.06,
+        "brow": 0
+      },
+      {
+        "direction": 7,
+        "head": -0.06,
+        "brow": 0
+      }
+    ],
+    "max": 0.06578681698823335
+  },
+  "expressionMovement": [
+    {
+      "expression": "neutral",
+      "eyes": "open",
+      "direction": 0,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "neutral",
+      "eyes": "open",
+      "direction": 1,
+      "vertical": [
+        {
+          "x": 27,
+          "y": 17,
+          "before": [
+            236,
+            123,
+            62,
+            255
+          ],
+          "after": [
+            253,
+            170,
+            115,
+            255
+          ]
+        }
+      ],
+      "diagonal": [
+        {
+          "x": 27,
+          "y": 17,
+          "before": [
+            236,
+            123,
+            62,
+            255
+          ],
+          "after": [
+            253,
+            170,
+            115,
+            255
+          ]
+        }
+      ]
+    },
+    {
+      "expression": "neutral",
+      "eyes": "open",
+      "direction": 2,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "neutral",
+      "eyes": "open",
+      "direction": 3,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "neutral",
+      "eyes": "open",
+      "direction": 4,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "neutral",
+      "eyes": "open",
+      "direction": 5,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "neutral",
+      "eyes": "open",
+      "direction": 6,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "neutral",
+      "eyes": "open",
+      "direction": 7,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "neutral",
+      "eyes": "closed",
+      "direction": 0,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "neutral",
+      "eyes": "closed",
+      "direction": 1,
+      "vertical": [
+        {
+          "x": 27,
+          "y": 17,
+          "before": [
+            236,
+            123,
+            62,
+            255
+          ],
+          "after": [
+            253,
+            170,
+            115,
+            255
+          ]
+        }
+      ],
+      "diagonal": [
+        {
+          "x": 27,
+          "y": 17,
+          "before": [
+            236,
+            123,
+            62,
+            255
+          ],
+          "after": [
+            253,
+            170,
+            115,
+            255
+          ]
+        }
+      ]
+    },
+    {
+      "expression": "neutral",
+      "eyes": "closed",
+      "direction": 2,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "neutral",
+      "eyes": "closed",
+      "direction": 3,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "neutral",
+      "eyes": "closed",
+      "direction": 4,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "neutral",
+      "eyes": "closed",
+      "direction": 5,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "neutral",
+      "eyes": "closed",
+      "direction": 6,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "neutral",
+      "eyes": "closed",
+      "direction": 7,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "angry",
+      "eyes": "open",
+      "direction": 0,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "angry",
+      "eyes": "open",
+      "direction": 1,
+      "vertical": [
+        {
+          "x": 27,
+          "y": 17,
+          "before": [
+            236,
+            123,
+            62,
+            255
+          ],
+          "after": [
+            253,
+            170,
+            115,
+            255
+          ]
+        }
+      ],
+      "diagonal": [
+        {
+          "x": 27,
+          "y": 17,
+          "before": [
+            236,
+            123,
+            62,
+            255
+          ],
+          "after": [
+            253,
+            170,
+            115,
+            255
+          ]
+        }
+      ]
+    },
+    {
+      "expression": "angry",
+      "eyes": "open",
+      "direction": 2,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "angry",
+      "eyes": "open",
+      "direction": 3,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "angry",
+      "eyes": "open",
+      "direction": 4,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "angry",
+      "eyes": "open",
+      "direction": 5,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "angry",
+      "eyes": "open",
+      "direction": 6,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "angry",
+      "eyes": "open",
+      "direction": 7,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "angry",
+      "eyes": "closed",
+      "direction": 0,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "angry",
+      "eyes": "closed",
+      "direction": 1,
+      "vertical": [
+        {
+          "x": 27,
+          "y": 17,
+          "before": [
+            236,
+            123,
+            62,
+            255
+          ],
+          "after": [
+            253,
+            170,
+            115,
+            255
+          ]
+        }
+      ],
+      "diagonal": [
+        {
+          "x": 27,
+          "y": 17,
+          "before": [
+            236,
+            123,
+            62,
+            255
+          ],
+          "after": [
+            253,
+            170,
+            115,
+            255
+          ]
+        }
+      ]
+    },
+    {
+      "expression": "angry",
+      "eyes": "closed",
+      "direction": 2,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "angry",
+      "eyes": "closed",
+      "direction": 3,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "angry",
+      "eyes": "closed",
+      "direction": 4,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "angry",
+      "eyes": "closed",
+      "direction": 5,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "angry",
+      "eyes": "closed",
+      "direction": 6,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "angry",
+      "eyes": "closed",
+      "direction": 7,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "sad",
+      "eyes": "open",
+      "direction": 0,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "sad",
+      "eyes": "open",
+      "direction": 1,
+      "vertical": [
+        {
+          "x": 27,
+          "y": 17,
+          "before": [
+            236,
+            123,
+            62,
+            255
+          ],
+          "after": [
+            253,
+            170,
+            115,
+            255
+          ]
+        }
+      ],
+      "diagonal": [
+        {
+          "x": 27,
+          "y": 17,
+          "before": [
+            236,
+            123,
+            62,
+            255
+          ],
+          "after": [
+            253,
+            170,
+            115,
+            255
+          ]
+        }
+      ]
+    },
+    {
+      "expression": "sad",
+      "eyes": "open",
+      "direction": 2,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "sad",
+      "eyes": "open",
+      "direction": 3,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "sad",
+      "eyes": "open",
+      "direction": 4,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "sad",
+      "eyes": "open",
+      "direction": 5,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "sad",
+      "eyes": "open",
+      "direction": 6,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "sad",
+      "eyes": "open",
+      "direction": 7,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "sad",
+      "eyes": "closed",
+      "direction": 0,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "sad",
+      "eyes": "closed",
+      "direction": 1,
+      "vertical": [
+        {
+          "x": 27,
+          "y": 17,
+          "before": [
+            236,
+            123,
+            62,
+            255
+          ],
+          "after": [
+            253,
+            170,
+            115,
+            255
+          ]
+        }
+      ],
+      "diagonal": [
+        {
+          "x": 27,
+          "y": 17,
+          "before": [
+            236,
+            123,
+            62,
+            255
+          ],
+          "after": [
+            253,
+            170,
+            115,
+            255
+          ]
+        }
+      ]
+    },
+    {
+      "expression": "sad",
+      "eyes": "closed",
+      "direction": 2,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "sad",
+      "eyes": "closed",
+      "direction": 3,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "sad",
+      "eyes": "closed",
+      "direction": 4,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "sad",
+      "eyes": "closed",
+      "direction": 5,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "sad",
+      "eyes": "closed",
+      "direction": 6,
+      "vertical": [],
+      "diagonal": []
+    },
+    {
+      "expression": "sad",
+      "eyes": "closed",
+      "direction": 7,
+      "vertical": [],
+      "diagonal": []
+    }
+  ],
+  "movementReference": {
+    "commit": "737c26d011f9a2e1a3b7cead3097b8cfb0d41a7f",
+    "conditions": 48,
+    "referenceDifferencesExactlyEqual": true,
+    "residualConditions": 6
+  }
+}

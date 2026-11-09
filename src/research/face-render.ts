@@ -1,3 +1,4 @@
+import {rasterRect,browPixels} from './face-grid';
 import {highlightLightGLSL,highlightFactorGLSL} from './highlight-light';
 import * as THREE from 'three';
 import {J} from '../character/rig';
@@ -27,7 +28,7 @@ function geometry(shape:string){
 }
 function drawBitmap(g:CanvasRenderingContext2D,b:Bitmap,r:Rect,angle=0,opacity=1,scale=1){
  if(r.w<=0||r.h<=0||opacity<=0)return;
- const x=Math.round(r.x*FACE_W),y=Math.round(r.y*FACE_H),w=Math.max(1,Math.round(r.w*FACE_W)),h=Math.max(1,Math.round(r.h*FACE_H));
+ const {x,y,w,h}=rasterRect(r);
  // Inverse nearest sampling into a local integer grid. The source image is never mutated.
  const c=Math.cos(angle*Math.PI/180),s=Math.sin(angle*Math.PI/180);
  for(let dy=0;dy<h;dy++)for(let dx=0;dx<w;dx++){
@@ -43,7 +44,9 @@ export function faceCanvas(f:FaceData,eyeState:number,mouth:boolean,open:boolean
   if(closed||half){const minimum=Math.min(e.minHeight,e.rect.h),h=closed?minimum:(e.rect.h+minimum)/2;r.y=e.rect.y+e.rect.h*e.closeAt-h*e.closeAt;r.h=h;}
   if(layer==='all'||layer==='eye-'+side)drawBitmap(g,closed&&f.blinkMode==='image'?e.closed:e.image,r,0,1,e.imageScale);
   const hi=e.highlight;if(((highlights&&(layer==='all'||layer==='eye-'+side))||layer==='highlight-'+side||layer==='highlights')&&hi.show&&!(hi.hideClosed&&(closed||half)))drawBitmap(g,[[FACE_HIGHLIGHT_COLOR]],{x:r.x+hi.x*r.w,y:r.y+hi.y*r.h,w:hi.w*r.w,h:hi.h*r.h},0,hi.opacity);
-  const b=f.brows[side],ex=b.expressions[expression];if(brows&&(layer==='all'||layer==='brow-'+side)&&(b.neutralVisible||expression!=='neutral'))drawBitmap(g,b.image,{...b.rect,y:b.rect.y+ex.dy},side==='left'?ex.angle:-ex.angle,1,b.imageScale);
+  const b=f.brows[side];if(brows&&(layer==='all'||layer==='brow-'+side)&&(b.neutralVisible||expression!=='neutral')){
+   const {bounds,pixels}=browPixels(b,expression,side);pixels.forEach((row,y)=>row.forEach((color,x)=>{if(color){g.fillStyle=color;g.fillRect(bounds.x+x,bounds.y+y,1,1);}}));
+  }
  }
  if(mouth&&(layer==='all'||layer==='mouth'))drawBitmap(g,open?f.mouth.open:f.mouth.image,f.mouth.rect,0,1,f.mouth.imageScale);
  return canvas;

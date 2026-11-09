@@ -62,6 +62,10 @@ jobs:
         run: node tests/browser/look-homura.mjs
         env:
           CHROMIUM_PATH: /usr/bin/google-chrome
+      - name: 受領JSON・眉の実効格子／表情・動作切替の頭姿勢
+        run: node tests/browser/look-brow-pose.mjs
+        env:
+          CHROMIUM_PATH: /usr/bin/google-chrome
       - name: ビルド済み統合研究画面の保存・表示・測定記録・通常復帰
         run: node tests/browser/look-built.mjs
         env:

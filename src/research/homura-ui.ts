@@ -1,5 +1,5 @@
 import {BASE,research,clone,validateDocument,type LookValues} from './model';
-import {homuraLook,HOMURA_NAME} from './look-presets';
+import {homuraLook,homuraDocument,initialHomuraLook,HOMURA_NAME} from './look-presets';
 import {lookDocument,applyLookDocument,refreshLookUI} from './ui';
 import {dirtyFace} from './face-render';
 import {resetLook} from './runtime';
@@ -7,9 +7,9 @@ const $=(id:string)=>document.getElementById(id)!;
 function section(parent:HTMLElement,title:string){const e=document.createElement('section');e.className='look-subsection';e.innerHTML=`<h3>${title}</h3>`;parent.append(e);return e;}
 export function bindHomuraUI(){
  const whole=$('look-whole'),presets=section(whole,'ルック候補（設定一式）');whole.insertBefore(presets,whole.children[1]);
- presets.innerHTML+='<p id="look-preset-state" role="status"></p><button class="btn" id="look-preset-homura">ほむら・ルック候補01を開く</button><button class="btn ghost" id="look-preset-base">調整中を基準の設定に戻す</button><p class="note">現在の調整欄を置き換えます。残したい調整は先に保存・コピーしてください。基準・保存済み一覧・通常のキャラクターは変わりません。</p>';
+ presets.innerHTML+='<p id="look-preset-state" role="status"></p><button class="btn" id="look-preset-homura">ほむら・ルック候補01を開く</button><button class="btn ghost" id="look-preset-homura-initial">以前の公開初期値を開く（12°）</button><button class="btn ghost" id="look-preset-base">調整中を基準の設定に戻す</button><p class="note">候補01は受領JSONの基準候補（頭2.5°・大きさ0.96）。現在の調整欄を置き換えます。残したい調整は先に保存・コピーしてください。基準・保存済み一覧・通常のキャラクターは変わりません。</p>';
  const use=(values:LookValues)=>{const d=lookDocument();d.values=values;d.name=values.presetName;d.preview={...d.preview,direction:0,autoDirection:false,light:'day',lightSite:'default',motion:'idle',hair:true,eyes:'auto'};d.playback={ticks:0,paused:true};applyLookDocument(d);};
- $('look-preset-homura').onclick=()=>use(homuraLook());$('look-preset-base').onclick=()=>use(clone(BASE));
+ $('look-preset-homura').onclick=()=>applyLookDocument(homuraDocument());$('look-preset-homura-initial').onclick=()=>use(initialHomuraLook());$('look-preset-base').onclick=()=>use(clone(BASE));
  function changed(){dirtyFace();refreshLookUI();sync();}
  const controls:Array<()=>void>=[];
  function options(host:HTMLElement,key:keyof LookValues,label:string,items:[string,string][]){const box=section(host,label);box.classList.add('homura-options');const buttons=items.map(([value,text])=>{const b=document.createElement('button');b.className='btn ghost';b.id='look-'+key+'-'+value;b.textContent=text;b.onclick=()=>{(research.values as any)[key]=value;changed();};box.append(b);return {b,value};});controls.push(()=>buttons.forEach(({b,value})=>b.setAttribute('aria-pressed',String(research.values[key]===value))));return box;}
@@ -28,5 +28,5 @@ export function bindHomuraUI(){
  document.querySelector('.look-save-row')!.append($('look-copy'));$('look-copy').classList.remove('ghost');$('look-copy').setAttribute('aria-label','設定をコピー（AIへ渡す・文字データ）');$('look-copy').title='ブラウザ保存とは別に、復元できる設定全文をコピー';
  function sync(){controls.forEach(f=>f());$('look-preset-state').textContent=`元の候補：${research.values.presetName}（調整は未採用）`;}
  window.addEventListener('look-controls-refreshed',sync);window.addEventListener('look-restored',sync);document.addEventListener('input',()=>queueMicrotask(sync));document.addEventListener('click',()=>queueMicrotask(sync));sync();
- if(new URLSearchParams(location.search).get('preset')==='homura-01')use(homuraLook());
+ if(new URLSearchParams(location.search).get('preset')==='homura-01')applyLookDocument(homuraDocument());
 }
