@@ -1,3 +1,4 @@
+import {alignFrontWalkHead} from './head-pose';
 import {frontWeight,previewAngle} from './look-presets';
 import {applyLookHair,restoreLookHair} from './look-hair';
 import {scaleResearchStamps} from './face-stamps';
@@ -9,7 +10,7 @@ import {research,effectiveLook,BASE} from './model';
 import {ReplayClock,presets,inputAt} from '../debug/replay';
 import {characterStudy} from '../debug/character-study';
 import {leaveValidation,active as validationActive} from '../debug/validation';
-import {tick,resetLogic,applyPose,simTime,idleT} from '../gameplay/logic';
+import {tick,resetLogic,applyPose,simTime,idleT,moving} from '../gameplay/logic';
 import {player,setPlayerWorld} from '../gameplay/player';
 import {resetInput,setReplayInput} from '../input/input';
 import {seedRuntime} from '../core/random';
@@ -59,10 +60,11 @@ export function renderLook(dt=0){
  state.tod=p.light;state.face='pixel';characterStudy.selection='default';
  const t=lookClock.seconds,dir=p.autoDirection?Math.floor(t/2)%8:p.direction;
  const angle=previewAngle(t,p.direction,p.autoDirection,v.headTiltScope==='front'),front=frontWeight(angle);
- setFace('pixel');J.head.position.set(0,.56,0);
- if(p.motion==='vertical'||p.motion==='diagonal')applyPose(true);
- else if(p.motion==='walk')walkPose(Math.floor(t/CYCLE*4)%4/4);
- else {
+ setFace('pixel');J.head.position.set(0,.56,0);J.head.scale.setScalar(1);
+ const locomotion=p.motion==='vertical'||p.motion==='diagonal',walking=p.motion==='walk'||(locomotion&&moving);
+ if(locomotion)applyPose(true);
+ else if(walking)walkPose(Math.floor(t/CYCLE*4)%4/4);
+ if(!walking){
   const b=v.idleMotion==='none'?0:p.motion==='still'?-1:(Math.floor(idleT*v.idleSpeed/.6)%2?1:-1);
   idlePose(b);const dy=J.torso.position.y;
   const headIdle=v.headIdle*(v.frontFringe==='still'?1-front:1);
@@ -74,6 +76,7 @@ export function renderLook(dt=0){
    J.head.position.set(0,.56+offset*Math.cos(lean),-offset*Math.sin(lean));
   }
  }
+ if(walking&&v.headTiltScope==='front')alignFrontWalkHead(front);
  J.head.rotation.x-=v.headTilt*Math.PI/180*(v.headTiltScope==='front'?front:1);applyResearchFace();applyLookHair(v);
  if(p.eyes==='closed'){expr.seq=[[2,999]];}else if(p.eyes==='open'||!p.blink){expr.seq=[];}
  J.motion.position.set(0,0,0);J.motion.rotation.set(0,0,0);

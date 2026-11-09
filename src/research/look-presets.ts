@@ -1,12 +1,16 @@
-import {BASE,clone,type LookValues} from './model';
+import referenceText from './presets/homura-01-reference.schema5.json?raw';
+import {BASE,clone,validateDocument,type LookValues} from './model';
 export const HOMURA_NAME='ほむら・ルック候補01';
 // Built-in comparison data: never writes browser storage or the game default.
-export function homuraLook():LookValues{
+export function initialHomuraLook():LookValues{
  const v=clone(BASE);Object.assign(v,{presetName:HOMURA_NAME,headTilt:12,headTiltScope:'front',headIdle:0,mouth:false,outlineMode:'underpaint',outerOpacity:.8,innerOpacity:.7,hairStyle:'eyes-visible',frontFringe:'still',browMode:'front-overlay',highlightLight:1});
  v.head.shape='cylinder';v.face.region.y=.03;v.face.blinkMode='image';
  for(const side of ['left','right']as const)v.face.brows[side].neutralVisible=true;
  return v;
 }
+// Full user-supplied schema 5 document is the research reference; no value overrides.
+export function homuraDocument(){return validateDocument(JSON.parse(referenceText));}
+export function homuraLook():LookValues{return homuraDocument().values;}
 // Smooth angular support ends before either 45-degree diagonal. No blanket tilt.
 export function frontWeight(angle:number){const a=Math.abs(Math.atan2(Math.sin(angle),Math.cos(angle)));const x=Math.max(0,Math.min(1,1-a/(Math.PI/4)));return x*x*(3-2*x);}
 export function previewAngle(seconds:number,direction:number,auto:boolean,smooth:boolean){

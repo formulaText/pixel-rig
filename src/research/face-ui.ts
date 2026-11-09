@@ -1,5 +1,6 @@
+import {rasterRect,browRaster} from './face-grid';
 import {research,BASE,clone,validateDocument} from './model';
-import {facePreset,originalFace,syncSide,FACE_W,FACE_H,type Bitmap,type Part,type Eye,type Brow,type Side} from './face-data';
+import {facePreset,originalFace,syncSide,FACE_W,FACE_H,type Bitmap,type Part,type Eye,type Brow,type Side,type Rect} from './face-data';
 import {dirtyFace,faceCanvas} from './face-render';
 import {refreshLookUI,lookDocument} from './ui';
 import {expr} from '../character/expression';
@@ -46,20 +47,31 @@ function refresh(){
  $<HTMLInputElement>('face-hair').checked=research.preview.hair;$<HTMLInputElement>('face-mouth-open').checked=research.preview.mouthOpen;
  bindFields($('look-face-editor')||$('look-panel'));fields();updateEditor();refreshLookUI();
 }
+function editorRaster(){
+ const p=current();if(part==='brows'&&p)return browRaster(p as Brow,research.preview.expression,side);
+ const r:Rect={...(p?.rect||{x:0,y:0,w:1,h:1})};
+ if(part==='eyes'&&layer==='closed'){const e=p as Eye,h=Math.min(e.minHeight,r.h);r.y+=r.h*e.closeAt-h*e.closeAt;r.h=h;}
+ const rect=rasterRect(r);return {rect,bounds:rect,angle:0};
+}
 function updateEditor(){
  const canvas=$<HTMLCanvasElement>('face-grid'),g=canvas.getContext('2d')!;g.clearRect(0,0,320,240);g.fillStyle='#d8b69c';g.fillRect(0,0,320,240);
  g.imageSmoothingEnabled=false;const f=research.values.face;const eye=layer==='closed'?2:0;
  g.drawImage(faceCanvas(f,eye,research.values.mouth,layer==='open',research.preview.expression),0,0,320,240);
  g.strokeStyle='#0003';g.lineWidth=1;for(let x=0;x<=32;x++){g.beginPath();g.moveTo(x*10+.5,0);g.lineTo(x*10+.5,240);g.stroke();}for(let y=0;y<=24;y++){g.beginPath();g.moveTo(0,y*10+.5);g.lineTo(320,y*10+.5);g.stroke();}
- const p=current();if(p){g.strokeStyle='#663bdb';g.lineWidth=2;g.strokeRect(p.rect.x*320,p.rect.y*240,p.rect.w*320,p.rect.h*240);}
+ const p=current(),raster=editorRaster(),bounds=raster.bounds;if(p){g.strokeStyle='#663bdb';g.lineWidth=2;g.strokeRect(bounds.x*10,bounds.y*10,bounds.w*10,bounds.h*10);}
  g.strokeStyle='#088';g.beginPath();g.moveTo(f.nose.x*320-5,f.nose.y*240);g.lineTo(f.nose.x*320+5,f.nose.y*240);g.moveTo(f.nose.x*320,f.nose.y*240-5);g.lineTo(f.nose.x*320,f.nose.y*240+5);g.stroke();
- $('face-grid-info').textContent=`32×24 共通格子 · ${part==='extra'?'追加描画':part==='eyes'?'目':part==='brows'?'眉':'口'} ${side==='left'?'本人の左':'本人の右'} · 元絵柄 ${bitmap()[0].length}×${bitmap().length}。紫の範囲／鼻の十字は編集ガイドです。`;
+ $('face-grid-info').textContent=`32×24 共通格子 · ${part==='extra'?'追加描画':part==='eyes'?'目':part==='brows'?'眉':'口'} ${side==='left'?'本人の左':'本人の右'} · 元絵柄 ${bitmap()[0].length}×${bitmap().length}。実効範囲：左${bounds.x}・上${bounds.y}、${bounds.w}×${bounds.h}格子${part==='brows'?`（表情の角度 ${raster.angle}°、上下移動 ${research.values.face.brows[side].expressions[research.preview.expression].dy} → ${raster.rect.y-rasterRect(p!.rect).y}格子）`:''}。紫は描画に使う整数範囲。保存値は変更しません。`;
+ $('face-brow-effective').hidden=part!=='brows';
 }
 function paint(e:PointerEvent){
  const c=$<HTMLCanvasElement>('face-grid'),r=c.getBoundingClientRect(),nx=(e.clientX-r.left)/r.width,ny=(e.clientY-r.top)/r.height,p=current(),b=bitmap();
- const rect=p?.rect||{x:0,y:0,w:1,h:1},scale=p?.imageScale||1;
- if(nx<rect.x||ny<rect.y||nx>=rect.x+rect.w||ny>=rect.y+rect.h)return;
- const x=Math.floor((((nx-rect.x)/rect.w-.5)/scale+.5)*b[0].length),y=Math.floor((((ny-rect.y)/rect.h-.5)/scale+.5)*b.length);if(x<0||y<0||x>=b[0].length||y>=b.length)return;
+ const raster=editorRaster(),rect=raster.rect,scale=p?.imageScale||1;
+ const px=Math.floor(nx*FACE_W)+.5,py=Math.floor(ny*FACE_H)+.5;
+ let x:number,y:number;
+ if(part==='brows'){const q=browRaster(p as Brow,research.preview.expression,side).sample(px,py);if(!q)return;({x,y}=q);}
+ else {if(px<rect.x||py<rect.y||px>=rect.x+rect.w||py>=rect.y+rect.h)return;
+ x=Math.floor((((px-rect.x)/rect.w-.5)/scale+.5)*b[0].length);y=Math.floor((((py-rect.y)/rect.h-.5)/scale+.5)*b.length);}
+ if(x<0||y<0||x>=b[0].length||y>=b.length)return;
  const key=x+','+y;if(key===lastCell)return;const previous=lastCell?lastCell.split(',').map(Number):[x,y],steps=Math.max(Math.abs(x-previous[0]),Math.abs(y-previous[1]));for(let n=0;n<=steps;n++){const t=steps?n/steps:0,px=Math.round(previous[0]+(x-previous[0])*t),py=Math.round(previous[1]+(y-previous[1])*t);b[py][px]=tool==='erase'?'':color;}lastCell=key;
  if(part==='brows')(current() as Brow).neutralVisible=true;
  if(part==='eyes'||part==='brows')syncSide(research.values.face,part,side,true);changed();
@@ -77,7 +89,7 @@ export function bindFaceEditor(){
  <p>左右はキャラクター本人から見た左右です。配置の連動とハイライトは独立です。鼻・そばかすは「追加描画」に描くと、まばたきの変形を受けません。</p>
  <label>編集する部位<select id="face-part"><option value="brows">眉</option><option value="eyes" selected>目</option><option value="extra">追加描画（鼻・そばかす）</option><option value="mouth">口</option></select></label><label>左右<select id="face-side"><option value="left">本人の左</option><option value="right">本人の右</option></select></label><label>編集する絵柄<select id="face-layer"><option value="normal">通常</option><option value="closed">閉じ目（目）</option><option value="open">開口（口）</option></select></label>
  <div class="validation-actions"><button class="btn" id="face-pen">描く</button><button class="btn ghost" id="face-erase">消しゴム</button><button class="btn ghost" id="face-undo">元に戻す</button><button class="btn ghost" id="face-redo">やり直す</button></div><label>描く色<input type="color" id="face-color" value="#241a38"></label><div id="face-palette"></div>
- <canvas id="face-grid" width="320" height="240" aria-label="顔のドット編集格子"></canvas><p class="note" id="face-grid-info"></p><p class="note">格子内は描画操作、格子の外はスクロールです。配置範囲を変えても元の絵柄は保持します。保存・コピーは下の研究設定に顔も含みます。</p>
+ <canvas id="face-grid" width="320" height="240" aria-label="顔のドット編集格子"></canvas><p class="note" id="face-grid-info"></p><p class="note" id="face-brow-effective" hidden></p><p class="note">格子内は描画操作、格子の外はスクロールです。配置範囲を変えても元の絵柄は保持します。保存・コピーは下の研究設定に顔も含みます。</p>
  <details><summary>選択した部位の配置・絵柄・閉じ目・ハイライト</summary><div id="face-part-fields"></div></details><p id="face-message" role="status"></p></details>`;
   // Selecting the unedited original explicitly retains its original renderer.
  $('face-preset-use').onclick=()=>{const old=snapshot();research.values.face=facePreset($<HTMLSelectElement>('face-preset').value);remember(old);dirtyFace();refresh();};
